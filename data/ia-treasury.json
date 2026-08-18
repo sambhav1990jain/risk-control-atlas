@@ -1,0 +1,362 @@
+[
+ {
+  "id": "IA-TR-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "Treasury",
+  "subprocess": "Cash Forecasting and Liquidity",
+  "risk": "Liquidity is managed on forecasts that are consistently wrong, so the organisation borrows expensively or is caught short.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess whether cash forecasting is accurate enough to support liquidity decisions.",
+  "what_to_review": [
+   "Forecast methodology, horizon and granularity",
+   "Accuracy of prior forecasts against actual outcomes",
+   "Inclusion of committed capital, tax and debt service outflows",
+   "Headroom against facilities and covenant limits",
+   "Escalation when forecast headroom falls below threshold"
+  ],
+  "procedures": [
+   "Compare prior forecasts to actual cash outcomes and quantify the error by horizon.",
+   "Test whether known commitments were included in forecasts or omitted.",
+   "Test facility headroom at several dates and whether escalation occurred where policy required.",
+   "Assess whether business units feed the forecast on a consistent basis."
+  ],
+  "red_flags": [
+   "Forecast error consistently in one direction",
+   "Committed outflows appearing only when they hit",
+   "Headroom breaches noticed after the fact",
+   "Forecast prepared by one person with no challenge"
+  ],
+  "evidence": [
+   "Cash forecasts and actual outcomes",
+   "Facility agreements and headroom reports",
+   "Capital commitment schedules",
+   "Escalation records"
+  ],
+  "kpis": [
+   "Forecast accuracy by horizon",
+   "Minimum headroom",
+   "Escalations raised"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TR-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "Treasury",
+  "subprocess": "Debt, Facilities and Covenant Compliance",
+  "risk": "A covenant is breached, or a facility lapses, because compliance is monitored manually and only at reporting dates.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm borrowing arrangements are tracked and covenant compliance is monitored continuously.",
+  "what_to_review": [
+   "Inventory of facilities, maturities and renewal timelines",
+   "Covenant definitions and how they are calculated",
+   "Frequency of covenant monitoring versus testing dates",
+   "Headroom trend and forecast covenant compliance",
+   "Reporting obligations to lenders and their timeliness"
+  ],
+  "procedures": [
+   "Recompute covenants from the lender definitions rather than from management's summary; definitions often differ from statutory measures.",
+   "Test covenant headroom at each test date and on a forecast basis.",
+   "Test that lender reporting obligations were met within the required timeframe.",
+   "Review maturity profile and refinancing plans for concentration risk."
+  ],
+  "red_flags": [
+   "Covenants calculated using management-adjusted figures",
+   "Headroom thin and narrowing without escalation",
+   "Lender reporting submitted late",
+   "Facilities maturing within twelve months with no refinancing plan"
+  ],
+  "evidence": [
+   "Facility and loan agreements",
+   "Covenant calculations",
+   "Lender reporting submissions",
+   "Maturity profile"
+  ],
+  "kpis": [
+   "Covenant headroom",
+   "Lender reports on time",
+   "Debt maturing within 12 months"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TR-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "Treasury",
+  "subprocess": "Foreign Exchange and Interest Rate Risk",
+  "risk": "Exposures are hedged on incomplete data or not at all, so earnings swing on market movements the organisation never chose to take.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess whether market risk exposures are identified, measured and managed within policy.",
+  "what_to_review": [
+   "Completeness of exposure identification from the business",
+   "Hedging policy, ratios and permitted instruments",
+   "Effectiveness of hedges and any hedge accounting applied",
+   "Speculative positions and policy breaches",
+   "Counterparty exposure and credit limits"
+  ],
+  "procedures": [
+   "Reconcile hedged exposures to underlying business exposures and quantify unhedged or over-hedged positions.",
+   "Test compliance with the hedging policy ratio at several dates.",
+   "Test that instruments used are on the permitted list and that no speculative positions exist.",
+   "Test hedge effectiveness documentation where hedge accounting is applied."
+  ],
+  "red_flags": [
+   "Over-hedging, which is speculation by another name",
+   "Exposures identified only from the ledger, missing forecast transactions",
+   "Instruments used outside the approved list",
+   "Effectiveness testing prepared retrospectively"
+  ],
+  "evidence": [
+   "Exposure reports and forecasts",
+   "Hedging policy",
+   "Deal confirmations and positions",
+   "Hedge documentation"
+  ],
+  "kpis": [
+   "Hedge ratio vs. policy",
+   "Unhedged exposure",
+   "Policy breaches"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TR-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "Treasury",
+  "subprocess": "Investments and Surplus Funds",
+  "risk": "Surplus cash is placed with counterparties or in instruments outside policy, risking capital for marginal yield.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm investments comply with policy on instrument, counterparty and tenor.",
+  "what_to_review": [
+   "Approved instrument and counterparty lists with credit limits",
+   "Concentration by counterparty and rating",
+   "Tenor and liquidity of investments against cash needs",
+   "Valuation and income recognition",
+   "Authorisation of placements and rollovers"
+  ],
+  "procedures": [
+   "Test each investment held against the approved instrument and counterparty list and applicable limits.",
+   "Analyse concentration by counterparty and rating band against policy.",
+   "Test authorisation for placements and rollovers, including who can instruct the bank.",
+   "Agree valuations and accrued income to independent confirmations."
+  ],
+  "red_flags": [
+   "Yield chasing into unapproved instruments",
+   "Concentration with one counterparty above limit",
+   "Rollovers executed without fresh authorisation",
+   "Valuations sourced from the counterparty alone"
+  ],
+  "evidence": [
+   "Investment register and policy",
+   "Counterparty credit ratings",
+   "Deal confirmations",
+   "Bank and custodian statements"
+  ],
+  "kpis": [
+   "Investments outside policy",
+   "Counterparty concentration",
+   "Average tenor vs. need"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TR-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "Treasury",
+  "subprocess": "Intercompany Funding and Cash Pooling",
+  "risk": "Funds move between group entities without documentation, creating tax exposure, regulatory breach and balances nobody can reconcile.",
+  "rating": "Medium",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm intragroup funding is documented, priced and permitted in each jurisdiction.",
+  "what_to_review": [
+   "Loan agreements and documentation for intragroup funding",
+   "Interest pricing and transfer pricing compliance",
+   "Cash pooling arrangements and participant agreements",
+   "Regulatory restrictions on cross-border movement and repatriation",
+   "Reconciliation of intercompany balances"
+  ],
+  "procedures": [
+   "Test that intragroup funding has executed agreements and that interest is charged and paid per those terms.",
+   "Test transfer pricing documentation supporting intragroup interest rates.",
+   "Reconcile pooling balances between participants and the header account.",
+   "Test compliance with local restrictions on capital movement for a sample of jurisdictions."
+  ],
+  "red_flags": [
+   "Funding advanced with no agreement",
+   "Interest accrued but never settled",
+   "Pool balances unreconciled between entities",
+   "Repatriation executed without checking local rules"
+  ],
+  "evidence": [
+   "Intercompany loan agreements",
+   "Transfer pricing documentation",
+   "Cash pool statements",
+   "Local regulatory advice"
+  ],
+  "kpis": [
+   "Funding with agreements",
+   "Intercompany reconciling differences",
+   "Interest settled vs. accrued"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TR-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "Treasury",
+  "subprocess": "Guarantees, Letters of Credit and Off-Balance Sheet Commitments",
+  "risk": "Guarantees and contingent commitments are given and forgotten, so the organisation carries obligations that appear nowhere in its reporting.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm contingent obligations are authorised, recorded, monitored and disclosed.",
+  "what_to_review": [
+   "Register of guarantees, letters of credit, bonds and indemnities",
+   "Authorisation and who may commit the organisation",
+   "Expiry monitoring and release of expired instruments",
+   "Fees paid on unused or expired facilities",
+   "Disclosure of contingent liabilities"
+  ],
+  "procedures": [
+   "Obtain confirmations from banks of all instruments outstanding and reconcile to the internal register.",
+   "Test authorisation for instruments issued in the period.",
+   "Identify expired instruments still incurring fees and test whether release was pursued.",
+   "Reconcile the register to contingent liability disclosure."
+  ],
+  "red_flags": [
+   "Bank confirmations revealing instruments not on the register",
+   "Guarantees issued by subsidiaries without group approval",
+   "Fees paid on instruments no longer needed",
+   "Contingent liabilities disclosed only in round terms"
+  ],
+  "evidence": [
+   "Guarantee and instrument register",
+   "Bank confirmations",
+   "Board and delegated authorities",
+   "Contingent liability disclosures"
+  ],
+  "kpis": [
+   "Instruments not on register",
+   "Expired instruments still live",
+   "Fees on unused facilities"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TR-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "Treasury",
+  "subprocess": "Treasury System Access and Dealing Controls",
+  "risk": "A single treasury user can create, confirm and settle a deal, allowing funds to be moved with no independent check.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm dealing, confirmation and settlement are segregated and that treasury system access reflects that.",
+  "what_to_review": [
+   "Segregation between front, middle and back office",
+   "System roles and conflicting access combinations",
+   "Independent confirmation of deals with counterparties",
+   "Standing settlement instructions and their amendment",
+   "Dealer mandates, limits and recorded lines"
+  ],
+  "procedures": [
+   "Map treasury system roles against a segregation matrix and test for users able to deal and settle.",
+   "Test independent confirmation of a sample of deals directly with counterparties.",
+   "Test amendments to standing settlement instructions for independent verification.",
+   "Test dealer authority against mandates for a sample of transactions."
+  ],
+  "red_flags": [
+   "Dealers able to amend settlement instructions",
+   "Confirmations returned to the dealer rather than the back office",
+   "Standing instructions changed without verification",
+   "Deals executed outside recorded lines"
+  ],
+  "evidence": [
+   "Treasury system user and role listings",
+   "Deal confirmations",
+   "Standing settlement instruction change logs",
+   "Dealer mandates"
+  ],
+  "kpis": [
+   "Dealing/settlement conflicts",
+   "Deals independently confirmed",
+   "SSI changes verified"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TR-08",
+  "industry": [
+   "cross"
+  ],
+  "process": "Treasury",
+  "subprocess": "Bank Account Governance and Fee Analysis",
+  "risk": "Bank accounts exist outside treasury's knowledge and banking fees are paid without review, wasting money and creating fraud exposure.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Confirm the organisation knows every bank account it holds and pays only the fees it agreed.",
+  "what_to_review": [
+   "Completeness of the bank account inventory",
+   "Account opening and closing authority",
+   "Dormant accounts and their closure",
+   "Bank fee schedules versus fees charged",
+   "Bank service quality and rationalisation opportunities"
+  ],
+  "procedures": [
+   "Obtain confirmations directly from all banking relationships and reconcile to the internal account inventory.",
+   "Test account opening and closing authorisation for the period.",
+   "Identify dormant accounts and test why they remain open.",
+   "Recompute a sample of bank charges against the agreed fee schedule."
+  ],
+  "red_flags": [
+   "Accounts confirmed by banks that treasury did not know about",
+   "Accounts opened by local management",
+   "Dormant accounts retained \"just in case\"",
+   "Fees charged above the agreed tariff"
+  ],
+  "evidence": [
+   "Bank confirmations",
+   "Internal account inventory",
+   "Account opening authorisations",
+   "Fee schedules and bank statements"
+  ],
+  "kpis": [
+   "Accounts not in inventory",
+   "Dormant accounts open",
+   "Fee overcharges recovered"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]

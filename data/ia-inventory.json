@@ -1,0 +1,317 @@
+[
+ {
+  "id": "IA-INV-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "Inventory & Costing",
+  "subprocess": "Receiving and Put-Away",
+  "risk": "Stock received is not what was ordered or is never recorded, so the ledger and the warehouse diverge from the first transaction.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Confirm goods received are verified against the order and recorded promptly and accurately.",
+  "what_to_review": [
+   "Verification of quantity, quality and specification at receipt",
+   "Timeliness of receipt posting against physical arrival",
+   "Put-away accuracy and location recording",
+   "Rejected and quarantined stock handling",
+   "Receipts without a purchase order"
+  ],
+  "procedures": [
+   "Observe receiving and test whether counts and inspections are genuinely performed or documents simply signed.",
+   "Compare receipt posting timestamps to carrier delivery times and quantify delays.",
+   "Test put-away accuracy by selecting system locations and verifying physical presence.",
+   "Test the disposition of rejected stock \u2014 returned, scrapped or quietly absorbed."
+  ],
+  "red_flags": [
+   "Deliveries signed without counting",
+   "Receipts posted in batches days later",
+   "Stock in locations the system does not show",
+   "Rejected goods with no return evidence"
+  ],
+  "evidence": [
+   "Goods receipt records and timestamps",
+   "Purchase orders and delivery notes",
+   "Put-away and location data",
+   "Quarantine and rejection logs"
+  ],
+  "kpis": [
+   "Receipt posting lag",
+   "Put-away accuracy",
+   "Rejected stock disposition"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-INV-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "Inventory & Costing",
+  "subprocess": "Warehouse Operations and Custody",
+  "risk": "Stock is stolen or damaged in storage, and weak custody controls mean the loss only appears at the next count.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Assess physical custody controls over inventory and the segregation between custody and record-keeping.",
+  "what_to_review": [
+   "Physical security \u2014 access control, CCTV, high-value cages",
+   "Segregation between warehouse custody and inventory record maintenance",
+   "Movement authorisation between locations",
+   "Handling of samples, promotional and staff purchases",
+   "Damage and write-off authorisation"
+  ],
+  "procedures": [
+   "Walk the warehouse and test physical access controls and segregation of high-value stock.",
+   "Test whether warehouse staff can amend inventory records to conceal a shortfall.",
+   "Test stock transfers between locations for authorisation and receipt confirmation at the destination.",
+   "Analyse write-offs by location, reason and approver for concentration."
+  ],
+  "red_flags": [
+   "Warehouse staff with inventory adjustment rights",
+   "Transfers despatched but never received",
+   "Write-offs concentrated before a count",
+   "Access lists including former employees"
+  ],
+  "evidence": [
+   "Access control and CCTV records",
+   "System access rights for inventory adjustment",
+   "Transfer documentation",
+   "Write-off approvals"
+  ],
+  "kpis": [
+   "Write-off value by location",
+   "Transfers unreceived",
+   "Adjustment rights conflicts"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-INV-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "Inventory & Costing",
+  "subprocess": "Cycle Counting and Physical Verification",
+  "risk": "Counts are performed by the people responsible for the stock, so discrepancies are corrected rather than reported.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm counting is independent, covers the population and results in investigated, approved adjustments.",
+  "what_to_review": [
+   "Count programme coverage, frequency and risk weighting",
+   "Independence of counters from custody",
+   "Recount and tolerance rules",
+   "Investigation of variances before adjustment",
+   "Approval authority for inventory adjustments"
+  ],
+  "procedures": [
+   "Attend a count unannounced and perform test counts in both directions.",
+   "Test coverage \u2014 identify items and locations never counted in the period.",
+   "Test whether variances above tolerance were investigated before the adjustment was posted, or simply posted.",
+   "Analyse adjustments by item, location and approver for offsetting positives and negatives."
+  ],
+  "red_flags": [
+   "Counts performed by the storekeeper alone",
+   "Positive and negative adjustments offsetting to near zero",
+   "Items never selected for count",
+   "Adjustments posted before investigation"
+  ],
+  "evidence": [
+   "Count schedules and results",
+   "Count sheets and recount records",
+   "Adjustment postings and approvals",
+   "Coverage analysis"
+  ],
+  "kpis": [
+   "Count coverage %",
+   "Gross vs. net adjustment",
+   "Variances investigated"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-INV-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "Inventory & Costing",
+  "subprocess": "Costing and Standard Cost Maintenance",
+  "risk": "Inventory is valued using costs that no longer reflect reality, so margin and stock value are both wrong.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm inventory cost reflects actual purchase and conversion cost on a supportable basis.",
+  "what_to_review": [
+   "Costing method and its consistent application",
+   "Standard cost roll frequency and approval",
+   "Overhead absorption basis and capacity assumptions",
+   "Purchase price variance analysis and disposition",
+   "Cost of items with volatile input prices"
+  ],
+  "procedures": [
+   "Recompute unit cost for a sample of items from purchase invoices and conversion cost data.",
+   "Test the overhead absorption rate against actual overhead and activity, including treatment of idle capacity.",
+   "Analyse purchase price variances by item and test whether they are investigated or simply absorbed.",
+   "Test the timing of the last standard cost roll against input price movements."
+  ],
+  "red_flags": [
+   "Standards unchanged through a period of significant price inflation",
+   "Idle capacity absorbed into inventory value",
+   "Variances written off without analysis",
+   "Overhead absorbed on an outdated activity base"
+  ],
+  "evidence": [
+   "Cost build-up files",
+   "Purchase invoices and conversion cost data",
+   "Variance reports",
+   "Standard cost roll approvals"
+  ],
+  "kpis": [
+   "Cost recomputation variance",
+   "PPV as % of purchases",
+   "Months since cost roll"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-INV-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "Inventory & Costing",
+  "subprocess": "Obsolescence, Slow-Moving and Net Realisable Value",
+  "risk": "Stock that will never sell at cost remains valued at cost, overstating assets and deferring a loss already incurred.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm inventory is carried at the lower of cost and net realisable value.",
+  "what_to_review": [
+   "Ageing and slow-moving reporting accuracy",
+   "Provisioning policy and its consistent application",
+   "Evidence of realisable value \u2014 recent sales, forecasts, market prices",
+   "Management overrides of the formula-driven provision",
+   "Treatment of discontinued lines and engineering changes"
+  ],
+  "procedures": [
+   "Test the ageing report logic \u2014 ageing based on receipt date can understate slow-moving items if stock is rotated in the system.",
+   "Compare carrying value to recent selling prices net of costs to sell for a sample of lines.",
+   "Test management overrides to the provision for support and approval.",
+   "Identify stock with no movement in twelve months and test the justification for holding it at cost."
+  ],
+  "red_flags": [
+   "Provision released to support results",
+   "Ageing reset by internal transfers",
+   "Discontinued lines still held at full cost",
+   "Realisable value supported by optimistic forecasts"
+  ],
+  "evidence": [
+   "Inventory ageing and movement reports",
+   "Provision calculations and overrides",
+   "Recent sales price data",
+   "Discontinuation notices"
+  ],
+  "kpis": [
+   "Provision coverage of aged stock",
+   "Stock with no movement 12m",
+   "Override value"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-INV-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "Inventory & Costing",
+  "subprocess": "Consignment, Third-Party and In-Transit Stock",
+  "risk": "Stock held by others or in transit is recorded on the wrong balance sheet, or lost entirely because nobody is counting it.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm that inventory ownership and location are correctly reflected wherever the stock physically sits.",
+  "what_to_review": [
+   "Identification of stock held at third parties and by agents",
+   "Consignment agreements and ownership terms",
+   "Confirmation and counting of externally held stock",
+   "Goods in transit and the shipping terms that determine ownership",
+   "Customer-owned stock held on the premises"
+  ],
+  "procedures": [
+   "Obtain confirmations from third parties holding stock and reconcile to the ledger.",
+   "Test consignment agreements to determine when ownership and risk transfer, and confirm accounting follows.",
+   "Test goods in transit at period end against shipping terms.",
+   "Identify customer-owned material on site and confirm it is excluded from inventory."
+  ],
+  "red_flags": [
+   "Third-party stock never counted or confirmed",
+   "Consignment treated as sold on despatch",
+   "In-transit stock recorded by both parties or neither",
+   "Customer material indistinguishable from own stock"
+  ],
+  "evidence": [
+   "Third-party stock confirmations",
+   "Consignment agreements",
+   "Shipping documentation",
+   "Inventory listings by location"
+  ],
+  "kpis": [
+   "Externally held stock confirmed",
+   "In-transit cut-off errors",
+   "Locations reconciled"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-INV-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "Inventory & Costing",
+  "subprocess": "Scrap, Returns and Reverse Logistics",
+  "risk": "Scrap and returned goods are removed from the system without control, providing a route for stock to leave the business.",
+  "rating": "Medium",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm scrap and returns are authorised, evidenced and any residual value captured.",
+  "what_to_review": [
+   "Scrap authorisation, witnessing and disposal evidence",
+   "Proceeds from scrap sales and where they are recorded",
+   "Customer returns receipt, inspection and disposition",
+   "Restocking accuracy and valuation of returned goods",
+   "Warranty and repair stock movements"
+  ],
+  "procedures": [
+   "Test scrap transactions for authorisation and independent witnessing of destruction or disposal.",
+   "Trace scrap sale proceeds to bank receipts and the ledger.",
+   "Test returned goods from receipt through inspection to restock, repair or scrap, and check valuation at each step.",
+   "Analyse return volumes by customer and product for patterns."
+  ],
+  "red_flags": [
+   "Scrap disposed of without witness",
+   "Scrap sale proceeds received in cash",
+   "Returns restocked at full value without inspection",
+   "Return rates far above normal for one customer"
+  ],
+  "evidence": [
+   "Scrap authorisation and disposal records",
+   "Scrap sale invoices and bank receipts",
+   "Returns processing records",
+   "Restock valuations"
+  ],
+  "kpis": [
+   "Scrap value and proceeds",
+   "Returns restocked without inspection",
+   "Return rate by customer"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]

@@ -1,0 +1,409 @@
+[
+ {
+  "id": "IA-FC-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "Financial Close & Reporting",
+  "subprocess": "Balance Sheet Reconciliations",
+  "risk": "Reconciliations are prepared as a formality, so differences accumulate in accounts nobody scrutinises and errors or misappropriation persist for years.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess whether reconciliations are complete, timely and of a quality that would actually detect an error.",
+  "what_to_review": [
+   "Completeness of the reconciliation inventory against the trial balance",
+   "Preparer and reviewer independence and sign-off timing",
+   "Ageing and nature of reconciling items",
+   "Treatment of unexplained differences and plug entries",
+   "High-risk accounts \u2014 suspense, clearing, intercompany, cash"
+  ],
+  "procedures": [
+   "Reconcile the list of accounts reconciled to the full trial balance and identify accounts never reconciled.",
+   "Sample reconciliations and reassess whether reconciling items are genuinely explained or merely labelled.",
+   "Age reconciling items and test the oldest; items older than a quarter usually indicate an unresolved error.",
+   "Test sign-off timing \u2014 reviews dated the same minute as preparation are not reviews.",
+   "Test suspense and clearing accounts for balances that should have cleared."
+  ],
+  "red_flags": [
+   "Reconciling items described as \"timing\" for months",
+   "Reviewer and preparer the same person",
+   "Accounts with a balance but no owner",
+   "Plug entries used to force agreement"
+  ],
+  "evidence": [
+   "Trial balance and reconciliation inventory",
+   "Completed reconciliations with sign-offs",
+   "Ageing of reconciling items",
+   "Suspense account activity"
+  ],
+  "kpis": [
+   "Accounts reconciled on time",
+   "Reconciling items over 90 days",
+   "Unexplained differences value"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FC-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "Financial Close & Reporting",
+  "subprocess": "Close Timetable and Governance",
+  "risk": "The close is compressed to hit a reporting deadline, so controls are skipped and errors are found after the numbers are published.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Assess whether the close timetable allows controls to operate and whether it is actually followed.",
+  "what_to_review": [
+   "Close calendar, task ownership and dependencies",
+   "Whether control activities have time allocated or are assumed",
+   "Late adjustments after the reported close",
+   "Sub-ledger cut-off and closing sequence",
+   "Post-close error identification and restatement history"
+  ],
+  "procedures": [
+   "Compare the close calendar to actual completion timestamps and identify tasks completed after the close was declared.",
+   "Extract entries posted after the reported close date and test their nature and approval.",
+   "Review the history of post-close adjustments and any restatements for a pattern.",
+   "Test whether sub-ledgers were closed before the general ledger in each period."
+  ],
+  "red_flags": [
+   "Journals posted days after results were reported",
+   "Controls scheduled to run after the numbers are released",
+   "Recurring late adjustments from the same location",
+   "Deadline met by deferring reconciliations"
+  ],
+  "evidence": [
+   "Close calendar and task completion data",
+   "Journal posting timestamps",
+   "Post-close adjustment records",
+   "Restatement history"
+  ],
+  "kpis": [
+   "Tasks completed on time",
+   "Post-close entries",
+   "Days to close"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FC-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "Financial Close & Reporting",
+  "subprocess": "Accounting Estimates and Judgements",
+  "risk": "Estimates are set to deliver a desired result rather than a faithful one, and the assumptions behind them are never challenged.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess whether significant estimates are supportable, consistently applied and independently challenged.",
+  "what_to_review": [
+   "Inventory of significant estimates and who owns each",
+   "Assumption setting, documentation and approval",
+   "Consistency of methodology between periods",
+   "Back-testing of prior estimates against outcomes",
+   "Governance \u2014 who challenges the estimate before it is booked"
+  ],
+  "procedures": [
+   "Back-test material estimates against subsequent actual outcomes and quantify the directional bias.",
+   "Test whether methodology or assumption changes coincided with pressure on results.",
+   "Trace significant estimates to documented approval by someone other than the preparer.",
+   "Compare the range of reasonable outcomes to the point estimate booked and assess where in the range management sits."
+  ],
+  "red_flags": [
+   "Estimates consistently proving favourable on back-testing",
+   "Assumptions changed in the period they most helped",
+   "Point estimates always at the favourable end of the range",
+   "No documented challenge in committee minutes"
+  ],
+  "evidence": [
+   "Estimate schedules and supporting models",
+   "Assumption documentation and approvals",
+   "Prior period estimates and actual outcomes",
+   "Audit committee papers"
+  ],
+  "kpis": [
+   "Estimate accuracy on back-test",
+   "Assumption changes per year",
+   "Estimates with documented challenge"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FC-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "Financial Close & Reporting",
+  "subprocess": "Consolidation and Intercompany",
+  "risk": "Intercompany balances do not eliminate and consolidation adjustments are made outside the system, so group results contain errors nobody can trace.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm that consolidation is complete, accurate and traceable from subsidiary ledgers to group accounts.",
+  "what_to_review": [
+   "Completeness of entities consolidated and the group structure used",
+   "Intercompany matching, disputes and elimination differences",
+   "Top-side and consolidation journals outside the subsidiary ledgers",
+   "Minority interests, equity accounting and group structure changes",
+   "Audit trail from group numbers back to source ledgers"
+  ],
+  "procedures": [
+   "Reconcile the entities consolidated to the legal entity register and identify omissions or dormant inclusions.",
+   "Age unmatched intercompany balances and test how differences were resolved \u2014 write-off to income is a red flag.",
+   "Extract consolidation-level journals and test support and approval for each material entry.",
+   "Trace a sample of group balances back through consolidation to subsidiary ledgers."
+  ],
+  "red_flags": [
+   "Intercompany differences written off to income",
+   "Top-side entries posted only at group with no subsidiary record",
+   "Entities appearing or disappearing without documented rationale",
+   "Consolidation performed in a spreadsheet outside the system"
+  ],
+  "evidence": [
+   "Group structure and legal entity register",
+   "Intercompany matching reports",
+   "Consolidation journal listing",
+   "Subsidiary trial balances"
+  ],
+  "kpis": [
+   "Unmatched intercompany value",
+   "Consolidation journals",
+   "Entities reconciled to register"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FC-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "Financial Close & Reporting",
+  "subprocess": "Foreign Currency Translation",
+  "risk": "Exchange rates are applied inconsistently or manually overridden, misstating results and equity in ways that are hard to detect.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm exchange rates used are authorised, correctly sourced and consistently applied.",
+  "what_to_review": [
+   "Rate source, upload process and authorisation",
+   "Application of spot, average and closing rates by balance type",
+   "Manual rate overrides at transaction level",
+   "Translation of net investments and the currency translation reserve",
+   "Hedge accounting interaction where applicable"
+  ],
+  "procedures": [
+   "Agree rates loaded into the system to the independent source for a sample of periods.",
+   "Test manual rate overrides by user and value.",
+   "Recompute translation for a sample of foreign subsidiaries including the movement in the translation reserve.",
+   "Test that the correct rate type is applied to each balance category."
+  ],
+  "red_flags": [
+   "Rates uploaded by the person who benefits from the result",
+   "Overrides applied to individual large transactions",
+   "Translation reserve movements not explained",
+   "Average rates used where closing rates are required"
+  ],
+  "evidence": [
+   "Rate tables and upload logs",
+   "Independent rate source data",
+   "Translation calculations",
+   "Currency translation reserve movement"
+  ],
+  "kpis": [
+   "Rate override count",
+   "Translation recomputation variance",
+   "Rates agreed to source"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FC-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "Financial Close & Reporting",
+  "subprocess": "Financial Reporting and Disclosure",
+  "risk": "The financial statements omit or misstate disclosures, or the narrative reporting is inconsistent with the numbers behind it.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm the financial statements are complete, internally consistent and supported.",
+  "what_to_review": [
+   "Disclosure checklist completion and who reviews it",
+   "Support for each disclosure traced to underlying records",
+   "Consistency between narrative reporting and the financial statements",
+   "Going concern assessment and its support",
+   "Review and approval by audit committee and board"
+  ],
+  "procedures": [
+   "Test a sample of disclosures back to underlying support rather than to the prior year statements.",
+   "Test the consistency of figures quoted in the narrative report against the financial statements.",
+   "Review the going concern assessment, including the forecast and sensitivities used.",
+   "Test that the disclosure checklist was completed for the current framework, not a superseded one."
+  ],
+  "red_flags": [
+   "Disclosures rolled forward from last year with figures updated only",
+   "Narrative metrics that cannot be reconciled to the accounts",
+   "Going concern paper prepared after the accounts were drafted",
+   "Checklist signed but sections left blank"
+  ],
+  "evidence": [
+   "Draft and final financial statements",
+   "Disclosure checklists",
+   "Supporting schedules",
+   "Going concern assessment",
+   "Audit committee minutes"
+  ],
+  "kpis": [
+   "Disclosures traced to support",
+   "Narrative inconsistencies found",
+   "Late disclosure changes"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FC-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "Financial Close & Reporting",
+  "subprocess": "Chart of Accounts and Ledger Master Data",
+  "risk": "The chart of accounts is amended without control, so transactions are misclassified and reporting hierarchies silently change.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm ledger master data changes are authorised and do not distort reporting.",
+  "what_to_review": [
+   "Authorisation of account creation, blocking and hierarchy changes",
+   "Mapping of accounts to reporting lines and its integrity",
+   "Dormant and duplicate accounts",
+   "Posting restrictions on control and system accounts",
+   "Cost centre and profit centre master data"
+  ],
+  "procedures": [
+   "Extract chart of accounts changes for the period and test authorisation, particularly hierarchy remapping.",
+   "Test whether reporting hierarchy changes were reflected in comparatives and explained.",
+   "Identify accounts allowing direct posting that should be system-controlled, such as control accounts.",
+   "Review dormant accounts with sudden activity."
+  ],
+  "red_flags": [
+   "Hierarchy changes made mid-year without restating comparatives",
+   "Direct posting permitted to reconciliation control accounts",
+   "Duplicate accounts for the same purpose",
+   "Accounts created by the person who then posts to them"
+  ],
+  "evidence": [
+   "Chart of accounts change log",
+   "Reporting hierarchy definitions",
+   "Posting restriction configuration",
+   "Account activity reports"
+  ],
+  "kpis": [
+   "Unauthorised master changes",
+   "Accounts permitting direct posting",
+   "Dormant accounts reactivated"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FC-08",
+  "industry": [
+   "cross"
+  ],
+  "process": "Financial Close & Reporting",
+  "subprocess": "Related Party Transactions",
+  "risk": "Transactions with related parties are not identified, so they escape disclosure and are conducted on terms that would not survive scrutiny.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm related parties are identified completely and their transactions are approved, priced and disclosed.",
+  "what_to_review": [
+   "Completeness of the related party register and how it is maintained",
+   "Declarations from directors and key management",
+   "Identification of transactions with related parties in the ledger",
+   "Approval and pricing of related party transactions",
+   "Disclosure in the financial statements"
+  ],
+  "procedures": [
+   "Build an independent list of related parties from directorships, shareholdings and declarations, and compare to the register.",
+   "Match the related party list against customer and vendor masters and extract transactions.",
+   "Test identified transactions for approval by those without an interest, and for arm's length pricing.",
+   "Reconcile disclosed related party transactions to the ledger extract."
+  ],
+  "red_flags": [
+   "Register maintained only from voluntary declarations",
+   "Related party found in the vendor master but not the register",
+   "Transactions approved by the interested party",
+   "Disclosure limited to remuneration"
+  ],
+  "evidence": [
+   "Related party register and declarations",
+   "Company registry and shareholding data",
+   "Customer and vendor masters",
+   "Financial statement disclosures"
+  ],
+  "kpis": [
+   "Related parties identified independently",
+   "Transactions with interested approval",
+   "Disclosure completeness"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FC-09",
+  "industry": [
+   "cross"
+  ],
+  "process": "Financial Close & Reporting",
+  "subprocess": "Management Reporting Integrity",
+  "risk": "The board and management make decisions on reports whose figures cannot be reconciled to the ledger or whose definitions shift over time.",
+  "rating": "Medium",
+  "risk_category": "Strategic",
+  "audit_objective": "Confirm that management and board reporting is accurate, consistent and reconcilable.",
+  "what_to_review": [
+   "Reconciliation of management reporting to statutory ledgers",
+   "Definition and stability of key performance measures",
+   "Non-financial and alternative performance measures and their basis",
+   "Manual manipulation of reports outside the system",
+   "Timeliness and completeness of reporting to the board"
+  ],
+  "procedures": [
+   "Reconcile key figures in the board pack to the general ledger and quantify differences.",
+   "Test whether definitions of key measures changed and whether comparatives were restated.",
+   "Trace alternative performance measures to their calculation and assess whether adjustments are consistently applied.",
+   "Identify where board reporting is assembled manually in spreadsheets and test controls over those models."
+  ],
+  "red_flags": [
+   "Board figures that cannot be reconciled to the ledger",
+   "Adjusted measures excluding costs that recur every year",
+   "Definitions changed without restating prior periods",
+   "Board pack built by one person with no review"
+  ],
+  "evidence": [
+   "Board and management reporting packs",
+   "General ledger data",
+   "Measure definitions and calculations",
+   "Reporting spreadsheets"
+  ],
+  "kpis": [
+   "Board figures reconciled",
+   "Definition changes",
+   "Manual reporting dependencies"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]
