@@ -215,6 +215,11 @@ td.ctrl{min-width:260px;max-width:380px;color:var(--ink-2)}
 .fieldgrid{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
 .fieldgrid span{font-family:var(--mono);font-size:10.5px;color:var(--muted);border:1px solid var(--line-2);
   border-radius:4px;padding:2px 7px}
+#toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,14px);background:var(--hero-bg);
+  color:var(--hero-fg);padding:11px 18px;border-radius:7px;font-size:13.5px;max-width:min(90vw,460px);
+  box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:80;
+  line-height:1.45;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
 footer.site{background:var(--surface);background-image:none;border-top:1px solid var(--line);padding:38px 0}
 .foot-in{max-width:1320px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;
   gap:26px;flex-wrap:wrap;align-items:flex-start}
@@ -660,7 +665,7 @@ function sheetXml(headers, rows){
 <autoFilter ref="A1:${(()=>{let s='',n=headers.length;while(n>0){const m=(n-1)%26;s=String.fromCharCode(65+m)+s;n=(n-m-1)/26;}return s;})()}${rows.length+1}"/>
 </worksheet>`;
 }
-function downloadXlsx(){
+function exportRows(){
   const rows=filtered(), ia=S.lens==='ia';
   const headers = ia
     ? ['Ref','Industry','Process','Sub-process','Risk','Rating','Risk category','Audit objective',
@@ -670,14 +675,16 @@ function downloadXlsx(){
        'Key control','Fraud relevant','Control owner','Segregation of duties','Test of design',
        'Test of operating effectiveness','Population / evidence source','Sample size guidance'];
   const j = a => (a||[]).map((x,i)=>`${i+1}. ${x}`).join('\n');
-  const iname = d => d.industry.map(indName).filter(Boolean).join(', ') || 'Cross-industry';
+  const iname = d => d.industry.map(indName).filter(Boolean).join(', ') || 'All industries';
   const body = rows.map(d => ia
     ? [d.id,iname(d),d.process,d.subprocess,d.risk,d.rating,d.risk_category,d.audit_objective,
        j(d.what_to_review),j(d.procedures),j(d.red_flags),j(d.evidence),j(d.kpis)]
     : [d.control_id,iname(d),d.process,d.subprocess,d.risk_id,d.risk,d.rating,d.control_objective,
        d.control,d.control_type,d.control_nature,d.frequency,d.assertions,d.coso,d.key_control,
        d.fraud,d.owner,d.sod,d.test_design,d.test_oe,d.population,d.sample]);
-  const title = ia ? 'Audit Programme' : 'Risk Control Matrix';
+  return {headers, body, ia, rows};
+}
+function xlsxBlob(headers, body, title){
   const files=[
     {name:'[Content_Types].xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>`},
@@ -691,10 +698,42 @@ function downloadXlsx(){
 <styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="10"/><name val="Calibri"/></font><font><b/><sz val="10"/><color rgb="FFFFFFFF"/><name val="Calibri"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF10201A"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="2"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0" applyAlignment="1"><alignment vertical="top" wrapText="1"/></xf><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment vertical="center" wrapText="1"/></xf></cellXfs></styleSheet>`},
     {name:'xl/worksheets/sheet1.xml',data:sheetXml(headers,body)}
   ];
-  const name = `${indName(S.ind).replace(/[^a-z0-9]+/gi,'-')}-${ia?'audit-programme':'risk-control-matrix'}.xlsx`;
-  const url=URL.createObjectURL(zip(files));
-  const a=document.createElement('a'); a.href=url; a.download=name; document.body.appendChild(a); a.click();
-  setTimeout(()=>{URL.revokeObjectURL(url); a.remove();},1500);
+  return zip(files);
+}
+function csvText(headers, body){
+  const q = v => `"${String(v==null?'':v).replace(/"/g,'""')}"`;
+  return '﻿' + [headers.map(q).join(','), ...body.map(r=>r.map(q).join(','))].join('\r\n');
+}
+function toast(msg){
+  let t=document.getElementById('toast');
+  if(!t){t=document.createElement('div');t.id='toast';document.body.appendChild(t);}
+  t.textContent=msg; t.className='show';
+  clearTimeout(window.__tt); window.__tt=setTimeout(()=>t.className='',5200);
+}
+async function downloadExcel(){
+  const {headers, body, ia} = exportRows();
+  if(!body.length){ toast('Nothing to export with the current filters.'); return; }
+  const base = `${indName(S.ind).replace(/[^a-z0-9]+/gi,'-').toLowerCase()}-${ia?'audit-programme':'risk-control-matrix'}`;
+  const title = ia ? 'Audit Programme' : 'Risk Control Matrix';
+  const dl = (window.claude && claude.use) ? await claude.use('downloads').catch(()=>null) : null;
+  if(dl){
+    const blob = xlsxBlob(headers, body, title);
+    const attempts = [[base+'.xlsx', blob], [base+'.csv', csvText(headers, body)]];
+    for(const [filename, data] of attempts){
+      try { await dl.save({filename, data}); return; }
+      catch(e){
+        if(e && (e.code==='declined' || e.code==='rate_limited')) return;
+        if(e && (e.code==='rejected_extension' || e.code==='extension_not_enabled')) continue;
+        break;
+      }
+    }
+    toast('This preview cannot save spreadsheets. The published site downloads a full Excel file.');
+    return;
+  }
+  const url = URL.createObjectURL(xlsxBlob(headers, body, title));
+  const a = document.createElement('a'); a.href=url; a.download=base+'.xlsx';
+  document.body.appendChild(a); a.click();
+  setTimeout(()=>{URL.revokeObjectURL(url); a.remove();}, 1500);
 }
 
 function coverageMap(rows){
@@ -803,7 +842,7 @@ function renderMain(){
           <button class="${S.view!=='map'?'on':''}" onclick="S.view='list';renderMain()">${S.lens==='icfr'?'Matrix':'Programmes'}</button>
           <button class="${S.view==='map'?'on':''}" onclick="S.view='map';renderMain()">Coverage map</button>
         </div>
-        <button class="ghost" onclick="downloadXlsx()">Excel</button>
+        <button class="ghost" onclick="downloadExcel()">Excel</button>
         <button class="ghost" onclick="window.print()">Print / PDF</button>
       </div>
     </div>
