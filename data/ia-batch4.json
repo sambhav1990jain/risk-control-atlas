@@ -1,0 +1,779 @@
+[
+ {
+  "id": "IA-TL-11",
+  "industry": [
+   "logistics"
+  ],
+  "process": "Cargo Claims",
+  "subprocess": "Claims Handling",
+  "risk": "Cargo loss and damage claims are settled without investigating root cause or pursuing recovery from the carrier at fault, so the same losses recur.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Assess whether claims are validated, recovered where a third party is liable, and used to drive corrective action.",
+  "what_to_review": [
+   "Claim intake, validation and settlement authority",
+   "Evidence required before settlement \u2014 proof of delivery, condition reports, photographs",
+   "Recovery from subcontracted carriers and insurers",
+   "Root-cause analysis and corrective action on repeat loss points",
+   "Claims reserve adequacy and ageing"
+  ],
+  "procedures": [
+   "Sample settled claims and test that liability was established before payment, not assumed.",
+   "Identify claims where a subcontracted carrier held the freight at the time of loss and test whether recovery was pursued within the contractual notice period.",
+   "Analyse claims by terminal, lane and commodity to locate concentrations, then test whether any corrective action followed.",
+   "Test the ageing of open claims and the basis for the reserve held against them.",
+   "Reconcile the claims register to the general ledger loss account and to insurer recoveries."
+  ],
+  "red_flags": [
+   "Claims settled below an investigation threshold that is never reviewed in aggregate",
+   "Recovery notice periods missed repeatedly",
+   "The same terminal appearing in loss concentrations quarter after quarter",
+   "Claims paid without proof of delivery on file"
+  ],
+  "evidence": [
+   "Claims register with reserve history",
+   "OS&D incident logs",
+   "Subcontract carrier agreements and notice terms",
+   "Insurer correspondence and recovery records"
+  ],
+  "kpis": [
+   "Claims paid vs. recovered",
+   "Loss per million shipments",
+   "Repeat loss locations"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-RTL-03",
+  "industry": [
+   "retail"
+  ],
+  "process": "Customer Revenue & Loyalty",
+  "subprocess": "Gift Cards and Loyalty",
+  "risk": "Gift card and loyalty balances are manipulated by staff, or breakage is recognised on an assumption that overstates income.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Assess the integrity of stored-value and loyalty balances and the support for breakage recognition.",
+  "what_to_review": [
+   "Gift card activation, reload and void controls at the till",
+   "Loyalty point issuance, adjustment and manual accrual rights",
+   "Breakage assumption and redemption history supporting it",
+   "Reconciliation of the liability to the issuing platform",
+   "Employee accounts and their transaction patterns"
+  ],
+  "procedures": [
+   "Analyse gift card activations reversed or voided shortly after issue, by operator.",
+   "Test manual loyalty point adjustments by user and value; sample the largest for approval and business reason.",
+   "Match loyalty and gift card accounts to employee records and analyse redemption behaviour on those accounts.",
+   "Recompute breakage using the actual redemption curve and compare to the rate recognised.",
+   "Reconcile the platform balance to the ledger liability at several dates."
+  ],
+  "red_flags": [
+   "Cards activated and voided in the same shift",
+   "Points adjusted upward immediately before redemption",
+   "Employee-linked accounts with outsized balances",
+   "Breakage rate unchanged for years despite behaviour shifts"
+  ],
+  "evidence": [
+   "Gift card and loyalty platform transaction data",
+   "Point adjustment logs",
+   "Employee master data",
+   "Liability reconciliations"
+  ],
+  "kpis": [
+   "Void rate by operator",
+   "Manual point adjustments",
+   "Breakage as % of issuance"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-03",
+  "industry": [
+   "banking"
+  ],
+  "process": "Deposits & Payments",
+  "subprocess": "Payment Processing and Account Integrity",
+  "risk": "Payments are processed to incorrect or fraudulent beneficiaries, and internal or dormant accounts are used to warehouse the proceeds.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Assess controls over payment execution, beneficiary integrity and the use of internal and dormant accounts.",
+  "what_to_review": [
+   "Payment authorisation limits and dual control by channel",
+   "Beneficiary verification and confirmation-of-payee checks",
+   "Dormant account reactivation and monitoring",
+   "Internal, suspense and staff account usage",
+   "Payment recall and error correction process"
+  ],
+  "procedures": [
+   "Test that every payment channel enforces dual authorisation at the stated thresholds, including manual and urgent routes.",
+   "Analyse dormant accounts that reactivated in the period and test the first transaction on each.",
+   "Extract transactions on internal and staff accounts and test the business justification for the largest and most frequent.",
+   "Sample high-value payments and test beneficiary verification evidence.",
+   "Review payment errors and recalls for pattern and for whether root causes were fixed."
+  ],
+  "red_flags": [
+   "Urgent payments bypassing dual control",
+   "Dormant accounts reactivating just before a large credit",
+   "Staff accounts transacting with customer accounts",
+   "Beneficiary details changed shortly before payment release"
+  ],
+  "evidence": [
+   "Payment system transaction logs and authorisation configuration",
+   "Dormant account reports",
+   "Internal and staff account statements",
+   "Payment error and recall register"
+  ],
+  "kpis": [
+   "Payments released single-handed",
+   "Dormant reactivations investigated",
+   "Error and recall rate"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-AVN-03",
+  "industry": [
+   "aviation"
+  ],
+  "process": "Fleet & Engineering",
+  "subprocess": "Aircraft Leasing and Return Conditions",
+  "risk": "Aircraft are returned to lessors without meeting contractual return conditions, triggering large end-of-lease compensation claims that were never provided for.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess whether lease return obligations are tracked through the lease term and provided for on a supportable basis.",
+  "what_to_review": [
+   "Inventory of lease return conditions per aircraft",
+   "Tracking of maintenance status against those conditions",
+   "Provisioning for expected return costs",
+   "Records and back-to-birth traceability required at return",
+   "Negotiation and settlement of end-of-lease claims"
+  ],
+  "procedures": [
+   "Build a register of return conditions from the lease agreements themselves and compare it to what the business is tracking.",
+   "For aircraft returning within two years, compare current maintenance status to the required return condition and quantify the gap.",
+   "Test whether the provision reflects that gap or only scheduled maintenance.",
+   "Review recent lease returns and compare final settlement to the amount provided.",
+   "Test the completeness of component records required at return."
+  ],
+  "red_flags": [
+   "Return conditions summarised by the operator rather than read from the lease",
+   "Provisions based on maintenance plans, not lease terms",
+   "Settlements consistently exceeding provisions",
+   "Component records reconstructed close to the return date"
+  ],
+  "evidence": [
+   "Lease agreements and return condition schedules",
+   "Maintenance status reports by aircraft",
+   "Provision calculations",
+   "Prior lease return settlements"
+  ],
+  "kpis": [
+   "Aircraft with quantified return gaps",
+   "Settlement vs. provision variance",
+   "Records completeness at return"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-AVN-04",
+  "industry": [
+   "aviation"
+  ],
+  "process": "Flight Revenue",
+  "subprocess": "Passenger Revenue Integrity",
+  "risk": "Fare rules, refunds and interline settlements are applied incorrectly, so revenue is lost between the booking and the general ledger.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess whether flown revenue is complete and correctly valued, and whether refunds and interline balances are controlled.",
+  "what_to_review": [
+   "Fare rule configuration and manual fare overrides",
+   "Refund and reissue authority and reason codes",
+   "Interline and code-share settlement reconciliation",
+   "Agency and distribution channel commission accuracy",
+   "Unflown ticket expiry and residual value treatment"
+  ],
+  "procedures": [
+   "Re-price a sample of tickets from the fare rules and quantify variance to the fare actually charged.",
+   "Analyse refunds and reissues by agent and reason code; sample the outliers for authorisation.",
+   "Reconcile interline billings to the settlement clearing house statements and test disputes raised within the deadline.",
+   "Recompute agency commission for a sample against the distribution agreement.",
+   "Test the expiry and recognition of unflown tickets against the stated policy."
+  ],
+  "red_flags": [
+   "Manual fare overrides concentrated with a few agents",
+   "Refunds issued to a payment method other than the original",
+   "Interline disputes filed after the deadline",
+   "Expiry recognition accelerated near period end"
+  ],
+  "evidence": [
+   "Revenue accounting system extracts",
+   "Fare rule configuration",
+   "Refund and reissue logs",
+   "Clearing house settlement statements"
+  ],
+  "kpis": [
+   "Fare variance on re-pricing",
+   "Refunds by agent",
+   "Interline disputes recovered"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-HSP-03",
+  "industry": [
+   "hospitality"
+  ],
+  "process": "Food & Beverage",
+  "subprocess": "Outlet Operations and Wastage",
+  "risk": "Food and beverage margin is lost through unrecorded wastage, over-portioning, unauthorised staff meals and supplier short-delivery.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Identify where margin is lost between purchase and sale in food and beverage outlets.",
+  "what_to_review": [
+   "Recipe costing and portion control",
+   "Wastage recording and its plausibility",
+   "Staff meal and entertainment policy and recording",
+   "Goods receipt verification against delivery notes and weights",
+   "Void and discount patterns in the outlet point of sale"
+  ],
+  "procedures": [
+   "Observe service and compare actual portions to the costed recipe for high-volume items.",
+   "Compare recorded wastage across outlets and shifts; implausibly low or perfectly consistent wastage warrants challenge.",
+   "Test goods receipt for weight and count verification rather than signature only, for a sample of deliveries.",
+   "Analyse voids, discounts and staff meals by server and shift against outlet averages.",
+   "Reconcile theoretical to actual consumption for a sample of high-value beverage lines."
+  ],
+  "red_flags": [
+   "Wastage recorded as the same figure every week",
+   "Deliveries signed without verification",
+   "Discounts concentrated on particular shifts",
+   "Stock counts performed by the outlet manager alone"
+  ],
+  "evidence": [
+   "Recipe and costing files",
+   "Wastage logs",
+   "Goods receipt records and delivery notes",
+   "Point of sale transaction data"
+  ],
+  "kpis": [
+   "Pour cost variance",
+   "Wastage as % of purchases",
+   "Discounts per server"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-AVN-05",
+  "industry": [
+   "aviation"
+  ],
+  "process": "Fuel & Hedging",
+  "subprocess": "Fuel Uplift and Supplier Billing",
+  "risk": "Fuel uplifted into aircraft is not reconciled to supplier invoices, so the airline pays for volumes it never received.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm that fuel purchased reconciles to fuel uplifted and that pricing follows the supply contract.",
+  "what_to_review": [
+   "Uplift recording at the wing and its independence from the supplier",
+   "Reconciliation of uplift tickets to supplier invoices",
+   "Contract pricing, differentials and into-plane fees",
+   "Density and temperature correction on volumes",
+   "Dispute handling with fuel suppliers"
+  ],
+  "procedures": [
+   "Reconcile uplift volumes from flight records to supplier invoiced volumes by station and quantify the difference.",
+   "Re-price a sample of invoices against the contract, including index differentials and into-plane fees.",
+   "Test whether volume corrections for temperature and density were applied consistently.",
+   "Review the ageing and outcome of fuel supplier disputes."
+  ],
+  "red_flags": [
+   "Uplift recorded solely from the supplier ticket",
+   "Persistent one-directional variances at a station",
+   "Fees charged that are not in the contract",
+   "Disputes abandoned rather than resolved"
+  ],
+  "evidence": [
+   "Flight records and uplift tickets",
+   "Fuel supplier invoices",
+   "Fuel supply contracts",
+   "Dispute correspondence"
+  ],
+  "kpis": [
+   "Uplift-to-invoice variance",
+   "Price variance to contract",
+   "Disputes recovered"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-ECM-03",
+  "industry": [
+   "ecommerce"
+  ],
+  "process": "Fulfilment",
+  "subprocess": "Warehouse Accuracy and Delivery Performance",
+  "risk": "Orders are picked, packed or shipped incorrectly, generating replacement cost, refunds and customer loss that is absorbed as a cost of doing business.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Assess fulfilment accuracy, the cost of getting it wrong, and whether root causes are addressed.",
+  "what_to_review": [
+   "Pick and pack accuracy and verification at despatch",
+   "Inventory accuracy between the warehouse and the storefront",
+   "Carrier performance and lost parcel handling",
+   "Replacement and refund cost attribution",
+   "Returns processing and restocking accuracy"
+  ],
+  "procedures": [
+   "Quantify order defects \u2014 wrong item, missing item, damaged \u2014 and the total cost of remediation over the period.",
+   "Test inventory accuracy by cycle count and compare to the availability shown on the storefront; oversell indicates a control gap.",
+   "Analyse lost and damaged parcels by carrier and test whether claims were filed within the carrier deadline.",
+   "Trace a sample of returns from receipt to restock or write-off and test the valuation applied."
+  ],
+  "red_flags": [
+   "Defect cost recorded in a general expense account with no attribution",
+   "Overselling followed by silent cancellation",
+   "Carrier claims not filed",
+   "Returned stock restocked without inspection"
+  ],
+  "evidence": [
+   "Order defect and remediation records",
+   "Cycle count results",
+   "Carrier performance and claims data",
+   "Returns processing records"
+  ],
+  "kpis": [
+   "Order defect rate",
+   "Remediation cost per order",
+   "Carrier claim recovery %"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-ECM-04",
+  "industry": [
+   "ecommerce"
+  ],
+  "process": "Marketplace & Content",
+  "subprocess": "Seller Onboarding and Product Compliance",
+  "risk": "Third-party sellers list counterfeit, unsafe or prohibited products, exposing the platform to regulatory action and liability.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess whether sellers and their listings are vetted and monitored proportionately to the risk they carry.",
+  "what_to_review": [
+   "Seller identity verification and business registration checks",
+   "Prohibited and restricted product controls at listing",
+   "Counterfeit and intellectual property complaint handling",
+   "Product safety recalls and takedown speed",
+   "Seller performance monitoring and suspension"
+  ],
+  "procedures": [
+   "Sample sellers and test that identity and business verification was completed before listing was enabled.",
+   "Test the listing filters by attempting to list restricted categories in a test environment.",
+   "Trace a sample of intellectual property and safety complaints through to takedown and measure elapsed time.",
+   "Test whether sellers suspended for cause reappear under new identities by matching bank details, addresses and devices."
+  ],
+  "red_flags": [
+   "Sellers onboarded with unverified documents",
+   "Restricted items reachable through alternate category paths",
+   "Takedowns taking weeks",
+   "Suspended sellers returning with the same bank account"
+  ],
+  "evidence": [
+   "Seller onboarding files",
+   "Listing filter configuration",
+   "Complaint and takedown logs",
+   "Suspension records"
+  ],
+  "kpis": [
+   "% sellers fully verified",
+   "Days to takedown",
+   "Repeat suspended sellers"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-UTL-03",
+  "industry": [
+   "utilities"
+  ],
+  "process": "Regulated Operations",
+  "subprocess": "Regulatory Compliance and Reporting",
+  "risk": "Regulatory obligations under the licence or determination are not tracked to an owner, so breaches are discovered by the regulator rather than internally.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm that licence and determination obligations are identified, owned, monitored and evidenced.",
+  "what_to_review": [
+   "Completeness of the regulatory obligation register against the licence",
+   "Ownership and monitoring of each obligation",
+   "Accuracy of performance data submitted to the regulator",
+   "Self-reporting of breaches and their timeliness",
+   "Regulatory penalties, undertakings and remediation"
+  ],
+  "procedures": [
+   "Read the licence and determination and build an obligation list independently; compare it to the register in use and quantify the gaps.",
+   "Sample obligations and test for evidence of compliance in the period, not merely an assertion of compliance.",
+   "Re-perform the calculation of key performance measures submitted to the regulator from source data.",
+   "Test breach self-reporting against the required timeframe and review whether remediation commitments were delivered."
+  ],
+  "red_flags": [
+   "Obligations without a named owner",
+   "Performance figures that cannot be reconstructed from source",
+   "Breaches identified by the regulator first",
+   "Remediation commitments closed without evidence"
+  ],
+  "evidence": [
+   "Licence and regulatory determination",
+   "Obligation register",
+   "Submitted regulatory returns and source data",
+   "Regulator correspondence and penalty notices"
+  ],
+  "kpis": [
+   "Obligations with current evidence",
+   "Breaches self-reported vs. found",
+   "Remediation actions overdue"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-INS-03",
+  "industry": [
+   "insurance"
+  ],
+  "process": "Reinsurance",
+  "subprocess": "Reinsurance Programme Effectiveness",
+  "risk": "The reinsurance programme does not respond as expected to a large loss because cover, exclusions or aggregate limits were not understood when the risk was written.",
+  "rating": "High",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether the reinsurance programme actually covers the exposures being underwritten.",
+  "what_to_review": [
+   "Alignment between underwriting appetite and reinsurance cover",
+   "Exclusions, aggregate limits and reinstatement provisions",
+   "Placement completeness and signed slips before inception",
+   "Reinsurer security and credit concentration",
+   "Recovery process after a large loss"
+  ],
+  "procedures": [
+   "Map material underwriting exposures against the reinsurance programme and identify uncovered aggregations.",
+   "Test that binding slips were signed and complete before cover incepted, not retrospectively.",
+   "Model a large-loss scenario and trace the expected recovery through the programme including reinstatements.",
+   "Assess reinsurer concentration and credit ratings against policy limits.",
+   "Review actual recoveries from recent large losses against what was expected."
+  ],
+  "red_flags": [
+   "Cover placed after inception",
+   "Aggregate limits exhausted without anyone noticing",
+   "Reliance on a small number of reinsurers",
+   "Recoveries materially below expectation after a loss"
+  ],
+  "evidence": [
+   "Reinsurance treaties and slips",
+   "Underwriting exposure data",
+   "Reinsurer security policy and ratings",
+   "Large loss recovery records"
+  ],
+  "kpis": [
+   "Uncovered aggregation exposure",
+   "Slips signed pre-inception",
+   "Recovery vs. expected"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-INS-04",
+  "industry": [
+   "insurance"
+  ],
+  "process": "Reserving",
+  "subprocess": "Reserve Adequacy and Governance",
+  "risk": "Reserves are influenced by earnings pressure rather than actuarial judgement, and adverse development is not surfaced to the board on a timely basis.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess the independence and rigour of the reserving process and the transparency of reserve movements.",
+  "what_to_review": [
+   "Independence of the actuarial function from underwriting and claims",
+   "Reserving methodology, assumption setting and change control",
+   "Management adjustments to the actuarial central estimate",
+   "Reserve development triangles and back-testing",
+   "Reporting of adverse development to the board"
+  ],
+  "procedures": [
+   "Analyse historical reserve development and quantify how often and in which direction estimates have proved wrong.",
+   "Test the size, direction and justification of management adjustments to the actuarial estimate across several periods.",
+   "Test whether assumption changes were documented and approved before results were known.",
+   "Review board and committee papers for whether adverse development was reported plainly or netted against other movements."
+  ],
+  "red_flags": [
+   "Management adjustments always favourable",
+   "Assumption changes made after preliminary results circulate",
+   "Consistent adverse development in the same class of business",
+   "Reserving committee minutes recording no challenge"
+  ],
+  "evidence": [
+   "Actuarial reserve reports and development triangles",
+   "Assumption change logs",
+   "Reserving committee minutes",
+   "Board reporting packs"
+  ],
+  "kpis": [
+   "Reserve development by year",
+   "Management adjustment as % of estimate",
+   "Classes with recurring deterioration"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-HSP-04",
+  "industry": [
+   "hospitality"
+  ],
+  "process": "Rooms Revenue",
+  "subprocess": "Revenue Management and Distribution",
+  "risk": "Rooms are sold through channels at rates and commissions that destroy margin, and rate parity or contractual terms with distributors are breached.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Assess whether distribution channel economics are understood, controlled and compliant with distributor agreements.",
+  "what_to_review": [
+   "Channel mix and net rate after commission by channel",
+   "Rate parity obligations and breaches",
+   "Commission calculation accuracy and reconciliation",
+   "Overbooking, walk cost and compensation",
+   "Group and corporate contract rate adherence"
+  ],
+  "procedures": [
+   "Recompute net revenue per room night by channel after commission and compare to the direct channel.",
+   "Test rate parity by comparing published rates across channels on sample dates.",
+   "Reconcile commission invoiced by distributors to the bookings actually delivered and recompute against the agreement.",
+   "Quantify walk and compensation costs from overbooking and test the authorisation for compensation paid."
+  ],
+  "red_flags": [
+   "Channels with negative contribution still receiving allocation",
+   "Parity breaches unnoticed until a distributor claims",
+   "Commission paid on cancelled bookings",
+   "Compensation paid without approval"
+  ],
+  "evidence": [
+   "Property management and channel manager data",
+   "Distributor agreements",
+   "Commission invoices",
+   "Overbooking and walk records"
+  ],
+  "kpis": [
+   "Net rate by channel",
+   "Parity breach incidents",
+   "Commission variance"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FMC-03",
+  "industry": [
+   "fmcg"
+  ],
+  "process": "Trade Spend",
+  "subprocess": "Trade Investment Effectiveness",
+  "risk": "Trade investment is committed without evidence that it generates incremental volume, and accruals are settled against claims that were never validated.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess whether trade spend is authorised, delivered, validated and generating a return.",
+  "what_to_review": [
+   "Promotion approval, expected uplift and post-event evaluation",
+   "Deduction and claim validation before settlement",
+   "Accrual accuracy and the ageing of unsettled claims",
+   "Customer-level profitability including all trade investment",
+   "Authority limits on discretionary spend"
+  ],
+  "procedures": [
+   "Select major promotions and compare actual uplift to the volume assumed in the approval; test whether any post-event evaluation occurred.",
+   "Sample settled customer deductions and test for a matched, approved promotion and delivery evidence.",
+   "Analyse the ageing of open deductions and the rate at which disputes are simply written off.",
+   "Recompute customer profitability including all trade investment and identify customers who are loss-making after spend."
+  ],
+  "red_flags": [
+   "Post-event evaluation performed for none of the largest promotions",
+   "Deductions written off once they age past a threshold",
+   "Spend approved by the same person who negotiates the customer relationship",
+   "Promotions repeated annually with no measured return"
+  ],
+  "evidence": [
+   "Promotion approvals and plans",
+   "Deduction and claim files",
+   "Trade accrual schedules",
+   "Customer profitability reports"
+  ],
+  "kpis": [
+   "% promotions evaluated",
+   "Deductions written off",
+   "Customers loss-making after trade spend"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-UTL-04",
+  "industry": [
+   "utilities"
+  ],
+  "process": "Trading & Commodity",
+  "subprocess": "Trading Conduct and Controls",
+  "risk": "Traders conceal losses or breach limits through mispriced trades, off-market transactions or unauthorised products.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Assess the independence and effectiveness of controls over trading activity and valuation.",
+  "what_to_review": [
+   "Independence of risk control and back office from the trading desk",
+   "Limit framework, monitoring and breach escalation",
+   "Independent price verification and off-market trade detection",
+   "Trader mandates, approved products and counterparties",
+   "Mandatory leave and trade cancellation or amendment patterns"
+  ],
+  "procedures": [
+   "Test independent price verification by re-valuing a sample of positions from an external curve.",
+   "Analyse trade amendments and cancellations by trader, and trades executed at prices away from the market at execution time.",
+   "Test limit breaches for timely escalation and for whether limits were subsequently raised rather than positions reduced.",
+   "Confirm mandatory leave was actually taken by all trading staff and that their books were managed by others during it.",
+   "Test that all traded products and counterparties are on the approved list."
+  ],
+  "red_flags": [
+   "Amendments concentrated with one trader",
+   "Limits raised shortly after a breach",
+   "Positions valued using trader-supplied marks",
+   "Mandatory leave waived for key staff"
+  ],
+  "evidence": [
+   "Trade capture system extracts with amendment history",
+   "Limit and breach reports",
+   "Independent price verification files",
+   "Leave records",
+   "Approved product and counterparty lists"
+  ],
+  "kpis": [
+   "Trade amendments per trader",
+   "Limit breaches and escalation time",
+   "Positions independently verified"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-04",
+  "industry": [
+   "banking"
+  ],
+  "process": "Treasury & Capital",
+  "subprocess": "Liquidity and Capital Management",
+  "risk": "Liquidity and capital positions are managed on assumptions that do not hold under stress, leaving the bank exposed to a funding shock or a regulatory shortfall.",
+  "rating": "High",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether liquidity and capital are measured, stressed and governed on a defensible basis.",
+  "what_to_review": [
+   "Liquidity risk appetite, limits and early warning indicators",
+   "Stress testing scenarios, severity and governance",
+   "Funding concentration and deposit stickiness assumptions",
+   "Capital planning and buffer management",
+   "Contingency funding plan credibility and testing"
+  ],
+  "procedures": [
+   "Test the data feeding liquidity metrics back to source systems for completeness and accuracy.",
+   "Challenge stress scenario severity against historical and regulatory benchmarks, and test whether results drive any action.",
+   "Analyse deposit behaviour against the stickiness assumptions used in the liquidity model.",
+   "Review the contingency funding plan and test whether it has ever been exercised.",
+   "Test capital projections against the plan and the sensitivity of the buffer to the stress scenarios."
+  ],
+  "red_flags": [
+   "Stress scenarios milder than events already experienced",
+   "Early warning indicators breached without action",
+   "Model assumptions unchanged through a rate cycle",
+   "Contingency funding plan never tested"
+  ],
+  "evidence": [
+   "Liquidity and capital reporting and source data",
+   "Stress testing methodology and results",
+   "ALCO minutes",
+   "Contingency funding plan"
+  ],
+  "kpis": [
+   "Liquidity coverage vs. limit",
+   "Early warning breaches actioned",
+   "Date of last funding plan test"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-INS-05",
+  "industry": [
+   "insurance"
+  ],
+  "process": "Underwriting",
+  "subprocess": "Underwriting Discipline and Pricing",
+  "risk": "Risks are written outside appetite or priced below technical rates to hold volume, so the portfolio deteriorates before the loss ratio reveals it.",
+  "rating": "High",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether underwriting stays within appetite and authority, and whether pricing is technically supported.",
+  "what_to_review": [
+   "Underwriting authority by class, limit and referral triggers",
+   "Adherence to the technical rate and the level of discounting",
+   "Risk selection against stated appetite and exclusions",
+   "Peer review of large or unusual risks",
+   "Delegated underwriting authority given to third parties"
+  ],
+  "procedures": [
+   "Sample bound risks and test each against the underwriter's authority and the referral criteria.",
+   "Quantify the discount to technical rate by underwriter, class and broker, and test the justification for the deepest discounts.",
+   "Test that risks outside appetite were declined or properly referred and approved.",
+   "Review peer review coverage and whether reviewers ever changed an outcome.",
+   "For delegated authorities, test the binder terms, reporting received and any audits performed on the coverholder."
+  ],
+  "red_flags": [
+   "Discounting deepest at period end",
+   "Referral triggers narrowly avoided through structuring",
+   "Peer review recorded but never dissenting",
+   "Coverholders writing outside the binder with no audit"
+  ],
+  "evidence": [
+   "Policy bordereaux and bound risk data",
+   "Underwriting authority matrix",
+   "Technical rating models",
+   "Peer review records",
+   "Binder agreements and coverholder audits"
+  ],
+  "kpis": [
+   "Average discount to technical rate",
+   "Risks bound outside authority",
+   "Coverholders audited in the period"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]
