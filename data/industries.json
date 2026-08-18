@@ -1,0 +1,37 @@
+[
+ {"group":"Financial services","items":[
+   {"id":"banking","name":"Banking and financial institutions"},
+   {"id":"insurance","name":"Insurance"},
+   {"id":"asset-mgmt","name":"Asset and wealth management"},
+   {"id":"fintech","name":"Fintech and payments"}]},
+ {"group":"Industrial and resources","items":[
+   {"id":"manufacturing","name":"Manufacturing"},
+   {"id":"automotive","name":"Automotive"},
+   {"id":"chemicals","name":"Chemicals and industrial products"},
+   {"id":"mining","name":"Mining and metals"},
+   {"id":"construction","name":"Construction and engineering"}]},
+ {"group":"Consumer","items":[
+   {"id":"retail","name":"Retail chains"},
+   {"id":"ecommerce","name":"E-commerce"},
+   {"id":"fmcg","name":"FMCG and consumer goods"},
+   {"id":"hospitality","name":"Hospitality and hotels"},
+   {"id":"food-bev","name":"Food and beverage"}]},
+ {"group":"Transport, energy and infrastructure","items":[
+   {"id":"logistics","name":"Transportation and logistics"},
+   {"id":"aviation","name":"Aviation"},
+   {"id":"utilities","name":"Utilities and energy"},
+   {"id":"oil-gas","name":"Oil and gas"},
+   {"id":"telecom","name":"Telecommunications"}]},
+ {"group":"Health and life sciences","items":[
+   {"id":"healthcare","name":"Healthcare providers"},
+   {"id":"pharma","name":"Pharmaceuticals and life sciences"}]},
+ {"group":"Property, technology and services","items":[
+   {"id":"real-estate","name":"Real estate"},
+   {"id":"tech","name":"Technology and SaaS"},
+   {"id":"prof-services","name":"Professional services"},
+   {"id":"media","name":"Media and entertainment"}]},
+ {"group":"Public and not-for-profit","items":[
+   {"id":"crown","name":"Crown corporations and public sector"},
+   {"id":"nfp","name":"Not-for-profit"},
+   {"id":"education","name":"Education"}]}
+]

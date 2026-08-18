@@ -1,0 +1,456 @@
+[
+ {
+  "id": "IA-BNK-01",
+  "industry": [
+   "banking"
+  ],
+  "process": "Credit and Lending",
+  "subprocess": "Credit Underwriting",
+  "risk": "Credit decisions are influenced by relationship pressure or incentive targets, so exceptions to policy become routine rather than exceptional.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Assess whether credit policy exceptions are genuinely exceptional, escalated to the right level, and performing no worse than compliant lending.",
+  "what_to_review": [
+   "Policy exception rate by product, branch and originator",
+   "Level at which exceptions are approved",
+   "Performance of exception loans versus the book",
+   "Incentive structures for lending staff",
+   "Override of automated credit scores"
+  ],
+  "procedures": [
+   "Extract all loans booked with a policy exception; analyse rate by originator, branch and product against the portfolio average.",
+   "Test that each exception was approved at the level the policy requires, not one below.",
+   "Compare arrears and default rates of exception loans to compliant loans of the same vintage.",
+   "Review the incentive plan for lending staff and test whether volume targets dominate credit quality measures.",
+   "Investigate cases where an automated score was manually overridden and trace the justification."
+  ],
+  "red_flags": [
+   "Exceptions concentrated with a small number of originators",
+   "Exceptions approved by the originator's immediate manager only",
+   "Rising exception rate near quarter end",
+   "Overrides without recorded justification"
+  ],
+  "evidence": [
+   "Loan origination system extract",
+   "Credit policy and delegated authority matrix",
+   "Arrears and default data by vintage",
+   "Incentive plan documents"
+  ],
+  "kpis": [
+   "Policy exception rate",
+   "Default rate: exception vs compliant",
+   "% exceptions approved at correct level"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-02",
+  "industry": [
+   "banking"
+  ],
+  "process": "Financial Crime",
+  "subprocess": "AML, KYC and Sanctions",
+  "risk": "Customer due diligence is incomplete or out of date, and transaction monitoring alerts are closed without adequate investigation, exposing the bank to regulatory enforcement.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Determine whether customer due diligence, screening and transaction monitoring operate as designed and that alerts are investigated to a defensible standard.",
+  "what_to_review": [
+   "CDD and enhanced due diligence completeness at onboarding",
+   "Periodic review cycle for existing customers, especially high risk",
+   "Sanctions and PEP screening coverage and tuning",
+   "Transaction monitoring alert backlog and closure quality",
+   "Suspicious activity report timeliness and quality"
+  ],
+  "procedures": [
+   "Sample customer files across risk ratings and test CDD completeness against policy, including source of funds for high-risk customers.",
+   "Quantify overdue periodic reviews by risk rating and test whether relationships continued to transact.",
+   "Re-perform screening on a sample of customers and counterparties to confirm the system produces the expected hits.",
+   "Sample closed monitoring alerts and reassess whether the closure rationale is supportable; measure closure rate by analyst.",
+   "Test elapsed time from alert to suspicious activity report filing against the regulatory deadline."
+  ],
+  "red_flags": [
+   "A single analyst closing far more alerts than peers",
+   "Alerts closed with template narratives",
+   "Screening rules relaxed after a volume spike",
+   "High-risk customers overdue for review still transacting"
+  ],
+  "evidence": [
+   "Customer files and CDD records",
+   "Alert management system extract",
+   "Screening system configuration and tuning records",
+   "SAR register and regulator correspondence"
+  ],
+  "kpis": [
+   "Overdue periodic reviews",
+   "Alert closure rate by analyst",
+   "Days from alert to SAR filing"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-INS-01",
+  "industry": [
+   "insurance"
+  ],
+  "process": "Claims",
+  "subprocess": "Claims Leakage",
+  "risk": "Claims are settled for more than the policy requires because coverage is not properly applied, subrogation is not pursued and reserves anchor the settlement.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Quantify claims leakage and identify where in the handling process value is lost.",
+  "what_to_review": [
+   "Coverage verification before settlement",
+   "Reserve setting discipline and reserve movement patterns",
+   "Subrogation and recovery identification",
+   "Use of preferred suppliers and negotiated rates",
+   "Settlement authority adherence"
+  ],
+  "procedures": [
+   "Re-review a sample of closed claims against policy wording and quantify amounts paid above entitlement.",
+   "Analyse reserve movements: claims settled at or near the initial reserve may indicate anchoring rather than assessment.",
+   "Identify closed claims with third-party liability indicators and test whether subrogation was pursued.",
+   "Compare settlement values by handler and by supplier for similar claim types."
+  ],
+  "red_flags": [
+   "Settlements clustered just below authority limits",
+   "Claims closed with no subrogation review",
+   "A handler consistently settling above peer averages",
+   "Repeat claimants across policies"
+  ],
+  "evidence": [
+   "Claims system extract with reserve history",
+   "Policy wordings",
+   "Supplier panel agreements",
+   "Subrogation recovery records"
+  ],
+  "kpis": [
+   "Leakage as % of claims paid",
+   "Subrogation recovery rate",
+   "Average settlement by handler"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-INS-02",
+  "industry": [
+   "insurance"
+  ],
+  "process": "Distribution",
+  "subprocess": "Broker and Agent Management",
+  "risk": "Business is written through intermediaries who are not authorised, whose commissions are calculated incorrectly, or who mis-sell products to unsuitable customers.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm intermediaries are properly appointed and monitored, and that commission and conduct risks are controlled.",
+  "what_to_review": [
+   "Intermediary appointment, licensing and vetting",
+   "Commission calculation and payment accuracy",
+   "Product suitability and sales conduct monitoring",
+   "Premium collection and client money handling by intermediaries",
+   "Complaint and cancellation patterns by intermediary"
+  ],
+  "procedures": [
+   "Reconcile intermediaries paid commission to the approved and licensed intermediary register.",
+   "Recompute commission for a sample of policies against the agency agreement and test clawback on early cancellation.",
+   "Analyse lapse, cancellation and complaint rates by intermediary and investigate the outlier tail.",
+   "Test premium remittance timeliness against the agency agreement and quantify amounts held beyond terms."
+  ],
+  "red_flags": [
+   "Commission paid to intermediaries with lapsed licences",
+   "High early-cancellation rates concentrated with one agent",
+   "Premium remitted late or netted against commission",
+   "Policies written for customers outside the target market"
+  ],
+  "evidence": [
+   "Intermediary register and agency agreements",
+   "Commission payment records",
+   "Policy lapse and complaint data",
+   "Premium remittance records"
+  ],
+  "kpis": [
+   "Early cancellation rate by intermediary",
+   "Commission error rate",
+   "Days to remit premium"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-MFG-01",
+  "industry": [
+   "manufacturing"
+  ],
+  "process": "Production",
+  "subprocess": "Production Planning and Yield",
+  "risk": "Actual production yield falls below standard and the loss is absorbed in variances rather than investigated, masking equipment, material or process failure.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Evaluate whether yield and scrap losses are measured accurately at the line level and driven down through root-cause action.",
+  "what_to_review": [
+   "Yield and scrap reporting accuracy at each production stage",
+   "Rework classification and cost capture",
+   "Root-cause analysis on repeat losses",
+   "Machine downtime capture and maintenance linkage",
+   "Bill of materials accuracy versus actual consumption"
+  ],
+  "procedures": [
+   "Reconcile material issued to output produced plus scrap for a sample of production orders; investigate unexplained gaps.",
+   "Compare reported yield by line and shift; test whether the reporting is system-generated or manually entered.",
+   "Trace repeat scrap causes through to a corrective action with a verified closure.",
+   "Compare bill of materials quantities to actual consumption for high-volume products."
+  ],
+  "red_flags": [
+   "Yield reported identically period after period",
+   "Scrap recorded in bulk at month end",
+   "Rework not distinguished from first-pass output",
+   "Downtime attributed to a generic category"
+  ],
+  "evidence": [
+   "Production order records",
+   "Scrap and rework logs",
+   "Machine downtime data",
+   "Bills of materials"
+  ],
+  "kpis": [
+   "First-pass yield %",
+   "Scrap as % of material issued",
+   "Overall equipment effectiveness"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-MFG-02",
+  "industry": [
+   "manufacturing"
+  ],
+  "process": "Health, Safety and Environment",
+  "subprocess": "Workplace Safety and Environmental Compliance",
+  "risk": "Safety incidents are under-reported and environmental permit conditions are breached, exposing the company to enforcement, shutdown and reputational damage.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess whether safety and environmental obligations are identified, monitored and actually met at plant level.",
+  "what_to_review": [
+   "Permit inventory and condition tracking",
+   "Incident and near-miss reporting culture",
+   "Corrective action closure after incidents",
+   "Emissions, effluent and waste monitoring and reporting",
+   "Contractor safety management on site"
+  ],
+  "procedures": [
+   "Build an inventory of environmental permits and test compliance with each material condition, including monitoring and reporting deadlines.",
+   "Compare reported incident rates across plants; a plant with an implausibly low rate warrants interview-based testing.",
+   "Trace a sample of incidents to root-cause analysis and verify the corrective action was implemented, not just recorded.",
+   "Test contractor induction, permit-to-work and competency records for work performed on site."
+  ],
+  "red_flags": [
+   "Near-miss reporting falling while incidents hold steady",
+   "Corrective actions closed with no evidence",
+   "Monitoring results clustered just inside the permit limit",
+   "Contractors working without a permit to work"
+  ],
+  "evidence": [
+   "Permit register and regulator correspondence",
+   "Incident management system",
+   "Monitoring and emissions data",
+   "Contractor induction and permit-to-work records"
+  ],
+  "kpis": [
+   "Total recordable incident rate",
+   "Near-miss to incident ratio",
+   "% permit conditions evidenced",
+   "Corrective actions overdue"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-RTL-01",
+  "industry": [
+   "retail"
+  ],
+  "process": "Store Operations",
+  "subprocess": "Store Cash and Refund Abuse",
+  "risk": "Store staff generate refunds, voids or discounts against genuine sales and remove the cash, or apply staff discounts to customer transactions.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Identify cash losses arising from transaction manipulation at the point of sale and test whether monitoring detects them.",
+  "what_to_review": [
+   "Refund, void and no-sale authorisation at the till",
+   "Refunds without an original receipt or card match",
+   "Staff discount usage patterns",
+   "Till variance investigation thresholds",
+   "CCTV coverage over till points"
+  ],
+  "procedures": [
+   "Analyse refunds by cashier per hundred transactions and rank stores and operators; select the outlier tail for CCTV review.",
+   "Test refunds processed to a different payment method than the original sale.",
+   "Match staff discount transactions to employee purchase records and test for use on non-employee sales.",
+   "Test whether till variances below the investigation threshold accumulate to a material amount by operator."
+  ],
+  "red_flags": [
+   "Refunds concentrated in the operator's own shift with no customer present on CCTV",
+   "Repeated small variances just under the threshold",
+   "Voids immediately after a cash sale",
+   "Discount cards used at multiple stores"
+  ],
+  "evidence": [
+   "Point-of-sale transaction log",
+   "Till variance reports",
+   "Employee discount card register",
+   "CCTV footage"
+  ],
+  "kpis": [
+   "Refunds per 100 transactions by operator",
+   "Till variance per store",
+   "Voids as % of sales"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-RTL-02",
+  "industry": [
+   "retail"
+  ],
+  "process": "Supply Chain",
+  "subprocess": "Supplier Terms and Delivery Compliance",
+  "risk": "Suppliers under-deliver, deliver late or invoice outside agreed terms, and the store network absorbs the loss because claims are never raised.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Confirm that goods received match what was ordered and invoiced, and that supplier non-compliance is claimed and recovered.",
+  "what_to_review": [
+   "Three-way match discipline between order, receipt and invoice",
+   "Short and damaged delivery claim process",
+   "On-time in-full performance by supplier",
+   "Price differences between contract and invoice",
+   "Deduction and chargeback recovery"
+  ],
+  "procedures": [
+   "Quantify receipts posted without a purchase order and invoices paid without a matched receipt.",
+   "Re-price a sample of invoices against contracted terms and quantify overcharges.",
+   "Analyse on-time in-full performance by supplier and test whether contractual service credits were claimed.",
+   "Test the ageing of open supplier claims and the recovery rate."
+  ],
+  "red_flags": [
+   "Receipts booked in full despite recorded shortages",
+   "Claims raised but never followed up",
+   "Price variances always in the supplier's favour",
+   "A supplier consistently below service level with no credits taken"
+  ],
+  "evidence": [
+   "Purchase order, receipt and invoice data",
+   "Supplier contracts and trading terms",
+   "Claims and deductions register",
+   "On-time in-full reporting"
+  ],
+  "kpis": [
+   "Price variance recovered",
+   "OTIF % by supplier",
+   "Open claims ageing"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-AVN-01",
+  "industry": [
+   "aviation"
+  ],
+  "process": "Safety and Regulatory",
+  "subprocess": "Airworthiness and Maintenance Compliance",
+  "risk": "Aircraft are released to service without all required maintenance tasks and airworthiness directives being completed and certified.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm that maintenance is performed and certified by authorised personnel and that airworthiness records are complete and traceable.",
+  "what_to_review": [
+   "Airworthiness directive and service bulletin compliance tracking",
+   "Certifying staff authorisation scope and currency",
+   "Deferred defect management against the minimum equipment list",
+   "Parts traceability and approved supply chain",
+   "Maintenance record retention and integrity"
+  ],
+  "procedures": [
+   "Select applicable airworthiness directives and trace each to a completed and certified work package within the required interval.",
+   "Test that certifying signatures belong to staff whose authorisation covers that aircraft type and task, and was current on the date.",
+   "Analyse deferred defects for items carried beyond the MEL time limit or repeatedly re-deferred.",
+   "Trace a sample of fitted parts to release certificates and approved suppliers."
+  ],
+  "red_flags": [
+   "Defects repeatedly deferred and re-raised",
+   "Certification by staff whose authorisation lapsed",
+   "Parts fitted without an airworthiness release certificate",
+   "Records completed retrospectively in blocks"
+  ],
+  "evidence": [
+   "Maintenance information system records",
+   "Airworthiness directive register",
+   "Certifying staff authorisation records",
+   "Parts release certificates",
+   "Regulator audit findings"
+  ],
+  "kpis": [
+   "AD compliance rate",
+   "Deferred defects beyond limit",
+   "% work packages certified in time"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-AVN-02",
+  "industry": [
+   "aviation"
+  ],
+  "process": "Ground Operations",
+  "subprocess": "Ramp Handling and Aircraft Damage",
+  "risk": "Ground handling errors damage aircraft, delay departures and generate airline chargebacks that are absorbed rather than investigated.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Assess control over ramp operations, damage reporting and the recovery or prevention of associated cost.",
+  "what_to_review": [
+   "Ground support equipment maintenance and operator licensing",
+   "Aircraft damage reporting and investigation",
+   "Delay coding accuracy and attribution",
+   "Load control and weight and balance accuracy",
+   "Airside driving permits and training currency"
+  ],
+  "procedures": [
+   "Reconcile ground damage incidents reported internally to airline claims received; investigate claims with no internal report.",
+   "Test operator licensing and training currency for a sample of ramp staff and equipment types.",
+   "Analyse delay codes attributed to handling and test the supporting evidence for a sample.",
+   "Review load sheet accuracy against actual loading for a sample of flights."
+  ],
+  "red_flags": [
+   "Damage discovered by the airline rather than reported by the station",
+   "Delay codes reassigned after the fact",
+   "Equipment operated by staff without a current licence",
+   "Load sheets amended after departure"
+  ],
+  "evidence": [
+   "Ground damage register and airline claims",
+   "Training and licensing records",
+   "Delay reporting data",
+   "Load sheets and weight and balance records"
+  ],
+  "kpis": [
+   "Ground damage incidents per 1,000 turns",
+   "On-time departure %",
+   "Claims cost per turn"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]

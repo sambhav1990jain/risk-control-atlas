@@ -1,0 +1,176 @@
+[
+ {
+  "control_id": "TL-REV-01",
+  "process": "Freight Revenue",
+  "subprocess": "Revenue Recognition",
+  "risk_id": "R-TL-REV-01",
+  "risk": "Freight revenue is recognised on despatch rather than over the transit period, overstating revenue at period end for shipments still in transit.",
+  "rating": "High",
+  "control_objective": "Ensure freight revenue is recognised as the performance obligation is satisfied, with in-transit shipments deferred.",
+  "control": "At each month end the Revenue Accounting Manager calculates the in-transit revenue deferral using the delivered-versus-despatched shipment report and average transit days by lane, and reviews the calculation against the prior month and volume trends before posting.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "CO, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Revenue Accounting Manager",
+  "sod": "Preparer of the deferral calculation is independent of operations reporting shipment status.",
+  "test_design": "Inspect the deferral methodology and confirm it reflects the transit-period recognition policy under IFRS 15 / ASC 606.",
+  "test_oe": "For a sample of months, re-perform the deferral using the underlying shipment report and agree the journal entry posted.",
+  "population": "Monthly in-transit deferral calculations and supporting shipment reports",
+  "sample": "3 of 12 months",
+  "industry": [
+   "logistics"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TL-REV-02",
+  "process": "Freight Revenue",
+  "subprocess": "Fuel Surcharge",
+  "risk_id": "R-TL-REV-02",
+  "risk": "Fuel surcharge is billed at a rate inconsistent with the published index or the contractual cap, misstating revenue.",
+  "rating": "Medium",
+  "control_objective": "Ensure the fuel surcharge applied in billing agrees to the published index and contractual terms.",
+  "control": "Weekly, the Pricing Analyst updates the fuel surcharge table from the published index and a second analyst independently agrees the uploaded rate to the index source before the table is activated in the rate engine.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Weekly",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Pricing Manager",
+  "sod": "Preparer of the rate upload cannot approve activation of the rate table.",
+  "test_design": "Inspect the surcharge procedure and rate engine configuration confirming dual sign-off before activation.",
+  "test_oe": "Select a sample of weeks; agree the activated surcharge rate to the published index and inspect independent review evidence.",
+  "population": "Weekly fuel surcharge table updates",
+  "sample": "25 of 52 weeks",
+  "industry": [
+   "logistics"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TL-REV-03",
+  "process": "Freight Revenue",
+  "subprocess": "Unbilled Revenue",
+  "risk_id": "R-TL-REV-03",
+  "risk": "Delivered shipments remain unbilled at period end and unbilled revenue is not accrued, understating revenue and receivables.",
+  "rating": "High",
+  "control_objective": "Ensure all delivered but uninvoiced shipments are identified and accrued at period end.",
+  "control": "At month end the Billing Manager reviews the aged unbilled shipment report, investigates items ageing beyond five days, and the Controller reviews and approves the resulting unbilled revenue accrual.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Controller",
+  "sod": "Billing staff resolving unbilled items do not approve the accrual.",
+  "test_design": "Inspect the unbilled reporting process and evidence of Controller review and approval.",
+  "test_oe": "For a sample of months, agree the accrual to the aged unbilled report and inspect investigation of aged items.",
+  "population": "Monthly unbilled shipment reports and accrual journals",
+  "sample": "3 of 12 months",
+  "industry": [
+   "logistics"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TL-COST-01",
+  "process": "Transportation Cost",
+  "subprocess": "Purchased Transportation Accrual",
+  "risk_id": "R-TL-COST-01",
+  "risk": "Purchased transportation costs for moves completed but not yet invoiced by carriers are omitted, understating cost of sales.",
+  "rating": "High",
+  "control_objective": "Ensure accrued purchased transportation is complete and based on contracted rates.",
+  "control": "At month end the Transportation Controller accrues purchased transportation for completed loads without carrier invoices, valued at the rate confirmation, and reviews the accrual against subsequent invoicing in the following month (lookback analysis).",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, CO",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Transportation Controller",
+  "sod": "Operations staff confirming load completion are independent of the accrual preparer.",
+  "test_design": "Inspect the accrual methodology and the lookback analysis comparing prior accruals to actual invoices.",
+  "test_oe": "Re-perform the accrual for a sample of months from the completed-load report and rate confirmations; review lookback variances.",
+  "population": "Monthly purchased transportation accruals and lookback analyses",
+  "sample": "3 of 12 months",
+  "industry": [
+   "logistics"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TL-CLM-01",
+  "process": "Cargo Claims",
+  "subprocess": "Claims Provision",
+  "risk_id": "R-TL-CLM-01",
+  "risk": "The provision for cargo loss and damage claims is understated because reported incidents are not fully captured or are valued below expected settlement.",
+  "rating": "Medium",
+  "control_objective": "Ensure the cargo claims provision reflects all reported incidents at an appropriate estimate of settlement value.",
+  "control": "Quarterly, the Claims Manager reconciles the claims register to the OS&D incident log and to the general ledger provision, and the Controller reviews the actuarial or historical settlement-ratio assumption applied to open claims.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Controller",
+  "sod": "Claims handlers who set individual reserves do not approve the aggregate provision assumption.",
+  "test_design": "Inspect the reconciliation template and evidence of Controller review of the settlement assumption.",
+  "test_oe": "For a sample of quarters, re-perform the reconciliation and recompute the provision using the approved settlement ratio.",
+  "population": "Quarterly claims reconciliations and provision calculations",
+  "sample": "2 of 4 quarters",
+  "industry": [
+   "logistics"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TL-FA-01",
+  "process": "Fleet Assets",
+  "subprocess": "Fleet Depreciation & Residuals",
+  "risk_id": "R-TL-FA-01",
+  "risk": "Vehicle useful lives and residual values are not revised for changes in fleet strategy or used-vehicle markets, misstating depreciation.",
+  "rating": "Medium",
+  "control_objective": "Ensure fleet useful lives and residual values remain supportable and are reviewed at least annually.",
+  "control": "Annually the Fixed Asset Manager compares realised disposal proceeds against carried residual values by vehicle class and presents proposed revisions to the Controller for approval before the depreciation run is updated.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Annual",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Fixed Asset Manager",
+  "sod": "Preparer of the residual analysis does not approve the change to master data.",
+  "test_design": "Inspect the annual review procedure and evidence of Controller approval of assumption changes.",
+  "test_oe": "Obtain the most recent review; recompute the proceeds-to-residual comparison and agree approved changes to the asset master.",
+  "population": "Annual fleet residual value reviews",
+  "sample": "1 of 1",
+  "industry": [
+   "logistics"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ }
+]

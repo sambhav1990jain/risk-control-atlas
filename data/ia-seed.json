@@ -1,0 +1,644 @@
+[
+ {
+  "id": "IA-TL-01",
+  "industry": [
+   "logistics"
+  ],
+  "process": "Fleet & Asset Management",
+  "subprocess": "Vehicle Acquisition & Disposal",
+  "risk": "Vehicles are acquired outside the approved capital plan, or disposed of below market value to related parties.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Confirm fleet additions and disposals are authorised, competitively sourced, and disposal proceeds are complete and at arm's length.",
+  "what_to_review": [
+   "Capital plan approval and variance to actual additions",
+   "Tender or quotation file for each acquisition above threshold",
+   "Disposal method used \u2014 auction, trade-in, private sale",
+   "Relationship of buyers to employees",
+   "Residual value assumptions versus realised proceeds"
+  ],
+  "procedures": [
+   "Reconcile the fixed asset register to the fleet management system and vehicle licensing records; investigate units in one and not the other.",
+   "Select a sample of additions and trace to capital plan approval, business case and competitive quotes.",
+   "For all disposals in the period, recompute gain/loss and agree proceeds to bank receipt.",
+   "Match buyer names and addresses against the employee and vendor master for related-party indicators.",
+   "Compare realised proceeds against an independent used-vehicle price guide for a sample of units."
+  ],
+  "red_flags": [
+   "Disposals clustered just below the approval threshold",
+   "Repeat buyers across multiple disposals",
+   "Units written down shortly before sale",
+   "Assets still insured or licensed after recorded disposal"
+  ],
+  "evidence": [
+   "Fixed asset register",
+   "Fleet management system extract",
+   "Provincial/state vehicle registration records",
+   "Auction settlement statements",
+   "Capital approval minutes"
+  ],
+  "kpis": [
+   "Average fleet age",
+   "Disposal proceeds vs. book value",
+   "% acquisitions within approved plan"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TL-02",
+  "industry": [
+   "logistics"
+  ],
+  "process": "Fleet & Asset Management",
+  "subprocess": "Fuel Management",
+  "risk": "Fuel is drawn for personal vehicles or resold, and the loss is buried in normal consumption variance.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Determine whether fuel consumption is complete, authorised, and reconciled to vehicle activity at the unit level.",
+  "what_to_review": [
+   "Fuel card issuance and cancellation process",
+   "Card-to-vehicle-to-driver assignment integrity",
+   "Consumption per kilometre by unit against the fleet norm",
+   "Transactions outside route, hours, or tank capacity",
+   "Reconciliation of bulk fuel site dips to dispensed volumes"
+  ],
+  "procedures": [
+   "Obtain the full fuel card transaction file and join it to telematics GPS data; test for fills where the vehicle was more than 5 km from the station.",
+   "Test for fill volumes exceeding the unit's tank capacity, and for two fills of the same card within a short window.",
+   "Rank units by litres per 100 km and investigate the outlier tail with the terminal manager.",
+   "Confirm cards for terminated drivers were cancelled within the policy window.",
+   "For bulk sites, reconcile deliveries plus opening dip less closing dip to dispensed volumes; investigate unexplained shrinkage."
+  ],
+  "red_flags": [
+   "Fills on non-operating days or outside shift hours",
+   "Odometer readings entered as round numbers or unchanged",
+   "Consumption spikes confined to one terminal",
+   "Manual PIN overrides at the pump"
+  ],
+  "evidence": [
+   "Fuel card provider transaction extract",
+   "Telematics / GPS trip data",
+   "Driver roster and termination list",
+   "Bulk fuel delivery notes and dip records"
+  ],
+  "kpis": [
+   "Litres per 100 km by unit",
+   "Fuel cost per revenue kilometre",
+   "Exception rate on card-to-GPS match"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TL-03",
+  "industry": [
+   "logistics"
+  ],
+  "process": "Fleet & Asset Management",
+  "subprocess": "Maintenance & Roadworthiness",
+  "risk": "Preventive maintenance is deferred to protect operating margin, exposing the company to breakdowns, accidents and regulatory sanction.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess whether the maintenance programme is executed on schedule and whether defects reported by drivers are actually closed.",
+  "what_to_review": [
+   "Preventive maintenance schedule compliance by unit",
+   "Driver vehicle inspection reports and defect close-out",
+   "Out-of-service orders and roadside inspection results",
+   "Third-party repair vendor rates versus contract",
+   "Warranty claim recovery"
+  ],
+  "procedures": [
+   "Extract the PM schedule and compute on-time completion by terminal; test whether overdue units continued in revenue service.",
+   "Trace a sample of driver-reported defects through to a work order and confirmed repair, measuring days open.",
+   "Obtain regulator roadside inspection data and reconcile out-of-service findings to internal maintenance records.",
+   "Recompute a sample of third-party repair invoices against contracted labour rates and parts mark-up."
+  ],
+  "red_flags": [
+   "Defects repeatedly re-reported on the same unit",
+   "PM completions recorded in bulk at period end",
+   "High share of repairs at a single vendor",
+   "Inspection sign-offs by staff not on shift"
+  ],
+  "evidence": [
+   "Maintenance management system work orders",
+   "Driver inspection reports",
+   "Regulator inspection database",
+   "Repair vendor contracts and invoices"
+  ],
+  "kpis": [
+   "PM on-time completion %",
+   "Roadside out-of-service rate",
+   "Mean time between failures"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TL-04",
+  "industry": [
+   "logistics"
+  ],
+  "process": "Revenue & Billing",
+  "subprocess": "Freight Billing Accuracy",
+  "risk": "Shipments are delivered but never invoiced, or are invoiced at the wrong rate, weight or accessorial \u2014 revenue leakage that never appears in a variance.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Verify that every delivered shipment is billed, once, at the contracted rate, with all applicable accessorial charges captured.",
+  "what_to_review": [
+   "Shipment-to-invoice completeness",
+   "Rate table maintenance and approval",
+   "Accessorial charge capture \u2014 waiting time, residential, re-delivery, fuel surcharge",
+   "Dimensional weight re-measurement",
+   "Manual rate overrides and credits"
+  ],
+  "procedures": [
+   "Reconcile delivered shipments in the operations system to invoiced shipments in billing; quantify and age the unbilled population.",
+   "Re-price a sample of invoices independently from the contract rate table and quantify the variance.",
+   "Analyse manual rate overrides by user; test the largest for approval evidence.",
+   "Test dimensional re-weigh exceptions to confirm the corrected charge was billed.",
+   "Analyse credit notes by reason code, customer and issuer for concentration."
+  ],
+  "red_flags": [
+   "Unbilled shipments ageing beyond the billing window",
+   "Overrides concentrated in one user or customer",
+   "Accessorial capture rate far below peer terminals",
+   "Credits issued shortly after month end"
+  ],
+  "evidence": [
+   "Operations shipment file",
+   "Billing system invoice extract",
+   "Customer contract rate tables",
+   "Scale and dimensioner data",
+   "Credit note register"
+  ],
+  "kpis": [
+   "Revenue leakage as % of billed revenue",
+   "Unbilled shipment ageing",
+   "Credit notes as % of revenue"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TL-05",
+  "industry": [
+   "logistics"
+  ],
+  "process": "Revenue & Billing",
+  "subprocess": "Customer Contracts & Pricing",
+  "risk": "Discounts and fuel surcharge caps are granted outside delegated authority, eroding margin on long-term contracts.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm customer pricing reflects properly authorised terms and that contract profitability is monitored after signature.",
+  "what_to_review": [
+   "Delegation of authority for discounting",
+   "Fuel surcharge mechanism and caps",
+   "Contract profitability review after award",
+   "Renewal and evergreen clauses",
+   "Volume commitment enforcement"
+  ],
+  "procedures": [
+   "Select the largest contracts by revenue and agree discount levels to the delegation of authority matrix.",
+   "Recompute the fuel surcharge applied against the contractual index for a sample of months.",
+   "Compare contracted volume commitments to actual shipped volumes and test whether shortfall charges were billed.",
+   "Review post-award profitability reporting and test whether loss-making contracts are escalated."
+  ],
+  "red_flags": [
+   "Discounts approved by the salesperson's direct report only",
+   "Surcharge caps not reflected in the rate engine",
+   "Contracts auto-renewing without repricing",
+   "Margin below cost-to-serve with no escalation"
+  ],
+  "evidence": [
+   "Signed customer contracts",
+   "Delegation of authority matrix",
+   "Rate engine configuration",
+   "Contract profitability reports"
+  ],
+  "kpis": [
+   "Average discount %",
+   "Contribution margin by contract",
+   "% contracts repriced at renewal"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TL-06",
+  "industry": [
+   "logistics"
+  ],
+  "process": "Network Operations",
+  "subprocess": "Linehaul & Capacity Planning",
+  "risk": "Purchased transportation is bought at spot rates when contracted capacity was available, inflating cost per shipment.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Evaluate whether linehaul capacity decisions follow the planning process and whether purchased transportation is procured at the best available rate.",
+  "what_to_review": [
+   "Load planning and trailer utilisation",
+   "Contracted versus spot carrier mix",
+   "Empty-mile and deadhead analysis",
+   "Carrier rate confirmation versus invoice",
+   "Detention and demurrage charges"
+  ],
+  "procedures": [
+   "Analyse trailer cube and weight utilisation by lane; identify structurally under-loaded lanes.",
+   "Compare spot purchases to available contracted capacity on the same lane and date; quantify the premium paid.",
+   "Recompute a sample of carrier invoices against the rate confirmation, including accessorials and detention.",
+   "Test the approval trail for spot buys above the contracted rate."
+  ],
+  "red_flags": [
+   "Spot buys concentrated with one broker",
+   "Repeated detention charges at the same terminal",
+   "Utilisation reported without reconciliation to scale data",
+   "Rate confirmations issued after the move"
+  ],
+  "evidence": [
+   "Transportation management system load data",
+   "Carrier contracts and rate confirmations",
+   "Carrier invoices",
+   "Terminal dock schedules"
+  ],
+  "kpis": [
+   "Trailer utilisation %",
+   "Empty miles %",
+   "Spot vs. contract rate premium"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TL-07",
+  "industry": [
+   "logistics"
+  ],
+  "process": "Network Operations",
+  "subprocess": "Terminal & Warehouse Operations",
+  "risk": "Cargo is lost, damaged or stolen in the terminal and the loss is absorbed as an operating expense without root-cause investigation.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Assess the integrity of custody controls over freight in the terminal and the completeness of loss reporting.",
+  "what_to_review": [
+   "Chain-of-custody scanning at each handoff",
+   "Physical security \u2014 access control, CCTV coverage, seal integrity",
+   "High-value and controlled-goods segregation",
+   "Overage, shortage and damage reporting",
+   "Claims recovery from carriers and insurers"
+  ],
+  "procedures": [
+   "Walk the terminal and observe scanning discipline at induction, sort and load; compare observed practice to the procedure.",
+   "Extract shipments with a missing scan event and test whether each was investigated.",
+   "Test seal number recording against trailer manifests for inbound and outbound loads.",
+   "Reconcile the OS&D log to claims paid and to the general ledger loss account.",
+   "Review terminal access lists against active employee records."
+  ],
+  "red_flags": [
+   "Losses clustered by shift, lane or employee",
+   "Seal numbers recorded as sequential or blank",
+   "CCTV coverage gaps at high-value cages",
+   "Claims written off below the investigation threshold"
+  ],
+  "evidence": [
+   "Scan event data",
+   "OS&D log",
+   "Claims register",
+   "Access control logs and CCTV retention records",
+   "Trailer seal manifests"
+  ],
+  "kpis": [
+   "Loss ratio per million shipments",
+   "Claims paid vs. recovered",
+   "Scan compliance %"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TL-08",
+  "industry": [
+   "logistics"
+  ],
+  "process": "Safety & Regulatory Compliance",
+  "subprocess": "Driver Hours & Licensing",
+  "risk": "Drivers operate beyond legal hours-of-service limits or with lapsed licences and medical certification, creating liability and regulatory exposure.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Determine whether driver qualification files are complete and hours-of-service limits are monitored and enforced.",
+  "what_to_review": [
+   "Driver qualification file completeness",
+   "Licence and medical certificate expiry monitoring",
+   "Electronic logging device data and edits",
+   "Hours-of-service violation follow-up",
+   "Use of owner-operators and their compliance status"
+  ],
+  "procedures": [
+   "Sample driver files and test for licence, abstract, medical certificate, training records and annual review.",
+   "Extract ELD data and quantify violations by driver and terminal; test disciplinary follow-up for the most frequent offenders.",
+   "Analyse ELD log edits by user \u2014 edits made by dispatch rather than the driver warrant challenge.",
+   "Cross-check active drivers against the licence expiry report on the audit date."
+  ],
+  "red_flags": [
+   "Log edits concentrated near the violation threshold",
+   "Unassigned driving time",
+   "Drivers dispatched with expired medicals",
+   "Owner-operators outside the compliance monitoring scope"
+  ],
+  "evidence": [
+   "Driver qualification files",
+   "ELD/telematics hours data",
+   "Licence abstract monitoring reports",
+   "Dispatch records"
+  ],
+  "kpis": [
+   "HOS violations per 1,000 driving hours",
+   "% driver files complete",
+   "Unassigned driving time hours"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TL-09",
+  "industry": [
+   "logistics"
+  ],
+  "process": "Safety & Regulatory Compliance",
+  "subprocess": "Dangerous Goods & Customs",
+  "risk": "Dangerous goods are accepted, or cross-border shipments are declared, without the required documentation and classification, exposing the company to penalties and shipment seizure.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm regulated shipments are correctly classified, documented and handled by trained personnel.",
+  "what_to_review": [
+   "Dangerous goods acceptance and classification",
+   "Training and certification currency for handlers",
+   "Customs declaration accuracy and tariff classification",
+   "Denied-party and sanctions screening",
+   "Broker performance and record retention"
+  ],
+  "procedures": [
+   "Sample dangerous goods shipments and test declaration, placarding, packaging and handler certification.",
+   "Re-perform tariff classification on a sample of cross-border shipments and quantify duty variance.",
+   "Test that denied-party screening runs on every consignee and that hits are cleared by compliance, not operations.",
+   "Review regulator correspondence, penalties and corrective action closure."
+  ],
+  "red_flags": [
+   "Screening exceptions cleared by the booking agent",
+   "Classification changed after a duty query",
+   "Training certificates expiring without replacement",
+   "Recurring penalties for the same defect"
+  ],
+  "evidence": [
+   "Dangerous goods declarations",
+   "Training register",
+   "Customs entries and broker files",
+   "Screening system logs",
+   "Regulator penalty notices"
+  ],
+  "kpis": [
+   "DG documentation error rate",
+   "Customs entry amendment rate",
+   "% handlers certified"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TL-10",
+  "industry": [
+   "logistics"
+  ],
+  "process": "Procurement & Third Parties",
+  "subprocess": "Owner-Operator & Subcontract Carriers",
+  "risk": "Subcontracted carriers are engaged without insurance, safety rating or contract, transferring their liability back to the company.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Verify that every carrier moving freight has been qualified, contracted and monitored throughout the engagement.",
+  "what_to_review": [
+   "Carrier onboarding and qualification checks",
+   "Insurance certificate currency and limits",
+   "Safety rating monitoring after onboarding",
+   "Contract coverage and indemnity terms",
+   "Payment to carriers not in the approved master"
+  ],
+  "procedures": [
+   "Reconcile carriers paid in the period to the approved carrier master; investigate every payee not on the master.",
+   "Test insurance certificate expiry against the dates freight was actually tendered to each carrier.",
+   "Re-check current safety ratings for the top carriers by spend and test escalation of downgrades.",
+   "Review contracts for indemnity, sub-contracting prohibition and audit rights."
+  ],
+  "red_flags": [
+   "Carriers paid with no contract on file",
+   "Insurance lapses covered by an expired certificate on file",
+   "Freight tendered to carriers with conditional safety ratings",
+   "Single-source lanes without competitive review"
+  ],
+  "evidence": [
+   "Carrier master data",
+   "Accounts payable carrier spend",
+   "Insurance certificates",
+   "Regulator safety rating database",
+   "Carrier contracts"
+  ],
+  "kpis": [
+   "% carrier spend under contract",
+   "Insurance lapse exceptions",
+   "% spend with conditional-rated carriers"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-X-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "Procure to Pay",
+  "subprocess": "Vendor Master & Payments",
+  "risk": "Payments are made to fictitious vendors, or to genuine vendors at bank details altered by a fraudster.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Determine whether vendor master changes are independently verified and whether the payment population contains indicators of fraud or duplication.",
+  "what_to_review": [
+   "Vendor creation and bank change verification",
+   "Segregation between vendor maintenance, invoice entry and payment release",
+   "Duplicate payment detection",
+   "Employee-to-vendor data matching",
+   "Dormant vendor reactivation"
+  ],
+  "procedures": [
+   "Match the vendor master against the employee master on bank account, address, tax ID and phone number.",
+   "Test all bank detail changes in the period for evidence of independent call-back verification to a number obtained from an independent source.",
+   "Run duplicate payment analytics on invoice number, amount, date and vendor across near-matches.",
+   "Identify vendors reactivated after long dormancy and test the first payment after reactivation.",
+   "Test system access to confirm no user can both maintain the vendor and release the payment."
+  ],
+  "red_flags": [
+   "Bank change immediately followed by a large payment",
+   "Vendors sharing a bank account",
+   "Invoices just below the approval threshold",
+   "Vendor address matching an employee address"
+  ],
+  "evidence": [
+   "Vendor master change log",
+   "Employee master",
+   "Payment run files",
+   "ERP access and role assignments"
+  ],
+  "kpis": [
+   "Duplicate payments recovered",
+   "% bank changes with verified call-back",
+   "Vendor master exception count"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-X-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "Payroll",
+  "subprocess": "Payroll Processing & Overtime",
+  "risk": "Payroll is paid to ghost employees, or overtime is claimed and approved without evidence of hours worked.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm the payroll population is valid, complete and authorised, and that variable pay is supported.",
+  "what_to_review": [
+   "New hire and termination processing timeliness",
+   "Ghost employee indicators",
+   "Overtime approval and supporting time records",
+   "Payroll master change authorisation",
+   "Off-cycle and manual payments"
+  ],
+  "procedures": [
+   "Match payroll to HR master records; investigate paid employees with no HR record and terminated employees still paid.",
+   "Test for duplicate bank accounts, addresses or tax IDs across the payroll population.",
+   "Analyse overtime by employee and supervisor; test the top decile to approved timesheets.",
+   "Test all off-cycle payments for authorisation.",
+   "Recompute gross-to-net for a sample and agree statutory deductions."
+  ],
+  "red_flags": [
+   "Overtime concentrated under one supervisor",
+   "Employees never taking leave",
+   "Bank details changed shortly before a pay run",
+   "Terminations processed after the final pay"
+  ],
+  "evidence": [
+   "Payroll register",
+   "HR master data",
+   "Time and attendance records",
+   "Bank payment files"
+  ],
+  "kpis": [
+   "Overtime as % of base pay",
+   "Days to process terminations",
+   "Payroll error rate"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-X-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "IT & Cyber",
+  "subprocess": "Access Management",
+  "risk": "Users retain access after role change or termination, or hold combinations of access that allow a transaction to be initiated and approved by the same person.",
+  "rating": "High",
+  "risk_category": "IT",
+  "audit_objective": "Assess whether logical access is granted, reviewed and removed in line with role requirements and segregation of duties rules.",
+  "what_to_review": [
+   "Joiner, mover and leaver processing",
+   "Periodic user access recertification",
+   "Privileged and generic account use",
+   "Segregation of duties conflict matrix",
+   "Access to production data and direct database changes"
+  ],
+  "procedures": [
+   "Reconcile active system accounts to the active employee list; test every orphan account.",
+   "Measure elapsed days from termination to access removal across all leavers in the period.",
+   "Run the SoD conflict matrix against current role assignments and quantify unmitigated conflicts.",
+   "Test whether the last recertification was completed by the business owner and whether flagged removals actually occurred.",
+   "Review privileged account activity logs for direct data changes outside change management."
+  ],
+  "red_flags": [
+   "Recertification approved in bulk on a single day",
+   "Generic accounts shared by a team",
+   "Firefighter access left permanently enabled",
+   "Removals flagged but never executed"
+  ],
+  "evidence": [
+   "User access listings by system",
+   "HR joiner/leaver data",
+   "Recertification evidence",
+   "Privileged activity logs"
+  ],
+  "kpis": [
+   "Days to revoke access",
+   "Unmitigated SoD conflicts",
+   "% accounts recertified on time"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-X-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "Governance & Ethics",
+  "subprocess": "Whistleblower & Conflicts of Interest",
+  "risk": "Concerns raised through the ethics line are not investigated independently, or undisclosed conflicts of interest influence supplier selection.",
+  "rating": "Medium",
+  "risk_category": "Strategic",
+  "audit_objective": "Evaluate whether the ethics reporting channel is trusted and effective, and whether conflicts of interest are disclosed and managed.",
+  "what_to_review": [
+   "Ethics line availability, anonymity and awareness",
+   "Case triage, investigation independence and closure",
+   "Conflict of interest declaration completeness",
+   "Related-party transactions with declared interests",
+   "Retaliation monitoring"
+  ],
+  "procedures": [
+   "Review the case log for volume, category, ageing and closure quality; test a sample end to end.",
+   "Test whether cases implicating management were investigated by someone outside that reporting line.",
+   "Reconcile conflict of interest declarations to the employee population and test completeness for decision-makers.",
+   "Match declared interests against the vendor master and investigate transactions with connected parties."
+  ],
+  "red_flags": [
+   "Very low case volume relative to headcount",
+   "Cases closed as unsubstantiated with no documented work",
+   "Declarations missing from procurement and finance staff",
+   "Reporters subsequently exiting the business"
+  ],
+  "evidence": [
+   "Ethics case management log",
+   "Conflict of interest declarations",
+   "Vendor master",
+   "Exit interview records"
+  ],
+  "kpis": [
+   "Cases per 1,000 employees",
+   "Average days to close",
+   "% declarations completed"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]

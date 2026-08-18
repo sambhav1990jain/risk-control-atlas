@@ -1,0 +1,582 @@
+[
+ {
+  "control_id": "BNK-01",
+  "process": "Credit and Lending",
+  "subprocess": "Loan Origination",
+  "risk_id": "R-BNK-01",
+  "risk": "Loans are advanced to borrowers who do not meet credit policy, or on terms outside delegated lending authority, leading to elevated default and impairment.",
+  "rating": "High",
+  "control_objective": "Ensure credit is granted only within approved policy and delegated lending authority.",
+  "control": "Every credit application is scored and reviewed against the credit policy by an underwriter independent of the relationship manager, and approved at the authority level set by exposure size in the delegated lending authority matrix before funds are released.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, R&O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Head of Credit Risk",
+  "sod": "The relationship manager who originates the application cannot approve it or release the funds.",
+  "test_design": "Inspect the credit policy, delegated authority matrix and origination workflow to confirm system-enforced approval limits.",
+  "test_oe": "Select a sample of loans advanced; agree the approval to the authority matrix and inspect the independent underwriting assessment.",
+  "population": "All loans advanced during the period",
+  "sample": "40 (per transaction, IT-dependent manual)",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-02",
+  "process": "Credit and Lending",
+  "subprocess": "Expected Credit Loss",
+  "risk_id": "R-BNK-02",
+  "risk": "The expected credit loss allowance is understated because staging criteria, macroeconomic scenarios or post-model overlays are not applied consistently.",
+  "rating": "High",
+  "control_objective": "Ensure the ECL allowance is calculated using approved models, inputs and overlays, and is subject to independent review.",
+  "control": "Quarterly, the Model Risk function independently validates ECL model outputs, staging migration and scenario weightings, and all management overlays are documented, quantified and approved by the Provisions Committee before the allowance is booked.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "A/V, C",
+  "coso": "Risk Assessment",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Risk Officer",
+  "sod": "Model owners in Credit Risk are separate from the Model Risk validation function.",
+  "test_design": "Inspect the model governance framework, validation reports and Provisions Committee terms of reference.",
+  "test_oe": "For a sample of quarters, agree the booked allowance to the approved committee paper and re-perform the overlay calculation.",
+  "population": "Quarterly ECL calculations, validation reports and committee minutes",
+  "sample": "2 of 4 quarters",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-03",
+  "process": "Treasury and Capital",
+  "subprocess": "Regulatory Capital Reporting",
+  "risk_id": "R-BNK-03",
+  "risk": "Risk-weighted assets are misclassified, misstating the regulatory capital ratio reported to the regulator.",
+  "rating": "High",
+  "control_objective": "Ensure exposures are assigned the correct risk weight and capital returns reconcile to the general ledger.",
+  "control": "Monthly, the Regulatory Reporting Manager reconciles the capital return to the general ledger and to the source exposure systems, and reviews a risk-weight assignment exception report before the Chief Financial Officer signs the return.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Head of Regulatory Reporting",
+  "sod": "Preparer of the return does not approve or submit it.",
+  "test_design": "Inspect the reconciliation template, the exception report logic and the sign-off protocol.",
+  "test_oe": "For a sample of months, re-perform the reconciliation and inspect resolution of risk-weight exceptions.",
+  "population": "Monthly regulatory capital returns and reconciliations",
+  "sample": "3 of 12 months",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-04",
+  "process": "Deposits and Payments",
+  "subprocess": "Suspense and Nostro Accounts",
+  "risk_id": "R-BNK-04",
+  "risk": "Unreconciled items in suspense and nostro accounts conceal misappropriation or processing errors.",
+  "rating": "High",
+  "control_objective": "Ensure suspense and nostro accounts are reconciled and aged items are cleared and investigated.",
+  "control": "Daily nostro and suspense reconciliations are prepared by Operations and reviewed by a supervisor; items ageing beyond 30 days are escalated monthly to the Financial Controller with a documented clearance plan.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Daily",
+  "assertions": "E/O, A/V, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Financial Controller",
+  "sod": "The preparer of the reconciliation cannot post clearing entries without independent review.",
+  "test_design": "Inspect the reconciliation procedure, ageing report and escalation protocol.",
+  "test_oe": "For a sample of days, inspect the reconciliation and supervisory review; test the ageing report for items cleared without support.",
+  "population": "Daily nostro and suspense reconciliations",
+  "sample": "25 of the period",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INS-01",
+  "process": "Claims",
+  "subprocess": "Claims Handling and Settlement",
+  "risk_id": "R-INS-01",
+  "risk": "Fraudulent or duplicate claims are settled, or claims are paid outside the handler's settlement authority.",
+  "rating": "High",
+  "control_objective": "Ensure claims are validated against policy cover and settled within delegated authority.",
+  "control": "Each claim is validated against policy cover and the claims system enforces settlement authority by value; claims above the handler limit require review by a claims manager, and all settlements are screened against duplicate and fraud indicator rules before payment release.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Claims Director",
+  "sod": "The handler who assesses the claim cannot release the payment.",
+  "test_design": "Inspect the settlement authority configuration and the fraud rule set in the claims system.",
+  "test_oe": "Select a sample of settled claims; agree the settlement to policy cover, authority limit and evidence of fraud screening.",
+  "population": "All claims settled during the period",
+  "sample": "40 (per transaction, IT-dependent manual)",
+  "industry": [
+   "insurance"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INS-02",
+  "process": "Reserving",
+  "subprocess": "IBNR and Case Reserves",
+  "risk_id": "R-INS-02",
+  "risk": "Reserves for incurred but not reported claims are understated through inappropriate development factors or unsupported management adjustments.",
+  "rating": "High",
+  "control_objective": "Ensure technical reserves are actuarially determined, independently reviewed and adjusted only with documented justification.",
+  "control": "Quarterly, the Appointed Actuary calculates reserves using approved methodology; results are peer-reviewed by an independent actuary, and any management adjustment to the actuarial central estimate is documented and approved by the Reserving Committee.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "A/V, C",
+  "coso": "Risk Assessment",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Actuary",
+  "sod": "The reserving actuary is independent of underwriting and claims settlement.",
+  "test_design": "Inspect the reserving methodology, peer review protocol and Reserving Committee terms of reference.",
+  "test_oe": "For a sample of quarters, agree booked reserves to the actuarial report and inspect approval of any management adjustment.",
+  "population": "Quarterly actuarial reserve reports and committee minutes",
+  "sample": "2 of 4 quarters",
+  "industry": [
+   "insurance"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INS-03",
+  "process": "Underwriting",
+  "subprocess": "Premium Recognition and Unearned Premium",
+  "risk_id": "R-INS-03",
+  "risk": "Premium is recognised on binding rather than over the policy period, overstating earned premium and understating the unearned premium reserve.",
+  "rating": "High",
+  "control_objective": "Ensure premium is earned over the period of cover and the unearned premium reserve is complete.",
+  "control": "Monthly, the Financial Reporting Manager reconciles written premium from the policy administration system to the general ledger and recalculates the unearned premium reserve on a pro-rata basis, with Controller review of the movement against policy volumes.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "CO, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer of the reserve calculation is independent of underwriting.",
+  "test_design": "Inspect the earning methodology and evidence of Controller review.",
+  "test_oe": "Re-perform the unearned premium calculation for a sample of months and agree to the ledger.",
+  "population": "Monthly premium reconciliations and UPR calculations",
+  "sample": "3 of 12 months",
+  "industry": [
+   "insurance"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INS-04",
+  "process": "Reinsurance",
+  "subprocess": "Reinsurance Recoveries",
+  "risk_id": "R-INS-04",
+  "risk": "Reinsurance recoveries are not claimed on qualifying losses, or are recognised against treaties that do not cover the loss.",
+  "rating": "Medium",
+  "control_objective": "Ensure reinsurance recoveries recognised are complete, valid and collectable.",
+  "control": "Quarterly, the Reinsurance Manager reconciles ceded losses to treaty terms and to reinsurer confirmations, reviews recovery ageing and reinsurer credit ratings, and the Controller approves any provision against doubtful recoveries.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "E/O, R&O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Reinsurance Manager",
+  "sod": "Recovery calculation and provision approval are performed by different individuals.",
+  "test_design": "Inspect the reconciliation approach, ageing review and credit assessment procedure.",
+  "test_oe": "For a sample of quarters, agree recoveries to treaty terms and reinsurer confirmations.",
+  "population": "Quarterly reinsurance reconciliations and confirmations",
+  "sample": "2 of 4 quarters",
+  "industry": [
+   "insurance"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "MFG-01",
+  "process": "Production and Costing",
+  "subprocess": "Standard Cost and Variance",
+  "risk_id": "R-MFG-01",
+  "risk": "Standard costs are not updated for input price and yield changes, so inventory is misvalued and variances absorb the error.",
+  "rating": "High",
+  "control_objective": "Ensure standard costs remain supportable and material variances are analysed and resolved.",
+  "control": "Annually the Cost Accounting Manager rolls standard costs using current material, labour and overhead rates with Controller approval; monthly, purchase price and usage variances are analysed by cost centre and explanations above threshold are documented and reviewed.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Cost Accounting Manager",
+  "sod": "Standard cost changes are approved by someone other than the preparer.",
+  "test_design": "Inspect the standard cost roll procedure, threshold definition and variance review template.",
+  "test_oe": "For a sample of months, re-perform variance calculations and inspect documented explanations and review.",
+  "population": "Monthly variance analyses and the annual standard cost roll",
+  "sample": "3 of 12 months",
+  "industry": [
+   "manufacturing"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "MFG-02",
+  "process": "Inventory",
+  "subprocess": "Physical Inventory and Cycle Counts",
+  "risk_id": "R-MFG-02",
+  "risk": "Recorded inventory quantities differ from physical stock because counts are infrequent, poorly controlled, or adjustments are posted without approval.",
+  "rating": "High",
+  "control_objective": "Ensure inventory quantities are verified by count and adjustments are authorised.",
+  "control": "Cycle counts are performed to a risk-based schedule covering all A-class items quarterly; counters are independent of stores custody, variances above tolerance are recounted, and all inventory adjustments require Plant Controller approval before posting.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O, C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Plant Controller",
+  "sod": "Count teams are independent of warehouse custody; the person recounting is not the original counter.",
+  "test_design": "Inspect the cycle count programme, coverage schedule and adjustment approval workflow.",
+  "test_oe": "Attend a count; for a sample of periods, agree count sheets to system adjustments and inspect approval.",
+  "population": "Cycle count records and inventory adjustment postings",
+  "sample": "25 adjustments",
+  "industry": [
+   "manufacturing"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "MFG-03",
+  "process": "Inventory",
+  "subprocess": "Obsolete and Slow-Moving Provision",
+  "risk_id": "R-MFG-03",
+  "risk": "Provision for obsolete and slow-moving inventory is understated because ageing data is inaccurate or engineering change notices are not reflected.",
+  "rating": "Medium",
+  "control_objective": "Ensure the inventory provision reflects ageing, demand and product lifecycle status.",
+  "control": "Quarterly, Supply Chain and Finance jointly review the inventory ageing and slow-moving report against forecast demand and engineering change notices, and the resulting provision is approved by the Controller.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Quarterly",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Supply chain proposes the provision; Finance independently reviews and approves it.",
+  "test_design": "Inspect the provision policy, ageing report logic and evidence of joint review.",
+  "test_oe": "For a sample of quarters, re-perform the provision using the ageing report and inspect approval.",
+  "population": "Quarterly inventory provision calculations and ageing reports",
+  "sample": "2 of 4 quarters",
+  "industry": [
+   "manufacturing"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "MFG-04",
+  "process": "Quality and Warranty",
+  "subprocess": "Warranty Provision",
+  "risk_id": "R-MFG-04",
+  "risk": "The warranty provision does not reflect emerging failure rates or an announced recall, understating liabilities.",
+  "rating": "Medium",
+  "control_objective": "Ensure the warranty provision reflects current claims experience and known product issues.",
+  "control": "Quarterly, the Quality Director provides failure rate and claims data by product line to Finance, which recalculates the warranty provision; recalls and known field issues are separately assessed and approved by the Controller.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Quality data provider is independent of the finance preparer of the provision.",
+  "test_design": "Inspect the provision methodology and the process for capturing field issues and recalls.",
+  "test_oe": "For a sample of quarters, recompute the provision from claims data and inspect Controller approval.",
+  "population": "Quarterly warranty provision calculations and quality claims data",
+  "sample": "2 of 4 quarters",
+  "industry": [
+   "manufacturing"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "RTL-01",
+  "process": "Store Operations",
+  "subprocess": "Cash and Point of Sale",
+  "risk_id": "R-RTL-01",
+  "risk": "Store cash takings are misappropriated or short-banked, concealed through unauthorised voids, refunds and no-sale transactions.",
+  "rating": "High",
+  "control_objective": "Ensure store takings are complete, banked intact and reconciled to point-of-sale records.",
+  "control": "Daily, the store manager reconciles till readings to cash counted and to the banking slip; voids, refunds and no-sale transactions above threshold require supervisor authorisation at the till, and head office reviews an exception report of till variances and refund patterns by store weekly.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Daily",
+  "assertions": "E/O, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Retail Operations Director",
+  "sod": "The cashier operating the till does not perform the end-of-day count alone; banking is verified independently at head office.",
+  "test_design": "Inspect the daily reconciliation procedure, till authorisation configuration and the weekly exception report.",
+  "test_oe": "For a sample of store-days, agree till readings to counted cash and bank credit; review exception report follow-up.",
+  "population": "Daily store cash reconciliations and weekly exception reports",
+  "sample": "40 store-days",
+  "industry": [
+   "retail"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "RTL-02",
+  "process": "Merchandising",
+  "subprocess": "Vendor Rebates and Trading Terms",
+  "risk_id": "R-RTL-02",
+  "risk": "Supplier rebates are recognised before the earning conditions are met, overstating margin.",
+  "rating": "High",
+  "control_objective": "Ensure rebate income is recognised only when the contractual conditions are satisfied and is supported by agreements.",
+  "control": "Quarterly, the Commercial Finance Manager reconciles accrued rebates to signed supplier agreements and purchase volumes, and material rebates are confirmed with the supplier before recognition; the Controller reviews and approves the rebate accrual.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Quarterly",
+  "assertions": "E/O, CO, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Financial Controller",
+  "sod": "Buyers who negotiate rebates do not calculate or approve the accrual.",
+  "test_design": "Inspect the rebate recognition policy, agreement repository and confirmation process.",
+  "test_oe": "For a sample of quarters, agree accrued rebates to signed agreements and volume data; inspect supplier confirmations.",
+  "population": "Quarterly rebate accruals and supplier agreements",
+  "sample": "2 of 4 quarters",
+  "industry": [
+   "retail"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "RTL-03",
+  "process": "Inventory",
+  "subprocess": "Shrinkage and Stock Loss",
+  "risk_id": "R-RTL-03",
+  "risk": "Inventory shrinkage from theft, process error or supplier short-delivery is absorbed into cost of sales without identification or correction.",
+  "rating": "High",
+  "control_objective": "Ensure shrinkage is measured by store, investigated and reflected in the financial statements.",
+  "control": "Stores are counted at least twice a year by an independent count provider; shrinkage is calculated by store and category, stores above the shrinkage threshold are subject to a loss-prevention review, and the shrinkage accrual between counts is approved by the Controller.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Loss Prevention Director",
+  "sod": "Count provider is independent of store management whose results are being measured.",
+  "test_design": "Inspect the count programme, shrinkage calculation and loss-prevention escalation criteria.",
+  "test_oe": "For a sample of stores, agree count results to system adjustments; inspect escalation for stores above threshold.",
+  "population": "Store count results and shrinkage accrual calculations",
+  "sample": "25 stores",
+  "industry": [
+   "retail"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "RTL-04",
+  "process": "Revenue",
+  "subprocess": "Gift Cards and Loyalty",
+  "risk_id": "R-RTL-04",
+  "risk": "Gift card and loyalty liabilities are understated, or breakage is recognised without a supportable redemption history.",
+  "rating": "Medium",
+  "control_objective": "Ensure gift card and loyalty obligations are completely recorded and breakage is supportable.",
+  "control": "Monthly, the Revenue Accountant reconciles the gift card and loyalty liability to the issuing platform, and breakage is recognised only using the redemption pattern approved annually by the Controller and revisited against actual redemption experience.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Revenue Accounting Manager",
+  "sod": "The person maintaining the loyalty platform does not approve the breakage assumption.",
+  "test_design": "Inspect the reconciliation, the breakage methodology and evidence of annual reassessment.",
+  "test_oe": "For a sample of months, re-perform the reconciliation and recompute breakage on the approved basis.",
+  "population": "Monthly liability reconciliations and the annual breakage assessment",
+  "sample": "3 of 12 months",
+  "industry": [
+   "retail"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "AVN-01",
+  "process": "Flight Revenue",
+  "subprocess": "Passenger Revenue and Unflown Tickets",
+  "risk_id": "R-AVN-01",
+  "risk": "Revenue is recognised on ticket sale rather than on flight, overstating revenue and understating the unflown ticket liability.",
+  "rating": "High",
+  "control_objective": "Ensure passenger revenue is recognised when the flight is flown and the air traffic liability is complete.",
+  "control": "Monthly, the Revenue Accounting Manager reconciles tickets sold, flown, refunded and expired from the revenue accounting system to the air traffic liability in the general ledger, and the Controller reviews the liability movement and the expiry recognition against the approved policy.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "CO, C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Revenue Accounting Manager",
+  "sod": "Preparer of the liability reconciliation is independent of sales and distribution.",
+  "test_design": "Inspect the revenue recognition policy and the air traffic liability reconciliation template.",
+  "test_oe": "For a sample of months, re-perform the reconciliation and agree flown revenue to flight coupon data.",
+  "population": "Monthly air traffic liability reconciliations",
+  "sample": "3 of 12 months",
+  "industry": [
+   "aviation"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "AVN-02",
+  "process": "Ground Operations",
+  "subprocess": "Ground Handling Billing",
+  "risk_id": "R-AVN-02",
+  "risk": "Ground handling services performed for airline customers are not billed, or are billed below the contracted tariff.",
+  "rating": "High",
+  "control_objective": "Ensure all ground handling services performed are captured and billed at contracted rates.",
+  "control": "The station reconciles daily service delivery records to flight movement data, and the billing system prices services from the contracted tariff table; the Station Manager reviews an unbilled services report weekly and approves manual rate overrides.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Weekly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Station Manager",
+  "sod": "Staff recording service delivery do not maintain the tariff table.",
+  "test_design": "Inspect the service capture process, tariff configuration and unbilled report.",
+  "test_oe": "For a sample of weeks, reconcile flight movements to services billed and re-price a sample of invoices to contract.",
+  "population": "Weekly service delivery and billing reconciliations",
+  "sample": "25 of 52 weeks",
+  "industry": [
+   "aviation"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "AVN-03",
+  "process": "Fleet and Engineering",
+  "subprocess": "Maintenance Reserves and Component Overhaul",
+  "risk_id": "R-AVN-03",
+  "risk": "Provisions for scheduled airframe and engine overhauls on leased aircraft are misstated because utilisation or overhaul cost assumptions are outdated.",
+  "rating": "High",
+  "control_objective": "Ensure maintenance provisions reflect actual utilisation and current overhaul cost estimates.",
+  "control": "Quarterly, Engineering supplies flight hours and cycles by aircraft and the latest overhaul cost estimates; Finance recalculates the maintenance provision per lease terms and the Controller approves changes to the cost assumption.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Quarterly",
+  "assertions": "A/V, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Engineering provides utilisation data; Finance independently calculates and Controller approves.",
+  "test_design": "Inspect the provisioning methodology against lease return conditions and the assumption approval process.",
+  "test_oe": "For a sample of quarters, recompute the provision using utilisation data and approved cost assumptions.",
+  "population": "Quarterly maintenance provision calculations and utilisation reports",
+  "sample": "2 of 4 quarters",
+  "industry": [
+   "aviation"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "AVN-04",
+  "process": "Fuel and Hedging",
+  "subprocess": "Fuel Procurement and Hedging",
+  "risk_id": "R-AVN-04",
+  "risk": "Fuel hedge accounting is applied to instruments that do not qualify, or hedge positions exceed the mandate approved by the board.",
+  "rating": "Medium",
+  "control_objective": "Ensure fuel hedging operates within the approved mandate and hedge accounting is properly supported.",
+  "control": "Monthly, Treasury reports open hedge positions against the board-approved mandate limits, and hedge effectiveness testing and documentation are prepared by Financial Reporting and reviewed by the Controller before hedge accounting is applied.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Treasurer",
+  "sod": "The dealer executing hedges does not perform effectiveness testing or confirm positions.",
+  "test_design": "Inspect the treasury mandate, hedge documentation standard and effectiveness testing methodology.",
+  "test_oe": "For a sample of months, agree open positions to the mandate and inspect effectiveness testing documentation.",
+  "population": "Monthly hedge position reports and effectiveness testing files",
+  "sample": "3 of 12 months",
+  "industry": [
+   "aviation"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ }
+]

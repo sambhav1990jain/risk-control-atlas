@@ -1,0 +1,3134 @@
+[
+ {
+  "control_id": "P2P-01",
+  "process": "Procure to Pay",
+  "subprocess": "Vendor Master",
+  "risk_id": "R-P2P-01",
+  "risk": "Fictitious or unauthorised vendors are created in the vendor master, enabling payments for goods or services never received.",
+  "rating": "High",
+  "control_objective": "Ensure all vendor master additions and changes are validated and authorised before activation.",
+  "control": "All new vendors and changes to existing vendor bank details are independently verified against supporting documentation and approved by the Vendor Master Supervisor before the record is activated in the ERP.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, R&O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Vendor Master Supervisor",
+  "sod": "Requestor of a vendor change must not be the approver; neither may process payments.",
+  "test_design": "Inspect the vendor maintenance procedure and ERP workflow configuration to confirm approval is required before activation.",
+  "test_oe": "Select a sample of vendor additions and bank detail changes; inspect evidence of independent verification and approval prior to activation.",
+  "population": "ERP vendor master change log for the period",
+  "sample": "25 (per transaction, manual)",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-02",
+  "process": "Procure to Pay",
+  "subprocess": "Vendor Master",
+  "risk_id": "R-P2P-02",
+  "risk": "Dormant, duplicate or superseded vendor records remain active and are used to route improper payments.",
+  "rating": "Medium",
+  "control_objective": "Ensure the vendor master remains accurate and free of duplicate or dormant records.",
+  "control": "The AP Manager performs a quarterly review of the vendor master for duplicates, dormant vendors and incomplete records, and initiates deactivation where required. Review is evidenced and retained.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "E/O, A/V",
+  "coso": "Monitoring Activities",
+  "key_control": "No",
+  "fraud": "Yes",
+  "owner": "Accounts Payable Manager",
+  "sod": "Reviewer must be independent of vendor master maintenance.",
+  "test_design": "Inspect the review template and confirm it addresses duplicates, dormancy and completeness.",
+  "test_oe": "For each quarter in the period, inspect the completed review, exceptions identified, and evidence of follow-up action.",
+  "population": "Quarterly vendor master review files",
+  "sample": "All quarters in period (4)",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-03",
+  "process": "Procure to Pay",
+  "subprocess": "Access & SoD",
+  "risk_id": "R-P2P-03",
+  "risk": "A single individual can create a vendor and release a payment to it, allowing undetected misappropriation.",
+  "rating": "High",
+  "control_objective": "Ensure incompatible duties within the purchasing and payment cycle are segregated in the ERP.",
+  "control": "ERP role configuration prevents any single user from holding both vendor master maintenance and payment release entitlements. Conflicts are blocked at role assignment.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, R&O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "IT Security / ERP Access Administrator",
+  "sod": "This control is itself the segregation mechanism; changes to the SoD ruleset require independent approval.",
+  "test_design": "Inspect the SoD ruleset configuration and confirm the conflict pair is defined and set to block rather than warn.",
+  "test_oe": "Attempt assignment of a conflicting role in a test client, or inspect system evidence that conflicting assignments were rejected during the period. Inspect any approved mitigating-control exceptions.",
+  "population": "ERP role conflict report and access change log",
+  "sample": "Full population (automated) plus all exceptions",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-04",
+  "process": "Procure to Pay",
+  "subprocess": "Requisition",
+  "risk_id": "R-P2P-04",
+  "risk": "Goods or services are committed without authorisation, resulting in unapproved expenditure.",
+  "rating": "Medium",
+  "control_objective": "Ensure all purchase requisitions are approved in accordance with the delegation of authority.",
+  "control": "The ERP workflow routes every purchase requisition for electronic approval according to the delegation of authority matrix based on value and cost centre. Requisitions cannot convert to a purchase order without approval.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Procurement Manager",
+  "sod": "Requestor cannot self-approve; workflow enforces a different approver.",
+  "test_design": "Inspect the delegation of authority matrix and reconcile approval thresholds configured in the workflow to it.",
+  "test_oe": "Select a sample of requisitions across value bands; inspect system approval history for approval by an authorised approver prior to PO creation. Test the configuration for a low and high value band.",
+  "population": "ERP requisition table for the period",
+  "sample": "25 configuration-supported, or full population testing",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-05",
+  "process": "Procure to Pay",
+  "subprocess": "Purchase Order",
+  "risk_id": "R-P2P-05",
+  "risk": "Purchase orders are issued without an approved requisition, bypassing the authorisation process.",
+  "rating": "Medium",
+  "control_objective": "Ensure purchase orders originate only from approved requisitions.",
+  "control": "The ERP prevents creation of a purchase order that is not linked to an approved requisition. Free-text POs are disabled for all users other than an approved emergency-purchase role.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Procurement Manager",
+  "sod": "Emergency-purchase role holders must not approve their own POs.",
+  "test_design": "Inspect ERP configuration confirming the requisition-to-PO link is mandatory.",
+  "test_oe": "Inspect a system-generated listing of POs without a linked requisition for the period and evaluate each. Re-perform by attempting PO creation without a requisition.",
+  "population": "ERP purchase order table",
+  "sample": "Full population exception report",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-06",
+  "process": "Procure to Pay",
+  "subprocess": "Invoice Processing",
+  "risk_id": "R-P2P-06",
+  "risk": "Invoices are paid for goods or services not ordered or not received, or at incorrect prices or quantities.",
+  "rating": "High",
+  "control_objective": "Ensure invoices are matched to an approved purchase order and evidence of receipt before payment.",
+  "control": "The ERP performs an automated three-way match of purchase order, goods receipt and supplier invoice. Invoices failing the match are blocked from payment and routed to an exception queue.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Accounts Payable Manager",
+  "sod": "AP processors cannot override a match block; override requires AP Manager entitlement.",
+  "test_design": "Inspect the match configuration, including which document types are subject to match and the block behaviour on failure.",
+  "test_oe": "Re-perform the match on a sample of invoices. Inspect the exception queue for the period to confirm blocked invoices were not released without resolution.",
+  "population": "ERP invoice register and match exception log",
+  "sample": "25, plus full review of overrides",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-07",
+  "process": "Procure to Pay",
+  "subprocess": "Invoice Processing",
+  "risk_id": "R-P2P-07",
+  "risk": "Match tolerances are set too wide or exceptions are cleared without investigation, allowing overpayment.",
+  "rating": "Medium",
+  "control_objective": "Ensure match exceptions and tolerance settings are reviewed and resolved appropriately.",
+  "control": "Match tolerance parameters are configured centrally and changes require approval. The AP Manager reviews and clears the match exception report weekly, evidencing investigation and resolution of each item.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Weekly",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Accounts Payable Manager",
+  "sod": "Reviewer must be independent of invoice entry.",
+  "test_design": "Inspect the tolerance configuration and the change-approval process. Inspect the exception review template.",
+  "test_oe": "Select a sample of weekly reviews; inspect evidence of investigation and resolution. Inspect all tolerance parameter changes in the period for approval.",
+  "population": "Weekly match exception reports; tolerance change log",
+  "sample": "25 weeks, or all if fewer",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-08",
+  "process": "Procure to Pay",
+  "subprocess": "Goods Receipt",
+  "risk_id": "R-P2P-08",
+  "risk": "Goods or services received are not recorded, understating liabilities and expenses in the correct period.",
+  "rating": "High",
+  "control_objective": "Ensure receipts are recorded completely and in the period in which they occur.",
+  "control": "Warehouse personnel record goods receipt in the ERP against the purchase order at the point of delivery. The ERP records the receipt date independently of the user-entered date.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "C, CO",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Warehouse Supervisor",
+  "sod": "Receiving function segregated from purchasing and from invoice approval.",
+  "test_design": "Inspect the receiving procedure and confirm system date capture is independent of user entry.",
+  "test_oe": "Select a sample of deliveries from carrier documentation and trace to timely recording in the ERP. Test period-end cutoff either side of the reporting date.",
+  "population": "Goods receipt table; carrier delivery documentation",
+  "sample": "25, plus cutoff testing at period end",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-09",
+  "process": "Procure to Pay",
+  "subprocess": "Invoice Processing",
+  "risk_id": "R-P2P-09",
+  "risk": "Duplicate invoices are entered and paid twice, overstating expenses and cash outflows.",
+  "rating": "Medium",
+  "control_objective": "Ensure duplicate invoices are prevented from being recorded.",
+  "control": "The ERP blocks entry of an invoice where vendor, invoice number, date and amount match an existing document. Blocked entries are logged and require AP Manager review to release.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Accounts Payable Manager",
+  "sod": "Releasing a duplicate block requires an entitlement not held by invoice processors.",
+  "test_design": "Inspect the duplicate check configuration, including which fields form the match key.",
+  "test_oe": "Attempt entry of a known duplicate in a test client. Inspect the log of blocked and released duplicates for the period and evaluate each release.",
+  "population": "ERP duplicate block log",
+  "sample": "Full population of releases",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-10",
+  "process": "Procure to Pay",
+  "subprocess": "Invoice Processing",
+  "risk_id": "R-P2P-10",
+  "risk": "Invoices without a purchase order are approved by individuals without appropriate authority.",
+  "rating": "High",
+  "control_objective": "Ensure non-PO invoices are approved in line with the delegation of authority.",
+  "control": "Non-PO invoices are routed through the ERP workflow for approval by cost centre owner and, above threshold, by a second approver, in accordance with the delegation of authority matrix.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Financial Controller",
+  "sod": "Approver cannot be the invoice requestor or the payment releaser.",
+  "test_design": "Reconcile workflow approval thresholds to the delegation of authority matrix.",
+  "test_oe": "Select a sample of non-PO invoices across value bands; inspect approval history for approval by an authorised approver prior to payment.",
+  "population": "ERP non-PO invoice listing",
+  "sample": "25 across value bands",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-11",
+  "process": "Procure to Pay",
+  "subprocess": "Period End",
+  "risk_id": "R-P2P-11",
+  "risk": "Goods received but not invoiced at period end are not accrued, understating liabilities.",
+  "rating": "High",
+  "control_objective": "Ensure the goods received not invoiced accrual is complete and accurate at each period end.",
+  "control": "At each month end the Financial Accountant prepares the GR/IR accrual from the system-generated aged goods-received-not-invoiced report, investigates aged items, and the Financial Controller reviews and approves the accrual and supporting reconciliation.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V, CO",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer and reviewer must be different individuals.",
+  "test_design": "Inspect the accrual methodology and the aged GR/IR report definition.",
+  "test_oe": "Select a sample of month ends; re-perform the accrual calculation from the underlying report and inspect evidence of review and approval, including investigation of aged items.",
+  "population": "Monthly GR/IR reports and accrual workpapers",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-12",
+  "process": "Procure to Pay",
+  "subprocess": "Period End",
+  "risk_id": "R-P2P-12",
+  "risk": "The accounts payable subledger does not agree to the general ledger, indicating unrecorded or erroneous transactions.",
+  "rating": "High",
+  "control_objective": "Ensure the AP subledger reconciles to the general ledger each period.",
+  "control": "The Financial Accountant reconciles the AP subledger to the general ledger control account monthly. Reconciling items are identified, explained and cleared. The Financial Controller reviews and approves the reconciliation.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer independent of reviewer; neither posts manual journals to the AP control account.",
+  "test_design": "Inspect the reconciliation template and the threshold for investigating reconciling items.",
+  "test_oe": "Select a sample of monthly reconciliations; verify mathematical accuracy, agreement to source reports, ageing and clearance of reconciling items, and evidence of timely review.",
+  "population": "Monthly AP reconciliations",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-13",
+  "process": "Procure to Pay",
+  "subprocess": "Disbursement",
+  "risk_id": "R-P2P-13",
+  "risk": "Payments are released for invoices that are unapproved, altered or fraudulent.",
+  "rating": "High",
+  "control_objective": "Ensure payment runs are reviewed and authorised before release to the bank.",
+  "control": "Prior to release, the Treasury Manager reviews the payment proposal against supporting approved invoices and authorises the run. Release to the bank requires dual authorisation by two nominated signatories.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V, R&O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Treasury Manager",
+  "sod": "Payment releasers must not maintain vendor master data or process invoices.",
+  "test_design": "Inspect the payment authorisation procedure and bank mandate confirming dual authorisation limits.",
+  "test_oe": "Select a sample of payment runs; inspect evidence of review against supporting invoices and dual authorisation prior to transmission.",
+  "population": "Payment run listings and bank authorisation records",
+  "sample": "25 payment runs",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-14",
+  "process": "Procure to Pay",
+  "subprocess": "Disbursement",
+  "risk_id": "R-P2P-14",
+  "risk": "The payment file is altered between approval in the ERP and receipt by the bank.",
+  "rating": "Medium",
+  "control_objective": "Ensure the integrity of the payment file in transit to the bank.",
+  "control": "Payment files are transmitted to the bank over an encrypted channel with hash-total validation. The bank rejects files failing validation, and rejections are investigated by Treasury.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Treasury Manager",
+  "sod": "File transmission access restricted and segregated from payment approval.",
+  "test_design": "Inspect the interface configuration, encryption and hash-total validation settings.",
+  "test_oe": "Inspect the transmission log for the period for rejected or failed files and evidence of investigation. Confirm control totals agree between ERP and bank confirmations for a sample.",
+  "population": "Bank interface transmission logs",
+  "sample": "25 transmissions, plus all rejections",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "P2P-15",
+  "process": "Procure to Pay",
+  "subprocess": "Monitoring",
+  "risk_id": "R-P2P-15",
+  "risk": "Debit balances and long-outstanding items in accounts payable indicate unrecovered overpayments or misstatement.",
+  "rating": "Low",
+  "control_objective": "Ensure aged and debit balances in accounts payable are identified and resolved.",
+  "control": "The AP Manager reviews the aged accounts payable listing monthly, investigating debit balances and items outstanding beyond terms, and documents resolution.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, C",
+  "coso": "Monitoring Activities",
+  "key_control": "No",
+  "fraud": "No",
+  "owner": "Accounts Payable Manager",
+  "sod": "Reviewer independent of invoice processing.",
+  "test_design": "Inspect the review procedure and the ageing report parameters.",
+  "test_oe": "Select a sample of monthly reviews; inspect evidence of investigation and resolution of debit and aged balances.",
+  "population": "Monthly AP ageing reports",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "O2C-01",
+  "process": "Order to Cash",
+  "subprocess": "Customer Master",
+  "risk_id": "R-O2C-01",
+  "risk": "Fictitious or unauthorised customers are created, or remittance details are altered, enabling diversion of receipts or recognition of invalid revenue.",
+  "rating": "High",
+  "control_objective": "Ensure customer master additions and changes are verified and authorised before activation.",
+  "control": "New customers and changes to existing customer bank or remittance details are independently verified against supporting documentation and approved by the Credit Manager before the record is activated in the ERP.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, R&O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Credit Manager",
+  "sod": "Requestor of a customer change must not approve it, and must not apply cash receipts.",
+  "test_design": "Inspect the customer maintenance procedure and ERP workflow to confirm approval precedes activation.",
+  "test_oe": "Select a sample of customer additions and remittance detail changes; inspect evidence of verification and approval prior to activation.",
+  "population": "ERP customer master change log",
+  "sample": "25 (per transaction, manual)",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "O2C-02",
+  "process": "Order to Cash",
+  "subprocess": "Credit Management",
+  "risk_id": "R-O2C-02",
+  "risk": "Credit is extended to customers without assessment of creditworthiness, resulting in receivables that are not collectable.",
+  "rating": "Medium",
+  "control_objective": "Ensure customer credit limits are assessed and approved in line with the credit policy.",
+  "control": "Credit limits are established from a documented credit assessment and approved in accordance with the credit policy authority matrix. Limits are reassessed at least annually and on trigger events.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Event Driven",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Credit Manager",
+  "sod": "Credit assessment prepared and approved by different individuals; approver independent of sales.",
+  "test_design": "Inspect the credit policy and reconcile approval thresholds to the authority matrix.",
+  "test_oe": "Select a sample of new and revised credit limits; inspect the credit assessment and approval at the appropriate authority level.",
+  "population": "Customer credit limit change log",
+  "sample": "25 credit limit changes",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "O2C-03",
+  "process": "Order to Cash",
+  "subprocess": "Credit Management",
+  "risk_id": "R-O2C-03",
+  "risk": "Orders are released to customers who are over their credit limit or on hold, increasing exposure to uncollectable balances.",
+  "rating": "Medium",
+  "control_objective": "Ensure orders exceeding credit limits are blocked and released only with authorisation.",
+  "control": "The ERP automatically places on hold any sales order that would take the customer beyond the approved credit limit or that is past due. Release requires Credit Manager entitlement and is logged.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Credit Manager",
+  "sod": "Sales personnel do not hold credit release entitlement.",
+  "test_design": "Inspect the credit check configuration and confirm the hold is enforced rather than advisory.",
+  "test_oe": "Attempt order entry beyond limit in a test client. Inspect the credit release log for the period and evaluate releases for authorisation.",
+  "population": "ERP credit hold and release log",
+  "sample": "Full population of releases",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "O2C-04",
+  "process": "Order to Cash",
+  "subprocess": "Pricing",
+  "risk_id": "R-O2C-04",
+  "risk": "Sales are invoiced at incorrect prices or unauthorised discounts, misstating revenue and receivables.",
+  "rating": "High",
+  "control_objective": "Ensure prices and discounts applied to sales orders are authorised and accurate.",
+  "control": "Price and discount master data changes require approval by the Commercial Director in line with the pricing policy. The ERP defaults pricing from the approved master; manual overrides are blocked above defined discount thresholds.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "A/V, E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Commercial Director",
+  "sod": "Sales representatives cannot amend the price master or approve their own discount overrides.",
+  "test_design": "Inspect the pricing policy, the price master change workflow, and the override threshold configuration.",
+  "test_oe": "Select a sample of price master changes and of discount overrides; inspect approval. Re-perform pricing on a sample of invoices against the approved price master.",
+  "population": "Price master change log; invoice register",
+  "sample": "25 changes and 25 invoices",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "O2C-05",
+  "process": "Order to Cash",
+  "subprocess": "Shipping",
+  "risk_id": "R-O2C-05",
+  "risk": "Goods are despatched without a valid sales order, or despatches are not recorded, leading to unbilled shipments and understated revenue.",
+  "rating": "High",
+  "control_objective": "Ensure all despatches are supported by an approved order and are recorded completely.",
+  "control": "Goods are released from the warehouse only against an approved sales order. Despatch is recorded in the ERP at the point of shipment and generates a shipping document referenced to the order.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "C, E/O, CO",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Distribution Manager",
+  "sod": "Warehouse despatch segregated from order entry and from invoicing.",
+  "test_design": "Inspect the despatch procedure and ERP configuration linking despatch to an approved order.",
+  "test_oe": "Trace a sample of shipping documents to approved orders and to recording in the ERP. Test cutoff either side of period end.",
+  "population": "Shipping document file; ERP delivery table",
+  "sample": "25, plus cutoff testing",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "O2C-06",
+  "process": "Order to Cash",
+  "subprocess": "Billing",
+  "risk_id": "R-O2C-06",
+  "risk": "Shipments are not invoiced, or are invoiced more than once, misstating revenue and receivables.",
+  "rating": "High",
+  "control_objective": "Ensure all despatches are invoiced once, completely and accurately.",
+  "control": "The ERP generates invoices from despatch records. The Billing Supervisor reviews the daily exception report of despatches not invoiced and invoices without a despatch, and resolves all items.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Daily",
+  "assertions": "C, E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Billing Supervisor",
+  "sod": "Reviewer independent of despatch recording.",
+  "test_design": "Inspect the exception report definition and confirm it captures both directions of mismatch.",
+  "test_oe": "Select a sample of daily reviews; inspect evidence of investigation and clearance of exceptions.",
+  "population": "Daily billing exception reports",
+  "sample": "25 days",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "O2C-07",
+  "process": "Order to Cash",
+  "subprocess": "Revenue Recognition",
+  "risk_id": "R-O2C-07",
+  "risk": "Revenue is recognised in the incorrect period or before the performance obligation is satisfied, misstating reported results.",
+  "rating": "High",
+  "control_objective": "Ensure revenue is recognised in accordance with the applicable framework and in the correct period.",
+  "control": "The Financial Controller reviews the revenue recognition analysis at each period end, confirming that performance obligations, transfer of control and contract terms support the timing and amount recognised, including for non-standard and multi-element arrangements.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "CO, E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Financial Controller",
+  "sod": "Preparer of the analysis is not the reviewer; commercial teams do not determine accounting conclusions.",
+  "test_design": "Inspect the revenue recognition policy and the review template, including criteria for identifying non-standard arrangements.",
+  "test_oe": "Select a sample of month ends; re-perform the analysis for a selection of contracts and inspect evidence of review and conclusion.",
+  "population": "Monthly revenue recognition files; contract register",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "O2C-08",
+  "process": "Order to Cash",
+  "subprocess": "Credit Notes",
+  "risk_id": "R-O2C-08",
+  "risk": "Credit notes are issued without justification to conceal uncollectable balances or fictitious sales.",
+  "rating": "High",
+  "control_objective": "Ensure credit notes are supported and authorised in line with the delegation of authority.",
+  "control": "Credit notes require documented justification and approval per the delegation of authority. Credits above threshold require Financial Controller approval. The ERP blocks posting without approval.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Financial Controller",
+  "sod": "Raiser of a credit note cannot approve it; sales cannot approve credits to their own accounts.",
+  "test_design": "Reconcile credit note approval thresholds to the delegation of authority.",
+  "test_oe": "Select a sample of credit notes across value bands; inspect supporting justification and approval prior to posting.",
+  "population": "Credit note register",
+  "sample": "25 across value bands",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "O2C-09",
+  "process": "Order to Cash",
+  "subprocess": "Cash Application",
+  "risk_id": "R-O2C-09",
+  "risk": "Receipts are misapplied or misappropriated, and customer balances are misstated.",
+  "rating": "High",
+  "control_objective": "Ensure customer receipts are applied accurately and completely to the correct accounts.",
+  "control": "Receipts are applied from the bank statement to customer accounts daily. Unapplied and suspense items are reviewed weekly by the AR Supervisor and cleared. Application is reconciled to bank receipts.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Weekly",
+  "assertions": "C, A/V, E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Accounts Receivable Supervisor",
+  "sod": "Cash application segregated from credit note approval, customer master and bank reconciliation.",
+  "test_design": "Inspect the cash application procedure and the unapplied cash review template.",
+  "test_oe": "Select a sample of weekly reviews; inspect ageing and clearance of unapplied items. Reconcile receipts applied to bank receipts for a sample of days.",
+  "population": "Unapplied cash reports; bank statements",
+  "sample": "25 weeks",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "O2C-10",
+  "process": "Order to Cash",
+  "subprocess": "Period End",
+  "risk_id": "R-O2C-10",
+  "risk": "The accounts receivable subledger does not agree to the general ledger, indicating unrecorded or erroneous transactions.",
+  "rating": "High",
+  "control_objective": "Ensure the AR subledger reconciles to the general ledger each period.",
+  "control": "The Financial Accountant reconciles the AR subledger to the general ledger control account monthly. Reconciling items are explained and cleared, and the reconciliation is reviewed and approved by the Financial Controller.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer independent of reviewer; neither posts manual journals to the AR control account.",
+  "test_design": "Inspect the reconciliation template and the investigation threshold for reconciling items.",
+  "test_oe": "Select a sample of monthly reconciliations; verify accuracy, agreement to source reports, and evidence of timely review.",
+  "population": "Monthly AR reconciliations",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "O2C-11",
+  "process": "Order to Cash",
+  "subprocess": "Provisioning",
+  "risk_id": "R-O2C-11",
+  "risk": "The allowance for expected credit losses is understated, overstating receivables and results.",
+  "rating": "High",
+  "control_objective": "Ensure the allowance for expected credit losses is complete and supportable.",
+  "control": "The Credit Manager prepares the expected credit loss calculation quarterly using the approved provisioning matrix and specific assessment of significant or disputed balances. The Financial Controller reviews and approves the provision and the underlying assumptions.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer and reviewer are different; sales does not influence provisioning conclusions.",
+  "test_design": "Inspect the provisioning methodology, the ageing bands and the loss rates applied.",
+  "test_oe": "Select the quarters in the period; re-perform the calculation and inspect support for specific provisions and for changes in assumptions.",
+  "population": "Quarterly ECL calculations and AR ageing",
+  "sample": "All quarters in period",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "O2C-12",
+  "process": "Order to Cash",
+  "subprocess": "Access & SoD",
+  "risk_id": "R-O2C-12",
+  "risk": "A single individual can create a customer, raise a credit note and apply cash, enabling concealment of misappropriated receipts.",
+  "rating": "High",
+  "control_objective": "Ensure incompatible duties across the order to cash cycle are segregated in the ERP.",
+  "control": "ERP role configuration prevents any single user from holding customer master maintenance, credit note approval and cash application entitlements. Conflicts are blocked at role assignment.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "IT Security / ERP Access Administrator",
+  "sod": "This control is the segregation mechanism; ruleset changes require independent approval.",
+  "test_design": "Inspect the SoD ruleset and confirm the conflict set is defined and blocking.",
+  "test_oe": "Inspect the role conflict report for the period, plus any approved mitigating-control exceptions.",
+  "population": "ERP role conflict report",
+  "sample": "Full population plus all exceptions",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INV-01",
+  "process": "Inventory & Costing",
+  "subprocess": "Standard Costing",
+  "risk_id": "R-INV-01",
+  "risk": "Standard costs are inaccurate or updated without authorisation, misstating inventory valuation and cost of sales.",
+  "rating": "High",
+  "control_objective": "Ensure standard cost changes are supported and authorised before release.",
+  "control": "Proposed standard cost changes are supported by current input costs and bills of material, reviewed by the Cost Accountant and approved by the Financial Controller before the cost roll is released.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Annual",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Cost preparer does not release the cost roll to production.",
+  "test_design": "Inspect the costing policy and the cost roll release procedure.",
+  "test_oe": "For each cost roll in the period, inspect the supporting analysis and evidence of approval prior to release.",
+  "population": "Cost roll documentation",
+  "sample": "All cost rolls in period",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INV-02",
+  "process": "Inventory & Costing",
+  "subprocess": "Variance Analysis",
+  "risk_id": "R-INV-02",
+  "risk": "Cost variances are not investigated, so errors in costing or consumption remain in inventory and cost of sales.",
+  "rating": "Medium",
+  "control_objective": "Ensure manufacturing and purchase price variances are analysed and resolved.",
+  "control": "The Cost Accountant prepares a monthly analysis of purchase price, usage and labour variances against threshold, investigates items exceeding tolerance, and the Financial Controller reviews the analysis and the resulting adjustments.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer and reviewer are different individuals.",
+  "test_design": "Inspect the variance report definition and the investigation thresholds.",
+  "test_oe": "Select a sample of month ends; inspect the analysis, evidence of investigation of items above tolerance, and review approval.",
+  "population": "Monthly variance analysis files",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INV-03",
+  "process": "Inventory & Costing",
+  "subprocess": "Physical Count",
+  "risk_id": "R-INV-03",
+  "risk": "Recorded inventory quantities do not reflect quantities on hand, misstating inventory and cost of sales.",
+  "rating": "High",
+  "control_objective": "Ensure recorded inventory quantities are validated by physical count.",
+  "control": "A cycle count programme covers all stock locations over the year, with high-value items counted more frequently. Counts are performed by personnel independent of custody, and results are reconciled to system quantities.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Inventory Control Manager",
+  "sod": "Counters independent of warehouse custody; count sheets not pre-populated with system quantities.",
+  "test_design": "Inspect the cycle count programme and confirm coverage of all locations and frequency by value band.",
+  "test_oe": "Select a sample of counts; inspect count sheets, reconciliation to system quantities and investigation of differences. Observe a count where possible.",
+  "population": "Cycle count records",
+  "sample": "25 counts",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INV-04",
+  "process": "Inventory & Costing",
+  "subprocess": "Physical Count",
+  "risk_id": "R-INV-04",
+  "risk": "Count differences are adjusted into the ledger without investigation or authorisation, concealing loss or theft.",
+  "rating": "High",
+  "control_objective": "Ensure inventory adjustments arising from counts are investigated and authorised.",
+  "control": "Count differences above threshold are investigated and documented. All inventory adjustments require approval by the Operations Director, and adjustments above a higher threshold require Financial Controller approval.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Event Driven",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Operations Director",
+  "sod": "Warehouse personnel cannot approve adjustments to inventory they hold custody of.",
+  "test_design": "Reconcile adjustment approval thresholds to the delegation of authority.",
+  "test_oe": "Select a sample of inventory adjustments; inspect investigation documentation and approval at the appropriate level.",
+  "population": "Inventory adjustment log",
+  "sample": "25 adjustments",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INV-05",
+  "process": "Inventory & Costing",
+  "subprocess": "Valuation",
+  "risk_id": "R-INV-05",
+  "risk": "Slow-moving, obsolete or damaged inventory is not provided against, overstating inventory.",
+  "rating": "High",
+  "control_objective": "Ensure the inventory provision reflects slow-moving and obsolete stock.",
+  "control": "The Cost Accountant prepares the excess and obsolete provision quarterly using the approved ageing and usage-based matrix, supplemented by specific assessment from Operations. The Financial Controller reviews and approves the provision.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Operations input is documented but does not override the policy matrix without approval.",
+  "test_design": "Inspect the provisioning policy, ageing bands and provision percentages.",
+  "test_oe": "For each quarter, re-perform the calculation and inspect support for specific provisions and for any deviation from the matrix.",
+  "population": "Quarterly E&O provision calculations",
+  "sample": "All quarters in period",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INV-06",
+  "process": "Inventory & Costing",
+  "subprocess": "Valuation",
+  "risk_id": "R-INV-06",
+  "risk": "Inventory is carried above net realisable value, overstating assets.",
+  "rating": "Medium",
+  "control_objective": "Ensure inventory is stated at the lower of cost and net realisable value.",
+  "control": "At each period end the Cost Accountant compares carrying cost to expected selling price less costs to sell for significant inventory categories, and records a write-down where required. The Financial Controller reviews the assessment.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer and reviewer are different individuals.",
+  "test_design": "Inspect the NRV assessment methodology and the basis for expected selling prices.",
+  "test_oe": "For a sample of categories, re-perform the NRV comparison and inspect evidence of review.",
+  "population": "NRV assessment workpapers",
+  "sample": "All quarters in period",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INV-07",
+  "process": "Inventory & Costing",
+  "subprocess": "Cutoff",
+  "risk_id": "R-INV-07",
+  "risk": "Inventory movements around period end are recorded in the wrong period, misstating inventory and cost of sales.",
+  "rating": "High",
+  "control_objective": "Ensure inventory receipts, despatches and transfers are recorded in the correct period.",
+  "control": "At each period end the Inventory Control Manager reviews goods received and despatched in the days either side of the cutoff date against supporting documentation to confirm recording in the correct period, including goods in transit.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "CO, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Inventory Control Manager",
+  "sod": "Reviewer independent of warehouse recording.",
+  "test_design": "Inspect the cutoff review procedure and the number of days either side reviewed.",
+  "test_oe": "Select a sample of period ends; inspect the cutoff testing performed and any corrections made.",
+  "population": "Period-end cutoff workpapers",
+  "sample": "3 to 5 period ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INV-08",
+  "process": "Inventory & Costing",
+  "subprocess": "Period End",
+  "risk_id": "R-INV-08",
+  "risk": "The inventory subledger does not agree to the general ledger, indicating unrecorded movements or valuation errors.",
+  "rating": "High",
+  "control_objective": "Ensure the inventory subledger reconciles to the general ledger each period.",
+  "control": "The Cost Accountant reconciles the inventory subledger to the general ledger monthly, explains and clears reconciling items, and the Financial Controller reviews and approves the reconciliation.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer independent of reviewer.",
+  "test_design": "Inspect the reconciliation template and the threshold for investigating items.",
+  "test_oe": "Select a sample of monthly reconciliations; verify accuracy and evidence of timely review.",
+  "population": "Monthly inventory reconciliations",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "INV-09",
+  "process": "Inventory & Costing",
+  "subprocess": "Third Party Stock",
+  "risk_id": "R-INV-09",
+  "risk": "Inventory held by or for third parties is omitted or double counted, misstating inventory and rights to it.",
+  "rating": "Medium",
+  "control_objective": "Ensure consignment and third-party held inventory is accounted for correctly.",
+  "control": "The Inventory Control Manager maintains a register of inventory held at third-party locations and inventory held on consignment for others, agreed quarterly to third-party statements or confirmations.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "E/O, C, R&O",
+  "coso": "Control Activities",
+  "key_control": "No",
+  "fraud": "No",
+  "owner": "Inventory Control Manager",
+  "sod": "Register maintained independently of the warehouse holding the stock.",
+  "test_design": "Inspect the register and the confirmation process with third parties.",
+  "test_oe": "For each quarter, inspect the agreement of the register to third-party confirmations and resolution of differences.",
+  "population": "Third-party inventory register and confirmations",
+  "sample": "All quarters in period",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "PAY-01",
+  "process": "Payroll",
+  "subprocess": "Employee Master",
+  "risk_id": "R-PAY-01",
+  "risk": "Fictitious employees are added to payroll, or pay rates and bank details are altered without authorisation.",
+  "rating": "High",
+  "control_objective": "Ensure employee master additions and changes are authorised and supported.",
+  "control": "New hires and changes to pay rate or bank details are entered from an approved HR instruction and independently verified against the personnel file before the next payroll run. Changes are evidenced on the payroll change report.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "HR Director",
+  "sod": "Payroll processors cannot amend employee master data; HR cannot process payment runs.",
+  "test_design": "Inspect the starter and change procedure and the interface between HR and payroll systems.",
+  "test_oe": "Select a sample of new hires and pay rate and bank detail changes; inspect the approved instruction and evidence of verification.",
+  "population": "Payroll change report; personnel files",
+  "sample": "25 changes",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "PAY-02",
+  "process": "Payroll",
+  "subprocess": "Employee Master",
+  "risk_id": "R-PAY-02",
+  "risk": "Leavers remain on payroll after termination, resulting in payments to individuals no longer employed.",
+  "rating": "High",
+  "control_objective": "Ensure terminations are processed on payroll promptly and completely.",
+  "control": "HR notifies payroll of all terminations through the workflow. The Payroll Manager reconciles the leaver report to payroll deletions each cycle and investigates any employee paid after their termination date.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Payroll Manager",
+  "sod": "Reviewer independent of employee master maintenance.",
+  "test_design": "Inspect the termination workflow and the leaver reconciliation template.",
+  "test_oe": "Select a sample of payroll cycles; reconcile the HR leaver report to payroll deletions and inspect investigation of any post-termination payments.",
+  "population": "HR leaver reports; payroll registers",
+  "sample": "25 cycles or all if fewer",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "PAY-03",
+  "process": "Payroll",
+  "subprocess": "Time & Attendance",
+  "risk_id": "R-PAY-03",
+  "risk": "Employees are paid for hours not worked, or overtime is claimed without authorisation.",
+  "rating": "Medium",
+  "control_objective": "Ensure hours and overtime are approved before being paid.",
+  "control": "Timesheets and overtime are approved electronically by the employee's line manager before transfer to payroll. Unapproved time is not paid and is reported as an exception.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "A/V, E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Operations Director",
+  "sod": "Employees cannot approve their own time; approver must be the designated line manager.",
+  "test_design": "Inspect the time system configuration confirming approval is required before transfer to payroll.",
+  "test_oe": "Select a sample of pay periods; inspect the approval status of time transferred and the exception report of unapproved time.",
+  "population": "Time and attendance system records",
+  "sample": "25 employee-periods",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "PAY-04",
+  "process": "Payroll",
+  "subprocess": "Payroll Processing",
+  "risk_id": "R-PAY-04",
+  "risk": "Errors or unauthorised amendments in the payroll run result in incorrect payments and misstated payroll expense.",
+  "rating": "High",
+  "control_objective": "Ensure the payroll run is reviewed and authorised before disbursement.",
+  "control": "Before disbursement the Payroll Manager reviews the payroll register against the prior period, investigating variances above threshold and all exception items. The Financial Controller approves the total payroll for release.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, C, E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Financial Controller",
+  "sod": "Preparer of the payroll run does not approve it or release payment.",
+  "test_design": "Inspect the review template, the variance threshold and the approval requirement before release.",
+  "test_oe": "Select a sample of payroll runs; inspect the variance analysis, investigation of exceptions and approval prior to disbursement.",
+  "population": "Monthly payroll registers and review files",
+  "sample": "25 runs or all if fewer",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "PAY-05",
+  "process": "Payroll",
+  "subprocess": "Disbursement",
+  "risk_id": "R-PAY-05",
+  "risk": "The payroll payment file is altered or released without authorisation, enabling diversion of funds.",
+  "rating": "High",
+  "control_objective": "Ensure payroll disbursements are authorised and transmitted intact.",
+  "control": "The payroll payment file is released to the bank under dual authorisation by nominated signatories, with control totals agreed to the approved payroll register before transmission.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Treasury Manager",
+  "sod": "Payroll processors do not hold bank release entitlements.",
+  "test_design": "Inspect the bank mandate and the dual authorisation configuration for payroll files.",
+  "test_oe": "Select a sample of payroll disbursements; inspect agreement of control totals to the approved register and evidence of dual authorisation.",
+  "population": "Payroll payment files and bank authorisations",
+  "sample": "25 disbursements",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "PAY-06",
+  "process": "Payroll",
+  "subprocess": "Off-Cycle Payments",
+  "risk_id": "R-PAY-06",
+  "risk": "Manual or off-cycle payments are made outside the normal controls, concealing unauthorised payments.",
+  "rating": "Medium",
+  "control_objective": "Ensure off-cycle and manual payroll payments are justified and approved.",
+  "control": "All off-cycle payments require documented justification and approval by the HR Director and Financial Controller before processing, and are reported in the monthly payroll review.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Event Driven",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Financial Controller",
+  "sod": "Requestor cannot approve; two approvers required.",
+  "test_design": "Inspect the off-cycle payment procedure and approval requirements.",
+  "test_oe": "Inspect the full population of off-cycle payments for the period for justification and dual approval.",
+  "population": "Off-cycle payment log",
+  "sample": "Full population",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "PAY-07",
+  "process": "Payroll",
+  "subprocess": "Statutory",
+  "risk_id": "R-PAY-07",
+  "risk": "Statutory deductions are calculated incorrectly or remitted late, resulting in liabilities, interest and penalties.",
+  "rating": "Medium",
+  "control_objective": "Ensure statutory deductions are accurate and remitted by the due date.",
+  "control": "The Payroll Manager reconciles statutory deductions per the payroll register to amounts remitted each period and confirms remittance by the statutory deadline. Differences are investigated and cleared.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Payroll Manager",
+  "sod": "Preparer of the remittance is not the sole reviewer of the reconciliation.",
+  "test_design": "Inspect the reconciliation template and the calendar of statutory deadlines.",
+  "test_oe": "Select a sample of periods; re-perform the reconciliation and inspect evidence of timely remittance.",
+  "population": "Statutory remittance reconciliations",
+  "sample": "3 to 5 periods",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "PAY-08",
+  "process": "Payroll",
+  "subprocess": "Incentives",
+  "risk_id": "R-PAY-08",
+  "risk": "Bonus and incentive payments are calculated incorrectly or paid without authorisation, misstating payroll expense.",
+  "rating": "Medium",
+  "control_objective": "Ensure incentive payments are calculated in accordance with approved schemes and authorised.",
+  "control": "Incentive calculations are prepared from the approved scheme rules and achieved performance data, independently reviewed for accuracy, and approved by the HR Director. Executive incentives are approved by the Remuneration Committee.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "A/V, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "HR Director",
+  "sod": "Recipients do not calculate or approve their own incentive; executive awards escalate to the committee.",
+  "test_design": "Inspect the scheme rules and the approval matrix, including the escalation for executive awards.",
+  "test_oe": "Re-perform a sample of incentive calculations against scheme rules and performance data; inspect approval at the required level.",
+  "population": "Incentive calculation files",
+  "sample": "25 calculations",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "PAY-09",
+  "process": "Payroll",
+  "subprocess": "Period End",
+  "risk_id": "R-PAY-09",
+  "risk": "Payroll costs and related liabilities are not completely recorded in the general ledger.",
+  "rating": "High",
+  "control_objective": "Ensure payroll postings reconcile to the general ledger each period.",
+  "control": "The Financial Accountant reconciles the payroll register to payroll expense and liability accounts in the general ledger monthly. Reconciling items are explained and cleared, and the Financial Controller reviews the reconciliation.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer independent of reviewer and of payroll processing.",
+  "test_design": "Inspect the reconciliation template and the accounts covered.",
+  "test_oe": "Select a sample of monthly reconciliations; verify accuracy and evidence of review.",
+  "population": "Monthly payroll reconciliations",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "PAY-10",
+  "process": "Payroll",
+  "subprocess": "Access & SoD",
+  "risk_id": "R-PAY-10",
+  "risk": "A single individual can add an employee, process the payroll and release the payment, enabling payments to fictitious employees.",
+  "rating": "High",
+  "control_objective": "Ensure incompatible payroll duties are segregated.",
+  "control": "System access is configured so that no individual holds employee master maintenance, payroll processing and payment release entitlements. Conflicts are blocked at role assignment and reviewed periodically.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "IT Security / HR Systems Administrator",
+  "sod": "This control is the segregation mechanism; exceptions require documented mitigating controls.",
+  "test_design": "Inspect the access ruleset and confirm the conflict set is defined and blocking.",
+  "test_oe": "Inspect the role conflict report for the period and evaluate any exceptions and mitigating controls.",
+  "population": "Payroll and HR system access reports",
+  "sample": "Full population plus all exceptions",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FA-01",
+  "process": "Fixed Assets",
+  "subprocess": "Capital Expenditure",
+  "risk_id": "R-FA-01",
+  "risk": "Capital expenditure is incurred without authorisation, resulting in unapproved commitments and asset additions.",
+  "rating": "Medium",
+  "control_objective": "Ensure capital expenditure is authorised in line with the delegation of authority.",
+  "control": "Capital expenditure requests are supported by a business case and approved per the capital authority matrix, with amounts above threshold requiring Board approval, before commitment is made.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Event Driven",
+  "assertions": "E/O, R&O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Financial Officer",
+  "sod": "Requestor cannot approve; Board approval required above threshold.",
+  "test_design": "Reconcile the capital authority matrix to the delegation of authority and to Board minutes.",
+  "test_oe": "Select a sample of capital projects; inspect the business case and approval at the required level prior to commitment.",
+  "population": "Capital expenditure request files",
+  "sample": "25 projects",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FA-02",
+  "process": "Fixed Assets",
+  "subprocess": "Capitalisation",
+  "risk_id": "R-FA-02",
+  "risk": "Costs are capitalised that should be expensed, or vice versa, misstating assets and results.",
+  "rating": "High",
+  "control_objective": "Ensure costs are capitalised only where they meet the capitalisation policy.",
+  "control": "The Fixed Asset Accountant assesses each addition against the capitalisation policy, including the capitalisation threshold and the treatment of directly attributable costs. The Financial Controller reviews additions above threshold.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer and reviewer are different individuals.",
+  "test_design": "Inspect the capitalisation policy and the review threshold.",
+  "test_oe": "Select a sample of additions; inspect the assessment against policy and evidence of review where above threshold.",
+  "population": "Fixed asset addition files",
+  "sample": "25 additions",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FA-03",
+  "process": "Fixed Assets",
+  "subprocess": "Disposals",
+  "risk_id": "R-FA-03",
+  "risk": "Asset disposals are not recorded, or proceeds are misappropriated, overstating assets and understating gains.",
+  "rating": "Medium",
+  "control_objective": "Ensure disposals are authorised, recorded and proceeds accounted for.",
+  "control": "Disposals require approval per the delegation of authority. The Fixed Asset Accountant removes the asset and accumulated depreciation on disposal and agrees proceeds to the bank. Disposals are reported monthly.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Event Driven",
+  "assertions": "E/O, A/V, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Financial Controller",
+  "sod": "Custodian of the asset cannot approve its disposal or receive the proceeds.",
+  "test_design": "Inspect the disposal procedure and approval thresholds.",
+  "test_oe": "Select a sample of disposals; inspect approval, removal from the register, and agreement of proceeds to bank.",
+  "population": "Disposal register; bank statements",
+  "sample": "25 disposals",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FA-04",
+  "process": "Fixed Assets",
+  "subprocess": "Depreciation",
+  "risk_id": "R-FA-04",
+  "risk": "Depreciation is calculated incorrectly or on inappropriate lives, misstating carrying value and expense.",
+  "rating": "Medium",
+  "control_objective": "Ensure depreciation is calculated in accordance with policy and reviewed for reasonableness.",
+  "control": "Depreciation is calculated automatically by the fixed asset system from the asset class, life and in-service date. The Fixed Asset Accountant reviews the monthly depreciation charge for reasonableness against expectation and investigates variances.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Fixed Asset Accountant",
+  "sod": "Asset class and life defaults cannot be amended by the preparer without approval.",
+  "test_design": "Inspect the depreciation configuration by asset class and the review template.",
+  "test_oe": "Re-perform depreciation for a sample of assets; inspect the monthly reasonableness review and investigation of variances.",
+  "population": "Fixed asset register; depreciation reports",
+  "sample": "25 assets and 3 to 5 months",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FA-05",
+  "process": "Fixed Assets",
+  "subprocess": "Useful Lives",
+  "risk_id": "R-FA-05",
+  "risk": "Useful lives and residual values are not reassessed, so carrying values do not reflect the pattern of consumption.",
+  "rating": "Low",
+  "control_objective": "Ensure useful lives and residual values are reviewed at least annually.",
+  "control": "The Fixed Asset Accountant reviews useful lives and residual values annually against usage and asset condition, and the Financial Controller approves any changes and their prospective application.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "No",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer and approver are different individuals.",
+  "test_design": "Inspect the review procedure and the basis for assessing lives.",
+  "test_oe": "Inspect the annual review performed in the period, changes made and evidence of approval.",
+  "population": "Annual useful life review file",
+  "sample": "Annual review",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FA-06",
+  "process": "Fixed Assets",
+  "subprocess": "Existence",
+  "risk_id": "R-FA-06",
+  "risk": "Assets recorded in the register no longer exist or are not in use, overstating assets.",
+  "rating": "Medium",
+  "control_objective": "Ensure recorded assets are validated by physical verification.",
+  "control": "A rolling programme of physical verification covers all asset locations over a defined cycle. Results are reconciled to the fixed asset register and differences are investigated and adjusted with approval.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Fixed Asset Accountant",
+  "sod": "Verifier independent of the custodian of the assets.",
+  "test_design": "Inspect the verification programme and its coverage cycle.",
+  "test_oe": "Inspect verification records for the period, reconciliation to the register, and approval of adjustments.",
+  "population": "Physical verification records",
+  "sample": "All verifications in period",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FA-07",
+  "process": "Fixed Assets",
+  "subprocess": "Construction in Progress",
+  "risk_id": "R-FA-07",
+  "risk": "Assets remain in construction in progress after being brought into use, deferring depreciation and overstating results.",
+  "rating": "Medium",
+  "control_objective": "Ensure assets are transferred from CIP to in-service on commissioning.",
+  "control": "The Fixed Asset Accountant reviews the CIP balance monthly, agrees each project to its status with the project manager, and transfers commissioned assets into service in the month they become available for use.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, CO",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Fixed Asset Accountant",
+  "sod": "Project status confirmed by project management, not by the accountant alone.",
+  "test_design": "Inspect the CIP review procedure and the criteria for available for use.",
+  "test_oe": "Select a sample of month ends; inspect the CIP review, project status confirmations and timeliness of transfers.",
+  "population": "Monthly CIP reviews",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FA-08",
+  "process": "Fixed Assets",
+  "subprocess": "Impairment",
+  "risk_id": "R-FA-08",
+  "risk": "Impaired assets are not written down, overstating carrying value.",
+  "rating": "Medium",
+  "control_objective": "Ensure indicators of impairment are identified and assessed.",
+  "control": "At each reporting date the Financial Controller reviews for indicators of impairment across cash generating units, and where indicators exist a recoverable amount assessment is prepared and reviewed by the CFO.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Financial Officer",
+  "sod": "Preparer of the assessment is not the approver.",
+  "test_design": "Inspect the impairment review procedure and the indicator checklist.",
+  "test_oe": "Inspect the impairment reviews performed in the period, any recoverable amount calculations, and evidence of approval.",
+  "population": "Impairment assessment files",
+  "sample": "All assessments in period",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FA-09",
+  "process": "Fixed Assets",
+  "subprocess": "Period End",
+  "risk_id": "R-FA-09",
+  "risk": "The fixed asset register does not agree to the general ledger, indicating unrecorded additions, disposals or depreciation.",
+  "rating": "High",
+  "control_objective": "Ensure the fixed asset register reconciles to the general ledger each period.",
+  "control": "The Fixed Asset Accountant reconciles the register to the general ledger monthly for cost, accumulated depreciation and net book value. Reconciling items are cleared and the Financial Controller reviews the reconciliation.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer independent of reviewer.",
+  "test_design": "Inspect the reconciliation template and the balances covered.",
+  "test_oe": "Select a sample of monthly reconciliations; verify accuracy and evidence of review.",
+  "population": "Monthly fixed asset reconciliations",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TRE-01",
+  "process": "Treasury",
+  "subprocess": "Bank Administration",
+  "risk_id": "R-TRE-01",
+  "risk": "Bank accounts are opened or closed, or signatories changed, without authorisation, enabling unauthorised movement of funds.",
+  "rating": "High",
+  "control_objective": "Ensure bank account and mandate changes are authorised at the required level.",
+  "control": "Opening and closing of bank accounts and all changes to bank mandates and signatories require approval by the CFO and, where required by the delegation of authority, by the Board. Changes are confirmed directly with the bank.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Event Driven",
+  "assertions": "E/O, R&O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Chief Financial Officer",
+  "sod": "Requestor cannot approve; confirmation obtained independently from the bank.",
+  "test_design": "Inspect the treasury policy and reconcile mandate authority to the delegation of authority and Board minutes.",
+  "test_oe": "Inspect the full population of account and mandate changes in the period for approval and bank confirmation.",
+  "population": "Bank mandate files; bank confirmations",
+  "sample": "Full population",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TRE-02",
+  "process": "Treasury",
+  "subprocess": "Bank Reconciliation",
+  "risk_id": "R-TRE-02",
+  "risk": "Differences between bank records and the ledger are not identified, concealing unrecorded or fraudulent transactions.",
+  "rating": "High",
+  "control_objective": "Ensure all bank accounts are reconciled and differences resolved promptly.",
+  "control": "All bank accounts are reconciled monthly by the Treasury Accountant to the bank statement. Reconciling items are aged, explained and cleared, and items above threshold or over 30 days are escalated. The Financial Controller reviews and approves each reconciliation.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O, C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Financial Controller",
+  "sod": "Preparer of the reconciliation does not process payments or have bank release entitlement.",
+  "test_design": "Inspect the reconciliation template, ageing thresholds and escalation criteria.",
+  "test_oe": "Select a sample of account-months; verify mathematical accuracy, agreement to bank statements obtained independently, ageing and clearance of items, and timely review.",
+  "population": "Monthly bank reconciliations; bank statements",
+  "sample": "25 account-months",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TRE-03",
+  "process": "Treasury",
+  "subprocess": "Cash Management",
+  "risk_id": "R-TRE-03",
+  "risk": "Liquidity is misjudged, resulting in an inability to meet obligations or in unnecessary borrowing cost.",
+  "rating": "Low",
+  "control_objective": "Ensure cash forecasts are prepared and reviewed to support liquidity management.",
+  "control": "The Treasury Manager prepares a rolling cash forecast weekly, compares actual to forecast, and reports variances and liquidity headroom to the CFO monthly.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Weekly",
+  "assertions": "P&D",
+  "coso": "Monitoring Activities",
+  "key_control": "No",
+  "fraud": "No",
+  "owner": "Treasury Manager",
+  "sod": "Forecast reviewed by CFO independent of preparation.",
+  "test_design": "Inspect the forecasting methodology and the reporting cycle.",
+  "test_oe": "Select a sample of forecasts; inspect the actual to forecast comparison and evidence of CFO review.",
+  "population": "Weekly cash forecasts",
+  "sample": "25 weeks",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TRE-04",
+  "process": "Treasury",
+  "subprocess": "Borrowings",
+  "risk_id": "R-TRE-04",
+  "risk": "Borrowings are entered into without authorisation, or are recorded incorrectly, misstating liabilities and finance cost.",
+  "rating": "High",
+  "control_objective": "Ensure borrowings are authorised and accurately recorded.",
+  "control": "New borrowing facilities and drawdowns require approval per the delegation of authority, with facilities above threshold approved by the Board. The Treasury Accountant records the instrument and agrees terms, interest and repayment schedules to the executed agreement.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Event Driven",
+  "assertions": "E/O, A/V, C, R&O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Financial Officer",
+  "sod": "Dealer does not record or settle the transaction.",
+  "test_design": "Reconcile borrowing approval thresholds to the delegation of authority and Board minutes.",
+  "test_oe": "Inspect the full population of new facilities and drawdowns for approval; agree recorded terms to executed agreements.",
+  "population": "Loan agreements; Board minutes",
+  "sample": "Full population",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TRE-05",
+  "process": "Treasury",
+  "subprocess": "Covenants",
+  "risk_id": "R-TRE-05",
+  "risk": "Breach of a debt covenant is not identified, resulting in misclassification of debt and potential acceleration.",
+  "rating": "High",
+  "control_objective": "Ensure compliance with debt covenants is monitored and reported.",
+  "control": "The Treasury Manager calculates covenant compliance each reporting period from the approved definitions and reports the position to the CFO and Audit Committee. Forecast headroom is assessed for the next twelve months.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "P&D, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Financial Officer",
+  "sod": "Calculation independently reviewed before reporting.",
+  "test_design": "Inspect the covenant definitions per the agreements and the calculation methodology.",
+  "test_oe": "For each period, re-perform the covenant calculations and inspect reporting to the CFO and Audit Committee.",
+  "population": "Covenant compliance certificates and calculations",
+  "sample": "All periods",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TRE-06",
+  "process": "Treasury",
+  "subprocess": "Foreign Exchange",
+  "risk_id": "R-TRE-06",
+  "risk": "Foreign exchange exposures are unidentified or unhedged, or derivatives are transacted without authorisation.",
+  "rating": "Medium",
+  "control_objective": "Ensure FX exposures are identified and hedging is transacted within approved mandates.",
+  "control": "The Treasury Manager identifies FX exposures monthly from forecast and balance sheet positions, and transacts hedges only within the limits and instrument types permitted by the Board-approved treasury policy. All deals are confirmed independently.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Treasury Manager",
+  "sod": "Dealing, confirmation and settlement performed by different individuals.",
+  "test_design": "Inspect the treasury policy limits and permitted instruments.",
+  "test_oe": "Select a sample of deals; inspect that terms fall within policy limits and that independent confirmation was obtained.",
+  "population": "Deal tickets; broker confirmations",
+  "sample": "25 deals",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TRE-07",
+  "process": "Treasury",
+  "subprocess": "Derivatives",
+  "risk_id": "R-TRE-07",
+  "risk": "Derivatives are misvalued or hedge accounting is applied without qualifying documentation, misstating results and equity.",
+  "rating": "Medium",
+  "control_objective": "Ensure derivatives are valued correctly and hedge accounting is properly documented.",
+  "control": "Derivative valuations are obtained from the counterparty and independently corroborated. Hedge designation documentation and effectiveness testing are prepared at inception and each reporting date and reviewed by the Financial Controller.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "A/V, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Valuation corroborated independently of the counterparty relationship manager.",
+  "test_design": "Inspect the hedge documentation template and the effectiveness testing methodology.",
+  "test_oe": "For a sample of hedges, inspect designation documentation, effectiveness testing and corroboration of valuation.",
+  "population": "Hedge documentation; valuation support",
+  "sample": "All hedges in period",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TRE-08",
+  "process": "Treasury",
+  "subprocess": "Intercompany",
+  "risk_id": "R-TRE-08",
+  "risk": "Intercompany funding is advanced without authorisation or is not recorded consistently by both parties.",
+  "rating": "Medium",
+  "control_objective": "Ensure intercompany funding is authorised and agreed between entities.",
+  "control": "Intercompany loans and funding require approval per the delegation of authority and are documented in an agreement. Balances are agreed between entities monthly and differences investigated.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O, C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Group Financial Controller",
+  "sod": "Both entities confirm the balance independently.",
+  "test_design": "Inspect the intercompany policy and the balance agreement process.",
+  "test_oe": "Select a sample of periods; inspect approval of new funding and evidence of balance agreement between entities.",
+  "population": "Intercompany agreements and confirmations",
+  "sample": "3 to 5 periods",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TRE-09",
+  "process": "Treasury",
+  "subprocess": "Access & SoD",
+  "risk_id": "R-TRE-09",
+  "risk": "A single individual can transact, confirm and settle a treasury deal, enabling unauthorised or concealed transactions.",
+  "rating": "High",
+  "control_objective": "Ensure front, middle and back office treasury duties are segregated.",
+  "control": "Treasury system and banking entitlements are configured so that dealing, confirmation and settlement are performed by different individuals. Access is reviewed quarterly by the CFO.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Chief Financial Officer",
+  "sod": "This control is the segregation mechanism; exceptions require documented mitigating controls.",
+  "test_design": "Inspect entitlement configuration across dealing, confirmation and settlement functions.",
+  "test_oe": "Inspect the quarterly access review and any conflicts identified, together with mitigating controls.",
+  "population": "Treasury system access reports",
+  "sample": "All quarterly reviews",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TAX-01",
+  "process": "Tax",
+  "subprocess": "Current Tax",
+  "risk_id": "R-TAX-01",
+  "risk": "The current tax provision is calculated incorrectly, misstating the tax charge and liability.",
+  "rating": "High",
+  "control_objective": "Ensure the current tax provision is accurate and supportable.",
+  "control": "The Tax Manager prepares the current tax computation from the statutory accounts, reconciling book to taxable profit and supporting each adjustment. The CFO reviews and approves the provision, with external adviser input on significant judgements.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "A/V, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Financial Officer",
+  "sod": "Preparer and approver are different; external adviser review for significant judgements.",
+  "test_design": "Inspect the tax computation methodology and the review and approval requirements.",
+  "test_oe": "For each period, re-perform the book to tax reconciliation for significant adjustments and inspect evidence of review and approval.",
+  "population": "Tax computation workpapers",
+  "sample": "All periods in year",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TAX-02",
+  "process": "Tax",
+  "subprocess": "Deferred Tax",
+  "risk_id": "R-TAX-02",
+  "risk": "Deferred tax balances are incomplete or measured at incorrect rates, misstating assets, liabilities and the tax charge.",
+  "rating": "High",
+  "control_objective": "Ensure deferred tax is complete and measured at the enacted rate.",
+  "control": "The Tax Manager prepares the deferred tax calculation from a full listing of temporary differences, applying enacted or substantively enacted rates, and assesses recoverability of deferred tax assets against forecast taxable profits. The CFO reviews and approves.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "A/V, C, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Financial Officer",
+  "sod": "Recoverability assessment supported by approved forecasts, not prepared in isolation by tax.",
+  "test_design": "Inspect the deferred tax methodology, the temporary difference listing and the recoverability criteria.",
+  "test_oe": "Re-perform the calculation for significant temporary differences; inspect rate support and the recoverability assessment and its approval.",
+  "population": "Deferred tax workpapers; approved forecasts",
+  "sample": "Annual calculation",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TAX-03",
+  "process": "Tax",
+  "subprocess": "Uncertain Positions",
+  "risk_id": "R-TAX-03",
+  "risk": "Uncertain tax positions are not identified or provided for, understating liabilities.",
+  "rating": "Medium",
+  "control_objective": "Ensure uncertain tax positions are identified, measured and disclosed.",
+  "control": "The Tax Manager maintains a register of uncertain tax positions, assessing each for probability and measurement at each reporting date with external adviser input. The CFO and Audit Committee review the register annually.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "A/V, C, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Financial Officer",
+  "sod": "External adviser input obtained independently of the preparer's conclusion.",
+  "test_design": "Inspect the register and the assessment methodology.",
+  "test_oe": "Inspect the register and supporting assessments; agree significant positions to adviser correspondence and to Audit Committee reporting.",
+  "population": "Uncertain tax position register",
+  "sample": "Full register",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TAX-04",
+  "process": "Tax",
+  "subprocess": "Indirect Tax",
+  "risk_id": "R-TAX-04",
+  "risk": "Indirect tax returns are inaccurate or filed late, resulting in assessments, interest and penalties.",
+  "rating": "Medium",
+  "control_objective": "Ensure indirect tax returns are accurate and filed by the due date.",
+  "control": "Indirect tax returns are prepared from system reports, reconciled to the general ledger and to revenue and purchase records, independently reviewed by the Tax Manager, and filed by the statutory deadline.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Tax Manager",
+  "sod": "Preparer and reviewer are different individuals.",
+  "test_design": "Inspect the return preparation procedure, the reconciliation template and the filing calendar.",
+  "test_oe": "Select a sample of returns; re-perform the reconciliation to the ledger and inspect evidence of review and timely filing.",
+  "population": "Indirect tax returns and reconciliations",
+  "sample": "25 returns or all if fewer",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TAX-05",
+  "process": "Tax",
+  "subprocess": "Transfer Pricing",
+  "risk_id": "R-TAX-05",
+  "risk": "Intercompany transactions are not priced at arm's length or are not documented, creating exposure to adjustment and penalties.",
+  "rating": "Medium",
+  "control_objective": "Ensure intercompany pricing follows the transfer pricing policy and is documented.",
+  "control": "Intercompany transactions are priced in accordance with the Board-approved transfer pricing policy. Local file and master file documentation is prepared or refreshed annually with external adviser support and reviewed by the CFO.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "A/V, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Financial Officer",
+  "sod": "Pricing set by policy, not negotiated between the transacting entities.",
+  "test_design": "Inspect the transfer pricing policy and the documentation refresh cycle.",
+  "test_oe": "Inspect the documentation prepared in the period and evidence of CFO review; agree a sample of intercompany charges to the policy.",
+  "population": "Transfer pricing documentation",
+  "sample": "Annual documentation",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TAX-06",
+  "process": "Tax",
+  "subprocess": "Compliance",
+  "risk_id": "R-TAX-06",
+  "risk": "Tax payments and filings are missed or made late, resulting in interest and penalties.",
+  "rating": "Medium",
+  "control_objective": "Ensure all tax filings and payments are made by their due dates.",
+  "control": "The Tax Manager maintains a compliance calendar of all filing and payment obligations by jurisdiction, monitors completion, and reports status to the CFO monthly. Missed or at-risk deadlines are escalated.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "C, P&D",
+  "coso": "Monitoring Activities",
+  "key_control": "No",
+  "fraud": "No",
+  "owner": "Tax Manager",
+  "sod": "Status independently reported to the CFO rather than self-certified without review.",
+  "test_design": "Inspect the compliance calendar for completeness of obligations by jurisdiction.",
+  "test_oe": "Select a sample of months; inspect the status report and evidence of escalation of at-risk items.",
+  "population": "Tax compliance calendar and status reports",
+  "sample": "3 to 5 months",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TAX-07",
+  "process": "Tax",
+  "subprocess": "Period End",
+  "risk_id": "R-TAX-07",
+  "risk": "Tax accounts in the general ledger are not reconciled, so misstatements in tax balances go undetected.",
+  "rating": "Medium",
+  "control_objective": "Ensure tax balances reconcile to supporting computations and filings.",
+  "control": "The Tax Manager reconciles all tax accounts in the general ledger to computations, returns and payments quarterly. Reconciling items are explained and cleared and the reconciliation is reviewed by the Financial Controller.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Quarterly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer independent of reviewer.",
+  "test_design": "Inspect the reconciliation template and the accounts covered.",
+  "test_oe": "Select a sample of quarters; verify accuracy of the reconciliation and evidence of review.",
+  "population": "Quarterly tax account reconciliations",
+  "sample": "All quarters in period",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FCR-01",
+  "process": "Financial Close & Reporting",
+  "subprocess": "Close Process",
+  "risk_id": "R-FCR-01",
+  "risk": "The close is not completed on a controlled basis, so errors are not identified before reporting.",
+  "rating": "Medium",
+  "control_objective": "Ensure the close is executed completely and on schedule.",
+  "control": "A close calendar and checklist assigns each task, owner and due date. The Financial Controller monitors completion daily through the close and confirms all tasks are complete and signed off before results are released.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "C, CO",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Task performer and checklist sign-off reviewer are different individuals.",
+  "test_design": "Inspect the close calendar and checklist for completeness of tasks and assignment of owners.",
+  "test_oe": "Select a sample of month ends; inspect the completed checklist, sign-offs and any tasks completed late.",
+  "population": "Monthly close checklists",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FCR-02",
+  "process": "Financial Close & Reporting",
+  "subprocess": "Journal Entries",
+  "risk_id": "R-FCR-02",
+  "risk": "Unauthorised or unsupported journal entries are posted, misstating the financial statements.",
+  "rating": "High",
+  "control_objective": "Ensure journal entries are supported and independently approved before posting.",
+  "control": "All manual journal entries require supporting documentation and electronic approval by a reviewer other than the preparer before posting. The ERP prevents a preparer from approving their own entry.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Financial Controller",
+  "sod": "Preparer cannot approve own journal; enforced by system configuration.",
+  "test_design": "Inspect the journal workflow configuration confirming preparer and approver must differ.",
+  "test_oe": "Select a sample of manual journals; inspect supporting documentation and approval prior to posting. Test the configuration by attempting self-approval.",
+  "population": "Manual journal entry listing",
+  "sample": "25 journals",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FCR-03",
+  "process": "Financial Close & Reporting",
+  "subprocess": "Journal Entries",
+  "risk_id": "R-FCR-03",
+  "risk": "Journals posted outside normal parameters are used to manipulate reported results, including through management override.",
+  "rating": "High",
+  "control_objective": "Ensure high-risk and non-standard journals are identified and scrutinised.",
+  "control": "The Financial Controller reviews a monthly report of high-risk journals, including those posted after the close cutoff, to seldom-used accounts, in round amounts, by unusual users, or above threshold, and documents investigation of each.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Financial Controller",
+  "sod": "Reviewer independent of journal preparation; the CFO's own journals are reviewed by the Audit Committee chair.",
+  "test_design": "Inspect the criteria defining high-risk journals and confirm the report captures each criterion.",
+  "test_oe": "Select a sample of month ends; inspect the report, the investigation documented, and conclusions reached.",
+  "population": "Monthly high-risk journal reports",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FCR-04",
+  "process": "Financial Close & Reporting",
+  "subprocess": "Account Reconciliation",
+  "risk_id": "R-FCR-04",
+  "risk": "Balance sheet accounts are not reconciled, so errors and unsupported balances persist undetected.",
+  "rating": "High",
+  "control_objective": "Ensure all balance sheet accounts are reconciled and reviewed each period.",
+  "control": "All balance sheet accounts are reconciled monthly to supporting documentation. Reconciliations are reviewed and approved by a reviewer independent of the preparer, with review depth based on account risk rating.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O, C, A/V, R&O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Preparer and reviewer are different; the reviewer does not post to the accounts reconciled.",
+  "test_design": "Inspect the reconciliation policy, the account risk rating and the review requirements by rating.",
+  "test_oe": "Select a sample of account-months across risk ratings; verify support, accuracy and evidence of timely review.",
+  "population": "Monthly account reconciliations",
+  "sample": "25 account-months",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FCR-05",
+  "process": "Financial Close & Reporting",
+  "subprocess": "Account Reconciliation",
+  "risk_id": "R-FCR-05",
+  "risk": "Reconciling items are carried forward indefinitely, masking errors or unrecorded transactions.",
+  "rating": "Medium",
+  "control_objective": "Ensure reconciling items are aged, investigated and cleared.",
+  "control": "Reconciling items are aged on each reconciliation. Items above threshold or older than 60 days are escalated to the Financial Controller with a clearance plan, and progress is monitored monthly.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Escalation independent of the preparer of the reconciliation.",
+  "test_design": "Inspect the ageing thresholds and escalation criteria.",
+  "test_oe": "Select a sample of reconciliations with aged items; inspect escalation, clearance plans and progress.",
+  "population": "Monthly reconciliation ageing reports",
+  "sample": "25 reconciliations",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FCR-06",
+  "process": "Financial Close & Reporting",
+  "subprocess": "Consolidation",
+  "risk_id": "R-FCR-06",
+  "risk": "The consolidation is inaccurate, misstating group results and position.",
+  "rating": "High",
+  "control_objective": "Ensure the consolidation is complete and accurate.",
+  "control": "The Group Financial Controller reconciles the consolidation output to submitted entity reporting packs, confirms all entities in scope are included, and reviews consolidation journals for support and approval.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Group Financial Controller",
+  "sod": "Consolidation journals prepared and reviewed by different individuals.",
+  "test_design": "Inspect the consolidation process, the entity scope listing and the journal approval requirement.",
+  "test_oe": "Select a sample of periods; agree entity packs to the consolidation, confirm scope completeness, and inspect approval of consolidation journals.",
+  "population": "Consolidation workbooks and entity packs",
+  "sample": "3 to 5 periods",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FCR-07",
+  "process": "Financial Close & Reporting",
+  "subprocess": "Intercompany",
+  "risk_id": "R-FCR-07",
+  "risk": "Intercompany balances and transactions do not eliminate, misstating group results.",
+  "rating": "Medium",
+  "control_objective": "Ensure intercompany balances are matched and eliminated in full.",
+  "control": "Intercompany balances and transactions are matched between entities each period. Unmatched differences above threshold are investigated and resolved before consolidation, and residual differences are approved by the Group Financial Controller.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Group Financial Controller",
+  "sod": "Both entities confirm; neither resolves a difference unilaterally.",
+  "test_design": "Inspect the matching process and the tolerance for residual differences.",
+  "test_oe": "Select a sample of periods; inspect the matching report, investigation of differences and approval of residuals.",
+  "population": "Intercompany matching reports",
+  "sample": "3 to 5 periods",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FCR-08",
+  "process": "Financial Close & Reporting",
+  "subprocess": "Translation",
+  "risk_id": "R-FCR-08",
+  "risk": "Foreign currency translation is applied at incorrect rates or to incorrect balances, misstating results and reserves.",
+  "rating": "Medium",
+  "control_objective": "Ensure foreign currency translation uses approved rates and correct methodology.",
+  "control": "Exchange rates are loaded from an approved independent source and locked for the period. The Group Financial Controller reviews the translation, confirming closing rates for balance sheet items and average rates for income statement items, and agrees the translation reserve movement.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Group Financial Controller",
+  "sod": "Rate loading and review performed by different individuals.",
+  "test_design": "Inspect the rate source, the loading process and the translation methodology configuration.",
+  "test_oe": "Select a sample of periods; agree rates to the independent source and re-perform the translation reserve movement.",
+  "population": "Rate tables; translation workpapers",
+  "sample": "3 to 5 periods",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FCR-09",
+  "process": "Financial Close & Reporting",
+  "subprocess": "Estimates",
+  "risk_id": "R-FCR-09",
+  "risk": "Significant accounting estimates are biased or unsupported, misstating the financial statements.",
+  "rating": "High",
+  "control_objective": "Ensure significant estimates are supported, challenged and approved.",
+  "control": "Each significant estimate is documented with its methodology, key assumptions and supporting data. The CFO reviews and challenges the assumptions, and the Audit Committee is informed of significant judgements and changes in assumptions.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "A/V, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Chief Financial Officer",
+  "sod": "Preparer of the estimate is not the approver; Audit Committee provides independent oversight.",
+  "test_design": "Inspect the estimates register and the documentation standard for methodology and assumptions.",
+  "test_oe": "For a sample of estimates, inspect the documentation, evidence of challenge, and reporting to the Audit Committee.",
+  "population": "Estimates register and workpapers",
+  "sample": "All significant estimates",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FCR-10",
+  "process": "Financial Close & Reporting",
+  "subprocess": "Financial Reporting",
+  "risk_id": "R-FCR-10",
+  "risk": "The financial statements contain errors or omit required disclosures.",
+  "rating": "High",
+  "control_objective": "Ensure the financial statements are accurate and complete before issue.",
+  "control": "The financial statements are agreed to the consolidation and supporting schedules, a disclosure checklist against the applicable framework is completed and reviewed, and the CFO and Audit Committee approve the statements before issue.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "P&D, A/V, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Financial Officer",
+  "sod": "Preparer, reviewer and approver are different; Audit Committee approval is independent of management.",
+  "test_design": "Inspect the disclosure checklist and the review and approval requirements.",
+  "test_oe": "Inspect the completed checklist, tie-out of the statements to the consolidation, and evidence of CFO and Audit Committee approval.",
+  "population": "Financial statements; disclosure checklist; minutes",
+  "sample": "Annual and interim reporting",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FCR-11",
+  "process": "Financial Close & Reporting",
+  "subprocess": "Management Review",
+  "risk_id": "R-FCR-11",
+  "risk": "Errors in reported results are not detected because management review is insufficiently precise.",
+  "rating": "High",
+  "control_objective": "Ensure management review of results operates at a level of precision capable of detecting misstatement.",
+  "control": "The CFO reviews results against budget, forecast and prior period at a defined level of disaggregation, investigating variances exceeding defined thresholds and documenting the explanation and corroboration for each.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, C, E/O",
+  "coso": "Monitoring Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Financial Officer",
+  "sod": "Explanations corroborated to underlying data rather than accepted from the preparer.",
+  "test_design": "Inspect the review template, the level of disaggregation and the variance thresholds.",
+  "test_oe": "Select a sample of month ends; inspect the variances investigated, the corroboration obtained and the conclusions documented.",
+  "population": "Monthly management review files",
+  "sample": "3 to 5 month ends",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ITGC-01",
+  "process": "IT General Controls",
+  "subprocess": "Access Provisioning",
+  "risk_id": "R-ITGC-01",
+  "risk": "Users are granted system access beyond what their role requires, enabling unauthorised transactions.",
+  "rating": "High",
+  "control_objective": "Ensure access is granted only on documented authorisation appropriate to the role.",
+  "control": "New user access and changes to entitlements require a request approved by the user's line manager and the application owner before provisioning by IT Security. Access is granted on the basis of predefined roles.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "Indirect (ITGC)",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "IT Security Manager",
+  "sod": "Requestor, approver and provisioner are different individuals.",
+  "test_design": "Inspect the access request workflow and the role definitions.",
+  "test_oe": "Select a sample of access grants and changes; inspect approval by line manager and application owner prior to provisioning.",
+  "population": "Access request tickets; system access logs",
+  "sample": "25 access grants",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ITGC-02",
+  "process": "IT General Controls",
+  "subprocess": "Access Deprovisioning",
+  "risk_id": "R-ITGC-02",
+  "risk": "Access is not revoked on termination or transfer, leaving active credentials for individuals without a business need.",
+  "rating": "High",
+  "control_objective": "Ensure access is revoked promptly on termination or role change.",
+  "control": "HR notifies IT Security of terminations and transfers through an automated feed. Access is disabled within one business day of the termination date, and IT Security reconciles the HR leaver report to disabled accounts monthly.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "Indirect (ITGC)",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "IT Security Manager",
+  "sod": "Reconciliation performed by someone other than the individual disabling accounts.",
+  "test_design": "Inspect the HR to IT notification feed and the monthly reconciliation template.",
+  "test_oe": "Select a sample of leavers; inspect the date access was disabled against the termination date. Inspect monthly reconciliations for exceptions.",
+  "population": "HR leaver reports; account status reports",
+  "sample": "25 leavers",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ITGC-03",
+  "process": "IT General Controls",
+  "subprocess": "Privileged Access",
+  "risk_id": "R-ITGC-03",
+  "risk": "Privileged or superuser access is held more widely than necessary, permitting undetected changes to data or configuration.",
+  "rating": "High",
+  "control_objective": "Ensure privileged access is restricted, justified and monitored.",
+  "control": "Privileged accounts are restricted to named individuals with documented business justification approved by the IT Director. Privileged activity is logged and the log is reviewed monthly by a reviewer independent of the account holders.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "Indirect (ITGC)",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "IT Director",
+  "sod": "Log reviewer must not hold privileged access to the system reviewed.",
+  "test_design": "Inspect the privileged access register, justifications and the logging configuration.",
+  "test_oe": "Inspect the privileged access listing for approval, and a sample of monthly log reviews for evidence of independent review and follow-up.",
+  "population": "Privileged access register; activity logs",
+  "sample": "Full listing plus 3 to 5 log reviews",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ITGC-04",
+  "process": "IT General Controls",
+  "subprocess": "Access Review",
+  "risk_id": "R-ITGC-04",
+  "risk": "Accumulated entitlements are not detected because access is never re-examined after it is granted.",
+  "rating": "High",
+  "control_objective": "Ensure user access is periodically recertified by the business.",
+  "control": "Application owners recertify all user access quarterly, confirming continued business need and appropriateness. Access identified as no longer required is revoked within ten business days and completion is tracked centrally.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Quarterly",
+  "assertions": "Indirect (ITGC)",
+  "coso": "Monitoring Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Application Owner",
+  "sod": "Recertification performed by the business owner, not by IT or by the user.",
+  "test_design": "Inspect the recertification procedure, scope of applications and the revocation timeframe.",
+  "test_oe": "For each quarter, inspect completed recertifications, exceptions identified and evidence that revocations were actioned.",
+  "population": "Quarterly access recertification records",
+  "sample": "All quarters in period",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ITGC-05",
+  "process": "IT General Controls",
+  "subprocess": "Authentication",
+  "risk_id": "R-ITGC-05",
+  "risk": "Weak authentication permits unauthorised access to financially significant systems.",
+  "rating": "Medium",
+  "control_objective": "Ensure authentication settings meet the security standard.",
+  "control": "Password complexity, length, expiry, lockout and multi-factor authentication settings are configured to the approved security standard on all financially significant systems, and configuration is reviewed annually.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Annual",
+  "assertions": "Indirect (ITGC)",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "IT Security Manager",
+  "sod": "Configuration changes require approval separate from the administrator applying them.",
+  "test_design": "Compare configured settings on each in-scope system to the approved security standard.",
+  "test_oe": "Inspect current configuration screenshots or extracts for each in-scope system and the annual review documentation.",
+  "population": "System configuration extracts",
+  "sample": "All in-scope systems",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ITGC-06",
+  "process": "IT General Controls",
+  "subprocess": "Change Management",
+  "risk_id": "R-ITGC-06",
+  "risk": "Changes are migrated to production without authorisation or testing, disrupting processing or corrupting financial data.",
+  "rating": "High",
+  "control_objective": "Ensure changes are tested and approved before migration to production.",
+  "control": "Changes follow the documented change process: requested and approved, developed, tested including user acceptance where applicable, and approved by the change advisory board before migration to production.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "Indirect (ITGC)",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "IT Director",
+  "sod": "Developer cannot approve or migrate their own change.",
+  "test_design": "Inspect the change management procedure and the approval gates before production migration.",
+  "test_oe": "Select a sample of changes; inspect the request, approval, test evidence and pre-migration approval.",
+  "population": "Change management tickets",
+  "sample": "25 changes",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ITGC-07",
+  "process": "IT General Controls",
+  "subprocess": "Emergency Changes",
+  "risk_id": "R-ITGC-07",
+  "risk": "Emergency changes bypass the standard process and are never subsequently reviewed.",
+  "rating": "Medium",
+  "control_objective": "Ensure emergency changes are justified and retrospectively approved.",
+  "control": "Emergency changes require verbal authorisation at the time and full documentation and retrospective approval by the change advisory board within five business days, with justification for the emergency route.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Event Driven",
+  "assertions": "Indirect (ITGC)",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "IT Director",
+  "sod": "Retrospective approver is not the individual who made the change.",
+  "test_design": "Inspect the emergency change procedure and the retrospective approval requirement.",
+  "test_oe": "Inspect the full population of emergency changes for justification and retrospective approval within the required period.",
+  "population": "Emergency change log",
+  "sample": "Full population",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ITGC-08",
+  "process": "IT General Controls",
+  "subprocess": "Segregation",
+  "risk_id": "R-ITGC-08",
+  "risk": "Developers hold access to production, enabling unapproved changes to code or data.",
+  "rating": "High",
+  "control_objective": "Ensure development and production environments and access are segregated.",
+  "control": "Development, test and production environments are separate. Developers do not hold write access to production; migration is performed by a separate release function. Exceptions require documented approval and compensating monitoring.",
+  "control_type": "Preventive",
+  "control_nature": "Automated",
+  "frequency": "Per Transaction",
+  "assertions": "Indirect (ITGC)",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "IT Director",
+  "sod": "This control is the segregation mechanism; exceptions monitored through privileged activity logging.",
+  "test_design": "Inspect environment architecture and production access listings for development personnel.",
+  "test_oe": "Inspect the production access listing for developer accounts and evaluate any approved exceptions and their compensating controls.",
+  "population": "Production access listings",
+  "sample": "Full listing",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ITGC-09",
+  "process": "IT General Controls",
+  "subprocess": "Backup",
+  "risk_id": "R-ITGC-09",
+  "risk": "Backups fail or are not recoverable, so financial data cannot be restored after an incident.",
+  "rating": "Medium",
+  "control_objective": "Ensure backups complete successfully and are recoverable.",
+  "control": "Backups run to the defined schedule and completion is monitored daily, with failures investigated and re-run. Restoration testing is performed at least annually and results documented.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Daily",
+  "assertions": "Indirect (ITGC)",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "IT Operations Manager",
+  "sod": "Monitoring performed independently of backup job configuration.",
+  "test_design": "Inspect the backup schedule, monitoring process and the restoration testing requirement.",
+  "test_oe": "Select a sample of days; inspect backup completion and resolution of failures. Inspect the annual restoration test results.",
+  "population": "Backup logs; restoration test records",
+  "sample": "25 days plus annual test",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ITGC-10",
+  "process": "IT General Controls",
+  "subprocess": "Job Scheduling",
+  "risk_id": "R-ITGC-10",
+  "risk": "Scheduled jobs fail without detection, resulting in incomplete or inaccurate financial processing.",
+  "rating": "Medium",
+  "control_objective": "Ensure batch job failures are detected and resolved.",
+  "control": "Financially significant batch jobs are monitored on completion. Failures generate an alert, are logged, investigated and re-run, and unresolved failures are escalated to the IT Operations Manager.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Daily",
+  "assertions": "Indirect (ITGC)",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "IT Operations Manager",
+  "sod": "Job configuration changes approved separately from job execution monitoring.",
+  "test_design": "Inspect the job schedule, the list of financially significant jobs and the alerting configuration.",
+  "test_oe": "Select a sample of days; inspect the failure log, investigation and resolution of each failure.",
+  "population": "Job scheduler logs",
+  "sample": "25 days",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TPM-01",
+  "process": "Third Party Management",
+  "subprocess": "Onboarding",
+  "risk_id": "R-TPM-01",
+  "risk": "Third parties are engaged without assessment of their financial, operational or integrity risk.",
+  "rating": "Medium",
+  "control_objective": "Ensure third parties are risk assessed and approved before engagement.",
+  "control": "Prospective third parties undergo due diligence proportionate to their risk tier, covering financial standing, sanctions and adverse media screening, and are approved by the Procurement Director before contracting.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Event Driven",
+  "assertions": "Indirect (ELC)",
+  "coso": "Risk Assessment",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Procurement Director",
+  "sod": "Requesting business unit does not perform or approve its own due diligence.",
+  "test_design": "Inspect the due diligence procedure and the risk tiering criteria.",
+  "test_oe": "Select a sample of new third parties; inspect the due diligence performed, screening results and approval before contracting.",
+  "population": "Third party onboarding files",
+  "sample": "25 onboardings",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TPM-02",
+  "process": "Third Party Management",
+  "subprocess": "Contracting",
+  "risk_id": "R-TPM-02",
+  "risk": "Contracts are executed without review, omitting protections over data, audit rights and service levels.",
+  "rating": "Medium",
+  "control_objective": "Ensure contracts are reviewed and executed under delegated authority.",
+  "control": "Contracts are reviewed by Legal against the approved contracting standards, including data protection, right to audit, service levels and termination, and are executed by an authorised signatory per the delegation of authority.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Event Driven",
+  "assertions": "R&O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "General Counsel",
+  "sod": "Negotiator does not execute the contract; signature authority held separately.",
+  "test_design": "Inspect the contracting standards and the signature authority matrix.",
+  "test_oe": "Select a sample of contracts; inspect legal review and execution by an authorised signatory.",
+  "population": "Contract register",
+  "sample": "25 contracts",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TPM-03",
+  "process": "Third Party Management",
+  "subprocess": "Assurance",
+  "risk_id": "R-TPM-03",
+  "risk": "Controls at a service organisation processing financially significant transactions are ineffective and this is not detected.",
+  "rating": "High",
+  "control_objective": "Ensure assurance is obtained over controls at service organisations.",
+  "control": "For each service organisation supporting a financially significant process, the Financial Controller obtains and reviews the annual SOC 1 Type 2 report, evaluating the opinion, exceptions noted, and the period covered against the reporting period.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "Indirect (ELC)",
+  "coso": "Monitoring Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Review performed by finance rather than by the relationship owner alone.",
+  "test_design": "Inspect the register of in-scope service organisations and the review template.",
+  "test_oe": "For each in-scope service organisation, inspect the SOC 1 report obtained, the documented review, and the assessment of any qualifications or exceptions.",
+  "population": "SOC 1 reports and review memoranda",
+  "sample": "All in-scope service organisations",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TPM-04",
+  "process": "Third Party Management",
+  "subprocess": "Assurance",
+  "risk_id": "R-TPM-04",
+  "risk": "Complementary user entity controls assumed by the service organisation are not implemented at the entity.",
+  "rating": "High",
+  "control_objective": "Ensure complementary user entity controls are identified and operating.",
+  "control": "The Financial Controller extracts the complementary user entity controls from each SOC 1 report, maps them to controls operating at the entity, and confirms their operating effectiveness. Gaps are remediated and tracked.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "Indirect (ELC)",
+  "coso": "Monitoring Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Mapping reviewed independently of the process owner responsible for the control.",
+  "test_design": "Inspect the CUEC mapping methodology and the remediation tracking.",
+  "test_oe": "For each SOC 1 report, inspect the CUEC listing, the mapping to entity controls and evidence those controls operate.",
+  "population": "CUEC mapping workpapers",
+  "sample": "All in-scope reports",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TPM-05",
+  "process": "Third Party Management",
+  "subprocess": "Assurance",
+  "risk_id": "R-TPM-05",
+  "risk": "Controls at a subservice organisation carved out of the SOC 1 report are not covered by any assurance.",
+  "rating": "Medium",
+  "control_objective": "Ensure carved-out subservice organisations are identified and addressed.",
+  "control": "For each SOC 1 report using the carve-out method, the Financial Controller identifies the subservice organisations excluded and obtains assurance over them directly or documents the alternative procedures performed.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "Indirect (ELC)",
+  "coso": "Monitoring Activities",
+  "key_control": "No",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Assessment documented and reviewed rather than assumed covered.",
+  "test_design": "Inspect the methodology for identifying carve-outs from SOC 1 reports.",
+  "test_oe": "For each carve-out identified, inspect the assurance obtained or the alternative procedures documented.",
+  "population": "SOC 1 reports; subservice assessments",
+  "sample": "All carve-outs identified",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TPM-06",
+  "process": "Third Party Management",
+  "subprocess": "Monitoring",
+  "risk_id": "R-TPM-06",
+  "risk": "Third party performance deteriorates without detection, disrupting processes on which reporting depends.",
+  "rating": "Low",
+  "control_objective": "Ensure third party performance is monitored against contracted service levels.",
+  "control": "Relationship owners review performance against contracted service levels quarterly for tier one third parties, document issues and escalate persistent underperformance to the Procurement Director.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "Indirect (ELC)",
+  "coso": "Monitoring Activities",
+  "key_control": "No",
+  "fraud": "No",
+  "owner": "Procurement Director",
+  "sod": "Escalation route independent of the relationship owner.",
+  "test_design": "Inspect the monitoring procedure and the tiering that determines review frequency.",
+  "test_oe": "Select a sample of tier one third parties; inspect quarterly performance reviews and evidence of escalation where relevant.",
+  "population": "Third party performance reviews",
+  "sample": "25 reviews",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ELC-01",
+  "process": "Entity Level Controls",
+  "subprocess": "Control Environment",
+  "risk_id": "R-ELC-01",
+  "risk": "Ethical standards are not communicated or reinforced, permitting a culture in which misconduct is tolerated.",
+  "rating": "Medium",
+  "control_objective": "Ensure the code of conduct is communicated and acknowledged.",
+  "control": "The code of conduct is issued to all employees on hire and annually thereafter, with electronic acknowledgement tracked to completion. Non-completion is escalated to the line manager and to HR.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Annual",
+  "assertions": "Indirect (ELC)",
+  "coso": "Control Environment",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "General Counsel",
+  "sod": "Completion tracked centrally rather than self-certified by business units.",
+  "test_design": "Inspect the code of conduct, the distribution process and the tracking mechanism.",
+  "test_oe": "Inspect the annual completion report, the rate achieved and evidence of escalation for non-completion.",
+  "population": "Acknowledgement tracking reports",
+  "sample": "Annual cycle",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ELC-02",
+  "process": "Entity Level Controls",
+  "subprocess": "Control Environment",
+  "risk_id": "R-ELC-02",
+  "risk": "Concerns about misconduct are not reported or are not investigated, allowing fraud to continue undetected.",
+  "rating": "High",
+  "control_objective": "Ensure a whistleblower channel operates and reports are investigated.",
+  "control": "An independently operated whistleblower hotline permits anonymous reporting. Reports are logged, triaged and investigated under a documented protocol, and the Audit Committee receives a summary of all reports and their outcomes each quarter.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "Indirect (ELC)",
+  "coso": "Information & Communication",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Audit Committee Chair",
+  "sod": "Hotline operated by an independent provider; reports concerning senior management routed directly to the Audit Committee.",
+  "test_design": "Inspect the whistleblower policy, the independence of the provider and the investigation protocol.",
+  "test_oe": "Inspect the report log and, for a sample, the investigation performed and the outcome. Inspect quarterly Audit Committee reporting.",
+  "population": "Whistleblower log; Audit Committee minutes",
+  "sample": "All quarters; 25 reports",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ELC-03",
+  "process": "Entity Level Controls",
+  "subprocess": "Governance",
+  "risk_id": "R-ELC-03",
+  "risk": "The Audit Committee lacks the independence or competence to challenge management effectively.",
+  "rating": "High",
+  "control_objective": "Ensure the Audit Committee is appropriately composed and discharges its responsibilities.",
+  "control": "The Audit Committee comprises independent non-executive directors including at least one with recent and relevant financial experience. It meets at least quarterly against a terms of reference covering financial reporting, internal control, internal audit and external audit, and meets privately with internal and external audit.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "Indirect (ELC)",
+  "coso": "Control Environment",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Board of Directors",
+  "sod": "Committee independent of management; private sessions held without management present.",
+  "test_design": "Inspect the terms of reference and the composition against independence and competence criteria.",
+  "test_oe": "Inspect minutes for each meeting in the period, confirming coverage of the terms of reference and the holding of private sessions.",
+  "population": "Audit Committee terms of reference and minutes",
+  "sample": "All meetings in period",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ELC-04",
+  "process": "Entity Level Controls",
+  "subprocess": "Risk Assessment",
+  "risk_id": "R-ELC-04",
+  "risk": "Risks to financial reporting are not identified, so controls are not designed to address them.",
+  "rating": "High",
+  "control_objective": "Ensure risks to financial reporting are identified and assessed periodically.",
+  "control": "Management performs an annual financial reporting risk assessment covering significant accounts, disclosures and processes, considering changes in the business, systems and the external environment. Results drive the scoping of the control framework and are reviewed by the Audit Committee.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "Indirect (ELC)",
+  "coso": "Risk Assessment",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Financial Officer",
+  "sod": "Assessment challenged by the Audit Committee independently of management.",
+  "test_design": "Inspect the risk assessment methodology and its linkage to control scoping.",
+  "test_oe": "Inspect the annual assessment, the changes made to scope as a result, and evidence of Audit Committee review.",
+  "population": "Annual risk assessment documentation",
+  "sample": "Annual assessment",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ELC-05",
+  "process": "Entity Level Controls",
+  "subprocess": "Risk Assessment",
+  "risk_id": "R-ELC-05",
+  "risk": "Fraud risks, including management override, are not specifically assessed or addressed.",
+  "rating": "High",
+  "control_objective": "Ensure fraud risks are assessed and responded to.",
+  "control": "An annual fraud risk assessment identifies fraud schemes relevant to the organisation, the incentives, opportunities and rationalisations present, and maps each to controls. Management override risk is specifically addressed. Results are reported to the Audit Committee.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "Indirect (ELC)",
+  "coso": "Risk Assessment",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Chief Financial Officer",
+  "sod": "Assessment includes risks arising from management itself and is reviewed by the Audit Committee.",
+  "test_design": "Inspect the fraud risk assessment methodology, including coverage of management override.",
+  "test_oe": "Inspect the annual assessment, the mapping of schemes to controls, and reporting to the Audit Committee.",
+  "population": "Fraud risk assessment documentation",
+  "sample": "Annual assessment",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ELC-06",
+  "process": "Entity Level Controls",
+  "subprocess": "Control Environment",
+  "risk_id": "R-ELC-06",
+  "risk": "Authority is exercised beyond delegated limits because the delegation of authority is outdated or unclear.",
+  "rating": "Medium",
+  "control_objective": "Ensure the delegation of authority is current and applied.",
+  "control": "The delegation of authority is approved by the Board, reviewed at least annually and on organisational change, and is reflected in system approval workflows. Changes are communicated to affected approvers.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "Indirect (ELC)",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Company Secretary",
+  "sod": "Board approves; management cannot expand its own authority.",
+  "test_design": "Inspect the delegation of authority, its approval and the linkage to system workflow configuration.",
+  "test_oe": "Inspect the annual review and Board approval, and reconcile a sample of system approval thresholds to the current matrix.",
+  "population": "Delegation of authority; Board minutes",
+  "sample": "Annual review",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ELC-07",
+  "process": "Entity Level Controls",
+  "subprocess": "Competence",
+  "risk_id": "R-ELC-07",
+  "risk": "Finance personnel lack the competence required, increasing the risk of error in financial reporting.",
+  "rating": "Medium",
+  "control_objective": "Ensure finance roles are filled by competent individuals whose skills are maintained.",
+  "control": "Finance roles have defined competency requirements applied in recruitment. Performance is evaluated annually against objectives, training needs are identified, and professional qualifications and continuing development are tracked.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "Indirect (ELC)",
+  "coso": "Control Environment",
+  "key_control": "No",
+  "fraud": "No",
+  "owner": "HR Director",
+  "sod": "Evaluation performed by the line manager and moderated independently.",
+  "test_design": "Inspect role competency definitions and the evaluation and training processes.",
+  "test_oe": "Select a sample of finance staff; inspect evidence of evaluation, identified training needs and completion.",
+  "population": "Job descriptions; performance and training records",
+  "sample": "25 employees",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ELC-08",
+  "process": "Entity Level Controls",
+  "subprocess": "Monitoring",
+  "risk_id": "R-ELC-08",
+  "risk": "Identified control deficiencies are not remediated, so weaknesses persist across reporting periods.",
+  "rating": "High",
+  "control_objective": "Ensure control deficiencies are evaluated, tracked and remediated.",
+  "control": "Deficiencies from any source are logged, evaluated for severity against defined criteria, assigned an owner and remediation date, and tracked to closure. Status is reported to the Audit Committee quarterly, and significant deficiencies and material weaknesses are escalated on identification.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "Indirect (ELC)",
+  "coso": "Monitoring Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Financial Officer",
+  "sod": "Severity evaluation reviewed independently of the process owner responsible for the deficiency.",
+  "test_design": "Inspect the deficiency evaluation criteria and the tracking and escalation process.",
+  "test_oe": "Inspect the deficiency log, a sample of severity evaluations, evidence of remediation, and quarterly Audit Committee reporting.",
+  "population": "Deficiency log; Audit Committee minutes",
+  "sample": "All quarters; 25 deficiencies",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ELC-09",
+  "process": "Entity Level Controls",
+  "subprocess": "Monitoring",
+  "risk_id": "R-ELC-09",
+  "risk": "Management overrides controls without detection, circumventing the control framework.",
+  "rating": "High",
+  "control_objective": "Ensure indicators of management override are monitored.",
+  "control": "Monitoring covers indicators of override, including manual journals posted by senior finance management, significant unusual transactions, changes in accounting estimates favouring reported results, and overrides of system-enforced controls. The Audit Committee reviews the results quarterly.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Quarterly",
+  "assertions": "Indirect (ELC)",
+  "coso": "Monitoring Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Audit Committee Chair",
+  "sod": "Monitoring cannot be performed solely by the individuals whose conduct is being monitored.",
+  "test_design": "Inspect the override indicators defined and the reporting route to the Audit Committee.",
+  "test_oe": "For each quarter, inspect the monitoring performed, items identified, investigation and reporting to the Audit Committee.",
+  "population": "Override monitoring reports; minutes",
+  "sample": "All quarters in period",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ELC-10",
+  "process": "Entity Level Controls",
+  "subprocess": "Information & Communication",
+  "risk_id": "R-ELC-10",
+  "risk": "Accounting policies are inconsistently applied because they are not documented or communicated.",
+  "rating": "Medium",
+  "control_objective": "Ensure accounting policies are documented, current and applied consistently.",
+  "control": "A group accounting manual documents policies for significant transactions, is reviewed annually for changes in the reporting framework, and is communicated to all reporting entities. Departures require Group Financial Controller approval.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "P&D, A/V",
+  "coso": "Information & Communication",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Group Financial Controller",
+  "sod": "Departures approved centrally rather than determined locally.",
+  "test_design": "Inspect the accounting manual, the annual review process and the departure approval requirement.",
+  "test_oe": "Inspect the annual review performed, changes made for new requirements, evidence of communication, and any approved departures.",
+  "population": "Group accounting manual; review records",
+  "sample": "Annual review",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ }
+]
