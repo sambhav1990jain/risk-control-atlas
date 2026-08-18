@@ -113,6 +113,11 @@ button.card:hover{border-color:var(--accent);transform:translateY(-2px);box-shad
 .profile-reg{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink-2)}
 .profile .chip{cursor:default}
 .profile .go{align-self:flex-start;margin-top:2px}
+
+.lensblocks{display:flex;flex-direction:column;gap:14px}
+.lensblock{display:flex;flex-direction:column;gap:6px}
+.lbh{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.lensblock .statbar{margin:0}
 /* ---- workspace ---- */
 .work{display:grid;grid-template-columns:250px minmax(0,1fr);gap:26px;padding:26px 0 80px;align-items:start}
 .side{position:sticky;top:66px;display:flex;flex-direction:column;gap:20px}
@@ -543,12 +548,13 @@ function viewIndustry(){
         const ic = pool(sel,'icfr'), iaa = pool(sel,'ia'), all = ic.concat(iaa);
         const own = sel!=='all' ? DATA.filter(d=>d.industry.includes(sel)) : [];
         const ownProcs = [...new Set(own.map(d=>d.process))].sort();
-        const stat = [['Processes', new Set(all.map(d=>d.process)).size],
-                      ['Audit programmes', iaa.length],
-                      ['Risks and controls', ic.length],
-                      ['High risk', all.filter(d=>d.rating==='High').length],
-                      ['Key controls', ic.filter(d=>d.key_control==='Yes').length],
-                      ['Fraud relevant', all.filter(d=>d.fraud==='Yes'||d.risk_category==='Fraud').length]];
+        const hi = a => a.filter(d=>d.rating==='High').length;
+        const fr = a => a.filter(d=>d.fraud==='Yes'||d.risk_category==='Fraud').length;
+        const groups = [
+          ['Internal audit', [['Audit programmes', iaa.length], ['High risk', hi(iaa)],
+                              ['Fraud related', fr(iaa)]]],
+          ['ICFR', [['Risks and controls', ic.length], ['Key controls', ic.filter(d=>d.key_control==='Yes').length],
+                    ['High risk', hi(ic)], ['Fraud relevant', fr(ic)]]]];
         return `<article class="profile">
           <header class="profile-h">
             <div>
@@ -560,8 +566,16 @@ function viewIndustry(){
           <p class="profile-sum">${prof ? prof.summary : sel==='all'
             ? 'Every risk and control in the atlas, across every sector, in one list. Use this to search the whole database at once.'
             : 'Sector-specific content for this industry is being written. What is shown today is the full set of finance, people, technology and governance processes that every organisation runs \u2014 which is the majority of any audit universe.'}</p>
-          <div class="statbar profile-stats">${stat.map(([k,v])=>
-            `<div class="stat"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('')}</div>
+          <div class="lensblocks">
+            <div class="lensblock"><span class="lbh">Across both lenses</span>
+              <div class="statbar"><div class="stat"><div class="k">Processes</div>
+                <div class="v">${new Set(all.map(d=>d.process)).size}</div></div></div></div>
+            ${groups.map(([name,rows])=>`<div class="lensblock">
+              <span class="lbh">${name}</span>
+              <div class="statbar">${rows.map(([k,v])=>
+                `<div class="stat"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('')}</div>
+            </div>`).join('')}
+          </div>
           ${prof ? `<div class="profile-cols">
             <div><h5>What shapes the risk profile here</h5>
               <ul class="ticks">${prof.hallmarks.map(h=>`<li>${h}</li>`).join('')}</ul></div>
