@@ -1,0 +1,504 @@
+[
+ {
+  "id": "IA-O2C-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "Order to Cash",
+  "subprocess": "Customer Master Data",
+  "risk": "Fictitious or duplicate customers are created, or bank and address details are altered, enabling diverted refunds and concealed related-party sales.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm customer master records are created and amended only on authorised, verified information.",
+  "what_to_review": [
+   "Authorisation and verification of customer creation and amendment",
+   "Duplicate customer detection",
+   "Changes to remittance and refund bank details",
+   "Related-party and employee matching",
+   "Dormant customer reactivation"
+  ],
+  "procedures": [
+   "Extract the customer master change log and test creations and amendments for authorisation independent of sales.",
+   "Run duplicate analytics on name, tax identifier, address and bank account.",
+   "Match customer records against employee data for shared addresses, phones and bank accounts.",
+   "Test refunds paid to bank details changed shortly before the refund.",
+   "Identify dormant customers reactivated in the period and test the first transaction on each."
+  ],
+  "red_flags": [
+   "Customers created by the salesperson who then sells to them",
+   "Refund bank details differing from the collection account",
+   "Duplicates that split a single exposure below credit limits",
+   "Reactivated dormant accounts with immediate credit balances"
+  ],
+  "evidence": [
+   "Customer master change log",
+   "Sales and refund transaction data",
+   "Employee master data",
+   "Credit files"
+  ],
+  "kpis": [
+   "Master changes with authorisation",
+   "Duplicate customer exceptions",
+   "Refunds to changed bank details"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-O2C-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "Order to Cash",
+  "subprocess": "Credit Assessment and Limits",
+  "risk": "Credit is granted without adequate assessment, or limits are set and raised to accommodate a sale rather than to reflect the customer's ability to pay.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess whether credit decisions are evidence-based, independent of sales, and enforced.",
+  "what_to_review": [
+   "Credit assessment methodology and information sources",
+   "Limit approval authority and independence from sales",
+   "Frequency of limit review, especially for the largest exposures",
+   "System enforcement of limits at order entry",
+   "Credit insurance, guarantees and security held"
+  ],
+  "procedures": [
+   "Test a sample of new limits to the supporting assessment and the approval authority.",
+   "Analyse limit increases and test how many occurred within days of a blocked order.",
+   "Compare exposures to limits at several dates and quantify over-limit balances.",
+   "Test whether security, guarantees or credit insurance recorded are valid and enforceable.",
+   "Test limits not reviewed within the policy cycle for the largest customers."
+  ],
+  "red_flags": [
+   "Limits raised immediately after an order block",
+   "Assessments based only on customer-supplied figures",
+   "Security recorded but never perfected",
+   "Limits unreviewed for years on major accounts"
+  ],
+  "evidence": [
+   "Credit files and assessments",
+   "Limit master data and change log",
+   "Aged receivables",
+   "Credit insurance policies and guarantees"
+  ],
+  "kpis": [
+   "Exposure over limit",
+   "Limits raised post-block",
+   "Limits reviewed on cycle"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-O2C-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "Order to Cash",
+  "subprocess": "Order Entry and Acceptance",
+  "risk": "Orders are accepted that the organisation cannot fulfil, should not accept, or that carry terms never approved.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Confirm orders are accepted within approved commercial and credit parameters.",
+  "what_to_review": [
+   "Order entry authorisation and completeness of order data",
+   "Blocked-order release and who performs it",
+   "Non-standard terms \u2014 payment terms, delivery, penalties, retention",
+   "Availability and fulfilment feasibility checks",
+   "Order acknowledgement and contract formation"
+  ],
+  "procedures": [
+   "Test blocked orders released in the period and inspect the approval for each.",
+   "Sample orders with non-standard terms and trace the approval against delegated authority.",
+   "Reconcile orders entered to orders acknowledged and fulfilled; investigate orders cancelled after entry.",
+   "Test whether penalty and service-credit clauses accepted at order stage are tracked operationally."
+  ],
+  "red_flags": [
+   "Blocks released by sales staff",
+   "Non-standard terms agreed by email without approval",
+   "Orders entered then cancelled repeatedly at period end",
+   "Penalty clauses accepted with no one monitoring performance"
+  ],
+  "evidence": [
+   "Order entry system data",
+   "Blocked-order release logs",
+   "Customer contracts and terms",
+   "Order acknowledgements"
+  ],
+  "kpis": [
+   "Blocked orders released",
+   "Orders with non-standard terms",
+   "Order cancellation rate"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-O2C-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "Order to Cash",
+  "subprocess": "Pricing, Discounts and Rebates",
+  "risk": "Prices, discounts and rebates are applied outside approved authority, eroding margin invisibly one transaction at a time.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm invoiced prices reflect approved price lists and that discounts and rebates are authorised and earned.",
+  "what_to_review": [
+   "Price list maintenance and approval",
+   "Discount authority by role and value",
+   "Manual price overrides at invoicing",
+   "Rebate and volume incentive agreements and their accrual",
+   "Margin analysis by customer, product and salesperson"
+  ],
+  "procedures": [
+   "Re-price a sample of invoices from the approved price list and quantify the variance.",
+   "Analyse manual price overrides by user and customer; test the largest against approval authority.",
+   "Recompute rebates earned against agreements and test the accrual.",
+   "Analyse margin by customer and salesperson and investigate the loss-making tail.",
+   "Test whether price list changes were approved before activation."
+  ],
+  "red_flags": [
+   "Discounts clustered just under an approval threshold",
+   "Overrides concentrated with one user",
+   "Rebates accrued on volumes never achieved",
+   "Customers persistently below cost to serve"
+  ],
+  "evidence": [
+   "Price lists and change logs",
+   "Invoice data",
+   "Discount approvals",
+   "Rebate agreements and accruals"
+  ],
+  "kpis": [
+   "Price variance on re-pricing",
+   "Override value by user",
+   "Margin by customer"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-O2C-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "Order to Cash",
+  "subprocess": "Despatch, Delivery and Cut-Off",
+  "risk": "Goods or services are recorded as delivered when they are not, or delivery is recorded in the wrong period, misstating revenue.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm delivery is evidenced and recorded in the correct period.",
+  "what_to_review": [
+   "Proof of delivery capture and retention",
+   "Cut-off procedures at period end",
+   "Goods despatched but not invoiced, and invoiced but not despatched",
+   "Consignment, bill-and-hold and agency arrangements",
+   "Delivery to third-party warehouses or agents"
+  ],
+  "procedures": [
+   "Test cut-off either side of period end by tracing despatch documents to invoices and to the revenue period recorded.",
+   "Reconcile despatches to invoices for the period and age the unbilled and un-despatched populations.",
+   "Test the existence of proof of delivery for a sample of the largest period-end sales.",
+   "Review bill-and-hold and consignment arrangements against the criteria for recognising revenue."
+  ],
+  "red_flags": [
+   "A concentration of large despatches on the final days of the period",
+   "Proof of delivery missing for the largest transactions",
+   "Consignment stock treated as sold",
+   "Delivery dates amended after invoicing"
+  ],
+  "evidence": [
+   "Despatch records and proof of delivery",
+   "Invoice register",
+   "Period-end cut-off testing schedules",
+   "Consignment agreements"
+  ],
+  "kpis": [
+   "Cut-off errors identified",
+   "Despatched not invoiced ageing",
+   "POD completeness"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-O2C-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "Order to Cash",
+  "subprocess": "Invoicing Accuracy and Completeness",
+  "risk": "Deliveries are never invoiced, or invoices are issued with errors that delay payment and trigger disputes.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm every delivery is invoiced once, accurately, and on time.",
+  "what_to_review": [
+   "Completeness of invoicing against delivery",
+   "Invoice accuracy \u2014 quantity, price, tax, currency, customer details",
+   "Timeliness of invoicing after delivery",
+   "Sequence control over invoice numbering",
+   "Manual and pro-forma invoices outside the main system"
+  ],
+  "procedures": [
+   "Reconcile delivered volumes to invoiced volumes and quantify the unbilled population and its ageing.",
+   "Test invoice numerical sequence for gaps and duplicates.",
+   "Sample invoices and re-perform the calculation including tax treatment and currency.",
+   "Identify invoices raised outside the main system and test their control and recording.",
+   "Measure days from delivery to invoice by business unit."
+  ],
+  "red_flags": [
+   "Unbilled deliveries ageing beyond the billing cycle",
+   "Gaps in invoice sequence with no explanation",
+   "Manual invoices used routinely for particular customers",
+   "Recurring disputes traced to invoice errors"
+  ],
+  "evidence": [
+   "Delivery and invoice data",
+   "Invoice sequence reports",
+   "Tax configuration",
+   "Dispute logs"
+  ],
+  "kpis": [
+   "Unbilled deliveries ageing",
+   "Days delivery to invoice",
+   "Invoice error rate"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-O2C-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "Order to Cash",
+  "subprocess": "Credit Notes, Returns and Adjustments",
+  "risk": "Credit notes are issued to conceal uncollectable debt, to reverse fictitious sales, or without any authorisation.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm credit notes and adjustments are justified, supported and authorised independently.",
+  "what_to_review": [
+   "Credit note authorisation limits and independence from sales and collections",
+   "Reason codes and their integrity",
+   "Credit notes issued after period end against prior-period sales",
+   "Returns received and their restocking or scrapping",
+   "Write-offs disguised as credit notes"
+  ],
+  "procedures": [
+   "Analyse credit notes by issuer, customer, value and reason code; test the largest and the most frequent.",
+   "Test credit notes raised after period end against sales recorded in the prior period.",
+   "Match credit notes for returns to physical evidence that goods came back.",
+   "Test whether credit notes are being used in place of a bad debt write-off, which would bypass the write-off authority."
+  ],
+  "red_flags": [
+   "Credit notes concentrated shortly after period end",
+   "Reason code \"other\" dominating",
+   "Credits issued by the collector chasing the debt",
+   "No goods returned against return-reason credits"
+  ],
+  "evidence": [
+   "Credit note register with user and reason",
+   "Returns receipts",
+   "Sales data",
+   "Write-off approvals"
+  ],
+  "kpis": [
+   "Credit notes as % of revenue",
+   "Credits by issuer",
+   "Post period-end credits"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-O2C-08",
+  "industry": [
+   "cross"
+  ],
+  "process": "Order to Cash",
+  "subprocess": "Cash Application and Unapplied Cash",
+  "risk": "Receipts are misapplied or left unapplied, concealing lapping, misappropriation or genuinely overdue balances.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm receipts are applied promptly and accurately to the correct customer and invoice.",
+  "what_to_review": [
+   "Timeliness of cash application and the size of unapplied cash",
+   "Segregation between cash application, credit control and bank reconciliation",
+   "Write-off of small differences and unallocated amounts",
+   "Bank reconciliation quality and reconciling item ageing",
+   "Lapping indicators across customer accounts"
+  ],
+  "procedures": [
+   "Age the unapplied and on-account cash and test the reason for the oldest items.",
+   "Test that the person applying cash cannot raise credit notes or write off balances.",
+   "Analyse receipt application timing for patterns consistent with lapping \u2014 receipts applied to progressively older invoices.",
+   "Test bank reconciliations for aged reconciling items and unexplained adjustments.",
+   "Recompute small-difference write-offs against the tolerance policy."
+  ],
+  "red_flags": [
+   "Unapplied cash growing period on period",
+   "Receipts routinely applied several days late",
+   "One person handling receipts, application and write-offs",
+   "Reconciling items carried forward for months"
+  ],
+  "evidence": [
+   "Cash application records and unapplied cash ageing",
+   "Bank statements and reconciliations",
+   "Write-off approvals",
+   "Segregation of duties matrix"
+  ],
+  "kpis": [
+   "Unapplied cash ageing",
+   "Days to apply receipts",
+   "Small write-off value"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-O2C-09",
+  "industry": [
+   "cross"
+  ],
+  "process": "Order to Cash",
+  "subprocess": "Collections and Dispute Management",
+  "risk": "Overdue balances are not pursued on schedule and disputes are left unresolved, so recoverable amounts become bad debts.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess whether collection activity and dispute resolution are timely, escalated and effective.",
+  "what_to_review": [
+   "Dunning and escalation timetable and adherence to it",
+   "Collector workload, targets and performance",
+   "Dispute logging, ownership and resolution time",
+   "Stop-supply and legal escalation decisions",
+   "Use of external collection agencies and their recovery rates"
+  ],
+  "procedures": [
+   "Test whether escalation steps actually occurred at the policy trigger points for a sample of overdue accounts.",
+   "Analyse ageing and recovery performance by collector and by business unit.",
+   "Age disputed balances and test the resolution of the oldest; disputes often mask a delivery or invoicing failure.",
+   "Test whether stop-supply rules were applied or overridden, and by whom.",
+   "Compare recovery rates before and after referral to external agencies."
+  ],
+  "red_flags": [
+   "Promises to pay recorded repeatedly with no follow-through",
+   "Disputes open beyond ninety days with no owner",
+   "Stop-supply overridden for the largest debtors",
+   "Accounts referred to agencies only once they are uncollectable"
+  ],
+  "evidence": [
+   "Aged receivables and collector activity notes",
+   "Dispute register",
+   "Stop-supply override approvals",
+   "Agency referral and recovery data"
+  ],
+  "kpis": [
+   "Days sales outstanding",
+   "Disputes over 90 days",
+   "Recovery rate after referral"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-O2C-10",
+  "industry": [
+   "cross"
+  ],
+  "process": "Order to Cash",
+  "subprocess": "Bad Debt Provision and Write-Offs",
+  "risk": "The provision for doubtful debts is understated and write-offs are approved without authority, delaying recognition of losses.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm the provision reflects genuine recoverability and that write-offs are properly authorised.",
+  "what_to_review": [
+   "Provision methodology \u2014 ageing based, specific, or expected credit loss",
+   "Consistency of application and any management overlay",
+   "Write-off authority and evidence of recovery effort before write-off",
+   "Recovery of amounts previously written off",
+   "Balances with no movement or activity"
+  ],
+  "procedures": [
+   "Recompute the provision using the stated methodology and test the basis of any management override.",
+   "Sample write-offs and test the authority level and the recovery steps taken beforehand.",
+   "Identify aged balances not provided for and test the justification, including reliance on informal assurances.",
+   "Test subsequent receipts against previously written-off accounts, which can indicate premature write-off or misappropriated recoveries."
+  ],
+  "red_flags": [
+   "Aged balances excluded from provision on the basis of a verbal assurance",
+   "Write-offs approved by the credit manager alone",
+   "Recoveries after write-off retained outside the ledger",
+   "Provision percentage unchanged despite a deteriorating book"
+  ],
+  "evidence": [
+   "Aged receivables",
+   "Provision calculations",
+   "Write-off approvals",
+   "Post write-off receipt records"
+  ],
+  "kpis": [
+   "Provision coverage of aged debt",
+   "Write-offs by approver",
+   "Post write-off recoveries"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-O2C-11",
+  "industry": [
+   "cross"
+  ],
+  "process": "Order to Cash",
+  "subprocess": "Revenue Recognition Judgements",
+  "risk": "Revenue is recognised on terms that do not reflect the contract \u2014 before obligations are met, gross where the organisation acts as agent, or without allocating to separate obligations.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm revenue recognition reflects the substance of customer contracts.",
+  "what_to_review": [
+   "Identification of performance obligations in customer contracts",
+   "Timing \u2014 point in time versus over time",
+   "Gross versus net presentation where a third party is involved",
+   "Variable consideration, rebates, penalties and refund rights",
+   "Side agreements and non-standard terms outside the contract file"
+  ],
+  "procedures": [
+   "Read a sample of significant contracts and test whether recognition follows the obligations and terms actually written.",
+   "Test arrangements involving a third party for principal versus agent indicators and the resulting presentation.",
+   "Test the estimation of variable consideration and whether constraints were applied.",
+   "Enquire of sales staff about side letters and verbal commitments, and search correspondence for terms absent from the contract file.",
+   "Test contracts modified near period end for their effect on recognition."
+  ],
+  "red_flags": [
+   "Side letters granting return rights not in the master contract",
+   "Gross presentation where the organisation carries no inventory risk",
+   "Long-term contracts recognised on invoicing rather than progress",
+   "Contract modifications concentrated at period end"
+  ],
+  "evidence": [
+   "Customer contracts and amendments",
+   "Revenue recognition policy and memoranda",
+   "Sales correspondence",
+   "Period-end contract modifications"
+  ],
+  "kpis": [
+   "Contracts reviewed for obligations",
+   "Gross vs. net reassessments",
+   "Side agreements identified"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]

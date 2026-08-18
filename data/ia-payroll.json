@@ -1,0 +1,509 @@
+[
+ {
+  "id": "IA-PAY-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "Payroll",
+  "subprocess": "Payroll System Access and Segregation of Duties",
+  "risk": "A single person can create an employee, change pay details and release the payment, allowing fabricated employees or altered pay to reach the bank without detection.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm that payroll system access is restricted by role and that no individual controls the full payroll cycle.",
+  "what_to_review": [
+   "Role design and who holds each payroll role",
+   "Conflicting combinations \u2014 master data maintenance with payroll processing or payment release",
+   "Access of HR, Finance and IT staff to payroll data",
+   "Privileged and vendor support accounts",
+   "Access reviews and removal on transfer or exit"
+  ],
+  "procedures": [
+   "Extract all users with payroll system access and map their roles against a segregation of duties matrix; quantify unmitigated conflicts.",
+   "Test whether any single user can both amend an employee record and approve the pay run, using the system rather than the policy as evidence.",
+   "Test that IT and vendor support accounts cannot post or release payroll transactions, and review their activity logs.",
+   "Trace payroll staff who changed role or left, and measure days to access removal.",
+   "Test whether the last access review was performed by the payroll owner and whether flagged removals actually happened."
+  ],
+  "red_flags": [
+   "Emergency or firefighter access left permanently enabled",
+   "Shared accounts used at pay run time",
+   "Access reviews approved in bulk on one day",
+   "Support vendor with standing production access"
+  ],
+  "evidence": [
+   "Payroll system user and role listings",
+   "Segregation of duties matrix",
+   "Access review evidence",
+   "Privileged activity logs",
+   "HR joiner, mover and leaver data"
+  ],
+  "kpis": [
+   "Unmitigated SoD conflicts",
+   "Days to revoke access",
+   "Privileged sessions at pay run"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-PAY-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "Payroll",
+  "subprocess": "Employee Master Data",
+  "risk": "Bank details, salary or employment status are changed without authorisation or verification, diverting pay or inflating it.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Verify that every change to employee master data is authorised, independently verified and traceable to a source document.",
+  "what_to_review": [
+   "Authorisation and verification of salary, bank and status changes",
+   "Source documentation retained for each change",
+   "Change reporting and who reviews it",
+   "Duplicate bank accounts, addresses or tax identifiers",
+   "Changes made close to the pay run cut-off"
+  ],
+  "procedures": [
+   "Extract the full master data change log for the period and reconcile it to authorised change forms.",
+   "Test all bank detail changes for independent verification back to a source the employee did not supply alone.",
+   "Run duplicate analytics across bank account, address, national insurance or SIN, and email across the active population.",
+   "Analyse changes made within 48 hours of the pay run cut-off and test each for approval.",
+   "Test whether the change report is genuinely reviewed, by re-performing the review for one period."
+  ],
+  "red_flags": [
+   "Bank change immediately followed by a pay increase",
+   "Multiple employees sharing one bank account",
+   "Changes entered and approved by the same user",
+   "Retrospective approval forms dated after the change"
+  ],
+  "evidence": [
+   "Master data change logs with user and timestamp",
+   "Authorised change forms",
+   "Bank verification evidence",
+   "Payroll master extract"
+  ],
+  "kpis": [
+   "Changes with verified authorisation",
+   "Duplicate bank account exceptions",
+   "Changes near cut-off"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-PAY-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "Payroll",
+  "subprocess": "Payroll Register Review and Authorisation",
+  "risk": "The payroll is released without anyone reviewing the register against the prior period, so errors and fraudulent entries pass straight to the bank.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm that the payroll register is reviewed on a meaningful basis and authorised by someone independent before payment.",
+  "what_to_review": [
+   "Pre-payment review of the register and variance to prior period",
+   "Investigation thresholds for movements and new joiners",
+   "Authorisation limits and who signs the pay run",
+   "Exception reports \u2014 negative pay, duplicate payments, high net pay, zero deductions",
+   "Evidence retained of the review"
+  ],
+  "procedures": [
+   "For a sample of pay runs, obtain the register and the reviewer evidence; re-perform the period-on-period variance analysis and test whether flagged items were investigated.",
+   "Test that the authoriser is independent of payroll preparation and within their authority.",
+   "Re-perform the exception reports on the payroll data and test whether the same exceptions were identified and cleared.",
+   "Test the completeness of the register reviewed against the payment file actually transmitted to the bank."
+  ],
+  "red_flags": [
+   "Sign-off dated after the payment was released",
+   "Variance review consisting of a total-only comparison",
+   "Exceptions cleared with the note \"checked\"",
+   "Register reviewed by the person who prepared it"
+  ],
+  "evidence": [
+   "Payroll registers and variance analyses",
+   "Reviewer sign-offs",
+   "Exception reports",
+   "Bank payment files"
+  ],
+  "kpis": [
+   "Pay runs with evidenced review",
+   "Exceptions investigated",
+   "Variance threshold breaches"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-PAY-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "Payroll",
+  "subprocess": "Time and Attendance",
+  "risk": "Hours paid are not the hours worked, because time records are entered, amended or approved by people who benefit from them.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Assess whether time and attendance data is captured accurately, approved independently and flows unaltered into pay.",
+  "what_to_review": [
+   "Time capture method and its integrity \u2014 biometric, badge, manual sheets",
+   "Supervisor approval of hours and whether it is exercised",
+   "Amendments to submitted time records and who makes them",
+   "Buddy punching and remote clock-in controls",
+   "Interface integrity between the time system and payroll"
+  ],
+  "procedures": [
+   "Reconcile hours approved in the time system to hours paid in the register and investigate differences.",
+   "Analyse time record amendments by user; amendments by payroll or by the employee themselves warrant testing.",
+   "Test approval evidence for a sample of timesheets and identify approvals granted after the pay run.",
+   "Where clock-in is remote or app-based, test the location and device controls.",
+   "Analyse employees with implausible patterns \u2014 identical hours every period, hours exceeding shift length."
+  ],
+  "red_flags": [
+   "Approvals granted in bulk seconds apart",
+   "Amendments concentrated with one supervisor",
+   "Employees clocked in at two locations",
+   "Manual timesheets replacing system capture for particular teams"
+  ],
+  "evidence": [
+   "Time and attendance system extract",
+   "Approval logs",
+   "Amendment audit trail",
+   "Payroll register",
+   "Shift rosters"
+  ],
+  "kpis": [
+   "Hours approved vs. paid variance",
+   "Amendments per user",
+   "Late approvals"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-PAY-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "Payroll",
+  "subprocess": "Overtime, Premiums and Variable Pay",
+  "risk": "Overtime, shift premiums, bonuses and commissions are claimed and approved without support, or calculated on the wrong basis.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm that variable pay is earned, supported, correctly calculated and approved within authority.",
+  "what_to_review": [
+   "Overtime authorisation before it is worked, not after",
+   "Premium and allowance eligibility rules and their application",
+   "Bonus and commission calculation against plan rules",
+   "Approval authority and self-approval risk",
+   "Concentration by employee, supervisor and cost centre"
+  ],
+  "procedures": [
+   "Analyse overtime by employee and supervisor as a percentage of base pay; test the top decile to pre-approval and time records.",
+   "Recompute a sample of shift premiums and allowances against the eligibility rules in the agreement or policy.",
+   "Recompute a sample of bonus and commission payments against the plan and the approved performance outcome.",
+   "Test for supervisors approving their own or a related party's variable pay."
+  ],
+  "red_flags": [
+   "Overtime approved after the period worked",
+   "The same employees at the top of the overtime list every period",
+   "Allowances continuing after the qualifying condition ended",
+   "Commission paid on cancelled or unpaid sales"
+  ],
+  "evidence": [
+   "Payroll register with pay element detail",
+   "Overtime authorisations",
+   "Union agreements and pay policies",
+   "Bonus and commission plan documents"
+  ],
+  "kpis": [
+   "Overtime as % of base pay",
+   "Variable pay recomputation errors",
+   "Self-approved payments"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-PAY-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "Payroll",
+  "subprocess": "Statutory Deductions and Remittances",
+  "risk": "Statutory deductions are calculated on the wrong basis or remitted late, exposing the organisation to interest, penalties and employee claims.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm that statutory deductions are correct, complete and remitted within the required deadlines.",
+  "what_to_review": [
+   "Tax code and withholding table maintenance and update timing",
+   "Pension, social security and levy calculations",
+   "Remittance deadlines by jurisdiction and evidence of payment",
+   "Year-end reporting and employee statements",
+   "Treatment of benefits in kind and taxable allowances"
+  ],
+  "procedures": [
+   "Recompute statutory deductions for a sample of employees across pay bands and jurisdictions.",
+   "Test that withholding tables were updated on the statutory effective date, not later.",
+   "Agree remittances to the authority receipts and test the payment date against the deadline; quantify interest and penalties.",
+   "Test the treatment of benefits in kind, allowances and expense reimbursements for correct taxability.",
+   "Reconcile year-end statements to the payroll ledger."
+  ],
+  "red_flags": [
+   "Penalties recurring period after period",
+   "Tables updated retrospectively after an authority query",
+   "Benefits paid through expenses to avoid tax",
+   "Reconciling differences at year end carried forward unexplained"
+  ],
+  "evidence": [
+   "Payroll register and deduction reports",
+   "Authority remittance receipts and correspondence",
+   "Withholding table configuration",
+   "Year-end statements and reconciliations"
+  ],
+  "kpis": [
+   "Remittances on time %",
+   "Penalties and interest incurred",
+   "Deduction recomputation errors"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-PAY-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "Payroll",
+  "subprocess": "Joiners, Leavers and Final Settlements",
+  "risk": "New starters are paid before onboarding is complete and leavers continue to be paid after their exit date, or receive settlements outside policy.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm that pay starts and stops on the correct date and that final settlements are calculated and approved correctly.",
+  "what_to_review": [
+   "Timeliness of new starter set-up and first payment accuracy",
+   "Leaver notification from HR to payroll and the cut-off applied",
+   "Final settlement components \u2014 notice, accrued leave, severance",
+   "Approval authority for settlements and ex gratia payments",
+   "Recovery of overpayments after exit"
+  ],
+  "procedures": [
+   "Reconcile the payroll population to the HR active employee list and investigate every difference in both directions.",
+   "For all leavers in the period, test that pay ceased on the exit date and recompute the final settlement.",
+   "Test severance and ex gratia payments to the approval authority matrix and to any settlement agreement.",
+   "Quantify overpayments to leavers and test the recovery outcome.",
+   "Test first-payment accuracy for a sample of new starters, including pro-rating."
+  ],
+  "red_flags": [
+   "Payments continuing one or more periods after exit",
+   "Settlements approved by the departing employee's own manager alone",
+   "Overpayments written off without attempt at recovery",
+   "Leaver notifications arriving after the pay run repeatedly"
+  ],
+  "evidence": [
+   "HR joiner and leaver reports",
+   "Payroll register",
+   "Settlement calculations and agreements",
+   "Overpayment recovery records"
+  ],
+  "kpis": [
+   "Payments after exit date",
+   "Days from exit to payroll cut-off",
+   "Overpayments recovered %"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-PAY-08",
+  "industry": [
+   "cross"
+  ],
+  "process": "Payroll",
+  "subprocess": "Leave and Employee Benefit Accruals",
+  "risk": "Accrued leave, long service and benefit liabilities are misstated because entitlement rules are applied inconsistently or balances are never verified.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm that leave and benefit balances reflect entitlement and are accurately valued.",
+  "what_to_review": [
+   "Entitlement rules by contract type and their configuration",
+   "Leave taken recorded against the balance",
+   "Carry-over, expiry and cap rules",
+   "Valuation basis for the accrual, including on-costs",
+   "Long service, sabbatical and other long-term benefit provisions"
+  ],
+  "procedures": [
+   "Recompute leave balances for a sample of employees from entitlement, accrual and leave taken.",
+   "Test that leave actually taken is recorded \u2014 compare rosters or absence records to leave deductions.",
+   "Test carry-over and expiry rules against policy and identify balances exceeding caps.",
+   "Recompute the accrual valuation including employer on-costs and agree to the ledger."
+  ],
+  "red_flags": [
+   "Employees with balances far above the cap",
+   "Leave taken but never deducted from the balance",
+   "Accrual valued at current salary where policy requires otherwise",
+   "Manual adjustments to balances without approval"
+  ],
+  "evidence": [
+   "Leave management system extract",
+   "Employment contracts and leave policy",
+   "Accrual calculations",
+   "General ledger balances"
+  ],
+  "kpis": [
+   "Leave balances above cap",
+   "Accrual recomputation variance",
+   "Manual balance adjustments"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-PAY-09",
+  "industry": [
+   "cross"
+  ],
+  "process": "Payroll",
+  "subprocess": "Payroll Payment Execution and Bank Controls",
+  "risk": "The payment file is altered between approval of the payroll and transmission to the bank, or payments are made from accounts outside treasury control.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm that the amount authorised is the amount paid, and that payroll banking is controlled.",
+  "what_to_review": [
+   "Integrity of the payment file between payroll and bank \u2014 hash totals, control counts",
+   "Authorisation of the payment file at the bank and dual release",
+   "Payroll bank account mandates and signatories",
+   "Manual, off-cycle and emergency payments",
+   "Returned and unpresented payments"
+  ],
+  "procedures": [
+   "Agree total value and record count on the approved register to the file transmitted to the bank for a sample of runs.",
+   "Test that release at the bank requires two approvers independent of payroll preparation.",
+   "Test all off-cycle and manual payments for authorisation and business reason.",
+   "Review returned payments and test where the funds were redirected.",
+   "Confirm payroll bank mandates against the approved signatory list."
+  ],
+  "red_flags": [
+   "Payment file totals differing from the approved register",
+   "Off-cycle payments used routinely",
+   "Returned payments re-issued to a different account",
+   "Payroll accounts with signatories no longer employed"
+  ],
+  "evidence": [
+   "Approved payroll registers",
+   "Bank payment files and transmission logs",
+   "Bank mandates",
+   "Off-cycle payment approvals"
+  ],
+  "kpis": [
+   "Register to bank file variances",
+   "Off-cycle payments per period",
+   "Payments released single-handed"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-PAY-10",
+  "industry": [
+   "cross"
+  ],
+  "process": "Payroll",
+  "subprocess": "Outsourced Payroll Provider Oversight",
+  "risk": "Payroll is outsourced but the risk is not, and the organisation cannot evidence that the provider's controls actually operate.",
+  "rating": "Medium",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether an outsourced payroll arrangement is governed, assured and recoverable.",
+  "what_to_review": [
+   "Contract terms \u2014 service levels, liability, audit rights, data protection",
+   "Assurance obtained, such as a service auditor report, and whether it is read",
+   "Complementary user entity controls the organisation must perform",
+   "Data transfer security and employee data protection",
+   "Exit and continuity planning if the provider fails"
+  ],
+  "procedures": [
+   "Obtain the provider's service auditor report; identify the complementary user controls and test whether the organisation actually performs each one.",
+   "Review report exceptions and test whether management assessed their impact.",
+   "Test the reconciliation performed on data returned by the provider before it is accepted.",
+   "Review the contract for audit rights and data protection terms, and test whether any audit has been exercised.",
+   "Assess the continuity plan for running payroll if the provider became unavailable."
+  ],
+  "red_flags": [
+   "Service auditor report received but never opened",
+   "Complementary user controls not even identified",
+   "Provider output accepted without reconciliation",
+   "No plan for a pay run if the provider fails"
+  ],
+  "evidence": [
+   "Outsourcing contract",
+   "Service auditor reports",
+   "Reconciliations of provider output",
+   "Service level reporting",
+   "Continuity plan"
+  ],
+  "kpis": [
+   "Complementary controls performed",
+   "Report exceptions assessed",
+   "Date of last provider review"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-PAY-11",
+  "industry": [
+   "cross"
+  ],
+  "process": "Payroll",
+  "subprocess": "Payroll Reconciliation, Cost Analysis and Ghost Employees",
+  "risk": "Payroll is not reconciled to the general ledger or to headcount, so fabricated employees and systematic errors persist undetected.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm payroll costs reconcile to the ledger and to a verified workforce, and test for fictitious employees.",
+  "what_to_review": [
+   "Reconciliation of payroll to the general ledger and to headcount",
+   "Cost per head and payroll cost trend analysis by department",
+   "Existence verification of employees",
+   "Employees with no leave taken, no deductions or no email account",
+   "Bank account and address matching across the population"
+  ],
+  "procedures": [
+   "Reconcile total payroll cost to the general ledger for each period and test unexplained differences.",
+   "Reconcile paid headcount to HR records and to an independent source such as building access or IT accounts; investigate every unmatched name.",
+   "Test for employees who never take leave, have no tax deductions, or share bank details with another employee.",
+   "For a sample of employees, verify existence through independent confirmation \u2014 line manager attestation, access records, or physical verification.",
+   "Analyse payroll cost per head by department against expectation."
+  ],
+  "red_flags": [
+   "Employees with no system account and no leave history",
+   "Payroll to ledger differences carried as a rounding plug",
+   "Headcount reported by HR differing persistently from payroll",
+   "New employees created shortly before the pay run and removed after"
+  ],
+  "evidence": [
+   "Payroll registers and general ledger",
+   "HR headcount reports",
+   "Building access and IT account listings",
+   "Leave records",
+   "Bank detail analytics"
+  ],
+  "kpis": [
+   "Payroll to GL differences",
+   "Unmatched paid employees",
+   "Employees with zero leave taken"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]

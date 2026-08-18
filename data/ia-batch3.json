@@ -1,51 +1,5 @@
 [
  {
-  "id": "IA-X-05",
-  "industry": [
-   "cross"
-  ],
-  "process": "Order to Cash",
-  "subprocess": "Credit and Collections",
-  "risk": "Credit is extended beyond approved limits and receivables age without escalation, so bad debt is recognised late and cash is tied up.",
-  "rating": "High",
-  "risk_category": "Financial",
-  "audit_objective": "Assess whether credit limits are set on evidence, enforced by the system, and whether collections escalate on schedule.",
-  "what_to_review": [
-   "Credit limit setting, review frequency and approval authority",
-   "System enforcement of limits at order entry",
-   "Order release overrides and who performs them",
-   "Collections escalation path and dunning discipline",
-   "Bad debt provision methodology and write-off approval"
-  ],
-  "procedures": [
-   "Compare customer balances to approved credit limits and quantify exposure over limit at several dates, not just year end.",
-   "Test the population of orders released over limit and inspect the approval for each.",
-   "Analyse receivables ageing by collector and customer; test whether escalation actually occurred at the policy trigger points.",
-   "Recompute the bad debt provision and test write-offs for approval at the correct authority.",
-   "Test whether credit limits were reviewed within the policy cycle, particularly for the largest exposures."
-  ],
-  "red_flags": [
-   "Limits raised immediately after an order was blocked",
-   "A collector with an ageing profile far worse than peers",
-   "Write-offs approved by the person who granted the credit",
-   "Customers on hold still receiving shipments"
-  ],
-  "evidence": [
-   "Accounts receivable ageing",
-   "Credit limit master data and change log",
-   "Order release override reports",
-   "Write-off approvals"
-  ],
-  "kpis": [
-   "Days sales outstanding",
-   "% balance over limit",
-   "Bad debt as % of revenue"
-  ],
-  "lens": [
-   "ia"
-  ]
- },
- {
   "id": "IA-X-06",
   "industry": [
    "cross"

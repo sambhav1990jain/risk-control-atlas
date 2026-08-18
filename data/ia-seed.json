@@ -505,52 +505,6 @@
   ]
  },
  {
-  "id": "IA-X-02",
-  "industry": [
-   "cross"
-  ],
-  "process": "Payroll",
-  "subprocess": "Payroll Processing & Overtime",
-  "risk": "Payroll is paid to ghost employees, or overtime is claimed and approved without evidence of hours worked.",
-  "rating": "High",
-  "risk_category": "Fraud",
-  "audit_objective": "Confirm the payroll population is valid, complete and authorised, and that variable pay is supported.",
-  "what_to_review": [
-   "New hire and termination processing timeliness",
-   "Ghost employee indicators",
-   "Overtime approval and supporting time records",
-   "Payroll master change authorisation",
-   "Off-cycle and manual payments"
-  ],
-  "procedures": [
-   "Match payroll to HR master records; investigate paid employees with no HR record and terminated employees still paid.",
-   "Test for duplicate bank accounts, addresses or tax IDs across the payroll population.",
-   "Analyse overtime by employee and supervisor; test the top decile to approved timesheets.",
-   "Test all off-cycle payments for authorisation.",
-   "Recompute gross-to-net for a sample and agree statutory deductions."
-  ],
-  "red_flags": [
-   "Overtime concentrated under one supervisor",
-   "Employees never taking leave",
-   "Bank details changed shortly before a pay run",
-   "Terminations processed after the final pay"
-  ],
-  "evidence": [
-   "Payroll register",
-   "HR master data",
-   "Time and attendance records",
-   "Bank payment files"
-  ],
-  "kpis": [
-   "Overtime as % of base pay",
-   "Days to process terminations",
-   "Payroll error rate"
-  ],
-  "lens": [
-   "ia"
-  ]
- },
- {
   "id": "IA-X-03",
   "industry": [
    "cross"
