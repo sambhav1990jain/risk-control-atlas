@@ -77,6 +77,24 @@ button.card:hover{border-color:var(--accent);transform:translateY(-2px);box-shad
 .lens-card .sub{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
 .lens-card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-2);font-size:13.5px;display:flex;flex-direction:column;gap:5px}
 
+
+.lens-card{padding:0;overflow:hidden;gap:0}
+.lens-open{display:block;width:100%;text-align:left;padding:22px 24px 16px}
+.lens-open:hover h3{color:var(--accent)}
+.lens-card .sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+.lens-card h3{font-size:22px;margin:3px 0 6px}
+.lens-blurb{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.proclist{display:flex;flex-direction:column;border-top:1px solid var(--line);max-height:340px;overflow-y:auto}
+.proclist button{display:flex;justify-content:space-between;align-items:baseline;gap:12px;width:100%;
+  padding:8px 24px;font-size:13.5px;color:var(--ink-2);text-align:left;border-bottom:1px solid var(--line)}
+.proclist button:last-child{border-bottom:none}
+.proclist button:hover{background:var(--accent-wash);color:var(--accent)}
+.proclist .pc{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.proclist button:hover .pc{color:var(--accent)}
+.proctotal{display:flex;justify-content:space-between;gap:12px;padding:11px 24px;
+  background:var(--surface-2);border-top:1px solid var(--line-2);font-family:var(--mono);
+  font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+.lens-card .go{margin:16px 24px 20px;align-self:flex-start}
 /* ---- workspace ---- */
 .work{display:grid;grid-template-columns:250px minmax(0,1fr);gap:26px;padding:26px 0 80px;align-items:start}
 .side{position:sticky;top:66px;display:flex;flex-direction:column;gap:20px}
@@ -505,7 +523,7 @@ function viewIndustry(){
               : 'Everything an internal audit or ICFR function needs in this sector \u2014 the processes specific to the industry plus the finance, people, IT and governance processes every organisation runs.'}</p>
             <div class="tally"><span>${c.icfr} controls</span><span>${c.ia} audit programmes</span>
               <span>${new Set(pool(sel,'icfr').concat(pool(sel,'ia')).map(d=>d.process)).size} processes</span></div>
-            <button class="go" onclick="go('lens',{ind:'${sel}'})">Open the atlas</button>
+            <button class="go" onclick="go('lens',{ind:'${sel}'})">Choose the lens</button>
           </div>` : `<p class="hint">Every industry loads the cross-industry foundation; sector-specific
             content is layered on top as it is written.</p>`}
         </div>
@@ -557,21 +575,40 @@ function viewIndustry(){
 
 function viewLens(){
   const c = counts(S.ind), ind = {name: indName(S.ind)};
+  const blurb = {
+    ia:'What to review, and how, when you are planning or running an engagement.',
+    icfr:'The risk\u2013control matrix, with test steps an external auditor will expect.'};
+  const unit = {ia:'audit programmes', icfr:'risks and controls'};
   return `<div class="wrap stage">
     <div class="lede">
-      <span class="eyebrow">Step two — ${ind.name}</span>
+      <span class="eyebrow">Step two \u2014 ${ind.name}</span>
       <h2>What are you here to do?</h2>
-      <p>The same risk looks different depending on the job. An internal auditor needs to know what to
-      go and look at; a controls owner needs the matrix that stands up to an external auditor.</p>
+      <p>The same risk looks different depending on the job. An internal auditor needs to know what
+      to go and look at; a controls owner needs the matrix that stands up to an external auditor.
+      Every process below is listed with what it holds, so you can see the shape of the work before
+      you start.</p>
     </div>
     <div class="grid-lens">
-      ${Object.entries(LENSES).map(([k,l])=>`
-        <button class="card lens-card" onclick="go('work',{lens:'${k}'})">
-          <span class="sub">${l.sub}</span>
-          <h3>${l.name}</h3>
-          <ul>${l.pts.map(p=>`<li>${p}</li>`).join('')}</ul>
-          <span class="tally"><span>${k==='ia'?c.ia+' audit programmes':c.icfr+' controls'}</span></span>
-        </button>`).join('')}
+      ${Object.entries(LENSES).map(([k,l])=>{
+        const rows = pool(S.ind,k);
+        const procs = [...new Set(rows.map(d=>d.process))].sort();
+        const total = rows.length;
+        return `<section class="card lens-card">
+          <button class="lens-open" onclick="go('work',{lens:'${k}'})">
+            <span class="sub">${l.sub}</span>
+            <h3>${l.name}</h3>
+            <p class="lens-blurb">${blurb[k]}</p>
+          </button>
+          <div class="proclist">
+            ${procs.map(pr=>{
+              const n = rows.filter(d=>d.process===pr).length;
+              return `<button onclick="go('work',{lens:'${k}',proc:'${esc(pr)}',sub:null})">
+                <span class="pn">${pr}</span><span class="pc">${n}</span></button>`}).join('')}
+          </div>
+          <div class="proctotal"><span>${procs.length} processes</span>
+            <span>${total} ${unit[k]}</span></div>
+          <button class="go" onclick="go('work',{lens:'${k}'})">Open ${l.name}</button>
+        </section>`}).join('')}
     </div>
   </div>`;
 }
