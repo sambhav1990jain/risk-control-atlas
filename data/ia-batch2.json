@@ -1,0 +1,454 @@
+[
+ {
+  "id": "IA-HSP-01",
+  "industry": [
+   "hospitality"
+  ],
+  "process": "Property Operations",
+  "subprocess": "Front Office and Cash Handling",
+  "risk": "Front desk staff manipulate reservations, comps and petty cash, and the loss is hidden by the volume of small transactions.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Identify cash and revenue loss at the property and assess whether property-level monitoring detects it.",
+  "what_to_review": [
+   "Comp, discount and rate-override authority at the front desk",
+   "Room moves and reservation cancellations after check-in",
+   "Petty cash and float custody",
+   "Paid-out and refund transactions",
+   "Night audit independence"
+  ],
+  "procedures": [
+   "Analyse comps, rate overrides and zero-rate stays by agent and shift; select the outlier tail for evidence of authorisation.",
+   "Test reservations cancelled after the guest checked in, which can conceal a cash sale.",
+   "Count floats unannounced at a sample of properties and agree to the recorded balance.",
+   "Test paid-outs and refunds for supporting documentation and guest signature.",
+   "Confirm the night auditor is not the same person who operated the desk during the shift audited."
+  ],
+  "red_flags": [
+   "Comps concentrated on one agent or shift",
+   "Repeated room moves to lower rate codes",
+   "Floats counted only by their own custodian",
+   "Guest folios adjusted after checkout"
+  ],
+  "evidence": [
+   "Property management system transaction log",
+   "Night audit packs",
+   "Petty cash and float records",
+   "CCTV at the front desk"
+  ],
+  "kpis": [
+   "Comps as % of room revenue",
+   "Overrides per agent",
+   "Float variance per property"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-HSP-02",
+  "industry": [
+   "hospitality"
+  ],
+  "process": "Procurement",
+  "subprocess": "Purchasing and Supplier Relationships",
+  "risk": "Property managers direct purchasing to connected suppliers at inflated prices, outside the group procurement framework.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Assess whether property-level purchasing follows the group framework and whether supplier relationships are arm's length.",
+  "what_to_review": [
+   "Use of contracted group suppliers versus local purchasing",
+   "Local supplier onboarding and vetting",
+   "Price benchmarking against group contracts",
+   "Conflict of interest declarations at property level",
+   "Splitting of purchases below approval thresholds"
+  ],
+  "procedures": [
+   "Quantify spend outside the group contracted supplier list by property and category.",
+   "Compare unit prices paid locally against the group contract rate for the same items.",
+   "Match local supplier details against employee records for shared addresses, phone numbers and bank accounts.",
+   "Test for purchase orders split into amounts just below the approval threshold."
+  ],
+  "red_flags": [
+   "A property with unusually high local spend",
+   "Suppliers created and used only by one property",
+   "Invoices consistently just below the threshold",
+   "No competitive quotes on recurring local spend"
+  ],
+  "evidence": [
+   "Accounts payable spend by property and supplier",
+   "Group supplier contracts and rates",
+   "Employee master data",
+   "Purchase order records"
+  ],
+  "kpis": [
+   "% spend on contract",
+   "Price variance to group rate",
+   "Split-order exceptions"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-ECM-01",
+  "industry": [
+   "ecommerce"
+  ],
+  "process": "Customer Experience",
+  "subprocess": "Pricing, Promotions and Digital Content",
+  "risk": "Pricing and promotion errors are published to the site and honoured at scale before anyone notices, or promotional terms are not met.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Assess control over what is published to customers and how quickly errors are detected and corrected.",
+  "what_to_review": [
+   "Price and promotion change approval before publication",
+   "Automated checks on price change magnitude",
+   "Stacking of promotions and discount codes",
+   "Speed of detection and rollback",
+   "Advertising and claims compliance"
+  ],
+  "procedures": [
+   "Test the approval trail for a sample of price and promotion changes published in the period.",
+   "Review automated tolerance checks on price changes and test whether they blocked or flagged extreme values.",
+   "Test whether discount codes can be stacked or reused beyond their intended limit by re-performing a checkout in a test environment.",
+   "Measure elapsed time from publication of known pricing errors to correction, and quantify orders honoured."
+  ],
+  "red_flags": [
+   "Discount codes shared publicly and still active",
+   "Price changes published outside working hours without approval",
+   "Repeat incidents with the same root cause",
+   "No monetary tolerance on automated price feeds"
+  ],
+  "evidence": [
+   "Content management change log",
+   "Promotion configuration records",
+   "Incident log for pricing errors",
+   "Order data for affected periods"
+  ],
+  "kpis": [
+   "Pricing incidents per quarter",
+   "Value honoured on error",
+   "Mean time to correct"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-ECM-02",
+  "industry": [
+   "ecommerce"
+  ],
+  "process": "Technology and Data",
+  "subprocess": "Customer Data and Privacy",
+  "risk": "Personal data is retained longer than permitted, shared with third parties without a lawful basis, or exposed through weak access control.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Determine whether personal data is held, used and shared in line with privacy obligations and consent.",
+  "what_to_review": [
+   "Data inventory and lawful basis for each processing purpose",
+   "Consent capture and withdrawal handling",
+   "Retention and deletion in practice, not just in policy",
+   "Third-party data sharing and processor agreements",
+   "Access to production customer data by staff and vendors"
+  ],
+  "procedures": [
+   "Trace a sample of processing purposes to a documented lawful basis and to what customers were actually told.",
+   "Test deletion by selecting accounts that requested erasure and searching all systems, including backups and analytics, for residual data.",
+   "Reconcile third parties receiving customer data to signed processor agreements.",
+   "Review who holds access to production customer data and test whether that access is justified by role."
+  ],
+  "red_flags": [
+   "Marketing to customers who withdrew consent",
+   "Data retained \"in case it is useful\"",
+   "Analytics tools receiving identifiable data",
+   "Vendor access never reviewed after onboarding"
+  ],
+  "evidence": [
+   "Data inventory and processing records",
+   "Consent management logs",
+   "Erasure request records",
+   "Processor agreements",
+   "Access listings"
+  ],
+  "kpis": [
+   "Erasure requests completed in time",
+   "Systems with retention enforced",
+   "Vendors with signed agreements"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FMC-01",
+  "industry": [
+   "fmcg"
+  ],
+  "process": "Sales and Distribution",
+  "subprocess": "Route to Market and Distributor Performance",
+  "risk": "Distributors sell outside their assigned territory, hold stock beyond shelf life, or claim promotional support they did not deliver.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Assess whether distributor arrangements are performing as contracted and claims are substantiated.",
+  "what_to_review": [
+   "Territory assignment and cross-territory selling",
+   "Distributor stock levels and shelf-life exposure",
+   "Promotional claim substantiation",
+   "Credit exposure and payment performance",
+   "Distributor audits performed by the company"
+  ],
+  "procedures": [
+   "Analyse sell-in versus sell-out data by distributor to identify stock building beyond normal cover.",
+   "Sample promotional claims and test for evidence the activity was performed, such as photographs, invoices or third-party verification.",
+   "Test credit exposure by distributor against approved limits and ageing.",
+   "Review the company's own distributor audit programme, coverage and follow-up of findings."
+  ],
+  "red_flags": [
+   "Distributors with stock cover far above the network average",
+   "Claims supported by generic or reused evidence",
+   "Sales spikes before price increases",
+   "Distributor audits repeatedly deferred"
+  ],
+  "evidence": [
+   "Distributor sell-in and sell-out data",
+   "Promotional claim files",
+   "Credit exposure reports",
+   "Distributor audit reports"
+  ],
+  "kpis": [
+   "Stock cover days by distributor",
+   "% claims with valid evidence",
+   "Overdue distributor balances"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FMC-02",
+  "industry": [
+   "fmcg"
+  ],
+  "process": "Manufacturing and Quality",
+  "subprocess": "Food Safety and Product Quality",
+  "risk": "A product safety failure reaches consumers because quality controls at the plant are bypassed under production pressure.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess whether food safety controls operate as designed under real production conditions.",
+  "what_to_review": [
+   "HACCP plan currency and critical control point monitoring",
+   "Deviations at critical control points and their disposition",
+   "Hygiene, pest control and allergen segregation",
+   "Supplier raw material approval and incoming testing",
+   "Certification audit findings and closure"
+  ],
+  "procedures": [
+   "Test critical control point monitoring records for completeness and for deviations released without a documented disposition decision.",
+   "Walk the plant during production and compare observed practice to the HACCP plan, particularly allergen changeover.",
+   "Trace incoming raw material batches to approved suppliers and required certificates of analysis.",
+   "Review third-party certification and regulator findings and verify corrective actions were implemented."
+  ],
+  "red_flags": [
+   "Monitoring records completed in identical handwriting at one time",
+   "Deviations released \"on management authority\"",
+   "Allergen changeover cleaning shortened to hit output",
+   "Supplier approvals lapsed but deliveries accepted"
+  ],
+  "evidence": [
+   "HACCP plans and CCP monitoring records",
+   "Deviation and disposition logs",
+   "Supplier approval files and certificates of analysis",
+   "Certification audit reports"
+  ],
+  "kpis": [
+   "CCP deviations per period",
+   "% records complete",
+   "Overdue corrective actions"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-UTL-01",
+  "industry": [
+   "utilities"
+  ],
+  "process": "Network Operations",
+  "subprocess": "Asset Integrity and Safety Critical Maintenance",
+  "risk": "Safety-critical network maintenance is deferred, raising the risk of asset failure, supply interruption and public harm.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Assess whether inspection and maintenance of safety-critical network assets is performed on schedule and defects are closed.",
+  "what_to_review": [
+   "Asset criticality classification and inspection intervals",
+   "Overdue safety-critical maintenance by asset class",
+   "Defect close-out and interim risk mitigation",
+   "Vegetation management and third-party interference",
+   "Contractor competency for high-risk work"
+  ],
+  "procedures": [
+   "Extract the maintenance plan and quantify overdue safety-critical tasks by asset class and region.",
+   "Trace a sample of high-priority defects to closure and verify the remediation physically occurred.",
+   "Test whether deferrals were formally risk-assessed and approved at the required level.",
+   "Review contractor competency and authorisation records for high-voltage or high-pressure work."
+  ],
+  "red_flags": [
+   "Deferrals approved in blocks at year end",
+   "Defects downgraded in priority without justification",
+   "Inspections recorded as complete with no field evidence",
+   "Contractors working outside their authorisation"
+  ],
+  "evidence": [
+   "Asset management system maintenance records",
+   "Defect registers",
+   "Deferral approvals",
+   "Contractor authorisation records"
+  ],
+  "kpis": [
+   "Overdue safety-critical tasks",
+   "Defect close-out days",
+   "Unplanned outage frequency"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-UTL-02",
+  "industry": [
+   "utilities"
+  ],
+  "process": "Customer Operations",
+  "subprocess": "Vulnerable Customers and Disconnection",
+  "risk": "Customers in financial hardship or on medical support are disconnected or pursued in breach of regulatory customer protection obligations.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm that customer protection obligations are applied before any restriction or disconnection.",
+  "what_to_review": [
+   "Identification and flagging of vulnerable and life-support customers",
+   "Hardship programme access and affordability assessment",
+   "Pre-disconnection notification and cooling-off requirements",
+   "Debt collection agency conduct",
+   "Complaint and ombudsman case outcomes"
+  ],
+  "procedures": [
+   "Reconcile disconnections executed against the vulnerable and life-support customer registers; investigate any overlap.",
+   "Test that each disconnection followed every required notification step within the prescribed timeframes.",
+   "Sample hardship applications and test the timeliness and consistency of assessment.",
+   "Review ombudsman and regulator determinations and trace systemic causes to remediation."
+  ],
+  "red_flags": [
+   "Life-support flags removed shortly before disconnection",
+   "Notification letters generated but not despatched",
+   "Hardship applications rejected at high rates by one team",
+   "Repeat ombudsman findings on the same issue"
+  ],
+  "evidence": [
+   "Disconnection records",
+   "Vulnerable customer registers",
+   "Hardship application files",
+   "Ombudsman and regulator correspondence"
+  ],
+  "kpis": [
+   "Disconnections in breach",
+   "Hardship assessment turnaround",
+   "Ombudsman cases upheld"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TEL-01",
+  "industry": [
+   "telecom"
+  ],
+  "process": "Revenue Assurance",
+  "subprocess": "Revenue Leakage Across the Order to Cash Chain",
+  "risk": "Services are provisioned on the network but never reach billing, so the customer uses the service without ever being charged.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Quantify revenue leakage between provisioning and billing and assess whether revenue assurance detects it.",
+  "what_to_review": [
+   "Reconciliation of network provisioning records to billing subscriptions",
+   "Free-of-charge and test accounts left active",
+   "Product catalogue consistency between systems",
+   "Discount and credit application",
+   "Revenue assurance coverage and independence"
+  ],
+  "procedures": [
+   "Reconcile active services on the network to active billing subscriptions; quantify the value of unbilled active services.",
+   "Extract free-of-charge, employee and test accounts and test whether each remains justified.",
+   "Compare product and tariff definitions across provisioning, rating and billing for inconsistencies.",
+   "Analyse credits and manual adjustments by user and reason code."
+  ],
+  "red_flags": [
+   "Test accounts with genuine consumption",
+   "Long-lived free-of-charge accounts",
+   "Catalogue changes made in one system only",
+   "Credits concentrated with a small number of users"
+  ],
+  "evidence": [
+   "Network provisioning extracts",
+   "Billing subscription data",
+   "Product catalogue configurations",
+   "Credit and adjustment logs"
+  ],
+  "kpis": [
+   "Unbilled active services",
+   "Leakage as % of revenue",
+   "Credits per 1,000 subscribers"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TEL-02",
+  "industry": [
+   "telecom"
+  ],
+  "process": "Technology and Infrastructure",
+  "subprocess": "Network Resilience and Change Management",
+  "risk": "A poorly controlled network change causes a major service outage, with regulatory reporting obligations and customer compensation following.",
+  "rating": "High",
+  "risk_category": "IT",
+  "audit_objective": "Assess whether network changes are controlled and whether resilience and recovery capability is proven rather than assumed.",
+  "what_to_review": [
+   "Change approval, testing and back-out planning",
+   "Emergency change usage and retrospective approval",
+   "Single points of failure in core network",
+   "Disaster recovery and failover testing",
+   "Major incident reporting to the regulator"
+  ],
+  "procedures": [
+   "Sample network changes and test for approval, testing evidence and a documented back-out plan.",
+   "Quantify emergency changes as a proportion of all changes and test whether retrospective approval occurred.",
+   "Review the most recent failover or disaster recovery test and confirm it exercised a genuine failover, not a tabletop walkthrough.",
+   "Trace major incidents to root-cause analysis, regulatory notification within the required window, and corrective action closure."
+  ],
+  "red_flags": [
+   "Emergency changes used routinely to bypass approval",
+   "Back-out plans stated as \"restore from backup\" with no detail",
+   "DR tests deferred or scoped to non-critical systems",
+   "Repeat incidents with the same root cause"
+  ],
+  "evidence": [
+   "Change management records",
+   "Emergency change log",
+   "DR test reports",
+   "Major incident and regulatory notification records"
+  ],
+  "kpis": [
+   "Emergency changes as % of total",
+   "Change failure rate",
+   "Time to regulatory notification"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]

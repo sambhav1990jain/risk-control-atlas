@@ -1,0 +1,582 @@
+[
+ {
+  "control_id": "HSP-01",
+  "process": "Rooms Revenue",
+  "subprocess": "Rate and Reservation Integrity",
+  "risk_id": "R-HSP-01",
+  "risk": "Room revenue is lost through unauthorised rate discounts, comped rooms and unrecorded occupancy at the front desk.",
+  "rating": "High",
+  "control_objective": "Ensure rooms occupied are recorded and billed at authorised rates.",
+  "control": "The property management system restricts discount and complimentary room codes to authorised users; the Night Auditor reconciles rooms physically occupied to rooms billed each night, and the General Manager reviews a daily exception report of comps, rate overrides and zero-rate stays.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Daily",
+  "assertions": "C, E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "General Manager",
+  "sod": "The front desk agent granting a rate override cannot approve their own override.",
+  "test_design": "Inspect user rights over rate codes and the night audit reconciliation procedure.",
+  "test_oe": "For a sample of nights, agree occupied rooms to rooms billed and inspect GM review of the exception report.",
+  "population": "Nightly night-audit packs and exception reports",
+  "sample": "25 nights",
+  "industry": [
+   "hospitality"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "HSP-02",
+  "process": "Food and Beverage",
+  "subprocess": "Inventory and Pour Cost",
+  "risk_id": "R-HSP-02",
+  "risk": "Food and beverage stock is consumed without sale through theft, over-pouring or unrecorded staff consumption.",
+  "rating": "High",
+  "control_objective": "Ensure food and beverage cost of sales reflects genuine sales and variances are investigated.",
+  "control": "Monthly, the Food and Beverage Controller counts stock, calculates theoretical versus actual cost of sales by outlet, and outlets exceeding the variance tolerance are investigated with the outlet manager and reported to the General Manager.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Food and Beverage Controller",
+  "sod": "The person counting stock is independent of the outlet whose variance is being measured.",
+  "test_design": "Inspect the costing methodology, tolerance thresholds and investigation protocol.",
+  "test_oe": "For a sample of months, re-perform the theoretical cost calculation and inspect investigation of outlier outlets.",
+  "population": "Monthly stock counts and cost variance reports",
+  "sample": "3 of 12 months",
+  "industry": [
+   "hospitality"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "HSP-03",
+  "process": "Rooms Revenue",
+  "subprocess": "Loyalty and Advance Deposits",
+  "risk_id": "R-HSP-03",
+  "risk": "Advance deposits and loyalty point liabilities are not recognised, understating liabilities and overstating revenue.",
+  "rating": "Medium",
+  "control_objective": "Ensure advance deposits and loyalty obligations are recorded until the stay is delivered.",
+  "control": "Monthly, the Financial Controller reconciles the advance deposit and loyalty liability accounts to the property management and loyalty systems, and reviews the ageing of deposits held for stays that have already passed.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, CO",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Reconciliation preparer does not process deposit refunds.",
+  "test_design": "Inspect the reconciliation template and the ageing review of expired deposits.",
+  "test_oe": "For a sample of months, re-perform the reconciliation and test the release of aged deposits to revenue.",
+  "population": "Monthly deposit and loyalty reconciliations",
+  "sample": "3 of 12 months",
+  "industry": [
+   "hospitality"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "HSP-04",
+  "process": "Property Operations",
+  "subprocess": "Capital Projects and FF&E",
+  "risk_id": "R-HSP-04",
+  "risk": "Refurbishment spend is capitalised when it is repair in nature, or project costs exceed approved budgets without escalation.",
+  "rating": "Medium",
+  "control_objective": "Ensure property capital expenditure is authorised, correctly classified and monitored against budget.",
+  "control": "Each capital project is approved against a business case at the authority level set by value; monthly, the Project Accountant reports actual against approved spend, and the Controller reviews the capital versus repairs classification for material additions before posting.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Project managers requesting spend do not approve capitalisation treatment.",
+  "test_design": "Inspect the capital approval framework and the classification review process.",
+  "test_oe": "For a sample of additions, agree to approval, inspect the classification assessment and agree spend to budget.",
+  "population": "Capital additions and monthly project reports",
+  "sample": "25 additions",
+  "industry": [
+   "hospitality"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ECM-01",
+  "process": "Online Revenue",
+  "subprocess": "Payment Gateway Reconciliation",
+  "risk_id": "R-ECM-01",
+  "risk": "Amounts collected by payment providers do not reconcile to orders recorded, so revenue and cash are misstated and shortfalls go undetected.",
+  "rating": "High",
+  "control_objective": "Ensure all customer orders are matched to settled funds and differences are investigated.",
+  "control": "Daily, the Revenue Operations Analyst reconciles order value in the commerce platform to gateway settlement reports and to bank credits, and unmatched items are aged and escalated to the Financial Controller weekly.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Daily",
+  "assertions": "C, E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Financial Controller",
+  "sod": "The person performing the reconciliation cannot post adjustments without review.",
+  "test_design": "Inspect the three-way reconciliation design between platform, gateway and bank.",
+  "test_oe": "For a sample of days, re-perform the reconciliation and inspect resolution of unmatched items.",
+  "population": "Daily gateway reconciliations",
+  "sample": "25 days",
+  "industry": [
+   "ecommerce"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ECM-02",
+  "process": "Online Revenue",
+  "subprocess": "Chargebacks and Payment Fraud",
+  "risk_id": "R-ECM-02",
+  "risk": "Fraudulent orders are fulfilled and later charged back, and losses are absorbed without adjusting fraud screening rules.",
+  "rating": "High",
+  "control_objective": "Ensure fraud screening operates effectively and chargeback losses are monitored and acted on.",
+  "control": "Orders are scored by the fraud screening engine before fulfilment, with holds above the risk threshold reviewed manually; monthly, the Risk Manager analyses chargeback reason codes and rates by channel and reports rule changes to the Financial Controller.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Risk Manager",
+  "sod": "Manual release of held orders is performed by risk staff, not by sales or fulfilment.",
+  "test_design": "Inspect the screening rule set, threshold configuration and manual review workflow.",
+  "test_oe": "Select a sample of released high-risk orders and inspect the documented review; recompute chargeback rates.",
+  "population": "Held-order review records and monthly chargeback analyses",
+  "sample": "40 released orders",
+  "industry": [
+   "ecommerce"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ECM-03",
+  "process": "Fulfilment",
+  "subprocess": "Returns and Refunds",
+  "risk_id": "R-ECM-03",
+  "risk": "Refunds are issued without the goods being returned, or are issued to accounts other than the original payment method.",
+  "rating": "High",
+  "control_objective": "Ensure refunds are issued only for validated returns and to the original payment method.",
+  "control": "The commerce platform restricts refunds to the original payment method and requires a matched return receipt in the warehouse system; refunds without a matched return require supervisor approval, and a daily exception report of these is reviewed by the Customer Operations Manager.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Customer Operations Manager",
+  "sod": "Agents issuing refunds cannot amend the return receipt record.",
+  "test_design": "Inspect the refund workflow configuration and the exception approval path.",
+  "test_oe": "Select a sample of refunds; agree to matched returns or documented supervisor approval.",
+  "population": "All refunds issued in the period",
+  "sample": "40 refunds",
+  "industry": [
+   "ecommerce"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "ECM-04",
+  "process": "Marketplace and Content",
+  "subprocess": "Third-Party Seller Settlements",
+  "risk_id": "R-ECM-04",
+  "risk": "Marketplace seller settlements are calculated on incorrect commission or fee terms, misstating net revenue and seller payables.",
+  "rating": "Medium",
+  "control_objective": "Ensure marketplace settlements reflect contracted commission and fee terms.",
+  "control": "Monthly, the Marketplace Finance Analyst recalculates a risk-based sample of seller settlements against contracted commission rates and reconciles the seller payable balance to the platform ledger, with Controller review of the reconciliation.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Commercial staff who negotiate seller terms do not calculate settlements.",
+  "test_design": "Inspect the settlement calculation logic and reconciliation template.",
+  "test_oe": "For a sample of months, recompute settlements to contract and agree the payable to the ledger.",
+  "population": "Monthly seller settlement runs and reconciliations",
+  "sample": "3 of 12 months",
+  "industry": [
+   "ecommerce"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FMC-01",
+  "process": "Trade Spend",
+  "subprocess": "Trade Promotions and Deductions",
+  "risk_id": "R-FMC-01",
+  "risk": "Trade promotion accruals are understated and customer deductions are settled without validation, overstating net revenue.",
+  "rating": "High",
+  "control_objective": "Ensure trade spend is accrued when the promotion is run and deductions are validated before settlement.",
+  "control": "Monthly, the Trade Finance Manager accrues promotional spend from approved promotion plans and shipment volumes, and customer deductions are matched to an approved promotion before clearing; unmatched deductions above threshold are disputed and escalated.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, CO, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Trade Finance Manager",
+  "sod": "Sales staff approving promotions do not clear the related customer deductions.",
+  "test_design": "Inspect the accrual methodology and the deduction matching and dispute workflow.",
+  "test_oe": "For a sample of months, re-perform the accrual and trace a sample of cleared deductions to approved promotions.",
+  "population": "Monthly trade accruals and deduction clearing records",
+  "sample": "3 of 12 months",
+  "industry": [
+   "fmcg"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FMC-02",
+  "process": "Distribution",
+  "subprocess": "Distributor Sales and Channel Stuffing",
+  "risk_id": "R-FMC-02",
+  "risk": "Sales are pushed into the distributor channel at period end beyond genuine demand, pulling forward revenue that later reverses as returns.",
+  "rating": "High",
+  "control_objective": "Ensure revenue reflects genuine sell-through and period-end shipment patterns are scrutinised.",
+  "control": "Monthly, the Commercial Controller analyses shipment volumes in the final week against the period average by distributor, reviews distributor inventory and sell-through data, and material period-end spikes require documented commercial justification approved by the Chief Financial Officer.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "CO, E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Commercial Controller",
+  "sod": "Sales leadership whose targets are affected do not approve their own justification.",
+  "test_design": "Inspect the analysis methodology, sell-through data source and escalation criteria.",
+  "test_oe": "For a sample of period ends, re-perform the shipment pattern analysis and inspect justification and approval.",
+  "population": "Monthly period-end shipment analyses",
+  "sample": "3 of 12 months",
+  "industry": [
+   "fmcg"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FMC-03",
+  "process": "Supply Chain",
+  "subprocess": "Product Recall and Traceability",
+  "risk_id": "R-FMC-03",
+  "risk": "A contaminated or defective batch cannot be traced and withdrawn quickly, extending consumer harm and financial exposure.",
+  "rating": "High",
+  "control_objective": "Ensure batch traceability is maintained end to end and recall capability is tested.",
+  "control": "Batch codes are captured at production, warehousing and despatch, and the Quality Director performs a documented mock recall at least annually, tracing a batch forward to customers and back to raw materials within the target time, with gaps remediated.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Annual",
+  "assertions": "C, E/O",
+  "coso": "Risk Assessment",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Quality Director",
+  "sod": "The mock recall is assessed by quality assurance independently of the operations team executing it.",
+  "test_design": "Inspect the traceability design and the mock recall procedure and target times.",
+  "test_oe": "Obtain the most recent mock recall report; re-perform the trace for one batch and test remediation of identified gaps.",
+  "population": "Annual mock recall exercises",
+  "sample": "1 of 1",
+  "industry": [
+   "fmcg"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "FMC-04",
+  "process": "Inventory",
+  "subprocess": "Short-Dated and Expired Stock",
+  "risk_id": "R-FMC-04",
+  "risk": "Finished goods approaching expiry are not provided for or withdrawn, overstating inventory and risking sale of out-of-date product.",
+  "rating": "Medium",
+  "control_objective": "Ensure short-dated and expired stock is identified, provided for and withdrawn from sale.",
+  "control": "Weekly, the Supply Chain Planner reviews the stock ageing and shelf-life report, blocks stock inside the minimum remaining-life window from despatch in the system, and Finance provides for short-dated stock monthly with Controller approval.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Weekly",
+  "assertions": "A/V, E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Planners blocking stock do not approve the resulting provision.",
+  "test_design": "Inspect the shelf-life blocking configuration and the provisioning policy.",
+  "test_oe": "For a sample of periods, test that blocked stock was not despatched and re-perform the provision.",
+  "population": "Weekly shelf-life reports and monthly provisions",
+  "sample": "25 of 52 weeks",
+  "industry": [
+   "fmcg"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "UTL-01",
+  "process": "Customer Revenue",
+  "subprocess": "Metering and Unbilled Revenue",
+  "risk_id": "R-UTL-01",
+  "risk": "Consumption is estimated rather than metered and the unbilled revenue accrual is unsupported, misstating revenue.",
+  "rating": "High",
+  "control_objective": "Ensure billed consumption reflects metered usage and unbilled revenue is supportable.",
+  "control": "Monthly, the Revenue Assurance Manager reconciles energy delivered into the network to energy billed plus estimated unbilled plus technical losses, and reviews the proportion of accounts on estimated reads with the Controller approving the unbilled accrual.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, CO, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Revenue Assurance Manager",
+  "sod": "Metering operations staff do not prepare or approve the revenue accrual.",
+  "test_design": "Inspect the energy balance methodology and the unbilled accrual basis.",
+  "test_oe": "For a sample of months, re-perform the energy balance and recompute the unbilled accrual.",
+  "population": "Monthly energy balances and unbilled accruals",
+  "sample": "3 of 12 months",
+  "industry": [
+   "utilities"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "UTL-02",
+  "process": "Regulated Operations",
+  "subprocess": "Regulatory Reporting and Tariffs",
+  "risk_id": "R-UTL-02",
+  "risk": "Tariffs are applied outside the regulator-approved schedule, or regulatory returns misstate performance, triggering penalties and rebates.",
+  "rating": "High",
+  "control_objective": "Ensure customer tariffs and regulatory submissions comply with the approved determination.",
+  "control": "Tariff changes are configured only from the regulator-approved schedule with independent verification of the configuration before activation, and the Regulatory Affairs Manager reviews each periodic return against source data before submission.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Event Driven",
+  "assertions": "A/V, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Head of Regulatory Affairs",
+  "sod": "The person configuring the tariff table does not verify or activate it.",
+  "test_design": "Inspect the tariff change procedure and the return review protocol.",
+  "test_oe": "For all tariff changes in the period, agree configuration to the approved schedule and inspect independent verification.",
+  "population": "Tariff change records and regulatory submissions",
+  "sample": "All changes in the period",
+  "industry": [
+   "utilities"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "UTL-03",
+  "process": "Asset Management",
+  "subprocess": "Capital Works and Asset Capitalisation",
+  "risk_id": "R-UTL-03",
+  "risk": "Network capital projects are capitalised before assets are commissioned, or overhead is over-absorbed into capital, overstating the asset base.",
+  "rating": "High",
+  "control_objective": "Ensure network assets are capitalised only when available for use and at supportable cost.",
+  "control": "Monthly, the Fixed Asset Manager reviews work in progress ageing and evidence of commissioning before transferring projects to fixed assets, and the overhead absorption rate applied to capital is approved annually by the Controller.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O, A/V, CO",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Fixed Asset Manager",
+  "sod": "Project engineers confirming commissioning are independent of the capitalisation posting.",
+  "test_design": "Inspect the capitalisation policy, WIP ageing review and overhead rate approval.",
+  "test_oe": "For a sample of transfers, agree to commissioning evidence and recompute overhead absorbed.",
+  "population": "Monthly WIP reviews and capitalisation transfers",
+  "sample": "25 transfers",
+  "industry": [
+   "utilities"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "UTL-04",
+  "process": "Trading and Commodity",
+  "subprocess": "Energy Trading and Position Limits",
+  "risk_id": "R-UTL-04",
+  "risk": "Energy trading positions breach approved risk limits, or trades are mispriced against the market curve.",
+  "rating": "High",
+  "control_objective": "Ensure trading operates within approved limits and positions are independently valued.",
+  "control": "Daily, the independent Risk Control function revalues open positions against an externally sourced forward curve, reports exposures against board-approved limits, and breaches are escalated same day to the Chief Risk Officer.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Daily",
+  "assertions": "A/V, E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Chief Risk Officer",
+  "sod": "Risk Control is organisationally independent of the trading desk it monitors.",
+  "test_design": "Inspect the limit framework, curve sourcing and escalation protocol.",
+  "test_oe": "For a sample of days, re-perform the revaluation and inspect breach escalation evidence.",
+  "population": "Daily position and limit reports",
+  "sample": "25 days",
+  "industry": [
+   "utilities"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TEL-01",
+  "process": "Service Revenue",
+  "subprocess": "Rating, Mediation and Revenue Assurance",
+  "risk_id": "R-TEL-01",
+  "risk": "Usage records are lost or mis-rated between the network and billing, so services delivered are never billed.",
+  "rating": "High",
+  "control_objective": "Ensure usage captured by the network is completely and accurately rated and billed.",
+  "control": "Daily, the Revenue Assurance team reconciles call and data records from network elements through mediation to the billing system, investigating record loss above tolerance, and reports leakage monthly to the Chief Financial Officer.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Daily",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Head of Revenue Assurance",
+  "sod": "Revenue Assurance is independent of network operations and billing.",
+  "test_design": "Inspect the end-to-end reconciliation design, tolerance levels and escalation route.",
+  "test_oe": "For a sample of days, re-perform the record count reconciliation and inspect investigation of variances.",
+  "population": "Daily mediation reconciliations",
+  "sample": "25 days",
+  "industry": [
+   "telecom"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TEL-02",
+  "process": "Service Revenue",
+  "subprocess": "Interconnect and Roaming Settlement",
+  "risk_id": "R-TEL-02",
+  "risk": "Amounts due from other operators for interconnect and roaming traffic are understated or not disputed within the settlement window.",
+  "rating": "High",
+  "control_objective": "Ensure interconnect and roaming balances are complete, agreed and settled on time.",
+  "control": "Monthly, the Interconnect Manager reconciles outgoing and incoming traffic to partner operator statements, raises disputes within the contractual window, and the Controller reviews the ageing of unresolved disputes and related provisions.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "C, A/V, E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "The person raising disputes does not approve write-offs of disputed balances.",
+  "test_design": "Inspect the settlement reconciliation process and dispute window monitoring.",
+  "test_oe": "For a sample of months, agree balances to partner statements and inspect dispute records and provisions.",
+  "population": "Monthly interconnect and roaming reconciliations",
+  "sample": "3 of 12 months",
+  "industry": [
+   "telecom"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TEL-03",
+  "process": "Customer Operations",
+  "subprocess": "Subscriber Provisioning and Credit",
+  "risk_id": "R-TEL-03",
+  "risk": "Services are activated for subscribers who fail credit vetting, or remain active long after non-payment, inflating receivables and bad debt.",
+  "rating": "High",
+  "control_objective": "Ensure activation follows credit policy and non-paying subscribers are suspended on schedule.",
+  "control": "The provisioning system enforces a credit decision before activation, and the dunning process automatically restricts and then suspends services at the policy-defined ageing points; manual overrides require Credit Manager approval and are reported monthly.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Credit Manager",
+  "sod": "Sales staff cannot override a credit decision or delay suspension.",
+  "test_design": "Inspect the credit workflow configuration and dunning rule set.",
+  "test_oe": "Select a sample of activations and overrides; agree to credit decisions and approvals; test suspension timing against policy.",
+  "population": "Activations and dunning overrides in the period",
+  "sample": "40 items",
+  "industry": [
+   "telecom"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "TEL-04",
+  "process": "Network and Infrastructure",
+  "subprocess": "Network Asset Capitalisation and Impairment",
+  "risk_id": "R-TEL-04",
+  "risk": "Network equipment that is decommissioned or superseded by technology change remains on the balance sheet, overstating assets.",
+  "rating": "Medium",
+  "control_objective": "Ensure network assets reflect equipment actually deployed and in service.",
+  "control": "Annually, Network Engineering performs a physical verification of deployed network elements against the fixed asset register, and assets identified as decommissioned or obsolete are retired or impaired with Controller approval.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Annual",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Engineering verifies existence; Finance independently posts retirements and impairments.",
+  "test_design": "Inspect the verification programme and retirement approval process.",
+  "test_oe": "Obtain the most recent verification; test exceptions through to retirement or impairment postings.",
+  "population": "Annual network asset verifications",
+  "sample": "1 of 1",
+  "industry": [
+   "telecom"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ }
+]
