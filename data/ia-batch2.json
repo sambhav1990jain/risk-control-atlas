@@ -50,7 +50,7 @@
   "industry": [
    "hospitality"
   ],
-  "process": "Procurement",
+  "process": "Procure to Pay",
   "subprocess": "Purchasing and Supplier Relationships",
   "risk": "Property managers direct purchasing to connected suppliers at inflated prices, outside the group procurement framework.",
   "rating": "High",
@@ -95,7 +95,7 @@
   "industry": [
    "ecommerce"
   ],
-  "process": "Customer Experience",
+  "process": "Online Revenue",
   "subprocess": "Pricing, Promotions and Digital Content",
   "risk": "Pricing and promotion errors are published to the site and honoured at scale before anyone notices, or promotional terms are not met.",
   "rating": "Medium",
@@ -140,7 +140,7 @@
   "industry": [
    "ecommerce"
   ],
-  "process": "Technology and Data",
+  "process": "IT & Technology",
   "subprocess": "Customer Data and Privacy",
   "risk": "Personal data is retained longer than permitted, shared with third parties without a lawful basis, or exposed through weak access control.",
   "rating": "High",
@@ -186,7 +186,7 @@
   "industry": [
    "fmcg"
   ],
-  "process": "Sales and Distribution",
+  "process": "Distribution",
   "subprocess": "Route to Market and Distributor Performance",
   "risk": "Distributors sell outside their assigned territory, hold stock beyond shelf life, or claim promotional support they did not deliver.",
   "rating": "Medium",
@@ -231,7 +231,7 @@
   "industry": [
    "fmcg"
   ],
-  "process": "Manufacturing and Quality",
+  "process": "Quality & Product Safety",
   "subprocess": "Food Safety and Product Quality",
   "risk": "A product safety failure reaches consumers because quality controls at the plant are bypassed under production pressure.",
   "rating": "High",
@@ -276,7 +276,7 @@
   "industry": [
    "utilities"
   ],
-  "process": "Network Operations",
+  "process": "Asset Management",
   "subprocess": "Asset Integrity and Safety Critical Maintenance",
   "risk": "Safety-critical network maintenance is deferred, raising the risk of asset failure, supply interruption and public harm.",
   "rating": "High",
@@ -366,7 +366,7 @@
   "industry": [
    "telecom"
   ],
-  "process": "Revenue Assurance",
+  "process": "Service Revenue",
   "subprocess": "Revenue Leakage Across the Order to Cash Chain",
   "risk": "Services are provisioned on the network but never reach billing, so the customer uses the service without ever being charged.",
   "rating": "High",
@@ -411,7 +411,7 @@
   "industry": [
    "telecom"
   ],
-  "process": "Technology and Infrastructure",
+  "process": "Network & Infrastructure",
   "subprocess": "Network Resilience and Change Management",
   "risk": "A poorly controlled network change causes a major service outage, with regulatory reporting obligations and customer compensation following.",
   "rating": "High",

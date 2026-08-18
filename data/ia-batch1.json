@@ -4,7 +4,7 @@
   "industry": [
    "banking"
   ],
-  "process": "Credit and Lending",
+  "process": "Credit & Lending",
   "subprocess": "Credit Underwriting",
   "risk": "Credit decisions are influenced by relationship pressure or incentive targets, so exceptions to policy become routine rather than exceptional.",
   "rating": "High",
@@ -186,7 +186,7 @@
   "industry": [
    "manufacturing"
   ],
-  "process": "Production",
+  "process": "Production & Costing",
   "subprocess": "Production Planning and Yield",
   "risk": "Actual production yield falls below standard and the loss is absorbed in variances rather than investigated, masking equipment, material or process failure.",
   "rating": "Medium",
@@ -231,7 +231,7 @@
   "industry": [
    "manufacturing"
   ],
-  "process": "Health, Safety and Environment",
+  "process": "Health, Safety & Environment",
   "subprocess": "Workplace Safety and Environmental Compliance",
   "risk": "Safety incidents are under-reported and environmental permit conditions are breached, exposing the company to enforcement, shutdown and reputational damage.",
   "rating": "High",
@@ -322,7 +322,7 @@
   "industry": [
    "retail"
   ],
-  "process": "Supply Chain",
+  "process": "Merchandising",
   "subprocess": "Supplier Terms and Delivery Compliance",
   "risk": "Suppliers under-deliver, deliver late or invoice outside agreed terms, and the store network absorbs the loss because claims are never raised.",
   "rating": "Medium",
@@ -367,7 +367,7 @@
   "industry": [
    "aviation"
   ],
-  "process": "Safety and Regulatory",
+  "process": "Safety & Regulatory Compliance",
   "subprocess": "Airworthiness and Maintenance Compliance",
   "risk": "Aircraft are released to service without all required maintenance tasks and airworthiness directives being completed and certified.",
   "rating": "High",

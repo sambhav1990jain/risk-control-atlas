@@ -30,7 +30,7 @@
  },
  {
   "control_id": "HSP-02",
-  "process": "Food and Beverage",
+  "process": "Food & Beverage",
   "subprocess": "Inventory and Pour Cost",
   "risk_id": "R-HSP-02",
   "risk": "Food and beverage stock is consumed without sale through theft, over-pouring or unrecorded staff consumption.",
@@ -204,7 +204,7 @@
  },
  {
   "control_id": "ECM-04",
-  "process": "Marketplace and Content",
+  "process": "Marketplace & Content",
   "subprocess": "Third-Party Seller Settlements",
   "risk_id": "R-ECM-04",
   "risk": "Marketplace seller settlements are calculated on incorrect commission or fee terms, misstating net revenue and seller payables.",
@@ -291,7 +291,7 @@
  },
  {
   "control_id": "FMC-03",
-  "process": "Supply Chain",
+  "process": "Quality & Product Safety",
   "subprocess": "Product Recall and Traceability",
   "risk_id": "R-FMC-03",
   "risk": "A contaminated or defective batch cannot be traced and withdrawn quickly, extending consumer harm and financial exposure.",
@@ -320,7 +320,7 @@
  },
  {
   "control_id": "FMC-04",
-  "process": "Inventory",
+  "process": "Inventory & Costing",
   "subprocess": "Short-Dated and Expired Stock",
   "risk_id": "R-FMC-04",
   "risk": "Finished goods approaching expiry are not provided for or withdrawn, overstating inventory and risking sale of out-of-date product.",
@@ -349,7 +349,7 @@
  },
  {
   "control_id": "UTL-01",
-  "process": "Customer Revenue",
+  "process": "Customer Operations",
   "subprocess": "Metering and Unbilled Revenue",
   "risk_id": "R-UTL-01",
   "risk": "Consumption is estimated rather than metered and the unbilled revenue accrual is unsupported, misstating revenue.",
@@ -436,7 +436,7 @@
  },
  {
   "control_id": "UTL-04",
-  "process": "Trading and Commodity",
+  "process": "Trading & Commodity",
   "subprocess": "Energy Trading and Position Limits",
   "risk_id": "R-UTL-04",
   "risk": "Energy trading positions breach approved risk limits, or trades are mispriced against the market curve.",
@@ -552,7 +552,7 @@
  },
  {
   "control_id": "TEL-04",
-  "process": "Network and Infrastructure",
+  "process": "Network & Infrastructure",
   "subprocess": "Network Asset Capitalisation and Impairment",
   "risk_id": "R-TEL-04",
   "risk": "Network equipment that is decommissioned or superseded by technology change remains on the balance sheet, overstating assets.",

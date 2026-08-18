@@ -1,0 +1,420 @@
+[
+ {
+  "id": "IA-X-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "Order to Cash",
+  "subprocess": "Credit and Collections",
+  "risk": "Credit is extended beyond approved limits and receivables age without escalation, so bad debt is recognised late and cash is tied up.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess whether credit limits are set on evidence, enforced by the system, and whether collections escalate on schedule.",
+  "what_to_review": [
+   "Credit limit setting, review frequency and approval authority",
+   "System enforcement of limits at order entry",
+   "Order release overrides and who performs them",
+   "Collections escalation path and dunning discipline",
+   "Bad debt provision methodology and write-off approval"
+  ],
+  "procedures": [
+   "Compare customer balances to approved credit limits and quantify exposure over limit at several dates, not just year end.",
+   "Test the population of orders released over limit and inspect the approval for each.",
+   "Analyse receivables ageing by collector and customer; test whether escalation actually occurred at the policy trigger points.",
+   "Recompute the bad debt provision and test write-offs for approval at the correct authority.",
+   "Test whether credit limits were reviewed within the policy cycle, particularly for the largest exposures."
+  ],
+  "red_flags": [
+   "Limits raised immediately after an order was blocked",
+   "A collector with an ageing profile far worse than peers",
+   "Write-offs approved by the person who granted the credit",
+   "Customers on hold still receiving shipments"
+  ],
+  "evidence": [
+   "Accounts receivable ageing",
+   "Credit limit master data and change log",
+   "Order release override reports",
+   "Write-off approvals"
+  ],
+  "kpis": [
+   "Days sales outstanding",
+   "% balance over limit",
+   "Bad debt as % of revenue"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-X-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "Inventory & Costing",
+  "subprocess": "Stock Accuracy and Valuation",
+  "risk": "Recorded inventory does not reflect what is physically held or what it is genuinely worth, misstating both the balance sheet and margin.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Verify that inventory exists, is owned, is counted accurately, and is valued at the lower of cost and net realisable value.",
+  "what_to_review": [
+   "Count programme coverage, independence and adjustment approval",
+   "Goods in transit and consignment stock ownership",
+   "Cost build-up and overhead absorption",
+   "Net realisable value testing on slow-moving and damaged stock",
+   "Third-party locations and stock held by others"
+  ],
+  "procedures": [
+   "Attend counts at a sample of locations; re-perform test counts in both directions, floor to sheet and sheet to floor.",
+   "Test cut-off around the period end for goods received and despatched.",
+   "Obtain confirmations for stock held at third parties and reconcile to the ledger.",
+   "Recompute the cost build-up for a sample of items including overhead absorption, and compare cost to recent selling prices net of costs to sell.",
+   "Analyse adjustment postings for entries made outside the count process."
+  ],
+  "red_flags": [
+   "Adjustments posted just after a count to restore the book figure",
+   "Consignment stock recorded as owned",
+   "Overhead absorption rates unchanged despite volume shifts",
+   "Locations never selected for count"
+  ],
+  "evidence": [
+   "Inventory listings by location",
+   "Count sheets and adjustment postings",
+   "Third-party stock confirmations",
+   "Cost build-up files",
+   "Recent sales price data"
+  ],
+  "kpis": [
+   "Count accuracy %",
+   "Adjustment value as % of inventory",
+   "Inventory turns"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-X-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "Fixed Assets",
+  "subprocess": "Capital Projects and Asset Existence",
+  "risk": "Capital spend is approved on optimistic business cases, overruns without escalation, and assets on the register can no longer be located.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Assess whether capital investment is authorised, controlled against budget, and whether recorded assets physically exist.",
+  "what_to_review": [
+   "Business case quality and post-implementation review",
+   "Approval authority and project change control",
+   "Capitalisation timing and classification",
+   "Physical verification programme",
+   "Disposals, transfers and idle assets"
+  ],
+  "procedures": [
+   "Select major projects and compare approved business case benefits to post-implementation actuals; test whether reviews are performed at all.",
+   "Test overruns against the re-approval threshold and inspect evidence of escalation.",
+   "Physically verify a sample of recorded assets and, in reverse, trace observed assets back to the register.",
+   "Test the capitalisation date against evidence the asset was available for use.",
+   "Review idle and fully depreciated assets still in service for impairment or life reassessment."
+  ],
+  "red_flags": [
+   "Post-implementation reviews never performed",
+   "Projects split to stay under an approval threshold",
+   "Assets on the register nobody can locate",
+   "Capitalisation dated before commissioning"
+  ],
+  "evidence": [
+   "Capital approval papers and business cases",
+   "Project cost reports",
+   "Fixed asset register",
+   "Disposal records"
+  ],
+  "kpis": [
+   "Capital spend vs. budget",
+   "% projects with post-implementation review",
+   "Assets verified / not located"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-X-08",
+  "industry": [
+   "cross"
+  ],
+  "process": "Treasury",
+  "subprocess": "Cash, Banking and Financial Risk",
+  "risk": "Bank mandates, payment authority and hedging activity are not controlled, exposing the organisation to fraud and to unmanaged market risk.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm that banking arrangements, payment authority and treasury activity operate within board-approved mandates.",
+  "what_to_review": [
+   "Bank account inventory and signatory mandates",
+   "Payment release authority and dual authorisation",
+   "Treasury policy limits on counterparty, currency and interest exposure",
+   "Hedging authorisation and effectiveness",
+   "Cash forecasting accuracy and idle balances"
+  ],
+  "procedures": [
+   "Obtain a complete list of bank accounts from the banks themselves, not from the ledger, and reconcile to the recorded accounts.",
+   "Test current signatory mandates against the approved authority list and identify leavers still holding authority.",
+   "Test that payment release genuinely requires two independent approvers, including for urgent and manual payments.",
+   "Compare open treasury positions to policy limits at several dates and test breach escalation.",
+   "Compare cash forecasts to actuals and assess forecasting discipline."
+  ],
+  "red_flags": [
+   "Bank accounts not in the ledger",
+   "Leavers still on mandates",
+   "Urgent payments routinely bypassing dual authorisation",
+   "Positions repeatedly at or just inside limits"
+  ],
+  "evidence": [
+   "Bank confirmations and mandate letters",
+   "Payment system authority configuration",
+   "Treasury policy and position reports",
+   "Cash forecasts"
+  ],
+  "kpis": [
+   "Accounts reconciled to bank confirmations",
+   "Payments released single-handed",
+   "Limit breaches per quarter"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-X-09",
+  "industry": [
+   "cross"
+  ],
+  "process": "Tax",
+  "subprocess": "Tax Compliance and Transfer Pricing",
+  "risk": "Returns are filed late or on incorrect positions, and intercompany pricing is not supported by documentation, leading to assessments, interest and penalties.",
+  "rating": "Medium",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess whether tax obligations are identified and met on time and whether positions taken are documented and defensible.",
+  "what_to_review": [
+   "Tax obligation calendar completeness across all jurisdictions",
+   "Filing and payment timeliness",
+   "Uncertain tax positions and provisioning",
+   "Transfer pricing policy, documentation and actual pricing applied",
+   "Indirect tax coding accuracy on transactions"
+  ],
+  "procedures": [
+   "Build the obligation calendar independently from entity and jurisdiction data and compare to the one in use.",
+   "Test filing and payment dates against statutory deadlines and quantify interest and penalties incurred.",
+   "Review uncertain tax positions and test whether the provision reflects current authority correspondence.",
+   "Test whether intercompany transactions were actually priced per the transfer pricing policy and whether local file documentation exists.",
+   "Sample transactions and re-perform indirect tax coding."
+  ],
+  "red_flags": [
+   "Obligations discovered only when the authority writes",
+   "Penalties recurring in the same jurisdiction",
+   "Transfer pricing documentation prepared long after year end",
+   "Manual overrides of tax codes at invoice entry"
+  ],
+  "evidence": [
+   "Tax obligation calendar",
+   "Filed returns and payment records",
+   "Authority correspondence and assessments",
+   "Transfer pricing documentation"
+  ],
+  "kpis": [
+   "Filings on time %",
+   "Penalties and interest incurred",
+   "Jurisdictions with current TP documentation"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-X-10",
+  "industry": [
+   "cross"
+  ],
+  "process": "Financial Close & Reporting",
+  "subprocess": "Close Quality and Manual Journals",
+  "risk": "Manual journal entries are used to force results to expectation, and the close is completed too quickly for controls to operate meaningfully.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Evaluate the integrity of the financial close, focusing on manual adjustments and account reconciliation quality.",
+  "what_to_review": [
+   "Manual journal authorisation, support and posting rights",
+   "Top-side and consolidation adjustments",
+   "Balance sheet reconciliation completion and review quality",
+   "Close timetable versus control operation",
+   "Estimates and accruals with judgement"
+  ],
+  "procedures": [
+   "Extract all manual journals and analyse by preparer, value, account, and posting date and time; test round-sum entries, entries posted at unusual hours, and entries to income statement accounts near period end.",
+   "Test that each sampled journal has support and an approver independent of the preparer.",
+   "Sample balance sheet reconciliations and reassess whether reconciling items are genuinely explained or simply labelled.",
+   "Compare journal patterns across periods to identify entries appearing only when results are close to target."
+  ],
+  "red_flags": [
+   "Journals posted after the close was reported as complete",
+   "Recurring entries with the description \"reclass\" and no support",
+   "Reconciliations signed the same day they were prepared",
+   "Late adjustments always moving in the favourable direction"
+  ],
+  "evidence": [
+   "Full journal entry extract with user and timestamp",
+   "Reconciliation files and sign-offs",
+   "Close timetable",
+   "Consolidation adjustment schedules"
+  ],
+  "kpis": [
+   "Manual journals per period",
+   "% journals with support",
+   "Reconciliations overdue"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-X-11",
+  "industry": [
+   "cross"
+  ],
+  "process": "Third Party Management",
+  "subprocess": "Outsourcing and Vendor Oversight",
+  "risk": "Critical activities are outsourced without contractual protection, assurance over the provider, or a viable exit, so failures land back on the organisation.",
+  "rating": "High",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether third parties performing critical activities are selected, contracted and monitored proportionately to the risk they carry.",
+  "what_to_review": [
+   "Inventory of third parties and criticality assessment",
+   "Due diligence performed before contracting",
+   "Contract terms \u2014 service levels, audit rights, data protection, exit",
+   "Ongoing assurance such as service auditor reports and site visits",
+   "Concentration risk and exit planning"
+  ],
+  "procedures": [
+   "Build an independent inventory of third parties from accounts payable and compare it to the register maintained by the business.",
+   "For critical providers, test that pre-contract due diligence was performed and documented.",
+   "Review contracts for audit rights, service levels, data protection and termination assistance.",
+   "Obtain service auditor reports for critical providers and test that complementary user controls were actually implemented.",
+   "Test whether exit plans exist and are credible for the most concentrated dependencies."
+  ],
+  "red_flags": [
+   "Critical providers absent from the register",
+   "Contracts auto-renewing without review",
+   "Service auditor reports received but never read",
+   "Exceptions in those reports with no follow-up",
+   "No alternative provider identified for a single point of dependency"
+  ],
+  "evidence": [
+   "Accounts payable vendor spend",
+   "Third-party register and criticality ratings",
+   "Contracts",
+   "Service auditor reports",
+   "Exit plans"
+  ],
+  "kpis": [
+   "% critical providers with current due diligence",
+   "Contracts with audit rights",
+   "Assurance reports reviewed"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-X-12",
+  "industry": [
+   "cross"
+  ],
+  "process": "Human Resources",
+  "subprocess": "Recruitment, Onboarding and Exit",
+  "risk": "People are hired without verification of their credentials, retain access and entitlements after leaving, and exit obligations are not enforced.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Assess whether the employee lifecycle is controlled from pre-hire screening through to exit.",
+  "what_to_review": [
+   "Pre-employment screening \u2014 identity, right to work, qualifications, references, criminal record where permitted",
+   "Approval of new positions against approved headcount",
+   "Onboarding: contract, code of conduct, mandatory training",
+   "Exit: access removal, asset return, final pay, restrictive covenants",
+   "Contractor and contingent worker treatment"
+  ],
+  "procedures": [
+   "Sample new hires and test that every required screening step was completed before the start date, not after.",
+   "Verify professional qualifications directly with the issuing body for roles where they are a condition of employment.",
+   "Reconcile headcount to approved positions and investigate roles filled without approval.",
+   "Sample leavers and test the elapsed time to access removal, asset return and final settlement.",
+   "Test whether contractors are subject to equivalent screening for equivalent access."
+  ],
+  "red_flags": [
+   "Screening completed weeks after the start date",
+   "Qualifications accepted on a photocopy",
+   "Leavers retaining building or system access",
+   "Contractors engaged for years through rolling short contracts",
+   "Exit interviews not conducted for regretted leavers"
+  ],
+  "evidence": [
+   "Employee files and screening records",
+   "Headcount approvals",
+   "Joiner and leaver reports",
+   "Asset registers",
+   "Contractor engagement records"
+  ],
+  "kpis": [
+   "% hires fully screened before start",
+   "Days to remove leaver access",
+   "Contractor tenure distribution"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-X-13",
+  "industry": [
+   "cross"
+  ],
+  "process": "Human Resources",
+  "subprocess": "Compensation, Performance and Culture",
+  "risk": "Pay decisions, incentives and promotions are made inconsistently, and behavioural issues are not addressed, driving turnover, grievance and conduct risk.",
+  "rating": "Medium",
+  "risk_category": "Strategic",
+  "audit_objective": "Evaluate whether reward and performance processes are applied consistently and whether conduct concerns are dealt with.",
+  "what_to_review": [
+   "Salary review and promotion decision governance",
+   "Incentive plan design and payout calculation",
+   "Pay equity across comparable roles",
+   "Performance management completion and quality",
+   "Grievance, disciplinary and harassment case handling"
+  ],
+  "procedures": [
+   "Recompute a sample of incentive payouts against plan rules and approved performance outcomes.",
+   "Analyse pay across comparable roles for unexplained dispersion, and test the explanations offered.",
+   "Test performance review completion rates and read a sample for substance rather than box-ticking.",
+   "Review grievance and disciplinary cases for investigation independence, timeliness and consistency of outcome.",
+   "Compare voluntary turnover by manager and function against the organisational average."
+  ],
+  "red_flags": [
+   "Incentives paid despite unmet performance conditions",
+   "Turnover concentrated under specific managers",
+   "Grievances against senior staff investigated by their own reports",
+   "Performance ratings clustered with no differentiation"
+  ],
+  "evidence": [
+   "Payroll and incentive calculation files",
+   "Performance review records",
+   "Grievance and disciplinary case files",
+   "Turnover and exit interview data"
+  ],
+  "kpis": [
+   "Voluntary turnover by manager",
+   "% reviews completed",
+   "Grievance cases and outcomes"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]

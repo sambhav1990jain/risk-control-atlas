@@ -1,7 +1,7 @@
 [
  {
   "control_id": "TL-REV-01",
-  "process": "Freight Revenue",
+  "process": "Freight Revenue & Billing",
   "subprocess": "Revenue Recognition",
   "risk_id": "R-TL-REV-01",
   "risk": "Freight revenue is recognised on despatch rather than over the transit period, overstating revenue at period end for shipments still in transit.",
@@ -30,7 +30,7 @@
  },
  {
   "control_id": "TL-REV-02",
-  "process": "Freight Revenue",
+  "process": "Freight Revenue & Billing",
   "subprocess": "Fuel Surcharge",
   "risk_id": "R-TL-REV-02",
   "risk": "Fuel surcharge is billed at a rate inconsistent with the published index or the contractual cap, misstating revenue.",
@@ -59,7 +59,7 @@
  },
  {
   "control_id": "TL-REV-03",
-  "process": "Freight Revenue",
+  "process": "Freight Revenue & Billing",
   "subprocess": "Unbilled Revenue",
   "risk_id": "R-TL-REV-03",
   "risk": "Delivered shipments remain unbilled at period end and unbilled revenue is not accrued, understating revenue and receivables.",
@@ -88,7 +88,7 @@
  },
  {
   "control_id": "TL-COST-01",
-  "process": "Transportation Cost",
+  "process": "Network Operations",
   "subprocess": "Purchased Transportation Accrual",
   "risk_id": "R-TL-COST-01",
   "risk": "Purchased transportation costs for moves completed but not yet invoiced by carriers are omitted, understating cost of sales.",
@@ -146,7 +146,7 @@
  },
  {
   "control_id": "TL-FA-01",
-  "process": "Fleet Assets",
+  "process": "Fleet & Asset Management",
   "subprocess": "Fleet Depreciation & Residuals",
   "risk_id": "R-TL-FA-01",
   "risk": "Vehicle useful lives and residual values are not revised for changes in fleet strategy or used-vehicle markets, misstating depreciation.",

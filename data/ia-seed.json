@@ -142,7 +142,7 @@
   "industry": [
    "logistics"
   ],
-  "process": "Revenue & Billing",
+  "process": "Freight Revenue & Billing",
   "subprocess": "Freight Billing Accuracy",
   "risk": "Shipments are delivered but never invoiced, or are invoiced at the wrong rate, weight or accessorial \u2014 revenue leakage that never appears in a variance.",
   "rating": "High",
@@ -189,7 +189,7 @@
   "industry": [
    "logistics"
   ],
-  "process": "Revenue & Billing",
+  "process": "Freight Revenue & Billing",
   "subprocess": "Customer Contracts & Pricing",
   "risk": "Discounts and fuel surcharge caps are granted outside delegated authority, eroding margin on long-term contracts.",
   "rating": "Medium",
@@ -417,7 +417,7 @@
   "industry": [
    "logistics"
   ],
-  "process": "Procurement & Third Parties",
+  "process": "Third Party Management",
   "subprocess": "Owner-Operator & Subcontract Carriers",
   "risk": "Subcontracted carriers are engaged without insurance, safety rating or contract, transferring their liability back to the company.",
   "rating": "High",
@@ -555,7 +555,7 @@
   "industry": [
    "cross"
   ],
-  "process": "IT & Cyber",
+  "process": "IT & Technology",
   "subprocess": "Access Management",
   "risk": "Users retain access after role change or termination, or hold combinations of access that allow a transaction to be initiated and approved by the same person.",
   "rating": "High",
@@ -601,7 +601,7 @@
   "industry": [
    "cross"
   ],
-  "process": "Governance & Ethics",
+  "process": "Governance & Entity Level Controls",
   "subprocess": "Whistleblower & Conflicts of Interest",
   "risk": "Concerns raised through the ethics line are not investigated independently, or undisclosed conflicts of interest influence supplier selection.",
   "rating": "Medium",

@@ -2379,7 +2379,7 @@
  },
  {
   "control_id": "ITGC-01",
-  "process": "IT General Controls",
+  "process": "IT & Technology",
   "subprocess": "Access Provisioning",
   "risk_id": "R-ITGC-01",
   "risk": "Users are granted system access beyond what their role requires, enabling unauthorised transactions.",
@@ -2408,7 +2408,7 @@
  },
  {
   "control_id": "ITGC-02",
-  "process": "IT General Controls",
+  "process": "IT & Technology",
   "subprocess": "Access Deprovisioning",
   "risk_id": "R-ITGC-02",
   "risk": "Access is not revoked on termination or transfer, leaving active credentials for individuals without a business need.",
@@ -2437,7 +2437,7 @@
  },
  {
   "control_id": "ITGC-03",
-  "process": "IT General Controls",
+  "process": "IT & Technology",
   "subprocess": "Privileged Access",
   "risk_id": "R-ITGC-03",
   "risk": "Privileged or superuser access is held more widely than necessary, permitting undetected changes to data or configuration.",
@@ -2466,7 +2466,7 @@
  },
  {
   "control_id": "ITGC-04",
-  "process": "IT General Controls",
+  "process": "IT & Technology",
   "subprocess": "Access Review",
   "risk_id": "R-ITGC-04",
   "risk": "Accumulated entitlements are not detected because access is never re-examined after it is granted.",
@@ -2495,7 +2495,7 @@
  },
  {
   "control_id": "ITGC-05",
-  "process": "IT General Controls",
+  "process": "IT & Technology",
   "subprocess": "Authentication",
   "risk_id": "R-ITGC-05",
   "risk": "Weak authentication permits unauthorised access to financially significant systems.",
@@ -2524,7 +2524,7 @@
  },
  {
   "control_id": "ITGC-06",
-  "process": "IT General Controls",
+  "process": "IT & Technology",
   "subprocess": "Change Management",
   "risk_id": "R-ITGC-06",
   "risk": "Changes are migrated to production without authorisation or testing, disrupting processing or corrupting financial data.",
@@ -2553,7 +2553,7 @@
  },
  {
   "control_id": "ITGC-07",
-  "process": "IT General Controls",
+  "process": "IT & Technology",
   "subprocess": "Emergency Changes",
   "risk_id": "R-ITGC-07",
   "risk": "Emergency changes bypass the standard process and are never subsequently reviewed.",
@@ -2582,7 +2582,7 @@
  },
  {
   "control_id": "ITGC-08",
-  "process": "IT General Controls",
+  "process": "IT & Technology",
   "subprocess": "Segregation",
   "risk_id": "R-ITGC-08",
   "risk": "Developers hold access to production, enabling unapproved changes to code or data.",
@@ -2611,7 +2611,7 @@
  },
  {
   "control_id": "ITGC-09",
-  "process": "IT General Controls",
+  "process": "IT & Technology",
   "subprocess": "Backup",
   "risk_id": "R-ITGC-09",
   "risk": "Backups fail or are not recoverable, so financial data cannot be restored after an incident.",
@@ -2640,7 +2640,7 @@
  },
  {
   "control_id": "ITGC-10",
-  "process": "IT General Controls",
+  "process": "IT & Technology",
   "subprocess": "Job Scheduling",
   "risk_id": "R-ITGC-10",
   "risk": "Scheduled jobs fail without detection, resulting in incomplete or inaccurate financial processing.",
@@ -2843,7 +2843,7 @@
  },
  {
   "control_id": "ELC-01",
-  "process": "Entity Level Controls",
+  "process": "Governance & Entity Level Controls",
   "subprocess": "Control Environment",
   "risk_id": "R-ELC-01",
   "risk": "Ethical standards are not communicated or reinforced, permitting a culture in which misconduct is tolerated.",
@@ -2872,7 +2872,7 @@
  },
  {
   "control_id": "ELC-02",
-  "process": "Entity Level Controls",
+  "process": "Governance & Entity Level Controls",
   "subprocess": "Control Environment",
   "risk_id": "R-ELC-02",
   "risk": "Concerns about misconduct are not reported or are not investigated, allowing fraud to continue undetected.",
@@ -2901,7 +2901,7 @@
  },
  {
   "control_id": "ELC-03",
-  "process": "Entity Level Controls",
+  "process": "Governance & Entity Level Controls",
   "subprocess": "Governance",
   "risk_id": "R-ELC-03",
   "risk": "The Audit Committee lacks the independence or competence to challenge management effectively.",
@@ -2930,7 +2930,7 @@
  },
  {
   "control_id": "ELC-04",
-  "process": "Entity Level Controls",
+  "process": "Governance & Entity Level Controls",
   "subprocess": "Risk Assessment",
   "risk_id": "R-ELC-04",
   "risk": "Risks to financial reporting are not identified, so controls are not designed to address them.",
@@ -2959,7 +2959,7 @@
  },
  {
   "control_id": "ELC-05",
-  "process": "Entity Level Controls",
+  "process": "Governance & Entity Level Controls",
   "subprocess": "Risk Assessment",
   "risk_id": "R-ELC-05",
   "risk": "Fraud risks, including management override, are not specifically assessed or addressed.",
@@ -2988,7 +2988,7 @@
  },
  {
   "control_id": "ELC-06",
-  "process": "Entity Level Controls",
+  "process": "Governance & Entity Level Controls",
   "subprocess": "Control Environment",
   "risk_id": "R-ELC-06",
   "risk": "Authority is exercised beyond delegated limits because the delegation of authority is outdated or unclear.",
@@ -3017,7 +3017,7 @@
  },
  {
   "control_id": "ELC-07",
-  "process": "Entity Level Controls",
+  "process": "Governance & Entity Level Controls",
   "subprocess": "Competence",
   "risk_id": "R-ELC-07",
   "risk": "Finance personnel lack the competence required, increasing the risk of error in financial reporting.",
@@ -3046,7 +3046,7 @@
  },
  {
   "control_id": "ELC-08",
-  "process": "Entity Level Controls",
+  "process": "Governance & Entity Level Controls",
   "subprocess": "Monitoring",
   "risk_id": "R-ELC-08",
   "risk": "Identified control deficiencies are not remediated, so weaknesses persist across reporting periods.",
@@ -3075,7 +3075,7 @@
  },
  {
   "control_id": "ELC-09",
-  "process": "Entity Level Controls",
+  "process": "Governance & Entity Level Controls",
   "subprocess": "Monitoring",
   "risk_id": "R-ELC-09",
   "risk": "Management overrides controls without detection, circumventing the control framework.",
@@ -3104,7 +3104,7 @@
  },
  {
   "control_id": "ELC-10",
-  "process": "Entity Level Controls",
+  "process": "Governance & Entity Level Controls",
   "subprocess": "Information & Communication",
   "risk_id": "R-ELC-10",
   "risk": "Accounting policies are inconsistently applied because they are not documented or communicated.",

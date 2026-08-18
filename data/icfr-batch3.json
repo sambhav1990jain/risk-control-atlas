@@ -1,0 +1,89 @@
+[
+ {
+  "control_id": "HR-01",
+  "process": "Human Resources",
+  "subprocess": "Employee Master Data",
+  "risk_id": "R-HR-01",
+  "risk": "Unauthorised changes to employee master data \u2014 salary, bank details, status \u2014 result in incorrect or fraudulent payments.",
+  "rating": "High",
+  "control_objective": "Ensure changes to employee master data are authorised and independently verified before they affect pay.",
+  "control": "All changes to salary, bank details and employment status are entered by HR Operations from an authorised change form and independently verified against source documentation by a second HR officer before the next payroll run; a system-generated change report is reviewed by the HR Manager each period.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "HR Operations Manager",
+  "sod": "The person entering the master data change cannot verify or approve it, and neither may release the payroll payment.",
+  "test_design": "Inspect the change authorisation form, verification requirement and the period-end change report.",
+  "test_oe": "Select a sample of master data changes; agree each to an authorised form and evidence of independent verification.",
+  "population": "All employee master data changes in the period",
+  "sample": "40 changes",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "HR-02",
+  "process": "Human Resources",
+  "subprocess": "Incentive and Bonus Accrual",
+  "risk_id": "R-HR-02",
+  "risk": "Bonus and incentive accruals are not supported by approved plans or actual performance outcomes, misstating employment costs.",
+  "rating": "Medium",
+  "control_objective": "Ensure incentive accruals reflect approved plan terms and the current performance outcome.",
+  "control": "Quarterly, the Reward Manager calculates the incentive accrual from approved plan rules and the latest performance forecast, and the Financial Controller reviews the calculation against plan documentation and prior-period trends before posting.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "The preparer of the accrual is not a participant in the plan being accrued.",
+  "test_design": "Inspect the accrual methodology, plan documentation and evidence of Controller review.",
+  "test_oe": "For a sample of quarters, re-perform the accrual from plan rules and performance data.",
+  "population": "Quarterly incentive accrual calculations",
+  "sample": "2 of 4 quarters",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "HR-03",
+  "process": "Human Resources",
+  "subprocess": "Termination and Severance",
+  "risk_id": "R-HR-03",
+  "risk": "Severance and termination payments are made outside policy or delegated authority, or leavers continue to be paid after their exit date.",
+  "rating": "High",
+  "control_objective": "Ensure termination payments are authorised, calculated correctly, and that pay ceases on the exit date.",
+  "control": "Termination payments are calculated by HR from the employment contract and policy, approved at the authority level set by value, and a leaver exception report comparing termination dates to the payroll master is reviewed by the HR Manager before each payroll run.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, A/V, CO",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "HR Director",
+  "sod": "The manager initiating the termination does not approve the settlement amount alone.",
+  "test_design": "Inspect the severance authority matrix and the leaver exception report design.",
+  "test_oe": "Select a sample of terminations; recompute the settlement, agree the approval, and test that pay ceased on the exit date.",
+  "population": "All terminations in the period",
+  "sample": "25 terminations",
+  "industry": [
+   "cross"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ }
+]

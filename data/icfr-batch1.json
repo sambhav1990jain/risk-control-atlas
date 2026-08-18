@@ -1,7 +1,7 @@
 [
  {
   "control_id": "BNK-01",
-  "process": "Credit and Lending",
+  "process": "Credit & Lending",
   "subprocess": "Loan Origination",
   "risk_id": "R-BNK-01",
   "risk": "Loans are advanced to borrowers who do not meet credit policy, or on terms outside delegated lending authority, leading to elevated default and impairment.",
@@ -30,7 +30,7 @@
  },
  {
   "control_id": "BNK-02",
-  "process": "Credit and Lending",
+  "process": "Credit & Lending",
   "subprocess": "Expected Credit Loss",
   "risk_id": "R-BNK-02",
   "risk": "The expected credit loss allowance is understated because staging criteria, macroeconomic scenarios or post-model overlays are not applied consistently.",
@@ -59,7 +59,7 @@
  },
  {
   "control_id": "BNK-03",
-  "process": "Treasury and Capital",
+  "process": "Treasury & Capital",
   "subprocess": "Regulatory Capital Reporting",
   "risk_id": "R-BNK-03",
   "risk": "Risk-weighted assets are misclassified, misstating the regulatory capital ratio reported to the regulator.",
@@ -88,7 +88,7 @@
  },
  {
   "control_id": "BNK-04",
-  "process": "Deposits and Payments",
+  "process": "Deposits & Payments",
   "subprocess": "Suspense and Nostro Accounts",
   "risk_id": "R-BNK-04",
   "risk": "Unreconciled items in suspense and nostro accounts conceal misappropriation or processing errors.",
@@ -233,7 +233,7 @@
  },
  {
   "control_id": "MFG-01",
-  "process": "Production and Costing",
+  "process": "Production & Costing",
   "subprocess": "Standard Cost and Variance",
   "risk_id": "R-MFG-01",
   "risk": "Standard costs are not updated for input price and yield changes, so inventory is misvalued and variances absorb the error.",
@@ -262,7 +262,7 @@
  },
  {
   "control_id": "MFG-02",
-  "process": "Inventory",
+  "process": "Inventory & Costing",
   "subprocess": "Physical Inventory and Cycle Counts",
   "risk_id": "R-MFG-02",
   "risk": "Recorded inventory quantities differ from physical stock because counts are infrequent, poorly controlled, or adjustments are posted without approval.",
@@ -291,7 +291,7 @@
  },
  {
   "control_id": "MFG-03",
-  "process": "Inventory",
+  "process": "Inventory & Costing",
   "subprocess": "Obsolete and Slow-Moving Provision",
   "risk_id": "R-MFG-03",
   "risk": "Provision for obsolete and slow-moving inventory is understated because ageing data is inaccurate or engineering change notices are not reflected.",
@@ -320,7 +320,7 @@
  },
  {
   "control_id": "MFG-04",
-  "process": "Quality and Warranty",
+  "process": "Quality & Product Safety",
   "subprocess": "Warranty Provision",
   "risk_id": "R-MFG-04",
   "risk": "The warranty provision does not reflect emerging failure rates or an announced recall, understating liabilities.",
@@ -407,7 +407,7 @@
  },
  {
   "control_id": "RTL-03",
-  "process": "Inventory",
+  "process": "Inventory & Costing",
   "subprocess": "Shrinkage and Stock Loss",
   "risk_id": "R-RTL-03",
   "risk": "Inventory shrinkage from theft, process error or supplier short-delivery is absorbed into cost of sales without identification or correction.",
@@ -436,7 +436,7 @@
  },
  {
   "control_id": "RTL-04",
-  "process": "Revenue",
+  "process": "Customer Revenue & Loyalty",
   "subprocess": "Gift Cards and Loyalty",
   "risk_id": "R-RTL-04",
   "risk": "Gift card and loyalty liabilities are understated, or breakage is recognised without a supportable redemption history.",
@@ -523,7 +523,7 @@
  },
  {
   "control_id": "AVN-03",
-  "process": "Fleet and Engineering",
+  "process": "Fleet & Engineering",
   "subprocess": "Maintenance Reserves and Component Overhaul",
   "risk_id": "R-AVN-03",
   "risk": "Provisions for scheduled airframe and engine overhauls on leased aircraft are misstated because utilisation or overhaul cost assumptions are outdated.",
@@ -552,7 +552,7 @@
  },
  {
   "control_id": "AVN-04",
-  "process": "Fuel and Hedging",
+  "process": "Fuel & Hedging",
   "subprocess": "Fuel Procurement and Hedging",
   "risk_id": "R-AVN-04",
   "risk": "Fuel hedge accounting is applied to instruments that do not qualify, or hedge positions exceed the mandate approved by the board.",
