@@ -1,0 +1,466 @@
+[
+ {
+  "control_id": "BNK-05",
+  "process": "Credit & Lending",
+  "subprocess": "Collateral Management",
+  "risk_id": "R-BNK-05",
+  "risk": "Collateral securing loans is not perfected, revalued or released correctly, overstating security and understating expected credit loss.",
+  "rating": "High",
+  "control_objective": "Ensure collateral is legally perfected, periodically revalued and released only when the exposure is repaid.",
+  "control": "Collateral is recorded in the collateral system only once legal perfection is evidenced by the Legal team; revaluations are performed at the frequency set by asset class using independent valuation sources, and releases require approval by Credit Risk independent of the relationship manager.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "R&O, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Head of Credit Risk",
+  "sod": "The relationship manager cannot record, revalue or release collateral.",
+  "test_design": "Inspect the collateral procedure, perfection checklist, revaluation frequency table and release workflow.",
+  "test_oe": "Select a sample of secured facilities; agree perfection evidence, latest revaluation and, for released collateral, approval and repayment.",
+  "population": "Secured facilities and collateral releases in the period",
+  "sample": "40 facilities",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-06",
+  "process": "Credit & Lending",
+  "subprocess": "Loan Disbursement",
+  "risk_id": "R-BNK-06",
+  "risk": "Loan proceeds are disbursed to an account other than the approved borrower account, or before conditions precedent are satisfied.",
+  "rating": "High",
+  "control_objective": "Ensure disbursement occurs only after conditions precedent are met and only to the approved account.",
+  "control": "Loan Operations verifies that all conditions precedent recorded in the credit approval are satisfied and that the disbursement account matches the approved borrower account before release; disbursement is authorised by two officers independent of credit origination.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, R&O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Head of Loan Operations",
+  "sod": "Credit origination staff cannot execute or authorise disbursement.",
+  "test_design": "Inspect the disbursement checklist, condition precedent tracking and dual authorisation configuration.",
+  "test_oe": "Select a sample of disbursements; agree to satisfied conditions precedent, the approved account and dual authorisation.",
+  "population": "All loan disbursements in the period",
+  "sample": "40 disbursements",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-07",
+  "process": "Credit & Lending",
+  "subprocess": "Loan Classification and Staging",
+  "risk_id": "R-BNK-07",
+  "risk": "Deteriorating loans are not migrated to the correct stage or classification, deferring impairment recognition.",
+  "rating": "High",
+  "control_objective": "Ensure loans are classified and staged in accordance with policy and observable credit deterioration indicators.",
+  "control": "The system applies staging rules based on days past due and qualitative deterioration triggers; monthly, Credit Risk reviews the staging migration report and all manual overrides of system-assigned staging require Credit Committee approval with documented rationale.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, C",
+  "coso": "Risk Assessment",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Chief Risk Officer",
+  "sod": "Relationship managers cannot override staging assigned by the system.",
+  "test_design": "Inspect the staging rule configuration, override workflow and Credit Committee terms of reference.",
+  "test_oe": "For a sample of months, re-perform staging from days past due data and inspect approval of all overrides.",
+  "population": "Monthly staging migration reports and override approvals",
+  "sample": "3 of 12 months",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-08",
+  "process": "Credit & Lending",
+  "subprocess": "Interest and Fee Accrual",
+  "risk_id": "R-BNK-08",
+  "risk": "Interest and fees are accrued on non-performing exposures or calculated on incorrect terms, overstating income.",
+  "rating": "High",
+  "control_objective": "Ensure interest and fee income is recognised on correct terms and ceases on non-performing exposures.",
+  "control": "The core banking system calculates interest from contracted terms and suspends accrual automatically on classification as non-performing; monthly, Financial Control reconciles interest income to the loan book and reviews an exception report of manually adjusted accruals.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, CO",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "Staff maintaining loan terms cannot post manual interest adjustments.",
+  "test_design": "Inspect the accrual configuration, non-accrual suspension logic and reconciliation template.",
+  "test_oe": "For a sample of months, re-perform the interest reconciliation and test manual adjustments to approval.",
+  "population": "Monthly interest income reconciliations",
+  "sample": "3 of 12 months",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-09",
+  "process": "Credit & Lending",
+  "subprocess": "Loan Modifications and Forbearance",
+  "risk_id": "R-BNK-09",
+  "risk": "Loans are restructured to avoid recognising default, so forbearance is not identified and impairment is understated.",
+  "rating": "High",
+  "control_objective": "Ensure modifications are identified as forbearance where applicable and are approved and disclosed correctly.",
+  "control": "All loan modifications are assessed against forbearance criteria by Credit Risk independent of the relationship manager, approved at the authority level set by exposure, and flagged in the system so that staging and disclosure reflect the modification.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "A/V, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Head of Credit Risk",
+  "sod": "The relationship manager proposing the modification cannot assess or approve its forbearance classification.",
+  "test_design": "Inspect the forbearance assessment criteria, approval matrix and system flagging.",
+  "test_oe": "Select a sample of modifications; agree the forbearance assessment, approval and system flag.",
+  "population": "All loan modifications in the period",
+  "sample": "25 modifications",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-10",
+  "process": "Credit & Lending",
+  "subprocess": "Write-Off and Recovery",
+  "risk_id": "R-BNK-10",
+  "risk": "Loans are written off without authority to remove problem exposures from reporting, or recoveries are misappropriated.",
+  "rating": "High",
+  "control_objective": "Ensure write-offs are authorised at the correct level and recoveries are completely recorded.",
+  "control": "Write-offs require approval at the authority level set by exposure size, with evidence that recovery avenues have been exhausted; recoveries on written-off accounts are received into a designated account, reconciled monthly by Financial Control and reported to the Credit Committee.",
+  "control_type": "Preventive",
+  "control_nature": "Manual",
+  "frequency": "Event Driven",
+  "assertions": "E/O, C, A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Chief Risk Officer",
+  "sod": "Recovery collection staff do not authorise write-offs or reconcile recovery receipts.",
+  "test_design": "Inspect the write-off authority matrix, recovery reconciliation and committee reporting.",
+  "test_oe": "Select a sample of write-offs; agree approval and recovery evidence. Reconcile recoveries received to the ledger for a sample of months.",
+  "population": "Write-offs and post write-off recoveries in the period",
+  "sample": "25 write-offs",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-11",
+  "process": "Deposits & Payments",
+  "subprocess": "Customer Onboarding and Account Opening",
+  "risk_id": "R-BNK-11",
+  "risk": "Accounts are opened without complete customer due diligence, breaching regulation and enabling illicit funds to enter the bank.",
+  "rating": "High",
+  "control_objective": "Ensure accounts are opened only where identification and due diligence requirements are satisfied.",
+  "control": "The onboarding workflow prevents account activation until identification, verification and risk rating are complete; enhanced due diligence for high-risk customers requires approval by Financial Crime Compliance independent of the relationship.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O, R&O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Head of Financial Crime Compliance",
+  "sod": "Relationship staff cannot approve their own enhanced due diligence or override risk ratings.",
+  "test_design": "Inspect the onboarding workflow configuration and enhanced due diligence approval routing.",
+  "test_oe": "Select a sample of accounts opened; agree due diligence completeness, risk rating and any EDD approval.",
+  "population": "All accounts opened during the period",
+  "sample": "40 accounts",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-12",
+  "process": "Deposits & Payments",
+  "subprocess": "Deposit Interest Calculation",
+  "risk_id": "R-BNK-12",
+  "risk": "Interest paid on customer deposits is calculated on incorrect rates or balances, misstating interest expense and customer balances.",
+  "rating": "Medium",
+  "control_objective": "Ensure deposit interest is calculated in accordance with product terms and approved rate tables.",
+  "control": "Rate tables are maintained by Product Control and independently verified before activation; monthly, Financial Control recalculates interest on a risk-based sample of products and reconciles total interest expense to the deposit book.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Financial Controller",
+  "sod": "The preparer of the rate table does not approve its activation.",
+  "test_design": "Inspect the rate maintenance procedure and the monthly recalculation and reconciliation.",
+  "test_oe": "For a sample of months, re-perform the interest recalculation and agree the expense to the ledger.",
+  "population": "Monthly deposit interest reconciliations",
+  "sample": "3 of 12 months",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-13",
+  "process": "Deposits & Payments",
+  "subprocess": "Dormant and Unclaimed Balances",
+  "risk_id": "R-BNK-13",
+  "risk": "Dormant accounts are reactivated fraudulently, or unclaimed balances are not escheated as required by regulation.",
+  "rating": "High",
+  "control_objective": "Ensure dormant balances are protected from unauthorised access and escheated in accordance with law.",
+  "control": "Accounts meeting the dormancy criteria are automatically blocked from transacting; reactivation requires customer identity verification and approval by a manager independent of branch operations, and unclaimed balances are reported and remitted to the authority on the statutory timetable.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O, C",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Head of Operations",
+  "sod": "Branch staff who request reactivation cannot approve it.",
+  "test_design": "Inspect the dormancy configuration, reactivation approval workflow and escheatment procedure.",
+  "test_oe": "Test all reactivations in the period for verification and approval; agree escheatment to statutory deadlines.",
+  "population": "Dormant account reactivations and escheatment submissions",
+  "sample": "All reactivations",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-14",
+  "process": "Deposits & Payments",
+  "subprocess": "Fee and Charge Application",
+  "risk_id": "R-BNK-14",
+  "risk": "Customer fees are applied that are not permitted by the product terms, generating remediation liabilities and regulatory censure.",
+  "rating": "Medium",
+  "control_objective": "Ensure fees charged to customers are permitted, correctly calculated and disclosed.",
+  "control": "Fee configuration changes require approval by Product Control and Compliance before activation; monthly, an exception report of manual fee applications and waivers is reviewed by the Head of Operations, and fee income is reconciled to the fee schedule.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Head of Operations",
+  "sod": "Branch staff applying manual fees do not maintain the fee configuration.",
+  "test_design": "Inspect the fee change approval process and the manual fee exception report.",
+  "test_oe": "For a sample of months, re-perform the fee reconciliation and test manual applications and waivers for approval.",
+  "population": "Monthly fee reconciliations and manual fee reports",
+  "sample": "3 of 12 months",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-15",
+  "process": "Financial Crime",
+  "subprocess": "Sanctions and Watchlist Screening",
+  "risk_id": "R-BNK-15",
+  "risk": "A sanctioned party transacts through the bank because screening lists are stale or matches are cleared without proper review.",
+  "rating": "High",
+  "control_objective": "Ensure customers and payments are screened against current sanctions lists and that matches are properly adjudicated.",
+  "control": "Sanctions lists are updated automatically on publication and screening runs on every customer at onboarding, on the full base after each list update, and on every cross-border payment before release; potential matches are adjudicated by Financial Crime Compliance, not by the business, with dual review on discounted true-match candidates.",
+  "control_type": "Preventive",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Per Transaction",
+  "assertions": "E/O",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Head of Financial Crime Compliance",
+  "sod": "Business and operations staff cannot discount a screening alert.",
+  "test_design": "Inspect the screening configuration, list update mechanism and alert adjudication workflow.",
+  "test_oe": "Re-perform screening on a sample of customers and payments to confirm expected hits; test a sample of discounted alerts for reviewer independence and rationale.",
+  "population": "Screening alerts raised during the period",
+  "sample": "40 alerts",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-16",
+  "process": "Financial Crime",
+  "subprocess": "Transaction Monitoring",
+  "risk_id": "R-BNK-16",
+  "risk": "Suspicious activity is not detected because monitoring scenarios are not tuned to the bank's risk profile or alerts are closed without investigation.",
+  "rating": "High",
+  "control_objective": "Ensure transaction monitoring scenarios are appropriate, operating and producing investigated outcomes.",
+  "control": "Monitoring scenarios are reviewed and tuned at least annually against the enterprise financial crime risk assessment with results approved by the Financial Crime Committee; alerts are investigated within defined timeframes and closure rationale is subject to quality assurance sampling by a team independent of the investigators.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "E/O, C",
+  "coso": "Monitoring Activities",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Head of Financial Crime Compliance",
+  "sod": "Quality assurance reviewers are independent of the analysts whose closures they test.",
+  "test_design": "Inspect the scenario tuning methodology, committee approval and the quality assurance process.",
+  "test_oe": "For a sample of periods, inspect tuning evidence; sample closed alerts and reassess the adequacy of the closure rationale.",
+  "population": "Alerts closed during the period and annual tuning documentation",
+  "sample": "40 alerts",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-17",
+  "process": "Financial Crime",
+  "subprocess": "Suspicious Activity Reporting",
+  "risk_id": "R-BNK-17",
+  "risk": "Suspicious activity reports are filed late or not at all, breaching statutory obligations and exposing the bank to enforcement.",
+  "rating": "High",
+  "control_objective": "Ensure suspicious activity is escalated, decided and reported within statutory deadlines.",
+  "control": "Escalations are logged on receipt and the Money Laundering Reporting Officer records a documented decision to report or not report within the internal deadline; filings are tracked against the statutory timetable and overdue items are escalated to the Financial Crime Committee monthly.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Monthly",
+  "assertions": "C, P&D",
+  "coso": "Information & Communication",
+  "key_control": "Yes",
+  "fraud": "Yes",
+  "owner": "Money Laundering Reporting Officer",
+  "sod": "The MLRO decision is independent of the business relationship generating the escalation.",
+  "test_design": "Inspect the escalation log, decision documentation standard and deadline tracking.",
+  "test_oe": "For a sample of escalations, agree the decision documentation and measure elapsed time to filing against the statutory deadline.",
+  "population": "Internal escalations and filed reports in the period",
+  "sample": "25 escalations",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-18",
+  "process": "Treasury & Capital",
+  "subprocess": "Liquidity Ratio Reporting",
+  "risk_id": "R-BNK-18",
+  "risk": "Regulatory liquidity ratios are misstated because the classification of assets and outflow assumptions are applied incorrectly.",
+  "rating": "High",
+  "control_objective": "Ensure regulatory liquidity ratios are calculated on correct classifications and approved assumptions.",
+  "control": "Monthly, Treasury Reporting calculates the liquidity ratios and an independent review by Risk Control verifies asset classification, haircuts and outflow factors against the regulatory rules before submission; the Asset and Liability Committee reviews the results.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V, P&D",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Treasurer",
+  "sod": "The preparer of the ratio calculation is independent of the reviewer in Risk Control.",
+  "test_design": "Inspect the calculation methodology, classification rules and evidence of independent review.",
+  "test_oe": "For a sample of months, re-perform the ratio calculation from source data and inspect the review evidence.",
+  "population": "Monthly liquidity ratio calculations and submissions",
+  "sample": "3 of 12 months",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-19",
+  "process": "Treasury & Capital",
+  "subprocess": "Investment Securities Valuation",
+  "risk_id": "R-BNK-19",
+  "risk": "Securities are valued using stale or unverified prices, misstating the investment portfolio and capital.",
+  "rating": "High",
+  "control_objective": "Ensure securities are valued using independently verified prices at the appropriate fair value level.",
+  "control": "Monthly, an independent price verification is performed by Risk Control against external sources for all portfolio holdings; level 3 valuations require model validation and Valuation Committee approval, and price exceptions above tolerance are escalated before month end close.",
+  "control_type": "Detective",
+  "control_nature": "IT-Dependent Manual",
+  "frequency": "Monthly",
+  "assertions": "A/V",
+  "coso": "Control Activities",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Chief Risk Officer",
+  "sod": "Front office cannot supply the prices used for independent verification.",
+  "test_design": "Inspect the price verification methodology, tolerance thresholds and Valuation Committee terms of reference.",
+  "test_oe": "For a sample of months, re-perform price verification on a sample of holdings and inspect resolution of exceptions.",
+  "population": "Monthly independent price verification files",
+  "sample": "3 of 12 months",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ },
+ {
+  "control_id": "BNK-20",
+  "process": "Treasury & Capital",
+  "subprocess": "Interest Rate Risk in the Banking Book",
+  "risk_id": "R-BNK-20",
+  "risk": "Interest rate risk is understated because behavioural assumptions on non-maturity deposits and prepayment are not validated.",
+  "rating": "Medium",
+  "control_objective": "Ensure interest rate risk measurement uses validated assumptions and remains within approved limits.",
+  "control": "Behavioural assumptions for non-maturity deposits and prepayment are validated at least annually against observed customer behaviour by Model Risk, and quarterly the Asset and Liability Committee reviews interest rate risk measures against board-approved limits with breaches escalated.",
+  "control_type": "Detective",
+  "control_nature": "Manual",
+  "frequency": "Quarterly",
+  "assertions": "A/V, P&D",
+  "coso": "Risk Assessment",
+  "key_control": "Yes",
+  "fraud": "No",
+  "owner": "Treasurer",
+  "sod": "Model owners in Treasury are separate from the Model Risk validation function.",
+  "test_design": "Inspect the assumption validation methodology and ALCO limit framework.",
+  "test_oe": "Obtain the most recent validation; re-perform the assumption back-test and inspect ALCO escalation of breaches.",
+  "population": "Annual assumption validations and quarterly ALCO packs",
+  "sample": "2 of 4 quarters",
+  "industry": [
+   "banking"
+  ],
+  "lens": [
+   "icfr"
+  ]
+ }
+]
