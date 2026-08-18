@@ -43,7 +43,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Most major system outages are caused by a change someone made, not by an attacker."
  },
  {
   "id": "IA-IT-02",
@@ -88,7 +89,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Overnight processing runs the business. When a job fails silently, the numbers are simply incomplete."
  },
  {
   "id": "IA-IT-03",
@@ -133,7 +135,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Attackers use known weaknesses that already have fixes available. Unpatched systems are an open door."
  },
  {
   "id": "IA-IT-04",
@@ -180,7 +183,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Most breaches start with a person clicking something or a password being reused, not with sophisticated hacking."
  },
  {
   "id": "IA-IT-05",
@@ -225,7 +229,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Having backups is not the same as being able to restore. You find out which you have on the worst day."
  },
  {
   "id": "IA-IT-06",
@@ -271,7 +276,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Using a cloud provider moves the work, not the accountability. If it goes down, your business goes down."
  },
  {
   "id": "IA-IT-07",
@@ -317,7 +323,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Data that nobody owns gets kept too long, shared too widely, and eventually leaked."
  },
  {
   "id": "IA-IT-08",
@@ -362,7 +369,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Untracked laptops walk out of the door, and unlicensed software invites an expensive audit from the vendor."
  },
  {
   "id": "IA-IT-09",
@@ -409,7 +417,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Large technology projects fail slowly and quietly, and status reports stay green until the day they do not."
  },
  {
   "id": "IA-IT-10",
@@ -454,7 +463,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "A surprising amount of financial reporting depends on a spreadsheet on one person's drive with no version control."
  },
  {
   "id": "IA-IT-11",
@@ -499,6 +509,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Old systems that nobody wants to touch keep running until the day they cannot be fixed any more."
  }
 ]

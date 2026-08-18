@@ -44,7 +44,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Vehicles are valuable and easy to sell cheaply to the wrong person if nobody is watching the disposal."
  },
  {
   "id": "IA-TL-02",
@@ -90,7 +91,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Fuel is easy to take and hard to trace, which makes it one of the most common losses in any fleet business."
  },
  {
   "id": "IA-TL-03",
@@ -135,7 +137,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Skipping maintenance saves money this month and causes breakdowns, accidents and regulator action later."
  },
  {
   "id": "IA-TL-04",
@@ -182,7 +185,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Delivering a shipment and never invoicing it is pure lost revenue, and it does not show up as a variance anywhere."
  },
  {
   "id": "IA-TL-05",
@@ -227,7 +231,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Discounts agreed by salespeople outside their authority quietly erode the margin on multi-year contracts."
  },
  {
   "id": "IA-TL-06",
@@ -272,7 +277,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Buying transport at short notice costs far more than using capacity already under contract."
  },
  {
   "id": "IA-TL-07",
@@ -319,7 +325,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Freight changes hands repeatedly in a terminal, and each handover is an opportunity for it to go missing."
  },
  {
   "id": "IA-TL-08",
@@ -364,7 +371,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Drivers over their legal hours or without valid licences create liability the company cannot insure away."
  },
  {
   "id": "IA-TL-09",
@@ -410,7 +418,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Dangerous goods and customs errors stop shipments and bring penalties, sometimes personal ones."
  },
  {
   "id": "IA-TL-10",
@@ -456,7 +465,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "When another carrier moves your freight, their insurance and safety record become your problem."
  },
  {
   "id": "IA-X-01",
@@ -502,7 +512,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Payments to suppliers are the most common route for money to leave a company fraudulently."
  },
  {
   "id": "IA-X-03",
@@ -548,7 +559,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "People who change jobs or leave often keep their old system access, which is how small problems become large ones."
  },
  {
   "id": "IA-X-04",
@@ -593,6 +605,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If people do not trust the confidential reporting line, management is the last to know about problems."
  }
 ]

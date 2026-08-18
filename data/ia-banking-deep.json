@@ -42,7 +42,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If the paperwork behind a loan is incomplete, the bank may not be able to enforce it in court when the borrower stops paying."
  },
  {
   "id": "IA-BNK-06",
@@ -87,7 +88,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Security is what the bank falls back on when a loan goes bad. If it was never registered properly or is worth less than recorded, that fallback is not there."
  },
  {
   "id": "IA-BNK-07",
@@ -132,7 +134,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Loan agreements contain promises the borrower must keep. Nobody checking them means the bank misses the early warning that the borrower is in trouble."
  },
  {
   "id": "IA-BNK-08",
@@ -177,7 +180,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "The earlier a struggling borrower is handed to specialists, the more money the bank gets back."
  },
  {
   "id": "IA-BNK-09",
@@ -222,7 +226,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Ratings drive how much the loan costs and how much capital the bank must hold. Inflated ratings make the bank look safer than it is."
  },
  {
   "id": "IA-BNK-10",
@@ -267,7 +272,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Lending too much to one customer, or several linked ones, means a single failure can hurt the whole bank. Regulators cap this for good reason."
  },
  {
   "id": "IA-BNK-11",
@@ -312,7 +318,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "How risky a customer is decided at the start determines how closely they are watched forever after. Getting it wrong at onboarding is a mistake that persists."
  },
  {
   "id": "IA-BNK-12",
@@ -357,7 +364,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Trade finance and correspondent banking move money across borders in ways that are hard to see through, which is exactly why criminals use them."
  },
  {
   "id": "IA-BNK-13",
@@ -402,7 +410,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "When customers are defrauded, the bank often has to reimburse them, and regulators judge how well it protected them."
  },
  {
   "id": "IA-BNK-14",
@@ -447,7 +456,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Companies can be prosecuted for failing to prevent bribery or tax evasion by people acting for them, even if senior management knew nothing."
  },
  {
   "id": "IA-BNK-15",
@@ -492,7 +502,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Branches hold physical cash, and small amounts taken repeatedly add up long before anyone notices."
  },
  {
   "id": "IA-BNK-16",
@@ -537,7 +548,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "When payments fail or duplicate, customers lose money and the bank has to make it good, on top of the regulatory attention."
  },
  {
   "id": "IA-BNK-17",
@@ -582,7 +594,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Complaints are the cheapest early warning a bank gets. Ignoring them turns one customer's problem into a redress bill for thousands."
  },
  {
   "id": "IA-BNK-18",
@@ -627,6 +640,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Selling a product to someone it was never designed for eventually means paying them back, often years later and with interest."
  }
 ]

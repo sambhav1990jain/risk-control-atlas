@@ -42,7 +42,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "You cannot manage suppliers you do not know you have, and most companies have more than they think."
  },
  {
   "id": "IA-TP-02",
@@ -87,7 +88,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Checking a supplier after you depend on them is too late to do anything about what you find."
  },
  {
   "id": "IA-TP-03",
@@ -132,7 +134,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "The contract is the only leverage you have when a supplier fails. Missing terms means no remedy."
  },
  {
   "id": "IA-TP-04",
@@ -177,7 +180,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If nobody measures the service, it drifts, and the credits you were owed are never claimed."
  },
  {
   "id": "IA-TP-05",
@@ -222,7 +226,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "When a supplier performs a control for you, you still have to prove it works."
  },
  {
   "id": "IA-TP-06",
@@ -267,7 +272,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "A data breach at your supplier is reported as your data breach."
  },
  {
   "id": "IA-TP-07",
@@ -312,7 +318,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If a critical supplier fails and there is no alternative, the disruption lasts as long as it lasts."
  },
  {
   "id": "IA-TP-08",
@@ -357,7 +364,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Moving work to another country brings regulatory, tax and oversight issues that are easy to miss."
  },
  {
   "id": "IA-EL-01",
@@ -402,7 +410,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "The board is the last line of defence. If it cannot see problems or will not challenge, nothing else compensates."
  },
  {
   "id": "IA-EL-02",
@@ -447,7 +456,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "People take their cue from what leaders reward and tolerate, not from what the policy says."
  },
  {
   "id": "IA-EL-03",
@@ -492,7 +502,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If the risk register does not contain the things that actually go wrong, risk management is decoration."
  },
  {
   "id": "IA-EL-04",
@@ -537,7 +548,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "A policy nobody knows about or follows provides no protection, only the appearance of it."
  },
  {
   "id": "IA-EL-05",
@@ -582,7 +594,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If it is unclear who can approve what, decisions get made by people without the authority to make them."
  },
  {
   "id": "IA-EL-06",
@@ -627,7 +640,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Fraud does not get prevented by general controls. Someone has to think specifically about how it would be done here."
  },
  {
   "id": "IA-EL-07",
@@ -672,7 +686,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If raising a concern feels unsafe, management finds out about problems from the regulator or the press instead."
  },
  {
   "id": "IA-EL-08",
@@ -717,7 +732,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Regulatory obligations that nobody owns get missed, and being told by the regulator is the expensive way to find out."
  },
  {
   "id": "IA-EL-09",
@@ -762,6 +778,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Plans that have never been tested tend not to work when they are finally needed."
  }
 ]

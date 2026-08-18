@@ -42,7 +42,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If what arrives is not properly checked and recorded, every stock figure after that point is already wrong."
  },
  {
   "id": "IA-INV-02",
@@ -87,7 +88,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Stock sitting in a warehouse is portable and saleable, which is why custody controls matter more than they look."
  },
  {
   "id": "IA-INV-03",
@@ -132,7 +134,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Counting stock is how you find out what is really there. Letting the same people count their own stock defeats the point."
  },
  {
   "id": "IA-INV-04",
@@ -177,7 +180,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "The cost attached to each item decides both the stock value and the reported margin on every sale."
  },
  {
   "id": "IA-INV-05",
@@ -222,7 +226,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Stock that will never sell at full price is worth less than the books say, and saying so is uncomfortable."
  },
  {
   "id": "IA-INV-06",
@@ -267,7 +272,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Stock held elsewhere, or in transit, is easy to count twice or not at all."
  },
  {
   "id": "IA-INV-07",
@@ -312,6 +318,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Scrap and returns are a legitimate-looking route for stock to leave the building."
  }
 ]

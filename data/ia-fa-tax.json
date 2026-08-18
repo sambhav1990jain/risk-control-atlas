@@ -42,7 +42,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Capital spending is committed years in advance and is very hard to reverse once started."
  },
  {
   "id": "IA-FA-02",
@@ -87,7 +88,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If an asset is on the register but nobody can find it, either it was stolen or the records are wrong. Both matter."
  },
  {
   "id": "IA-FA-03",
@@ -132,7 +134,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Calling a repair an asset spreads the cost over years and makes this year's profit look better than it is."
  },
  {
   "id": "IA-FA-04",
@@ -176,7 +179,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Depreciation spreads an asset's cost over its life. Wrong life, wrong profit, every single year."
  },
  {
   "id": "IA-FA-05",
@@ -221,7 +225,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Selling company assets cheaply to someone you know is one of the oldest frauds there is."
  },
  {
   "id": "IA-FA-06",
@@ -266,7 +271,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "When an asset stops earning its keep, the loss has already happened. Recognising it late just delays bad news."
  },
  {
   "id": "IA-FA-07",
@@ -311,7 +317,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Projects left as 'under construction' avoid depreciation, so finished assets sometimes stay there on purpose."
  },
  {
   "id": "IA-FA-08",
@@ -356,7 +363,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Rented assets now sit on the balance sheet. Leases nobody has identified mean the balance sheet is incomplete."
  },
  {
   "id": "IA-FA-09",
@@ -401,7 +409,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Uninsured or badly maintained assets turn a single bad day into a very expensive one."
  },
  {
   "id": "IA-TX-01",
@@ -446,7 +455,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Without someone clearly owning tax risk, positions get taken across the group that nobody has assessed together."
  },
  {
   "id": "IA-TX-02",
@@ -491,7 +501,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Corporate tax filed late or wrongly attracts interest and penalties, and authorities can look back several years."
  },
  {
   "id": "IA-TX-03",
@@ -536,7 +547,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Sales tax and VAT are applied to enormous numbers of transactions, so a small error repeated becomes a large bill."
  },
  {
   "id": "IA-TX-04",
@@ -581,7 +593,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Treating someone as a contractor when they work like an employee creates back-tax liabilities plus penalties."
  },
  {
   "id": "IA-TX-05",
@@ -626,7 +639,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "When group companies charge each other, tax authorities want proof the price was fair. No proof means an adjustment."
  },
  {
   "id": "IA-TX-06",
@@ -671,7 +685,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "The tax numbers in the accounts are estimates too, and they depend on forecasts that may not hold."
  },
  {
   "id": "IA-TX-07",
@@ -716,7 +731,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "When a tax authority finds something, the same issue usually exists elsewhere in the group."
  },
  {
   "id": "IA-TX-08",
@@ -761,6 +777,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Tax is often calculated in spreadsheets nobody controls, which makes errors invisible until an authority finds them."
  }
 ]

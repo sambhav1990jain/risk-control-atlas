@@ -43,7 +43,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Fake or duplicated customer records are how fictitious sales and diverted refunds are set up."
  },
  {
   "id": "IA-O2C-02",
@@ -89,7 +90,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Giving credit to someone who cannot pay is a decision to lose money, taken one order at a time."
  },
  {
   "id": "IA-O2C-03",
@@ -134,7 +136,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Accepting an order commits the business to terms it may not be able to meet."
  },
  {
   "id": "IA-O2C-04",
@@ -180,7 +183,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Discounts and rebates are given away one transaction at a time and rarely reviewed in total."
  },
  {
   "id": "IA-O2C-05",
@@ -225,7 +229,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Recording a delivery in the wrong period moves profit between years, which is a classic way to flatter results."
  },
  {
   "id": "IA-O2C-06",
@@ -271,7 +276,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Goods delivered but never invoiced is money the business has simply given away."
  },
  {
   "id": "IA-O2C-07",
@@ -316,7 +322,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Credit notes reverse sales. They are also the easiest way to hide a debt that was never going to be collected."
  },
  {
   "id": "IA-O2C-08",
@@ -362,7 +369,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Money received but not matched to an invoice makes the debt look overdue and hides where cash actually went."
  },
  {
   "id": "IA-O2C-09",
@@ -408,7 +416,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "The longer a debt goes unchased, the less of it comes back."
  },
  {
   "id": "IA-O2C-10",
@@ -453,7 +462,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Not providing for debts that will never be paid overstates both profit and what the business is owed."
  },
  {
   "id": "IA-O2C-11",
@@ -499,6 +509,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "When revenue is recognised is a judgement, and judgements around year end get pressure applied to them."
  }
 ]

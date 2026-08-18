@@ -43,7 +43,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Set up a fake supplier, or change a real one's bank details, and payments walk straight out of the company."
  },
  {
   "id": "IA-P2P-02",
@@ -89,7 +90,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Awarding work without competition costs money, and is often where undisclosed personal interests hide."
  },
  {
   "id": "IA-P2P-03",
@@ -135,7 +137,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "An approved order is the point at which the company becomes committed to spend. After that it is too late."
  },
  {
   "id": "IA-P2P-04",
@@ -180,7 +183,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Confirming that goods or services arrived is what stops the company paying for nothing, and it is hardest to prove for services."
  },
  {
   "id": "IA-P2P-05",
@@ -225,7 +229,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Matching the invoice to the order and the delivery is the basic check that stops overbilling."
  },
  {
   "id": "IA-P2P-06",
@@ -270,7 +275,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "This is the moment cash actually leaves. Everything before it is preparation."
  },
  {
   "id": "IA-P2P-07",
@@ -315,7 +321,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Paying the same invoice twice is common, rarely noticed, and usually only recovered if someone looks."
  },
  {
   "id": "IA-P2P-08",
@@ -361,7 +368,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Expenses and company cards are small amounts approved quickly, which is exactly why personal spending slips through."
  },
  {
   "id": "IA-P2P-09",
@@ -406,7 +414,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Companies negotiate good rates and then pay something different, because nobody checks the invoice against the contract."
  },
  {
   "id": "IA-P2P-10",
@@ -452,7 +461,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Buyers control who gets the business, which makes them a target for suppliers offering something on the side."
  },
  {
   "id": "IA-P2P-11",
@@ -497,6 +507,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Leaving out bills that have already been incurred makes profit look better than it is."
  }
 ]

@@ -42,7 +42,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Running out of cash kills otherwise profitable businesses. The forecast is what stops that happening."
  },
  {
   "id": "IA-TR-02",
@@ -87,7 +88,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Loan agreements contain promises. Break one and the lender can demand its money back immediately."
  },
  {
   "id": "IA-TR-03",
@@ -132,7 +134,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Currency and interest rate moves can swing profit even when the business is performing exactly as planned."
  },
  {
   "id": "IA-TR-04",
@@ -177,7 +180,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Chasing slightly better returns with spare cash is how companies lose money they were not trying to risk."
  },
  {
   "id": "IA-TR-05",
@@ -222,7 +226,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Money moved between group companies without proper agreements creates tax and legal problems later."
  },
  {
   "id": "IA-TR-06",
@@ -267,7 +272,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Guarantees are promises to pay if someone else does not. They are easy to give and easy to forget."
  },
  {
   "id": "IA-TR-07",
@@ -312,7 +318,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If the same person can do a deal and settle it, money can move with no independent check at all."
  },
  {
   "id": "IA-TR-08",
@@ -357,6 +364,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Companies routinely have bank accounts nobody at head office knows about."
  }
 ]

@@ -44,7 +44,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Stock is often the largest number on the balance sheet, and it is only worth what it can actually be sold for."
  },
  {
   "id": "IA-X-07",
@@ -90,7 +91,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Big capital projects get approved on promises, and almost nobody goes back to check whether the promises came true."
  },
  {
   "id": "IA-X-08",
@@ -136,7 +138,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Bank accounts and payment authority are the front door to the company's cash."
  },
  {
   "id": "IA-X-09",
@@ -182,7 +185,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Filing tax late or on the wrong basis costs interest and penalties, and repeats every year until it is fixed."
  },
  {
   "id": "IA-X-10",
@@ -227,7 +231,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Manual journals are how results get adjusted at the last minute, which makes them the first place to look."
  },
  {
   "id": "IA-X-11",
@@ -275,7 +280,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Outsourcing the work never outsources the responsibility. When the supplier fails, it is still your problem."
  },
  {
   "id": "IA-X-12",
@@ -323,7 +329,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Hiring someone without checking who they are, and letting leavers keep access, are both simple failures with expensive consequences."
  },
  {
   "id": "IA-X-13",
@@ -369,6 +376,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "How people are paid and promoted drives how they behave, which shapes every other control in the business."
  }
 ]

@@ -43,7 +43,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If salespeople can push through loans that break the rules, the bank ends up with borrowers who were never going to pay."
  },
  {
   "id": "IA-BNK-02",
@@ -89,7 +90,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Banks are legally required to know who their customers are and to report suspicious activity. Getting this wrong brings fines and, sometimes, criminal charges."
  },
  {
   "id": "IA-INS-01",
@@ -134,7 +136,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Every extra pound paid on a claim beyond what the policy requires is profit gone, and it happens quietly across thousands of claims."
  },
  {
   "id": "IA-INS-02",
@@ -179,7 +182,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Brokers and agents sell using the insurer's name, so whatever they do wrong lands on the insurer's desk."
  },
  {
   "id": "IA-MFG-01",
@@ -224,7 +228,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Material that goes in but does not come out as product is money lost. If it is buried in general variances, nobody fixes the cause."
  },
  {
   "id": "IA-MFG-02",
@@ -270,7 +275,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Safety and environmental breaches can shut a plant down, and they injure people. This is not a financial risk first."
  },
  {
   "id": "IA-RTL-01",
@@ -315,7 +321,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Tills are where cash and staff meet thousands of times a day, and a refund against a real sale is the easiest way to take money."
  },
  {
   "id": "IA-RTL-02",
@@ -360,7 +367,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If suppliers under-deliver or overcharge and nobody claims it back, the loss is simply absorbed store by store."
  },
  {
   "id": "IA-AVN-01",
@@ -406,7 +414,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "An aircraft with incomplete maintenance records cannot legally fly, regardless of whether the work was actually done."
  },
  {
   "id": "IA-AVN-02",
@@ -451,6 +460,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Damage on the ground grounds aircraft and generates claims from airlines, and it is often discovered by the customer rather than the handler."
  }
 ]

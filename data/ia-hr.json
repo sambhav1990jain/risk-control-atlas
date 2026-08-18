@@ -42,7 +42,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Headcount is one of the largest costs a business has, and it grows quietly when nobody enforces the approved plan."
  },
  {
   "id": "IA-HR-02",
@@ -87,7 +88,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Hiring without a fair, documented process invites both bad hires and discrimination claims."
  },
  {
   "id": "IA-HR-03",
@@ -132,7 +134,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "In regulated or safety-critical roles, an expired certificate means the person should not be doing the job at all."
  },
  {
   "id": "IA-HR-04",
@@ -177,7 +180,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Handling grievances inconsistently is how employment claims and tribunal costs are created."
  },
  {
   "id": "IA-HR-05",
@@ -222,7 +226,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Unexplained pay differences between people doing the same job are a legal exposure and a retention problem."
  },
  {
   "id": "IA-HR-06",
@@ -267,7 +272,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Employee records contain some of the most sensitive data a company holds, including health information."
  },
  {
   "id": "IA-HR-07",
@@ -312,6 +318,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If only one person knows how something critical works, their resignation is an operational incident."
  }
 ]

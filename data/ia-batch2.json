@@ -43,7 +43,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "The front desk can give away rooms, discounts and refunds, and each one is money the hotel never sees."
  },
  {
   "id": "IA-HSP-02",
@@ -88,7 +89,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "When each property buys locally, prices drift upward and personal relationships creep in."
  },
  {
   "id": "IA-ECM-01",
@@ -133,7 +135,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "An online pricing error is honoured at scale within minutes, before anyone can react."
  },
  {
   "id": "IA-ECM-02",
@@ -179,7 +182,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Customer data is regulated. Keeping it too long or sharing it too widely is a fine, not just a bad look."
  },
  {
   "id": "IA-FMC-01",
@@ -224,7 +228,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Distributors buying more than they can sell means the sales figures are not real, and the stock comes back."
  },
  {
   "id": "IA-FMC-02",
@@ -269,7 +274,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If a product batch is unsafe, the company must find every unit fast. Poor traceability turns a problem into a crisis."
  },
  {
   "id": "IA-UTL-01",
@@ -314,7 +320,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Utility assets carry public safety risk. Deferring maintenance to save money moves the cost to someone's injury."
  },
  {
   "id": "IA-UTL-02",
@@ -359,7 +366,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Cutting off a customer who is ill or in hardship is a regulatory breach and a front-page story."
  },
  {
   "id": "IA-TEL-01",
@@ -404,7 +412,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Every call or data session that never reaches billing is a service given away free."
  },
  {
   "id": "IA-TEL-02",
@@ -449,6 +458,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "A badly controlled network change can take service down for millions of customers, and that has to be reported to the regulator."
  }
 ]

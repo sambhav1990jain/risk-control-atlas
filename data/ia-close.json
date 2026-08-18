@@ -43,7 +43,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "A reconciliation is how you prove a balance is real. Done badly, errors and theft sit undisturbed for years."
  },
  {
   "id": "IA-FC-02",
@@ -88,7 +89,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "When the close is rushed to hit a deadline, the checks are the first thing dropped."
  },
  {
   "id": "IA-FC-03",
@@ -133,7 +135,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Estimates are the numbers management gets to choose. That is exactly why they need challenging."
  },
  {
   "id": "IA-FC-04",
@@ -178,7 +181,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Group accounts are built by combining many companies. If balances between them do not cancel out, the group figures are wrong."
  },
  {
   "id": "IA-FC-05",
@@ -223,7 +227,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Using the wrong exchange rate quietly changes profit, and it is very hard to spot from the outside."
  },
  {
   "id": "IA-FC-06",
@@ -269,7 +274,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "The notes in the accounts are part of the accounts. Getting them wrong is a reporting failure, not a formatting one."
  },
  {
   "id": "IA-FC-07",
@@ -314,7 +320,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "If accounts in the ledger can be changed freely, the reports built on them stop meaning what people think."
  },
  {
   "id": "IA-FC-08",
@@ -359,7 +366,8 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "Deals with people connected to the business must be disclosed. Hiding them is where governance scandals usually start."
  },
  {
   "id": "IA-FC-09",
@@ -404,6 +412,7 @@
   ],
   "lens": [
    "ia"
-  ]
+  ],
+  "plain": "The board makes decisions from these reports. If the numbers cannot be traced back to the ledger, the decisions rest on nothing."
  }
 ]
