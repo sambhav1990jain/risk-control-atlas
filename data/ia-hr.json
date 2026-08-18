@@ -1,0 +1,317 @@
+[
+ {
+  "id": "IA-HR-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "Human Resources",
+  "subprocess": "Workforce Planning and Headcount Control",
+  "risk": "Headcount grows outside approved plan and roles are filled without establishment approval, inflating cost.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm headcount is controlled against approved establishment and budget.",
+  "what_to_review": [
+   "Establishment approval and vacancy authorisation",
+   "Reconciliation of actual headcount to approved positions",
+   "Use of contractors to circumvent headcount limits",
+   "Backfill versus new role approval",
+   "Organisational change and restructuring authorisation"
+  ],
+  "procedures": [
+   "Reconcile paid headcount to approved establishment by function and investigate excesses.",
+   "Test whether contractor engagement increased where headcount was frozen.",
+   "Test a sample of hires to vacancy approval and budget availability.",
+   "Test restructuring costs against approvals."
+  ],
+  "red_flags": [
+   "Contractor numbers rising as headcount is capped",
+   "Roles filled before approval",
+   "Establishment last approved years ago",
+   "Restructuring costs exceeding approval"
+  ],
+  "evidence": [
+   "Establishment and budget approvals",
+   "Headcount reports",
+   "Contractor engagement data",
+   "Vacancy approvals"
+  ],
+  "kpis": [
+   "Headcount vs. establishment",
+   "Contractor ratio",
+   "Hires with prior approval"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-HR-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "Human Resources",
+  "subprocess": "Recruitment and Selection",
+  "risk": "Hiring decisions are made without competitive or objective process, admitting unsuitable people and creating discrimination exposure.",
+  "rating": "Medium",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm recruitment is fair, documented and free from undisclosed conflicts.",
+  "what_to_review": [
+   "Advertising, shortlisting and interview documentation",
+   "Panel composition and independence",
+   "Conflict of interest and relative disclosure by hiring managers",
+   "Use of agencies, their terms and fees",
+   "Consistency of offers against approved salary bands"
+  ],
+  "procedures": [
+   "Test a sample of hires for documented selection rationale and panel involvement.",
+   "Match new hires against employee records for family or prior relationships with the hiring manager.",
+   "Recompute agency fees against agreed terms and test rebate claims where hires leave early.",
+   "Test offers against approved salary bands and approval of exceptions."
+  ],
+  "red_flags": [
+   "Roles filled without advertisement",
+   "Hiring manager as sole interviewer",
+   "Relatives of employees appointed with no disclosure",
+   "Agency fees above agreed rates"
+  ],
+  "evidence": [
+   "Recruitment files",
+   "Interview and panel records",
+   "Agency agreements and invoices",
+   "Salary band approvals"
+  ],
+  "kpis": [
+   "Hires with documented process",
+   "Agency fee variances",
+   "Offers outside band"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-HR-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "Human Resources",
+  "subprocess": "Learning, Competence and Mandatory Training",
+  "risk": "Staff perform regulated or safety-critical roles without the required competence, exposing the organisation to harm and enforcement.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm role-required competence and mandatory training are achieved and current.",
+  "what_to_review": [
+   "Identification of roles with mandatory training or certification requirements",
+   "Completion tracking and enforcement",
+   "Currency of certifications and expiry monitoring",
+   "Effectiveness assessment beyond attendance",
+   "Training records for contractors performing regulated work"
+  ],
+  "procedures": [
+   "Reconcile staff in regulated or safety-critical roles to completed and current certification.",
+   "Test enforcement \u2014 what happens when training lapses; if nothing, the control does not exist.",
+   "Test whether contractors in equivalent roles meet the same requirements.",
+   "Assess whether competence is tested or attendance merely recorded."
+  ],
+  "red_flags": [
+   "Certifications expired but staff still rostered",
+   "Completion tracked with no consequence for non-completion",
+   "Training measured by attendance only",
+   "Contractors exempt from requirements"
+  ],
+  "evidence": [
+   "Training records and matrices",
+   "Role requirement definitions",
+   "Certification expiry reports",
+   "Contractor records"
+  ],
+  "kpis": [
+   "Mandatory training current",
+   "Expired certifications in role",
+   "Contractor compliance"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-HR-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "Human Resources",
+  "subprocess": "Employee Relations, Grievance and Discipline",
+  "risk": "Grievances and disciplinary matters are handled inconsistently, generating legal claims and eroding trust.",
+  "rating": "Medium",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess whether employee relations cases are handled fairly, consistently and promptly.",
+  "what_to_review": [
+   "Case logging, ownership and timeliness",
+   "Investigation independence, particularly for senior subjects",
+   "Consistency of outcomes for comparable conduct",
+   "Legal claims, settlements and their causes",
+   "Trends by manager, function and location"
+  ],
+  "procedures": [
+   "Review a sample of cases for procedural fairness and timeliness against policy.",
+   "Compare outcomes for comparable conduct across seniority levels and locations.",
+   "Analyse claims and settlements for recurring causes and whether root causes were addressed.",
+   "Analyse case volumes by manager for concentration."
+  ],
+  "red_flags": [
+   "Cases open for months",
+   "Different outcomes for the same conduct",
+   "Settlements with non-disclosure and no root cause work",
+   "One manager generating most grievances"
+  ],
+  "evidence": [
+   "Case management records",
+   "Settlement agreements",
+   "Legal claim records",
+   "Manager-level case analysis"
+  ],
+  "kpis": [
+   "Days to close cases",
+   "Outcome consistency",
+   "Claims and settlement cost"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-HR-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "Human Resources",
+  "subprocess": "Diversity, Equity and Pay Equity",
+  "risk": "Pay and progression differ across comparable roles without justification, creating legal exposure and reputational risk.",
+  "rating": "Medium",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess whether pay and progression decisions are equitable and defensible.",
+  "what_to_review": [
+   "Pay analysis across comparable roles by gender and other protected characteristics",
+   "Progression and promotion rates across groups",
+   "Starting salary determination and negotiation effects",
+   "Reporting obligations on pay gaps",
+   "Action taken on identified disparities"
+  ],
+  "procedures": [
+   "Analyse pay for comparable roles and test the explanations offered for material dispersion.",
+   "Analyse promotion and progression rates across groups.",
+   "Test whether starting salaries are set by band or by negotiation, which tends to embed disparity.",
+   "Test the accuracy of any published pay gap reporting."
+  ],
+  "red_flags": [
+   "Disparities explained as \"experience\" with no data",
+   "Progression concentrated in one group",
+   "Starting salaries set entirely by negotiation",
+   "Published figures that cannot be reconstructed"
+  ],
+  "evidence": [
+   "Payroll and role data",
+   "Promotion records",
+   "Pay gap reporting and calculations",
+   "Remuneration policy"
+  ],
+  "kpis": [
+   "Pay dispersion in comparable roles",
+   "Progression rate by group",
+   "Actions on disparities"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-HR-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "Human Resources",
+  "subprocess": "Employee Data Privacy and HR Systems",
+  "risk": "Employee personal data is over-retained, over-shared or accessible to people with no business need.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm employee data is protected, minimised and retained lawfully.",
+  "what_to_review": [
+   "Access to HR and payroll data by role",
+   "Retention of records for leavers and unsuccessful candidates",
+   "Sharing with benefit providers, insurers and other third parties",
+   "Special category data \u2014 health, background checks",
+   "Monitoring of employees and its lawful basis"
+  ],
+  "procedures": [
+   "Test who can access sensitive employee data and whether the access is justified by role.",
+   "Test retention by identifying leaver and candidate records past the retention period.",
+   "Reconcile third parties receiving employee data to agreements and lawful basis.",
+   "Test the basis and transparency of any employee monitoring."
+  ],
+  "red_flags": [
+   "Managers with access to the whole workforce record",
+   "Candidate data retained indefinitely",
+   "Health data stored in general HR folders",
+   "Monitoring introduced without notice to staff"
+  ],
+  "evidence": [
+   "HR system access listings",
+   "Retention schedules and deletion evidence",
+   "Third-party agreements",
+   "Monitoring notices"
+  ],
+  "kpis": [
+   "Access appropriate to role",
+   "Records past retention",
+   "Third parties with agreements"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-HR-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "Human Resources",
+  "subprocess": "Succession and Key Person Risk",
+  "risk": "Critical roles have no identified successor, so a departure creates immediate operational and control failure.",
+  "rating": "Medium",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether key person dependency is identified and mitigated.",
+  "what_to_review": [
+   "Identification of critical roles and single points of dependency",
+   "Succession plans and their realism",
+   "Documentation and cross-training for critical activities",
+   "Retention risk for key individuals",
+   "Handover quality when key staff leave"
+  ],
+  "procedures": [
+   "Identify critical roles and test whether a named, ready successor exists.",
+   "Test whether critical processes are documented sufficiently for another person to perform them.",
+   "Review recent departures of key staff and assess the quality of handover.",
+   "Assess whether mandatory leave is applied in roles where it would surface concealment."
+  ],
+  "red_flags": [
+   "Succession plans naming the same person for several roles",
+   "Critical processes with no documentation",
+   "Handovers of a single day",
+   "Key staff never taking leave"
+  ],
+  "evidence": [
+   "Succession plans",
+   "Critical role assessments",
+   "Process documentation",
+   "Leave records"
+  ],
+  "kpis": [
+   "Critical roles with successor",
+   "Documented critical processes",
+   "Key staff leave taken"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]

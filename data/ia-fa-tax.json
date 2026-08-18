@@ -1,0 +1,766 @@
+[
+ {
+  "id": "IA-FA-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "Fixed Assets",
+  "subprocess": "Capital Budgeting and Authorisation",
+  "risk": "Capital expenditure is committed without approval, or approved on business cases that are never held to account.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm capital spend is authorised within delegated authority and evaluated against the case that justified it.",
+  "what_to_review": [
+   "Delegated authority for capital approval and its system enforcement",
+   "Business case quality \u2014 assumptions, options considered, benefits",
+   "Splitting of projects below approval thresholds",
+   "Re-approval when costs exceed the approved amount",
+   "Post-implementation review of benefits realised"
+  ],
+  "procedures": [
+   "Test a sample of additions to the approved capital request and the authority level applied.",
+   "Analyse spend clustering just below approval thresholds by requester and cost centre.",
+   "Compare final project cost to the approved amount and test escalation where overruns exceeded tolerance.",
+   "Select completed projects and compare realised benefits to the business case."
+  ],
+  "red_flags": [
+   "Overruns absorbed without re-approval",
+   "Business cases with benefits stated but never measured",
+   "Projects split into phases to stay under a threshold",
+   "Approvals obtained after commitment"
+  ],
+  "evidence": [
+   "Capital approval records",
+   "Project cost reports",
+   "Fixed asset additions",
+   "Post-implementation reviews"
+  ],
+  "kpis": [
+   "Spend within approved authority",
+   "Cost overrun %",
+   "Projects with benefit review"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FA-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "Fixed Assets",
+  "subprocess": "Asset Existence and Verification",
+  "risk": "Assets recorded on the register cannot be located, and assets in use are not on the register at all.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Confirm the fixed asset register reflects assets that physically exist and are in use.",
+  "what_to_review": [
+   "Physical verification programme, coverage and independence",
+   "Asset tagging and identification",
+   "Two-way testing \u2014 register to floor and floor to register",
+   "Treatment of assets not located",
+   "Custody and responsibility for mobile and remote assets"
+  ],
+  "procedures": [
+   "Select assets from the register and verify physical existence; then select assets observed and trace them back to the register.",
+   "Test coverage of the verification programme and identify asset classes never verified.",
+   "Test the disposition of assets recorded as not located in previous verifications.",
+   "For mobile assets \u2014 laptops, vehicles, tools \u2014 test custody records and return on exit."
+  ],
+  "red_flags": [
+   "Verification performed by the asset custodian",
+   "Assets not located simply rolled forward each year",
+   "Untagged assets in service",
+   "No verification of assets at remote or third-party sites"
+  ],
+  "evidence": [
+   "Fixed asset register",
+   "Verification programme and results",
+   "Asset tagging records",
+   "Custody assignments"
+  ],
+  "kpis": [
+   "Assets verified vs. population",
+   "Assets not located",
+   "Register accuracy %"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FA-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "Fixed Assets",
+  "subprocess": "Capitalisation and Expense Classification",
+  "risk": "Costs are capitalised that should be expensed, or vice versa, misstating profit and the asset base.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm the capital versus revenue distinction is applied consistently and in line with policy.",
+  "what_to_review": [
+   "Capitalisation policy, thresholds and their consistent application",
+   "Treatment of repairs, refurbishment and major overhauls",
+   "Internal labour, overhead and borrowing cost capitalised",
+   "Software and development cost capitalisation criteria",
+   "Timing \u2014 capitalisation only when available for use"
+  ],
+  "procedures": [
+   "Sample capitalised additions and test each against the policy criteria, particularly repairs and maintenance capitalised.",
+   "Test internal labour and overhead capitalised for a supportable basis and time records.",
+   "Test software and development capitalisation against the recognition criteria, including feasibility evidence.",
+   "Test capitalisation dates against evidence the asset was ready for use."
+  ],
+  "red_flags": [
+   "Repairs capitalised near year end",
+   "Internal labour capitalised at a standard percentage with no time records",
+   "Development capitalised before technical feasibility",
+   "Assets capitalised while still under construction"
+  ],
+  "evidence": [
+   "Fixed asset additions listing",
+   "Capitalisation policy",
+   "Supporting invoices and time records",
+   "Project documentation"
+  ],
+  "kpis": [
+   "Misclassification value found",
+   "Internal cost capitalised",
+   "Additions tested to policy"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FA-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "Fixed Assets",
+  "subprocess": "Depreciation and Useful Lives",
+  "risk": "Assets are depreciated over lives that no longer reflect use, or depreciation is not charged at all on parts of the register.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm depreciation is calculated correctly and lives and residuals remain supportable.",
+  "what_to_review": [
+   "Useful lives by class and their periodic reassessment",
+   "Depreciation method and its appropriateness",
+   "Residual value assumptions against realised disposal proceeds",
+   "Assets fully depreciated but still in use",
+   "Depreciation start and stop dates"
+  ],
+  "procedures": [
+   "Recompute depreciation for a sample of assets and reconcile the total charge to the ledger.",
+   "Compare realised disposal proceeds to residual assumptions by class and test whether lives were reassessed.",
+   "Quantify fully depreciated assets still in use and assess whether lives were understated.",
+   "Test depreciation start dates against in-service dates."
+  ],
+  "red_flags": [
+   "Lives unchanged for a decade despite changed usage",
+   "Fully depreciated assets forming a large share of the register",
+   "Residuals far above realised proceeds",
+   "Depreciation suspended without justification"
+  ],
+  "evidence": [
+   "Fixed asset register with depreciation detail",
+   "Disposal proceeds data",
+   "Life reassessment documentation"
+  ],
+  "kpis": [
+   "Depreciation recomputation variance",
+   "Fully depreciated assets in use",
+   "Life reassessments performed"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FA-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "Fixed Assets",
+  "subprocess": "Disposals, Transfers and Retirements",
+  "risk": "Assets are disposed of below value, sold to connected parties, or removed from the register while still held.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm disposals are authorised, competitively realised and correctly accounted.",
+  "what_to_review": [
+   "Disposal authorisation and method \u2014 tender, auction, trade-in, scrap",
+   "Proceeds received, banked and recorded",
+   "Buyer identity and any connection to employees",
+   "Transfers between locations and entities",
+   "Gain and loss calculation and accounting"
+  ],
+  "procedures": [
+   "Test disposals for authorisation and evidence of competitive realisation.",
+   "Trace disposal proceeds to bank receipts and recompute gain or loss.",
+   "Match buyers against employee and vendor records for connections.",
+   "Test that disposed assets were removed from insurance, licensing and maintenance contracts."
+  ],
+  "red_flags": [
+   "Repeat buyers across disposals",
+   "Assets written down shortly before disposal",
+   "Proceeds received in cash",
+   "Assets still insured after recorded disposal"
+  ],
+  "evidence": [
+   "Disposal authorisations and records",
+   "Bank receipts",
+   "Employee and vendor master data",
+   "Insurance schedules"
+  ],
+  "kpis": [
+   "Proceeds vs. book value",
+   "Disposals with competition",
+   "Connected buyer exceptions"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FA-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "Fixed Assets",
+  "subprocess": "Impairment",
+  "risk": "Impairment indicators are ignored, so assets that no longer generate value remain at full carrying amount.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm impairment indicators are identified and assessments performed and supported.",
+  "what_to_review": [
+   "Process for identifying impairment indicators",
+   "Cash generating unit definition and consistency",
+   "Assumptions in value-in-use models \u2014 growth, discount rate, forecast horizon",
+   "Sensitivity analysis and headroom",
+   "Reversal of prior impairments"
+  ],
+  "procedures": [
+   "Test whether known indicators \u2014 idle assets, loss-making units, technology change \u2014 triggered an assessment.",
+   "Recompute a value-in-use model and test the sensitivity of the conclusion to key assumptions.",
+   "Compare forecast assumptions used in impairment models to budgets used elsewhere in the business.",
+   "Test the consistency of cash generating unit definitions between periods."
+  ],
+  "red_flags": [
+   "Forecasts in impairment models more optimistic than the board-approved budget",
+   "Cash generating units redefined to absorb a loss-making operation",
+   "Discount rates that fall as headroom tightens",
+   "Idle assets with no assessment"
+  ],
+  "evidence": [
+   "Impairment assessments and models",
+   "Budgets and forecasts",
+   "Asset utilisation data",
+   "Prior period assessments"
+  ],
+  "kpis": [
+   "Indicators triggering assessment",
+   "Model headroom",
+   "Assumption consistency"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FA-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "Fixed Assets",
+  "subprocess": "Assets Under Construction",
+  "risk": "Projects remain in construction long after completion, avoiding depreciation and concealing abandoned spend.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm assets under construction are genuinely incomplete and transferred promptly on completion.",
+  "what_to_review": [
+   "Ageing of the assets under construction balance",
+   "Evidence of commissioning and transfer timing",
+   "Abandoned or stalled projects and their write-off",
+   "Costs accumulated in construction that are not capital in nature",
+   "Interest and overhead capitalised during construction"
+  ],
+  "procedures": [
+   "Age the construction balance and test the oldest items for evidence they are still in progress.",
+   "Physically inspect a sample of assets recorded as under construction.",
+   "Test the completeness and timing of transfers to fixed assets against commissioning evidence.",
+   "Test whether abandoned projects were written off."
+  ],
+  "red_flags": [
+   "Balances in construction for more than two years",
+   "Assets in use but still recorded as under construction",
+   "Abandoned projects retained on the balance sheet",
+   "Operating costs accumulated in a construction account"
+  ],
+  "evidence": [
+   "Assets under construction ageing",
+   "Commissioning evidence",
+   "Project status reports",
+   "Transfer postings"
+  ],
+  "kpis": [
+   "AUC balance over 12 months old",
+   "Days commissioning to transfer",
+   "Abandoned project write-offs"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FA-08",
+  "industry": [
+   "cross"
+  ],
+  "process": "Fixed Assets",
+  "subprocess": "Leases and Right-of-Use Assets",
+  "risk": "Leases are not identified or are misclassified, so right-of-use assets and lease liabilities are incomplete.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm the lease population is complete and lease accounting reflects the contracts.",
+  "what_to_review": [
+   "Completeness of the lease register against contracts and payments",
+   "Identification of embedded leases in service contracts",
+   "Discount rate determination",
+   "Lease modifications, extensions and termination options",
+   "Short-term and low-value exemptions applied"
+  ],
+  "procedures": [
+   "Search payment data for recurring rental-type payments and reconcile to the lease register.",
+   "Review significant service contracts for embedded leases.",
+   "Recompute right-of-use asset and liability for a sample of leases including options reasonably certain to be exercised.",
+   "Test the discount rates used for support."
+  ],
+  "red_flags": [
+   "Leases known to operations but absent from the register",
+   "Options excluded from the term without analysis",
+   "Discount rates chosen to minimise the liability",
+   "Modifications not remeasured"
+  ],
+  "evidence": [
+   "Lease register and contracts",
+   "Payment data",
+   "Lease calculations",
+   "Discount rate support"
+  ],
+  "kpis": [
+   "Leases identified outside register",
+   "Recomputation variance",
+   "Modifications remeasured"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-FA-09",
+  "industry": [
+   "cross"
+  ],
+  "process": "Fixed Assets",
+  "subprocess": "Asset Insurance and Maintenance",
+  "risk": "Assets are uninsured or underinsured, and maintenance neglect shortens asset life and creates safety exposure.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Confirm assets are adequately insured and maintained in line with their criticality.",
+  "what_to_review": [
+   "Insurance coverage against asset values and replacement cost",
+   "Reconciliation of the insured schedule to the asset register",
+   "Preventive maintenance programme and completion",
+   "Warranty tracking and claims",
+   "Critical spares and obsolescence"
+  ],
+  "procedures": [
+   "Reconcile the insured asset schedule to the fixed asset register and quantify uninsured or under-insured items.",
+   "Test insured values against replacement cost rather than book value.",
+   "Test preventive maintenance completion for critical assets.",
+   "Test whether warranty claims were pursued on failures within warranty."
+  ],
+  "red_flags": [
+   "Insurance based on net book value",
+   "Assets acquired but never added to the policy",
+   "Maintenance deferred on critical assets",
+   "Warranty periods lapsing unclaimed"
+  ],
+  "evidence": [
+   "Insurance policies and schedules",
+   "Fixed asset register",
+   "Maintenance records",
+   "Warranty documentation"
+  ],
+  "kpis": [
+   "Uninsured asset value",
+   "PM completion %",
+   "Warranty claims recovered"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TX-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "Tax",
+  "subprocess": "Tax Governance and Strategy",
+  "risk": "There is no clear ownership of tax risk, so positions are taken across the group that nobody has assessed in aggregate.",
+  "rating": "Medium",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether tax risk is governed, owned and reported.",
+  "what_to_review": [
+   "Tax strategy, risk appetite and board oversight",
+   "Ownership of tax risk across entities and jurisdictions",
+   "Tax risk register and reporting to the audit committee",
+   "Resourcing and technical capability",
+   "Use and oversight of external advisers"
+  ],
+  "procedures": [
+   "Review the tax risk register against issues identified in the audit and assess completeness.",
+   "Test whether material tax positions were reported to the audit committee.",
+   "Assess whether advice received from advisers was acted upon or quietly shelved.",
+   "Test that each jurisdiction has an identified owner for tax compliance."
+  ],
+  "red_flags": [
+   "Tax risk register listing only routine compliance",
+   "Advice obtained and then not followed",
+   "Jurisdictions with no named owner",
+   "No tax item reaching the audit committee in a year"
+  ],
+  "evidence": [
+   "Tax strategy and risk register",
+   "Audit committee papers",
+   "Adviser correspondence",
+   "Entity and jurisdiction listing"
+  ],
+  "kpis": [
+   "Jurisdictions with named owner",
+   "Tax items reported to committee",
+   "Advice implemented"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TX-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "Tax",
+  "subprocess": "Direct Tax Compliance",
+  "risk": "Corporate tax returns are filed late or on positions that cannot be supported, generating assessments, interest and penalties.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm direct tax obligations are met accurately and on time in every jurisdiction.",
+  "what_to_review": [
+   "Completeness of the filing calendar across all entities",
+   "Filing and payment timeliness",
+   "Support for deductions, reliefs and losses claimed",
+   "Reconciliation of the tax charge to the accounting profit",
+   "Correspondence and open enquiries with authorities"
+  ],
+  "procedures": [
+   "Build the obligation calendar independently from the entity register and compare to the one in use.",
+   "Test filing and payment dates against deadlines and quantify penalties and interest.",
+   "Test support for significant deductions and reliefs claimed.",
+   "Reconcile the effective tax rate and test the explanation for material reconciling items."
+  ],
+  "red_flags": [
+   "Entities discovered to have filing obligations nobody tracked",
+   "Repeated late filings in one jurisdiction",
+   "Losses carried forward without evidence of availability",
+   "Effective rate movements unexplained"
+  ],
+  "evidence": [
+   "Entity and jurisdiction register",
+   "Filed returns and payment evidence",
+   "Tax computations",
+   "Authority correspondence"
+  ],
+  "kpis": [
+   "Filings on time",
+   "Penalties incurred",
+   "Effective tax rate variance"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TX-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "Tax",
+  "subprocess": "Indirect Tax",
+  "risk": "VAT, GST or sales tax is charged, recovered or remitted incorrectly across large transaction volumes, so small errors become material.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm indirect tax is applied correctly at transaction level and returns are complete.",
+  "what_to_review": [
+   "Tax code determination logic in the systems",
+   "Treatment of cross-border, exempt and zero-rated supplies",
+   "Input tax recovery and partial exemption calculations",
+   "Manual overrides of tax codes",
+   "Reconciliation of returns to the ledger"
+  ],
+  "procedures": [
+   "Sample transactions across supply types and re-perform the tax determination.",
+   "Analyse manual tax code overrides by user and value.",
+   "Recompute the input tax recovery or partial exemption calculation.",
+   "Reconcile returns filed to the general ledger and test differences."
+  ],
+  "red_flags": [
+   "Tax codes overridden routinely at invoice entry",
+   "Recovery claimed on blocked categories",
+   "Cross-border supplies defaulting to domestic treatment",
+   "Return to ledger differences carried forward"
+  ],
+  "evidence": [
+   "Transaction level tax data",
+   "Tax code configuration",
+   "Filed indirect tax returns",
+   "Reconciliations"
+  ],
+  "kpis": [
+   "Determination error rate",
+   "Manual overrides",
+   "Return to ledger differences"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TX-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "Tax",
+  "subprocess": "Employment Taxes and Benefits",
+  "risk": "Payments to employees and contractors are misclassified, creating employment tax liabilities and worker status exposure.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm employment taxes are correctly applied, including on benefits and contractor arrangements.",
+  "what_to_review": [
+   "Worker status determinations for contractors and consultants",
+   "Benefits in kind identification and reporting",
+   "Expense reimbursements treated as non-taxable",
+   "Termination payments and their tax treatment",
+   "Cross-border and mobile employee obligations"
+  ],
+  "procedures": [
+   "Sample contractors and test the worker status determination against the substance of the engagement.",
+   "Test expense categories treated as non-taxable for correct treatment.",
+   "Test benefit reporting completeness against payroll and procurement data \u2014 company cars, health cover, allowances.",
+   "Test the tax treatment of termination settlements."
+  ],
+  "red_flags": [
+   "Long-serving contractors working like employees",
+   "Round-sum allowances paid untaxed",
+   "Benefits identified only from the payroll system",
+   "Mobile employees with no jurisdiction analysis"
+  ],
+  "evidence": [
+   "Contractor agreements and payment records",
+   "Expense and benefit data",
+   "Termination settlements",
+   "Employee mobility records"
+  ],
+  "kpis": [
+   "Contractors with status review",
+   "Benefits reported",
+   "Employment tax adjustments"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TX-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "Tax",
+  "subprocess": "Transfer Pricing",
+  "risk": "Intragroup transactions are priced without support, exposing the group to adjustment, double taxation and penalties.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm intragroup pricing follows policy and is documented to the standard each jurisdiction requires.",
+  "what_to_review": [
+   "Transfer pricing policy and its application in practice",
+   "Local file, master file and country-by-country reporting",
+   "Benchmarking studies and their currency",
+   "Intragroup service charges and evidence of benefit",
+   "Funding, royalties and licence arrangements"
+  ],
+  "procedures": [
+   "Test whether intragroup transactions were actually priced per policy by recomputing a sample.",
+   "Test documentation exists and is current for each jurisdiction with a requirement.",
+   "Test service charges for evidence the recipient benefited, not merely that cost was allocated.",
+   "Review benchmarking studies for age and comparability."
+  ],
+  "red_flags": [
+   "Documentation prepared long after year end",
+   "Service charges allocated by formula with no benefit evidence",
+   "Benchmarks several years old",
+   "Pricing that differs from the stated policy"
+  ],
+  "evidence": [
+   "Transfer pricing policy and documentation",
+   "Intragroup agreements and invoices",
+   "Benchmarking studies",
+   "CbCR submissions"
+  ],
+  "kpis": [
+   "Jurisdictions with current documentation",
+   "Pricing deviations found",
+   "Service charges with benefit evidence"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TX-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "Tax",
+  "subprocess": "Tax Provisions and Deferred Tax",
+  "risk": "The tax provision and deferred tax balances are misstated because positions and temporary differences are not tracked.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm tax balances in the accounts are supported and complete.",
+  "what_to_review": [
+   "Current tax provision support and reconciliation to returns filed",
+   "Deferred tax asset and liability calculation and temporary difference tracking",
+   "Recoverability of deferred tax assets and the forecasts supporting them",
+   "Uncertain tax positions and their measurement",
+   "Prior year adjustments and their causes"
+  ],
+  "procedures": [
+   "Reconcile the provision to returns subsequently filed and test the causes of significant true-ups.",
+   "Recompute deferred tax on a sample of temporary differences.",
+   "Test the forecast supporting deferred tax asset recognition against board-approved projections.",
+   "Test the measurement of uncertain tax positions against authority correspondence."
+  ],
+  "red_flags": [
+   "Large recurring prior year adjustments",
+   "Deferred tax assets supported by forecasts no one else uses",
+   "Uncertain positions not provided for despite live enquiries",
+   "Temporary differences tracked in a single spreadsheet"
+  ],
+  "evidence": [
+   "Tax provision schedules",
+   "Filed returns",
+   "Deferred tax workings",
+   "Forecasts and board projections"
+  ],
+  "kpis": [
+   "Prior year adjustment value",
+   "DTA recoverability headroom",
+   "Uncertain positions provided"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TX-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "Tax",
+  "subprocess": "Tax Authority Audits and Disputes",
+  "risk": "Authority enquiries are handled inconsistently and the same issues recur across jurisdictions and years.",
+  "rating": "Medium",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess how tax enquiries are managed and whether findings drive change.",
+  "what_to_review": [
+   "Tracking of open enquiries, assessments and appeals",
+   "Ownership and consistency of responses",
+   "Provisioning for assessments raised",
+   "Root cause analysis on findings and remediation",
+   "Lessons applied across other jurisdictions"
+  ],
+  "procedures": [
+   "Review open enquiries and test whether provisions reflect the exposure.",
+   "Trace closed enquiry findings to remediation actions and test whether they were implemented.",
+   "Test whether findings in one jurisdiction were assessed for relevance in others.",
+   "Test the timeliness of responses against authority deadlines."
+  ],
+  "red_flags": [
+   "Same finding raised in successive audits",
+   "Assessments settled with no root cause work",
+   "Responses missing deadlines",
+   "Provisions raised only after assessment is final"
+  ],
+  "evidence": [
+   "Enquiry and dispute register",
+   "Authority correspondence and assessments",
+   "Provision workings",
+   "Remediation records"
+  ],
+  "kpis": [
+   "Open enquiries and exposure",
+   "Repeat findings",
+   "Remediation completed"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TX-08",
+  "industry": [
+   "cross"
+  ],
+  "process": "Tax",
+  "subprocess": "Tax Data, Systems and Reporting",
+  "risk": "Tax calculations depend on manual extracts and spreadsheets nobody controls, so errors are undetectable.",
+  "rating": "Medium",
+  "risk_category": "IT",
+  "audit_objective": "Assess the integrity of the data and tools used to calculate and report tax.",
+  "what_to_review": [
+   "Source data quality feeding tax calculations",
+   "Reliance on spreadsheets and end user computing",
+   "Tax engine configuration and change control",
+   "Access to tax master data and rate tables",
+   "Audit trail from tax return back to source transactions"
+  ],
+  "procedures": [
+   "Trace a tax return figure back to source transactions and assess the effort required \u2014 poor traceability is itself a finding.",
+   "Test controls over the spreadsheets used in tax computation, including version control and formula integrity.",
+   "Test change control over tax engine configuration and rate tables.",
+   "Test who can amend tax master data."
+  ],
+  "red_flags": [
+   "Tax computed in an unversioned spreadsheet",
+   "Rate tables amended without change control",
+   "No audit trail from return to ledger",
+   "One person holding all tax model knowledge"
+  ],
+  "evidence": [
+   "Tax computation files",
+   "Tax engine configuration and change logs",
+   "Access listings",
+   "Data extracts"
+  ],
+  "kpis": [
+   "Traceability of return to source",
+   "EUC controls in place",
+   "Unauthorised rate changes"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]

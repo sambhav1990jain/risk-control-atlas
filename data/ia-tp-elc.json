@@ -1,0 +1,767 @@
+[
+ {
+  "id": "IA-TP-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "Third Party Management",
+  "subprocess": "Third Party Inventory and Risk Tiering",
+  "risk": "The organisation does not know who its third parties are or which matter, so oversight is applied to the wrong ones.",
+  "rating": "High",
+  "risk_category": "Strategic",
+  "audit_objective": "Confirm third parties are identified completely and tiered by the risk they present.",
+  "what_to_review": [
+   "Completeness of the third-party register against payments and system access",
+   "Criticality and risk tiering methodology",
+   "Fourth-party and subcontracting visibility",
+   "Ownership of each relationship inside the business",
+   "Refresh of tiering when the service changes"
+  ],
+  "procedures": [
+   "Build an independent third-party inventory from accounts payable and system access data and compare it to the register.",
+   "Test the tiering of a sample against the methodology; challenge any critical service tiered low.",
+   "Test whether subcontracting by key providers is known and permitted by contract.",
+   "Test that each relationship has a named business owner."
+  ],
+  "red_flags": [
+   "Providers paid regularly but absent from the register",
+   "Critical services tiered as low risk",
+   "No knowledge of who the provider subcontracts to",
+   "Relationships with no owner since the manager left"
+  ],
+  "evidence": [
+   "Accounts payable vendor data",
+   "Third-party register and tiering",
+   "System access listings",
+   "Contracts"
+  ],
+  "kpis": [
+   "Providers not in register",
+   "Critical providers tiered",
+   "Relationships with named owner"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TP-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "Third Party Management",
+  "subprocess": "Due Diligence and Onboarding",
+  "risk": "Third parties are engaged without checks on their financial health, integrity or capability, and problems surface only after dependency exists.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm due diligence is performed before engagement and is proportionate to risk.",
+  "what_to_review": [
+   "Due diligence scope by risk tier \u2014 financial, sanctions, integrity, capability",
+   "Timing \u2014 before contract signature or after",
+   "Sanctions, anti-bribery and modern slavery screening",
+   "Site visits or technical assessment for critical providers",
+   "Refresh of due diligence during the relationship"
+  ],
+  "procedures": [
+   "Test that due diligence was completed before contract signature for a sample of engagements.",
+   "Test screening evidence for sanctions and adverse media on critical providers.",
+   "Test the currency of due diligence for long-standing relationships.",
+   "Assess whether financial health of critical providers is monitored, not just checked once."
+  ],
+  "red_flags": [
+   "Due diligence dated after the contract",
+   "Long relationships never re-assessed",
+   "Screening limited to a search engine query",
+   "Financial distress at a provider discovered from the news"
+  ],
+  "evidence": [
+   "Due diligence files",
+   "Screening records",
+   "Contracts and signature dates",
+   "Financial monitoring records"
+  ],
+  "kpis": [
+   "DD before signature %",
+   "Critical providers refreshed",
+   "Screening completed"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TP-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "Third Party Management",
+  "subprocess": "Contracting and Commercial Terms",
+  "risk": "Contracts omit the protections the organisation needs, so there is no remedy when the provider fails.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm contracts contain the terms required for the risk the provider carries.",
+  "what_to_review": [
+   "Presence of service levels, remedies and service credits",
+   "Audit and inspection rights",
+   "Data protection, confidentiality and security obligations",
+   "Liability caps, indemnities and insurance requirements",
+   "Termination, exit assistance and transition obligations"
+  ],
+  "procedures": [
+   "Review contracts for critical providers against a required-terms checklist and quantify gaps.",
+   "Test whether spend is occurring under expired or absent contracts.",
+   "Test whether liability caps are proportionate to the exposure the service creates.",
+   "Test whether audit rights have ever been exercised."
+  ],
+  "red_flags": [
+   "Material spend with no signed contract",
+   "Liability capped at one month of fees for a critical service",
+   "Auto-renewal with no review point",
+   "Audit rights present but never used"
+  ],
+  "evidence": [
+   "Contract register and agreements",
+   "Spend analysis",
+   "Insurance certificates",
+   "Renewal records"
+  ],
+  "kpis": [
+   "Spend under contract %",
+   "Contracts with audit rights",
+   "Expired contracts still active"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TP-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "Third Party Management",
+  "subprocess": "Performance and Service Level Management",
+  "risk": "Provider performance is not measured, so service degrades and contractual remedies go unclaimed.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Confirm provider performance is measured against contract and managed actively.",
+  "what_to_review": [
+   "Service level definition and who measures performance",
+   "Provider self-reporting versus independent measurement",
+   "Service credit and remedy claims",
+   "Governance meetings, minutes and escalation",
+   "Relationship between performance and contract renewal"
+  ],
+  "procedures": [
+   "Test whether performance data is produced by the provider or independently verified.",
+   "Recompute service levels for a sample of periods and test whether credits due were claimed.",
+   "Review governance meeting minutes for substance and escalation of persistent failures.",
+   "Test whether poor performers were renewed regardless."
+  ],
+  "red_flags": [
+   "Performance reported solely by the provider",
+   "Service credits never claimed",
+   "Governance meetings cancelled repeatedly",
+   "Consistently failing providers renewed"
+  ],
+  "evidence": [
+   "Service level reports",
+   "Contracts and credit provisions",
+   "Governance minutes",
+   "Renewal decisions"
+  ],
+  "kpis": [
+   "SLA attainment",
+   "Credits claimed vs. due",
+   "Governance meetings held"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TP-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "Third Party Management",
+  "subprocess": "Assurance over Provider Controls",
+  "risk": "The organisation relies on controls operated by a third party without any evidence that they work.",
+  "rating": "High",
+  "risk_category": "IT",
+  "audit_objective": "Confirm assurance is obtained over provider controls and acted upon.",
+  "what_to_review": [
+   "Assurance strategy by tier \u2014 service auditor reports, certifications, right to audit",
+   "Review of reports received, including exceptions and qualified opinions",
+   "Complementary user entity controls and whether they are performed",
+   "Coverage gaps between report period and financial year",
+   "Escalation of adverse findings"
+  ],
+  "procedures": [
+   "Obtain service auditor reports for critical providers; test whether anyone read them by tracing exceptions to management action.",
+   "Identify complementary user entity controls and test whether the organisation performs each.",
+   "Test the coverage period against the financial year and how gaps are addressed.",
+   "Assess reliance placed on certifications that do not cover the services actually used."
+  ],
+  "red_flags": [
+   "Reports filed unread",
+   "Complementary controls never identified",
+   "Certification scope excluding the service used",
+   "Qualified opinions with no response"
+  ],
+  "evidence": [
+   "Service auditor reports and certifications",
+   "Bridge letters",
+   "Complementary control testing",
+   "Management responses"
+  ],
+  "kpis": [
+   "Critical providers with assurance",
+   "Complementary controls tested",
+   "Exceptions addressed"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TP-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "Third Party Management",
+  "subprocess": "Data Protection and Information Security",
+  "risk": "Third parties hold or access the organisation's data without adequate protection, and a breach at the provider becomes the organisation's breach.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm data shared with third parties is protected, minimised and governed.",
+  "what_to_review": [
+   "Inventory of data shared with each provider and its classification",
+   "Processor agreements and lawful basis for transfers",
+   "Security requirements imposed and verified",
+   "Provider access into the organisation's environment",
+   "Breach notification obligations and testing of the route"
+  ],
+  "procedures": [
+   "Reconcile providers receiving personal or sensitive data to signed processor agreements.",
+   "Test the security requirements imposed on providers and any verification performed.",
+   "Test provider access accounts \u2014 authentication, privilege, monitoring and removal.",
+   "Test whether breach notification routes have been exercised or are theoretical."
+  ],
+  "red_flags": [
+   "Data shared with no agreement in place",
+   "Provider staff with standing privileged access",
+   "Security requirements stated but never verified",
+   "No test of the breach notification path"
+  ],
+  "evidence": [
+   "Data sharing inventory",
+   "Processor agreements",
+   "Provider access listings",
+   "Security assessment records"
+  ],
+  "kpis": [
+   "Providers with agreements",
+   "Provider access reviewed",
+   "Security verifications performed"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TP-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "Third Party Management",
+  "subprocess": "Concentration, Continuity and Exit",
+  "risk": "A critical provider fails and there is no alternative and no exit plan, so the disruption is unbounded.",
+  "rating": "High",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether dependency on third parties is understood and survivable.",
+  "what_to_review": [
+   "Concentration analysis \u2014 single providers, shared fourth parties, geographic concentration",
+   "Business continuity requirements imposed and tested with the provider",
+   "Exit plans, transition assistance and data return",
+   "Substitutability of each critical provider",
+   "Testing of failover to an alternative"
+  ],
+  "procedures": [
+   "Identify critical services with a single provider and no substitute, and test the mitigation.",
+   "Test whether continuity arrangements have been jointly exercised with the provider.",
+   "Review exit plans for credibility \u2014 timescale, cost, data format, resource.",
+   "Analyse fourth-party concentration where several providers depend on the same underlying supplier."
+  ],
+  "red_flags": [
+   "Exit plan consisting of a single paragraph",
+   "Continuity never tested with the provider",
+   "Several critical providers hosted on the same platform",
+   "Data held in a proprietary format with no export"
+  ],
+  "evidence": [
+   "Concentration analysis",
+   "Continuity test records",
+   "Exit plans",
+   "Provider architecture information"
+  ],
+  "kpis": [
+   "Critical services single-sourced",
+   "Continuity tests performed",
+   "Exit plans credible"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-TP-08",
+  "industry": [
+   "cross"
+  ],
+  "process": "Third Party Management",
+  "subprocess": "Offshoring and Cross-Border Arrangements",
+  "risk": "Work performed offshore creates regulatory, tax and resilience exposure that was never assessed.",
+  "rating": "Medium",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm cross-border service arrangements comply with regulatory and data residency requirements.",
+  "what_to_review": [
+   "Regulatory notification or approval requirements for outsourcing",
+   "Data residency and cross-border transfer mechanisms",
+   "Local labour, tax and permanent establishment considerations",
+   "Time zone, language and oversight practicality",
+   "Geopolitical and country risk assessment"
+  ],
+  "procedures": [
+   "Test whether required regulatory notifications for outsourcing were made.",
+   "Test data residency against the contractual and regulatory requirement.",
+   "Assess whether offshore arrangements create permanent establishment or transfer pricing exposure.",
+   "Test the practical oversight exercised over offshore operations."
+  ],
+  "red_flags": [
+   "Outsourcing arrangements never notified to the regulator",
+   "Data processed in jurisdictions not permitted",
+   "No country risk assessment for concentrated locations",
+   "Oversight limited to a monthly call"
+  ],
+  "evidence": [
+   "Outsourcing agreements",
+   "Regulatory notifications",
+   "Data flow mapping",
+   "Country risk assessments"
+  ],
+  "kpis": [
+   "Notifications made",
+   "Data residency exceptions",
+   "Offshore sites visited"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-EL-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "Governance & Entity Level Controls",
+  "subprocess": "Governance Structure and Board Effectiveness",
+  "risk": "The board and its committees lack the information, independence or challenge to oversee the organisation effectively.",
+  "rating": "High",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether governance arrangements provide genuine oversight.",
+  "what_to_review": [
+   "Board and committee composition, independence and skills",
+   "Quality, timeliness and balance of information provided",
+   "Evidence of challenge in minutes",
+   "Committee terms of reference and coverage of their remit",
+   "Board evaluation and succession planning"
+  ],
+  "procedures": [
+   "Review minutes across several meetings for evidence of challenge, dissent and follow-up, not just approval.",
+   "Test whether papers reached members with enough time to read them.",
+   "Test committee coverage against terms of reference \u2014 matters required but never discussed.",
+   "Assess whether management reporting to the board matches what the audit found operationally."
+  ],
+  "red_flags": [
+   "Minutes recording approval with no discussion",
+   "Papers issued the day before",
+   "Terms of reference matters never on any agenda",
+   "Board evaluation never performed"
+  ],
+  "evidence": [
+   "Board and committee minutes and packs",
+   "Terms of reference",
+   "Composition and independence records",
+   "Evaluation reports"
+  ],
+  "kpis": [
+   "Papers issued on time",
+   "Matters covered vs. remit",
+   "Actions closed"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-EL-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "Governance & Entity Level Controls",
+  "subprocess": "Tone at the Top and Culture",
+  "risk": "Stated values are contradicted by what management rewards and tolerates, so controls are undermined from above.",
+  "rating": "High",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether the culture supports the control environment in practice, not only in policy.",
+  "what_to_review": [
+   "Code of conduct, its communication and acknowledgement",
+   "Consistency between stated values and incentive design",
+   "Consequence management \u2014 how breaches by senior staff are handled",
+   "Speak-up culture and psychological safety indicators",
+   "Employee survey results relevant to ethics and pressure"
+  ],
+  "procedures": [
+   "Compare disciplinary outcomes for similar breaches at different seniority levels.",
+   "Test whether incentive plans reward outcomes the code discourages.",
+   "Review survey data for indicators of pressure to meet targets at any cost, and follow up on the worst-scoring units.",
+   "Interview staff at multiple levels about whether they would raise a concern and what they expect would happen."
+  ],
+  "red_flags": [
+   "Senior breaches handled quietly while junior ones are dismissed",
+   "Targets that can only be met by cutting corners",
+   "Survey scores on ethics declining with no response",
+   "Exit interviews citing pressure repeatedly"
+  ],
+  "evidence": [
+   "Code of conduct and acknowledgements",
+   "Disciplinary case records",
+   "Incentive plan documents",
+   "Employee survey and exit interview data"
+  ],
+  "kpis": [
+   "Code acknowledgement rate",
+   "Consistency of consequence",
+   "Survey ethics scores"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-EL-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "Governance & Entity Level Controls",
+  "subprocess": "Risk Management Framework",
+  "risk": "Risk management is a reporting exercise disconnected from decisions, so real risks are absent from the register.",
+  "rating": "High",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether the risk framework identifies and manages the risks that actually threaten the organisation.",
+  "what_to_review": [
+   "Risk appetite definition and its use in decisions",
+   "Risk identification process and register completeness",
+   "Assessment methodology and consistency of scoring",
+   "Mitigation ownership, action tracking and effectiveness",
+   "Emerging risk identification and horizon scanning"
+  ],
+  "procedures": [
+   "Compare the risk register to issues identified by audit, incidents and losses \u2014 gaps show the identification process is not working.",
+   "Test whether risk appetite has ever caused a decision to change.",
+   "Test the scoring of a sample for consistency and challenge.",
+   "Test whether mitigation actions were completed and made a difference."
+  ],
+  "red_flags": [
+   "Risks scored to sit just inside appetite",
+   "Register unchanged for years",
+   "Incidents occurring in areas rated low risk",
+   "Mitigation actions perpetually in progress"
+  ],
+  "evidence": [
+   "Risk register and appetite statement",
+   "Incident and loss data",
+   "Risk committee minutes",
+   "Action tracking"
+  ],
+  "kpis": [
+   "Register vs. incidents alignment",
+   "Actions overdue",
+   "Risks outside appetite"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-EL-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "Governance & Entity Level Controls",
+  "subprocess": "Policy Framework and Compliance",
+  "risk": "Policies are out of date, contradictory or unknown to the people expected to follow them.",
+  "rating": "Medium",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm the policy framework is current, accessible and complied with.",
+  "what_to_review": [
+   "Policy inventory, ownership and review cycle",
+   "Accessibility and communication to affected staff",
+   "Consistency between related policies",
+   "Attestation and training completion",
+   "Monitoring of actual compliance rather than assumed compliance"
+  ],
+  "procedures": [
+   "Test the policy inventory for overdue reviews and identify policies referencing superseded regulation.",
+   "Test staff awareness of key policies in the areas audited.",
+   "Test attestation and training completion, particularly for high-risk roles.",
+   "Compare policy requirements to observed practice in the processes audited."
+  ],
+  "red_flags": [
+   "Policies years past review date",
+   "Practice diverging from policy with no exception recorded",
+   "Training completion tracked but not enforced",
+   "Contradictory requirements in related policies"
+  ],
+  "evidence": [
+   "Policy inventory and documents",
+   "Training and attestation records",
+   "Process observations",
+   "Exception approvals"
+  ],
+  "kpis": [
+   "Policies within review cycle",
+   "Training completion",
+   "Policy vs. practice gaps"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-EL-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "Governance & Entity Level Controls",
+  "subprocess": "Delegation of Authority",
+  "risk": "Authority limits are unclear, outdated or unenforced, so decisions are made by people without the mandate.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm delegated authority is defined, current and enforced in the systems where it matters.",
+  "what_to_review": [
+   "Currency of the delegation of authority matrix",
+   "Alignment between the matrix and system configuration",
+   "Delegation during absence and its expiry",
+   "Authority held by leavers and movers",
+   "Evidence of decisions taken outside authority"
+  ],
+  "procedures": [
+   "Compare the delegation matrix to system approval limits in the finance, procurement and HR systems and quantify differences.",
+   "Test delegations granted during absence for expiry.",
+   "Reconcile approvers active in systems to current role holders.",
+   "Test a sample of significant decisions against the authority held at the time."
+  ],
+  "red_flags": [
+   "System limits inconsistent with the matrix",
+   "Temporary delegations never revoked",
+   "Leavers still active as approvers",
+   "Matrix last updated after a reorganisation two years ago"
+  ],
+  "evidence": [
+   "Delegation of authority matrix",
+   "System approval configuration",
+   "HR role data",
+   "Approval records"
+  ],
+  "kpis": [
+   "Matrix to system alignment",
+   "Expired delegations active",
+   "Decisions outside authority"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-EL-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "Governance & Entity Level Controls",
+  "subprocess": "Fraud Risk Management",
+  "risk": "Fraud risk is assumed to be covered by other controls, so no one assesses where the organisation is actually exposed.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Assess whether fraud risk is specifically assessed, mitigated and detected.",
+  "what_to_review": [
+   "Fraud risk assessment covering asset misappropriation, corruption and financial reporting fraud",
+   "Ownership of fraud risk and specific anti-fraud controls",
+   "Fraud detection analytics and their coverage",
+   "Investigation capability, independence and consistency",
+   "Loss recording, recovery and lessons applied"
+  ],
+  "procedures": [
+   "Test whether a fraud risk assessment exists and covers the schemes relevant to the business, not generic categories.",
+   "Test the anti-fraud controls claimed against each significant scheme.",
+   "Review investigations for independence, quality and consistency of outcome.",
+   "Test whether identified frauds led to control changes."
+  ],
+  "red_flags": [
+   "Fraud risk assessment copied from a template",
+   "Investigations conducted by the function investigated",
+   "Losses written off without root cause work",
+   "No detective analytics in high-risk processes"
+  ],
+  "evidence": [
+   "Fraud risk assessment",
+   "Investigation files",
+   "Loss register",
+   "Analytics coverage documentation"
+  ],
+  "kpis": [
+   "Schemes assessed",
+   "Investigations independent",
+   "Controls changed after fraud"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-EL-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "Governance & Entity Level Controls",
+  "subprocess": "Whistleblowing and Conflicts of Interest",
+  "risk": "Concerns are not raised or not acted upon, and undisclosed interests influence decisions.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess whether the speak-up channel is trusted and effective and whether conflicts are managed.",
+  "what_to_review": [
+   "Channel availability, anonymity, independence and awareness",
+   "Case triage, investigation independence and closure quality",
+   "Conflict of interest declarations \u2014 completeness and refresh",
+   "Management of declared conflicts, not just declaration",
+   "Retaliation monitoring"
+  ],
+  "procedures": [
+   "Analyse case volume against benchmarks for organisation size; very low volume indicates a channel people do not trust.",
+   "Test cases implicating senior management for investigator independence.",
+   "Reconcile conflict declarations to the population required to declare, particularly procurement, finance and hiring managers.",
+   "Test what happened after a conflict was declared \u2014 management action, not just a record."
+  ],
+  "red_flags": [
+   "Case volume near zero",
+   "Cases closed as unsubstantiated with no documented work",
+   "Declarations collected but never acted on",
+   "Reporters leaving shortly after raising a concern"
+  ],
+  "evidence": [
+   "Case management records",
+   "Conflict declarations and registers",
+   "Investigation files",
+   "Exit interview data"
+  ],
+  "kpis": [
+   "Cases per 1,000 staff",
+   "Days to close",
+   "Declarations completed"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-EL-08",
+  "industry": [
+   "cross"
+  ],
+  "process": "Governance & Entity Level Controls",
+  "subprocess": "Regulatory Compliance Management",
+  "risk": "Regulatory obligations are not identified or tracked to an owner, so breaches are found by the regulator.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm regulatory obligations are identified, owned, monitored and evidenced.",
+  "what_to_review": [
+   "Completeness of the regulatory obligation inventory",
+   "Horizon scanning for new and changing requirements",
+   "Ownership and monitoring of each obligation",
+   "Breach identification, self-reporting and remediation",
+   "Regulatory relationship and correspondence handling"
+  ],
+  "procedures": [
+   "Build an obligation list independently for the most significant regulations and compare to the inventory.",
+   "Test evidence of compliance for a sample of obligations rather than an assertion.",
+   "Test breach self-reporting timeliness and remediation delivery.",
+   "Test whether regulatory change was assessed and implemented on time."
+  ],
+  "red_flags": [
+   "Obligations with no owner",
+   "Compliance asserted with no evidence",
+   "Regulatory change implemented after the deadline",
+   "Breaches identified externally first"
+  ],
+  "evidence": [
+   "Obligation inventory",
+   "Regulatory correspondence",
+   "Breach register",
+   "Change implementation records"
+  ],
+  "kpis": [
+   "Obligations with evidence",
+   "Breaches self-identified",
+   "Change implemented on time"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-EL-09",
+  "industry": [
+   "cross"
+  ],
+  "process": "Governance & Entity Level Controls",
+  "subprocess": "Business Continuity and Crisis Management",
+  "risk": "The organisation cannot continue operating through disruption because plans are theoretical and untested.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Assess whether continuity and crisis arrangements would work in practice.",
+  "what_to_review": [
+   "Business impact analysis and its currency",
+   "Continuity plans for critical processes, including dependencies",
+   "Testing \u2014 scope, realism and lessons captured",
+   "Crisis management structure, roles and decision authority",
+   "Communication plans for staff, customers and regulators"
+  ],
+  "procedures": [
+   "Test whether the business impact analysis reflects the current operating model.",
+   "Review the most recent continuity test for realism \u2014 was anything actually switched off?",
+   "Test whether lessons from previous tests or real incidents were implemented.",
+   "Assess whether plans account for third-party and technology dependencies."
+  ],
+  "red_flags": [
+   "Plans referencing systems or premises no longer used",
+   "Tests that are desktop discussions only",
+   "Lessons logged but never actioned",
+   "Plans assuming staff availability during a regional event"
+  ],
+  "evidence": [
+   "Business impact analysis",
+   "Continuity plans",
+   "Test reports and lessons logs",
+   "Incident records"
+  ],
+  "kpis": [
+   "Plans within review cycle",
+   "Tests performed",
+   "Lessons implemented"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]

@@ -378,7 +378,7 @@
  },
  {
   "control_id": "BNK-18",
-  "process": "Treasury & Capital",
+  "process": "Treasury",
   "subprocess": "Liquidity Ratio Reporting",
   "risk_id": "R-BNK-18",
   "risk": "Regulatory liquidity ratios are misstated because the classification of assets and outflow assumptions are applied incorrectly.",
@@ -407,7 +407,7 @@
  },
  {
   "control_id": "BNK-19",
-  "process": "Treasury & Capital",
+  "process": "Treasury",
   "subprocess": "Investment Securities Valuation",
   "risk_id": "R-BNK-19",
   "risk": "Securities are valued using stale or unverified prices, misstating the investment portfolio and capital.",
@@ -436,7 +436,7 @@
  },
  {
   "control_id": "BNK-20",
-  "process": "Treasury & Capital",
+  "process": "Treasury",
   "subprocess": "Interest Rate Risk in the Banking Book",
   "risk_id": "R-BNK-20",
   "risk": "Interest rate risk is understated because behavioural assumptions on non-maturity deposits and prepayment are not validated.",

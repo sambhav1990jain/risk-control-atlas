@@ -1,66 +1,311 @@
 [
- {"group":"Financial services","items":[
-   {"id":"banking","name":"Banking and financial institutions"},
-   {"id":"insurance","name":"Insurance"},
-   {"id":"capital-markets","name":"Capital markets, brokerage and exchanges"},
-   {"id":"consumer-finance","name":"Consumer finance and credit"},
-   {"id":"asset-mgmt","name":"Asset and wealth management"},
-   {"id":"fintech","name":"Fintech and payments"}]},
- {"group":"Health and life sciences","items":[
-   {"id":"healthcare","name":"Healthcare providers"},
-   {"id":"pharma","name":"Pharmaceuticals and life sciences"},
-   {"id":"biotech","name":"Biotechnology"},
-   {"id":"medtech","name":"Medical devices and equipment"}]},
- {"group":"Technology and communications","items":[
-   {"id":"tech","name":"Technology, software and IT services"},
-   {"id":"semiconductors","name":"Semiconductors"},
-   {"id":"hardware","name":"Technology hardware and electronics"},
-   {"id":"telecom","name":"Telecommunications"},
-   {"id":"media","name":"Media and entertainment"},
-   {"id":"advertising","name":"Advertising and marketing services"}]},
- {"group":"Industrials and manufacturing","items":[
-   {"id":"manufacturing","name":"Manufacturing and industrial products"},
-   {"id":"aerospace","name":"Aerospace and defence"},
-   {"id":"automotive","name":"Automotive and vehicle parts"},
-   {"id":"chemicals","name":"Chemicals"},
-   {"id":"building-products","name":"Building products and materials"},
-   {"id":"packaging","name":"Packaging and containers"},
-   {"id":"paper","name":"Paper, forest products and timber"}]},
- {"group":"Energy, utilities and resources","items":[
-   {"id":"oil-gas","name":"Oil, gas and refining"},
-   {"id":"oilfield","name":"Oilfield services and equipment"},
-   {"id":"pipelines","name":"Pipelines and energy infrastructure"},
-   {"id":"utilities","name":"Utilities, power and water"},
-   {"id":"renewables","name":"Renewable energy and independent power"},
-   {"id":"mining","name":"Mining, metals and materials"}]},
- {"group":"Transport and infrastructure","items":[
-   {"id":"logistics","name":"Transportation and logistics"},
-   {"id":"aviation","name":"Aviation and airlines"},
-   {"id":"marine","name":"Marine transport and shipping"},
-   {"id":"rail","name":"Rail transport"},
-   {"id":"transport-infra","name":"Ports, airports and transport infrastructure"}]},
- {"group":"Consumer and retail","items":[
-   {"id":"retail","name":"Retail chains"},
-   {"id":"ecommerce","name":"E-commerce"},
-   {"id":"wholesale","name":"Wholesale distribution"},
-   {"id":"fmcg","name":"FMCG and consumer goods"},
-   {"id":"food-bev","name":"Food and beverage"},
-   {"id":"agriculture","name":"Agriculture and agribusiness"},
-   {"id":"apparel","name":"Apparel, textiles and luxury goods"},
-   {"id":"tobacco","name":"Tobacco"}]},
- {"group":"Hospitality and leisure","items":[
-   {"id":"hospitality","name":"Hospitality and hotels"},
-   {"id":"restaurants","name":"Restaurants and food service"},
-   {"id":"gaming","name":"Gaming, casinos and resorts"}]},
- {"group":"Real estate and construction","items":[
-   {"id":"real-estate","name":"Real estate"},
-   {"id":"construction","name":"Construction and engineering"},
-   {"id":"homebuilding","name":"Homebuilding and residential development"}]},
- {"group":"Business and professional services","items":[
-   {"id":"prof-services","name":"Professional services"},
-   {"id":"waste","name":"Waste management and environmental services"}]},
- {"group":"Public and not-for-profit","items":[
-   {"id":"crown","name":"Crown corporations and public sector"},
-   {"id":"nfp","name":"Not-for-profit"},
-   {"id":"education","name":"Education"}]}
+ {
+  "group": "Financial services",
+  "items": [
+   {
+    "id": "banking",
+    "name": "Banking and financial institutions",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   },
+   {
+    "id": "insurance",
+    "name": "Insurance",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   },
+   {
+    "id": "capital-markets",
+    "name": "Capital markets, brokerage and exchanges",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   },
+   {
+    "id": "consumer-finance",
+    "name": "Consumer finance and credit",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   },
+   {
+    "id": "asset-mgmt",
+    "name": "Asset and wealth management",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   },
+   {
+    "id": "fintech",
+    "name": "Fintech and payments",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   }
+  ]
+ },
+ {
+  "group": "Health and life sciences",
+  "items": [
+   {
+    "id": "healthcare",
+    "name": "Healthcare providers"
+   },
+   {
+    "id": "pharma",
+    "name": "Pharmaceuticals and life sciences"
+   },
+   {
+    "id": "biotech",
+    "name": "Biotechnology"
+   },
+   {
+    "id": "medtech",
+    "name": "Medical devices and equipment"
+   }
+  ]
+ },
+ {
+  "group": "Technology and communications",
+  "items": [
+   {
+    "id": "tech",
+    "name": "Technology, software and IT services",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   },
+   {
+    "id": "semiconductors",
+    "name": "Semiconductors"
+   },
+   {
+    "id": "hardware",
+    "name": "Technology hardware and electronics"
+   },
+   {
+    "id": "telecom",
+    "name": "Telecommunications"
+   },
+   {
+    "id": "media",
+    "name": "Media and entertainment",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   },
+   {
+    "id": "advertising",
+    "name": "Advertising and marketing services",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   }
+  ]
+ },
+ {
+  "group": "Industrials and manufacturing",
+  "items": [
+   {
+    "id": "manufacturing",
+    "name": "Manufacturing and industrial products"
+   },
+   {
+    "id": "aerospace",
+    "name": "Aerospace and defence"
+   },
+   {
+    "id": "automotive",
+    "name": "Automotive and vehicle parts"
+   },
+   {
+    "id": "chemicals",
+    "name": "Chemicals"
+   },
+   {
+    "id": "building-products",
+    "name": "Building products and materials"
+   },
+   {
+    "id": "packaging",
+    "name": "Packaging and containers"
+   },
+   {
+    "id": "paper",
+    "name": "Paper, forest products and timber"
+   }
+  ]
+ },
+ {
+  "group": "Energy, utilities and resources",
+  "items": [
+   {
+    "id": "oil-gas",
+    "name": "Oil, gas and refining"
+   },
+   {
+    "id": "oilfield",
+    "name": "Oilfield services and equipment"
+   },
+   {
+    "id": "pipelines",
+    "name": "Pipelines and energy infrastructure"
+   },
+   {
+    "id": "utilities",
+    "name": "Utilities, power and water"
+   },
+   {
+    "id": "renewables",
+    "name": "Renewable energy and independent power"
+   },
+   {
+    "id": "mining",
+    "name": "Mining, metals and materials"
+   }
+  ]
+ },
+ {
+  "group": "Transport and infrastructure",
+  "items": [
+   {
+    "id": "logistics",
+    "name": "Transportation and logistics"
+   },
+   {
+    "id": "aviation",
+    "name": "Aviation and airlines"
+   },
+   {
+    "id": "marine",
+    "name": "Marine transport and shipping"
+   },
+   {
+    "id": "rail",
+    "name": "Rail transport"
+   },
+   {
+    "id": "transport-infra",
+    "name": "Ports, airports and transport infrastructure"
+   }
+  ]
+ },
+ {
+  "group": "Consumer and retail",
+  "items": [
+   {
+    "id": "retail",
+    "name": "Retail chains"
+   },
+   {
+    "id": "ecommerce",
+    "name": "E-commerce"
+   },
+   {
+    "id": "wholesale",
+    "name": "Wholesale distribution"
+   },
+   {
+    "id": "fmcg",
+    "name": "FMCG and consumer goods"
+   },
+   {
+    "id": "food-bev",
+    "name": "Food and beverage"
+   },
+   {
+    "id": "agriculture",
+    "name": "Agriculture and agribusiness"
+   },
+   {
+    "id": "apparel",
+    "name": "Apparel, textiles and luxury goods"
+   },
+   {
+    "id": "tobacco",
+    "name": "Tobacco"
+   }
+  ]
+ },
+ {
+  "group": "Hospitality and leisure",
+  "items": [
+   {
+    "id": "hospitality",
+    "name": "Hospitality and hotels"
+   },
+   {
+    "id": "restaurants",
+    "name": "Restaurants and food service"
+   },
+   {
+    "id": "gaming",
+    "name": "Gaming, casinos and resorts"
+   }
+  ]
+ },
+ {
+  "group": "Real estate and construction",
+  "items": [
+   {
+    "id": "real-estate",
+    "name": "Real estate",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   },
+   {
+    "id": "construction",
+    "name": "Construction and engineering"
+   },
+   {
+    "id": "homebuilding",
+    "name": "Homebuilding and residential development"
+   }
+  ]
+ },
+ {
+  "group": "Business and professional services",
+  "items": [
+   {
+    "id": "prof-services",
+    "name": "Professional services",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   },
+   {
+    "id": "waste",
+    "name": "Waste management and environmental services"
+   }
+  ]
+ },
+ {
+  "group": "Public and not-for-profit",
+  "items": [
+   {
+    "id": "crown",
+    "name": "Crown corporations and public sector",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   },
+   {
+    "id": "nfp",
+    "name": "Not-for-profit",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   },
+   {
+    "id": "education",
+    "name": "Education",
+    "exclude": [
+     "Inventory & Costing"
+    ]
+   }
+  ]
+ }
 ]

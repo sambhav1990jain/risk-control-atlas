@@ -688,7 +688,7 @@
   "industry": [
    "banking"
   ],
-  "process": "Treasury & Capital",
+  "process": "Treasury",
   "subprocess": "Liquidity and Capital Management",
   "risk": "Liquidity and capital positions are managed on assumptions that do not hold under stress, leaving the bank exposed to a funding shock or a regulatory shortfall.",
   "rating": "High",

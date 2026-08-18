@@ -59,7 +59,7 @@
  },
  {
   "control_id": "BNK-03",
-  "process": "Treasury & Capital",
+  "process": "Treasury",
   "subprocess": "Regulatory Capital Reporting",
   "risk_id": "R-BNK-03",
   "risk": "Risk-weighted assets are misclassified, misstating the regulatory capital ratio reported to the regulator.",

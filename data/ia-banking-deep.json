@@ -1,0 +1,632 @@
+[
+ {
+  "id": "IA-BNK-05",
+  "industry": [
+   "banking"
+  ],
+  "process": "Credit & Lending",
+  "subprocess": "Credit Origination and Documentation",
+  "risk": "Facilities are drawn on incomplete or unenforceable documentation, so the bank cannot enforce its rights on default.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm credit documentation is complete, executed and enforceable before drawdown.",
+  "what_to_review": [
+   "Completeness of the credit file \u2014 agreements, security, conditions precedent",
+   "Execution and legal review of non-standard documentation",
+   "Conditions precedent satisfied before disbursement",
+   "Document custody and retrieval",
+   "Covenant terms recorded in the monitoring system"
+  ],
+  "procedures": [
+   "Sample facilities and test the credit file for executed agreements and evidence of conditions precedent.",
+   "Test that non-standard terms received legal review before execution.",
+   "Test whether covenants in the agreement were loaded into the monitoring system, and completely.",
+   "Test document custody by requesting original security documents for a sample."
+  ],
+  "red_flags": [
+   "Drawdowns before conditions precedent satisfied",
+   "Covenants in the agreement absent from monitoring",
+   "Original documents that cannot be located",
+   "Non-standard terms agreed without legal review"
+  ],
+  "evidence": [
+   "Credit files and agreements",
+   "Disbursement records",
+   "Covenant monitoring system extract",
+   "Document custody records"
+  ],
+  "kpis": [
+   "Files complete",
+   "CPs satisfied pre-drawdown",
+   "Covenants loaded to monitoring"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-06",
+  "industry": [
+   "banking"
+  ],
+  "process": "Credit & Lending",
+  "subprocess": "Collateral Valuation and Perfection",
+  "risk": "Security is unperfected or valued on stale information, so realisable value on default is far below what is recorded.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm collateral is legally perfected and valued on a current, independent basis.",
+  "what_to_review": [
+   "Legal perfection \u2014 registration, charges, priority",
+   "Valuation frequency by asset class and independence of valuers",
+   "Loan-to-value monitoring and breach action",
+   "Insurance over charged assets",
+   "Release of security and its authorisation"
+  ],
+  "procedures": [
+   "Test perfection evidence for a sample of secured exposures, including registration at the relevant registry.",
+   "Test valuation currency against policy and re-perform loan-to-value calculations.",
+   "Test valuer independence and panel rotation.",
+   "Test that insurance over charged assets is current and the bank is noted as interested party."
+  ],
+  "red_flags": [
+   "Charges unregistered or registered late",
+   "Valuations years out of date on volatile asset classes",
+   "Same valuer used for all exposures to one borrower",
+   "Insurance lapsed on charged property"
+  ],
+  "evidence": [
+   "Collateral register and legal files",
+   "Registry search results",
+   "Valuation reports",
+   "Insurance certificates"
+  ],
+  "kpis": [
+   "Exposures with perfected security",
+   "Valuations within policy age",
+   "LTV breaches actioned"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-07",
+  "industry": [
+   "banking"
+  ],
+  "process": "Credit & Lending",
+  "subprocess": "Covenant Monitoring",
+  "risk": "Borrower covenant breaches are not detected, so deterioration is not acted on and the bank loses its intervention rights.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm borrower covenants are monitored and breaches escalated and acted upon.",
+  "what_to_review": [
+   "Completeness of covenants captured from agreements",
+   "Receipt and review of borrower financial information",
+   "Timeliness of covenant testing after each reporting date",
+   "Waiver and amendment authority",
+   "Link between breach and risk grading or staging"
+  ],
+  "procedures": [
+   "Recompute covenants for a sample of borrowers from their submitted financials.",
+   "Test whether borrower information was received on time and chased when late.",
+   "Test waivers granted for authorisation at the correct level and for whether pricing or security was adjusted.",
+   "Test whether breaches fed through to risk grading."
+  ],
+  "red_flags": [
+   "Waivers granted routinely to the same borrowers",
+   "Financial information outstanding for months",
+   "Covenants recomputed only at year end",
+   "Breaches with no effect on grading"
+  ],
+  "evidence": [
+   "Facility agreements",
+   "Borrower financial submissions",
+   "Covenant testing records",
+   "Waiver approvals"
+  ],
+  "kpis": [
+   "Covenants tested on time",
+   "Waivers granted",
+   "Breaches reflected in grading"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-08",
+  "industry": [
+   "banking"
+  ],
+  "process": "Credit & Lending",
+  "subprocess": "Problem Loan and Watchlist Management",
+  "risk": "Deteriorating exposures are not moved to specialist management early enough, reducing recovery.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess whether early warning indicators work and problem exposures are managed by the right people.",
+  "what_to_review": [
+   "Early warning indicator design, coverage and response",
+   "Watchlist criteria and transfer to specialist workout",
+   "Independence of workout from origination",
+   "Recovery strategies and their execution",
+   "Provisioning alignment with the workout view"
+  ],
+  "procedures": [
+   "Test whether early warning indicators triggered and what happened when they did.",
+   "Compare the date deterioration was observable in data to the date the exposure was watchlisted.",
+   "Test that workout management is independent of the originating relationship manager.",
+   "Compare recovery outcomes to strategies agreed at transfer."
+  ],
+  "red_flags": [
+   "Exposures watchlisted only once past due",
+   "Relationship managers retaining problem exposures",
+   "Indicators triggering with no recorded response",
+   "Recovery strategies never revisited"
+  ],
+  "evidence": [
+   "Early warning reports",
+   "Watchlist and transfer records",
+   "Workout files",
+   "Recovery outcomes"
+  ],
+  "kpis": [
+   "Time from indicator to watchlist",
+   "Exposures in workout",
+   "Recovery rate"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-09",
+  "industry": [
+   "banking"
+  ],
+  "process": "Credit & Lending",
+  "subprocess": "Credit Risk Models and Rating Integrity",
+  "risk": "Internal ratings and credit models are inaccurate or overridden, understating risk and regulatory capital.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Assess the integrity, validation and use of internal credit ratings and models.",
+  "what_to_review": [
+   "Model development, validation and approval governance",
+   "Rating override frequency, direction and justification",
+   "Data quality feeding models",
+   "Back-testing of predicted against actual default",
+   "Use test \u2014 whether ratings actually drive decisions and pricing"
+  ],
+  "procedures": [
+   "Analyse rating overrides by direction and originator; overrides consistently improving ratings warrant testing.",
+   "Review validation reports and test whether findings were remediated.",
+   "Back-test rating performance against realised defaults.",
+   "Test whether ratings genuinely drive pricing and approval, or are produced after the decision."
+  ],
+  "red_flags": [
+   "Overrides almost always upward",
+   "Validation findings open across cycles",
+   "Models unchanged despite deteriorating performance",
+   "Ratings assigned after the credit decision"
+  ],
+  "evidence": [
+   "Model documentation and validation reports",
+   "Rating and override data",
+   "Default history",
+   "Pricing records"
+  ],
+  "kpis": [
+   "Override rate and direction",
+   "Validation findings open",
+   "Back-test accuracy"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-10",
+  "industry": [
+   "banking"
+  ],
+  "process": "Credit & Lending",
+  "subprocess": "Concentration and Large Exposures",
+  "risk": "Exposure concentrations breach regulatory or internal limits because connected counterparties are not grouped correctly.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm exposures are aggregated correctly and remain within limits.",
+  "what_to_review": [
+   "Connected counterparty identification and grouping",
+   "Aggregation across products, entities and geographies",
+   "Regulatory large exposure limits and internal appetite",
+   "Sector, geographic and collateral concentration",
+   "Breach identification and escalation"
+  ],
+  "procedures": [
+   "Test the grouping of connected counterparties against ownership and control data.",
+   "Recompute large exposures against regulatory limits at several dates.",
+   "Analyse concentration by sector and geography against appetite.",
+   "Test escalation of breaches and whether limits were raised rather than exposures reduced."
+  ],
+  "red_flags": [
+   "Connected borrowers treated as unrelated",
+   "Exposure aggregation excluding off-balance sheet commitments",
+   "Limits raised immediately after a breach",
+   "Concentration reported only at year end"
+  ],
+  "evidence": [
+   "Exposure data by counterparty and group",
+   "Ownership and control information",
+   "Limit framework",
+   "Breach records"
+  ],
+  "kpis": [
+   "Exposures over limit",
+   "Groups correctly aggregated",
+   "Breach escalations"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-11",
+  "industry": [
+   "banking"
+  ],
+  "process": "Financial Crime",
+  "subprocess": "Customer Due Diligence and Risk Rating",
+  "risk": "Customer risk is rated incorrectly at onboarding, so the level of due diligence and monitoring applied is wrong from the start.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Confirm customer risk rating drives due diligence and is refreshed as behaviour changes.",
+  "what_to_review": [
+   "Risk rating methodology and its factors",
+   "Enhanced due diligence for high-risk customers and PEPs",
+   "Beneficial ownership identification and verification",
+   "Periodic review cycles by risk tier",
+   "Rating overrides and who may make them"
+  ],
+  "procedures": [
+   "Sample customers across risk tiers and test that due diligence matches the rating applied.",
+   "Test beneficial ownership identification for corporate customers, including layered structures.",
+   "Test rating overrides for approval and rationale.",
+   "Quantify overdue periodic reviews and test whether high-risk customers continued transacting."
+  ],
+  "red_flags": [
+   "Ratings downgraded to avoid enhanced due diligence",
+   "Beneficial ownership recorded as the immediate holder only",
+   "Periodic reviews overdue on the highest-risk customers",
+   "Overrides made by relationship staff"
+  ],
+  "evidence": [
+   "Customer files and risk ratings",
+   "Beneficial ownership records",
+   "Periodic review reports",
+   "Override logs"
+  ],
+  "kpis": [
+   "EDD completed for high risk",
+   "Overdue reviews",
+   "Ownership verified"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-12",
+  "industry": [
+   "banking"
+  ],
+  "process": "Financial Crime",
+  "subprocess": "Correspondent Banking and Trade Finance",
+  "risk": "Correspondent and trade finance relationships are used to move illicit funds because the underlying activity is not scrutinised.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess controls over higher-risk financial crime channels.",
+  "what_to_review": [
+   "Correspondent bank due diligence and Wolfsberg-style questionnaires",
+   "Nested and downstream relationship identification",
+   "Trade document review for dual-use goods and price manipulation",
+   "Sanctions screening on trade parties, vessels and ports",
+   "Country and product risk assessment"
+  ],
+  "procedures": [
+   "Test correspondent due diligence currency and whether nested relationships were identified.",
+   "Sample trade transactions and test document review for over- or under-invoicing and dual-use goods.",
+   "Test vessel and port screening on shipping documents.",
+   "Test whether high-risk corridors receive additional scrutiny."
+  ],
+  "red_flags": [
+   "Correspondent questionnaires years old",
+   "Nested relationships discovered by the regulator",
+   "Trade documents reviewed for form only",
+   "Vessels not screened"
+  ],
+  "evidence": [
+   "Correspondent due diligence files",
+   "Trade transaction files and documents",
+   "Screening records",
+   "Country risk assessments"
+  ],
+  "kpis": [
+   "Correspondents with current DD",
+   "Trade files with substantive review",
+   "Screening coverage"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-13",
+  "industry": [
+   "banking"
+  ],
+  "process": "Financial Crime",
+  "subprocess": "Fraud Detection and Customer Protection",
+  "risk": "Customers are defrauded through account takeover, authorised push payment scams or card fraud, and the bank bears loss and censure.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Assess the effectiveness of fraud prevention, detection and customer reimbursement.",
+  "what_to_review": [
+   "Authentication and step-up controls for payments and account changes",
+   "Fraud detection rules, machine learning models and their tuning",
+   "Confirmation of payee and scam warnings",
+   "Reimbursement decisions and their consistency",
+   "Mule account detection"
+  ],
+  "procedures": [
+   "Analyse fraud losses by type and channel and test whether controls were adjusted after each pattern emerged.",
+   "Test authentication for high-risk actions such as payee changes and device registration.",
+   "Review reimbursement decisions for consistency with the regulatory standard.",
+   "Test mule account detection \u2014 accounts receiving and rapidly dispersing funds."
+  ],
+  "red_flags": [
+   "Losses rising in a channel with no rule change",
+   "Reimbursement declined inconsistently",
+   "Mule accounts identified only after victim reports",
+   "Step-up authentication bypassable through a channel"
+  ],
+  "evidence": [
+   "Fraud loss data by type",
+   "Detection rule configuration",
+   "Reimbursement decisions",
+   "Mule account investigations"
+  ],
+  "kpis": [
+   "Fraud loss rate",
+   "Detection rate before customer report",
+   "Reimbursement consistency"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-14",
+  "industry": [
+   "banking"
+  ],
+  "process": "Financial Crime",
+  "subprocess": "Anti-Bribery, Corruption and Tax Evasion Facilitation",
+  "risk": "The bank facilitates bribery or tax evasion through its customers or its own conduct, triggering corporate criminal liability.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess the adequacy of procedures to prevent facilitation of financial crime by staff and associates.",
+  "what_to_review": [
+   "Risk assessment for bribery and facilitation of tax evasion",
+   "Gifts, hospitality and political donation controls",
+   "Third-party intermediaries and introducer arrangements",
+   "Training for high-risk roles",
+   "Investigation and reporting of suspected facilitation"
+  ],
+  "procedures": [
+   "Test the bribery and facilitation risk assessment for coverage of the actual business model.",
+   "Review the gifts and hospitality register for completeness and approval of high-value items.",
+   "Test due diligence on introducers and intermediaries and the basis of their remuneration.",
+   "Test training completion for high-risk and client-facing roles."
+  ],
+  "red_flags": [
+   "Introducers paid success fees with no due diligence",
+   "Gifts register with implausibly few entries",
+   "Risk assessment not covering key jurisdictions",
+   "Training completion low in front-office roles"
+  ],
+  "evidence": [
+   "Risk assessments",
+   "Gifts and hospitality register",
+   "Introducer agreements and payments",
+   "Training records"
+  ],
+  "kpis": [
+   "High-risk roles trained",
+   "Introducers with due diligence",
+   "Register entries vs. expectation"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-15",
+  "industry": [
+   "banking"
+  ],
+  "process": "Deposits & Payments",
+  "subprocess": "Branch and Cash Operations",
+  "risk": "Cash and negotiable instruments are misappropriated at branches through teller manipulation or vault control failure.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Assess physical and procedural controls over cash and instruments in branch operations.",
+  "what_to_review": [
+   "Teller limits, cash-outs and end-of-day balancing",
+   "Vault dual control and access logging",
+   "Surprise cash counts and their independence",
+   "Suspense and difference accounts at branch level",
+   "Negotiable instrument stock control"
+  ],
+  "procedures": [
+   "Perform surprise cash counts at a sample of branches and agree to records.",
+   "Analyse teller differences by individual \u2014 small persistent differences can indicate skimming.",
+   "Test vault access logs for single-person access events.",
+   "Review branch suspense accounts for aged items."
+  ],
+  "red_flags": [
+   "Recurring small teller differences by the same person",
+   "Vault accessed by one person",
+   "Surprise counts announced in advance",
+   "Suspense items cleared just before a count"
+  ],
+  "evidence": [
+   "Cash records and teller balancing reports",
+   "Vault access logs",
+   "Surprise count records",
+   "Branch suspense accounts"
+  ],
+  "kpis": [
+   "Teller difference frequency",
+   "Surprise counts performed",
+   "Aged suspense items"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-16",
+  "industry": [
+   "banking"
+  ],
+  "process": "Deposits & Payments",
+  "subprocess": "Payment Operations and Settlement",
+  "risk": "Payments fail, settle late or are duplicated, causing customer loss, liquidity impact and regulatory breach.",
+  "rating": "High",
+  "risk_category": "Operational",
+  "audit_objective": "Assess controls over payment processing, settlement and exception handling.",
+  "what_to_review": [
+   "Straight-through processing rates and manual repair volumes",
+   "Cut-off times, settlement finality and liquidity management",
+   "Duplicate and erroneous payment detection and recovery",
+   "Payment scheme rules compliance",
+   "Resilience of payment channels and contingency arrangements"
+  ],
+  "procedures": [
+   "Analyse manual repair volumes and who performs them; manual intervention is where error and fraud enter.",
+   "Test duplicate payment detection and the recovery of identified duplicates.",
+   "Test compliance with scheme rules on timing and messaging standards.",
+   "Review payment incidents and test whether root causes were remediated."
+  ],
+  "red_flags": [
+   "High manual repair rates in one channel",
+   "Repairs performed by the same person who inputs",
+   "Duplicates identified by customers rather than the bank",
+   "Recurring incidents with the same cause"
+  ],
+  "evidence": [
+   "Payment processing data",
+   "Repair and exception logs",
+   "Incident records",
+   "Scheme compliance reporting"
+  ],
+  "kpis": [
+   "STP rate",
+   "Manual repairs",
+   "Payment incidents"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-17",
+  "industry": [
+   "banking"
+  ],
+  "process": "Deposits & Payments",
+  "subprocess": "Customer Complaints and Conduct",
+  "risk": "Complaints are not identified, investigated fairly or used to detect systemic customer harm.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess whether complaint handling is fair, timely and drives correction of root causes.",
+  "what_to_review": [
+   "Complaint identification \u2014 including expressions of dissatisfaction not logged as complaints",
+   "Investigation quality, timeliness and outcome fairness",
+   "Root cause analysis and systemic issue identification",
+   "Redress calculation and delivery",
+   "Ombudsman referrals and overturn rates"
+  ],
+  "procedures": [
+   "Sample closed complaints and reassess whether the outcome was fair on the facts.",
+   "Test whether complaints are being logged at first point of contact or filtered out.",
+   "Test whether root causes were identified and remediated, including proactive redress for similarly affected customers.",
+   "Analyse ombudsman overturn rates as an indicator of internal decision quality."
+  ],
+  "red_flags": [
+   "Complaints resolved verbally and never logged",
+   "High ombudsman overturn rate",
+   "Redress paid only to those who complained",
+   "Root cause recorded as \"customer misunderstanding\""
+  ],
+  "evidence": [
+   "Complaint records and case files",
+   "Ombudsman decisions",
+   "Root cause analyses",
+   "Redress calculations"
+  ],
+  "kpis": [
+   "Complaints per 1,000 customers",
+   "Ombudsman overturn rate",
+   "Systemic issues identified"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-BNK-18",
+  "industry": [
+   "banking"
+  ],
+  "process": "Deposits & Payments",
+  "subprocess": "Product Governance and Customer Outcomes",
+  "risk": "Products are sold to customers for whom they are unsuitable, or perform differently from what was represented.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess whether products are designed, targeted and monitored for good customer outcomes.",
+  "what_to_review": [
+   "Product approval process and target market definition",
+   "Distribution against the intended target market",
+   "Fair value assessment and pricing",
+   "Post-sale monitoring of customer outcomes",
+   "Vulnerable customer identification and treatment"
+  ],
+  "procedures": [
+   "Test sales data against the defined target market and quantify sales outside it.",
+   "Review the fair value assessment for products with high margin or low usage.",
+   "Test outcome monitoring \u2014 cancellation rates, complaints, claims declined \u2014 for signals of poor outcomes.",
+   "Test identification and treatment of vulnerable customers in the sales process."
+  ],
+  "red_flags": [
+   "Products sold well outside the target market",
+   "Fair value assessments concluding value in every case",
+   "High early cancellation rates unexplained",
+   "Vulnerability flags not visible to front-line staff"
+  ],
+  "evidence": [
+   "Product approval documentation",
+   "Sales and distribution data",
+   "Fair value assessments",
+   "Outcome monitoring reports"
+  ],
+  "kpis": [
+   "Sales outside target market",
+   "Early cancellation rate",
+   "Vulnerable customers identified"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]
