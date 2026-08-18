@@ -1,0 +1,112 @@
+{
+ "banking": {
+  "summary": "Risk here concentrates in the loan book and the payment rails. The audit universe runs from origination and collateral through covenant monitoring and problem loans, alongside the financial crime obligations that carry personal and corporate liability, and the treasury and capital functions the regulator watches most closely.",
+  "hallmarks": [
+   "Credit decisions made under commercial pressure, where policy exceptions become routine",
+   "Financial crime obligations where failure is a regulatory event, not just a loss",
+   "Capital and liquidity positions built on behavioural assumptions that need validating",
+   "Customer outcomes and conduct, where redress liabilities build quietly"
+  ],
+  "regulatory": "Basel capital and liquidity framework, AML/CFT and sanctions regimes, conduct and consumer protection rules, IFRS 9 / CECL expected credit loss."
+ },
+ "insurance": {
+  "summary": "The balance sheet is built on estimates, so the audit universe centres on whether reserves, pricing and reinsurance reflect reality. Claims handling and distribution conduct carry the operational and regulatory exposure.",
+  "hallmarks": [
+   "Reserves set by judgement, where earnings pressure can bend the estimate",
+   "Claims leakage \u2014 value lost between entitlement and settlement",
+   "Reinsurance that must respond when the large loss actually arrives",
+   "Intermediaries selling on the insurer's licence and reputation"
+  ],
+  "regulatory": "Solvency capital regimes, IFRS 17 / statutory reserving, conduct and product governance rules, actuarial standards."
+ },
+ "logistics": {
+  "summary": "Margin is thin and the assets move, so the audit universe covers fleet and fuel, the accuracy of freight billing, custody of goods in the network, and the compliance obligations that attach to drivers, vehicles and cross-border shipments.",
+  "hallmarks": [
+   "Revenue leakage \u2014 shipments delivered but never billed, or billed at the wrong rate",
+   "Fuel and fleet, where consumption is hard to verify against activity",
+   "Custody of freight through every handoff in the network",
+   "Driver hours, dangerous goods and customs \u2014 compliance failures that stop operations"
+  ],
+  "regulatory": "Hours-of-service rules, dangerous goods regulations, customs and trade compliance, IFRS 15 / ASC 606 for transit-period revenue."
+ },
+ "aviation": {
+  "summary": "Safety regulation sets the floor and the assets are enormously expensive, so the audit universe spans airworthiness and maintenance certification, ground handling, passenger revenue and unflown ticket liability, and the lease and fuel commitments that dominate the cost base.",
+  "hallmarks": [
+   "Airworthiness records and certifying authority \u2014 where documentation failure grounds aircraft",
+   "Air traffic liability, where revenue is recognised on flying, not on selling",
+   "Lease return conditions that crystallise years after the decision that caused them",
+   "Ground damage and delay attribution across handling operations"
+  ],
+  "regulatory": "Airworthiness directives and continuing airworthiness rules, ground operations standards, IFRS 16 leases, IFRS 15 passenger revenue."
+ },
+ "manufacturing": {
+  "summary": "Value sits in inventory and in the conversion process, so the audit universe covers costing accuracy, stock existence and valuation, production yield, and the safety, environmental and warranty obligations that attach to making physical things.",
+  "hallmarks": [
+   "Standard costs that drift away from actual input prices",
+   "Yield and scrap losses absorbed into variances rather than investigated",
+   "Inventory that exists on the system but not on the floor",
+   "Health, safety and environmental permits where breach means enforcement"
+  ],
+  "regulatory": "Environmental permits and emissions reporting, workplace safety regulation, product liability and warranty obligations."
+ },
+ "retail": {
+  "summary": "High volume, low value, distributed across many sites \u2014 so the audit universe is about cash integrity at the till, shrinkage through the supply chain, supplier trading terms, and the stored-value liabilities that build up unnoticed.",
+  "hallmarks": [
+   "Till-level manipulation through refunds, voids and discounts",
+   "Shrinkage \u2014 theft, process error and supplier short-delivery, blended together",
+   "Vendor rebates recognised before the conditions are met",
+   "Gift card and loyalty liabilities and the breakage assumption"
+  ],
+  "regulatory": "Consumer protection and pricing rules, payment card security standards, food safety where applicable."
+ },
+ "hospitality": {
+  "summary": "Cash, stock and people at every property, with central oversight stretched thin \u2014 so the audit universe covers front office revenue integrity, food and beverage margin, property-level purchasing, and the distribution economics that determine whether a room is profitable.",
+  "hallmarks": [
+   "Comps, rate overrides and cancellations at the front desk",
+   "Pour cost and wastage, where theoretical and actual consumption diverge",
+   "Property-level purchasing outside the group framework",
+   "Channel commissions that can exceed the room's contribution"
+  ],
+  "regulatory": "Food safety and licensing, payment card security standards, employment and tipping regulation."
+ },
+ "ecommerce": {
+  "summary": "Everything is a transaction and everything is data, so the audit universe covers the reconciliation from order to settled cash, fraud and chargeback exposure, fulfilment accuracy, and the privacy obligations attaching to customer data.",
+  "hallmarks": [
+   "Order-to-cash reconciliation across platform, gateway and bank",
+   "Payment fraud and chargebacks, where the loss lands after fulfilment",
+   "Refunds issued without goods returned",
+   "Personal data retained longer and shared wider than the basis allows"
+  ],
+  "regulatory": "Data protection and privacy law, payment card security standards, consumer rights on returns and refunds, marketplace liability rules."
+ },
+ "fmcg": {
+  "summary": "Trade investment is the largest discretionary spend and the product is consumed, so the audit universe covers trade spend effectiveness, channel and distributor behaviour, and the food safety and traceability controls that make a recall survivable.",
+  "hallmarks": [
+   "Trade promotions accrued and deducted, often without evidence of delivery",
+   "Channel stuffing at period end, reversing later as returns",
+   "Batch traceability \u2014 whether a recall could actually be executed",
+   "Short-dated stock and the provision that should follow it"
+  ],
+  "regulatory": "Food safety regimes and HACCP, labelling and advertising standards, product recall obligations."
+ },
+ "utilities": {
+  "summary": "A regulated monopoly with safety-critical assets, so the audit universe covers metering and revenue completeness, licence obligations, network asset integrity, and the customer protection rules that carry the sharpest regulatory teeth.",
+  "hallmarks": [
+   "Energy delivered versus energy billed, and the losses in between",
+   "Licence conditions that must be evidenced, not merely asserted",
+   "Safety-critical maintenance deferred under cost pressure",
+   "Vulnerable customers and disconnection \u2014 where compliance failure is a public event"
+  ],
+  "regulatory": "Sector licence conditions and price determinations, customer protection and hardship rules, safety and environmental regulation."
+ },
+ "telecom": {
+  "summary": "Enormous transaction volumes flowing through several systems before they reach a bill, so the audit universe centres on revenue assurance, interconnect settlement, subscriber credit, and the resilience of the network everything depends on.",
+  "hallmarks": [
+   "Usage records lost between the network and billing",
+   "Interconnect and roaming balances settled on the operator's own data",
+   "Services provisioned but never billed",
+   "Network change and resilience, where an outage is a regulatory event"
+  ],
+  "regulatory": "Telecommunications licence conditions, outage reporting obligations, data retention and privacy rules, consumer contract regulation."
+ }
+}
