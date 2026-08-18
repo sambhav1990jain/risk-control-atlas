@@ -1,0 +1,502 @@
+[
+ {
+  "id": "IA-P2P-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "Procure to Pay",
+  "subprocess": "Vendor Master Data",
+  "risk": "Fictitious vendors are created, or bank details on genuine vendors are altered, so payments leave the organisation to accounts controlled by a fraudster.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm vendor records are created and amended only on verified, authorised information.",
+  "what_to_review": [
+   "Authorisation and independent verification of vendor creation and bank changes",
+   "Call-back verification to independently obtained contact details",
+   "Duplicate vendor detection",
+   "Employee-to-vendor data matching",
+   "Dormant vendor reactivation and one-time vendor use"
+  ],
+  "procedures": [
+   "Extract the vendor master change log and test creations and bank changes for independent verification evidence.",
+   "Match the vendor master against employee data on bank account, address, tax identifier and phone.",
+   "Run duplicate analytics across name, bank account and tax identifier; quantify spend flowing through duplicates.",
+   "Identify vendors reactivated after dormancy and test the first payment following reactivation.",
+   "Test one-time and manual vendor payments for approval and business justification."
+  ],
+  "red_flags": [
+   "Bank change immediately followed by a large payment",
+   "Vendors sharing a bank account with each other or an employee",
+   "Vendor created and paid within the same day",
+   "Verification evidenced by an email from the address that requested the change"
+  ],
+  "evidence": [
+   "Vendor master change log with user and timestamp",
+   "Employee master data",
+   "Accounts payable spend by vendor",
+   "Bank verification records"
+  ],
+  "kpis": [
+   "Changes with verified call-back",
+   "Employee-vendor matches",
+   "Spend through one-time vendors"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-P2P-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "Procure to Pay",
+  "subprocess": "Vendor Selection, Tendering and Contracting",
+  "risk": "Suppliers are awarded work without competition or on terms that favour them, often where a personal interest exists.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Assess whether sourcing is competitive, documented and free from undisclosed interest.",
+  "what_to_review": [
+   "Tender thresholds and adherence to them",
+   "Evaluation criteria, scoring and evaluator independence",
+   "Single and sole-source justifications",
+   "Conflict of interest declarations from evaluators",
+   "Contract award terms versus what was tendered"
+  ],
+  "procedures": [
+   "Quantify spend awarded without competition and test the justification for the largest.",
+   "Re-perform the scoring on a sample of tenders and test whether the award followed the evaluation.",
+   "Test evaluator conflict declarations and match evaluators to winning suppliers for connections.",
+   "Compare final contract terms to the tendered terms and identify post-award concessions.",
+   "Test for purchases split to fall below the tender threshold."
+  ],
+  "red_flags": [
+   "Sole-source justification citing urgency repeatedly",
+   "Scoring changed after bids were opened",
+   "The same supplier winning every category with one buyer",
+   "Contracts amended in the supplier's favour shortly after award"
+  ],
+  "evidence": [
+   "Tender files and evaluation records",
+   "Contract register",
+   "Conflict of interest declarations",
+   "Spend analysis by supplier and buyer"
+  ],
+  "kpis": [
+   "% spend competitively tendered",
+   "Single-source awards",
+   "Post-award concessions"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-P2P-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "Procure to Pay",
+  "subprocess": "Requisition and Purchase Order Authorisation",
+  "risk": "Commitments are made without budget or authority, so the organisation is bound to spend that was never approved.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm purchase commitments are authorised within delegated authority and budget before they are made.",
+  "what_to_review": [
+   "Delegated authority matrix and its configuration in the system",
+   "Budget availability checking at requisition",
+   "Retrospective purchase orders raised after the invoice arrives",
+   "Order splitting below approval thresholds",
+   "Blanket and standing orders and their monitoring"
+  ],
+  "procedures": [
+   "Test the system configuration of approval limits against the delegated authority matrix.",
+   "Quantify purchase orders raised on or after the invoice date and test the reason for each.",
+   "Analyse orders clustering just below authority thresholds by requisitioner.",
+   "Test blanket order utilisation against approved values and expiry.",
+   "Test a sample of orders for budget availability checking at the time of commitment."
+  ],
+  "red_flags": [
+   "A high proportion of retrospective orders in one department",
+   "Values repeatedly just under a threshold",
+   "Approvers approving their own requisitions through delegation",
+   "Blanket orders extended year after year without re-approval"
+  ],
+  "evidence": [
+   "Purchase order data with approval trail",
+   "Delegated authority matrix",
+   "System workflow configuration",
+   "Budget reports"
+  ],
+  "kpis": [
+   "Retrospective PO rate",
+   "Orders near threshold",
+   "PO coverage of spend"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-P2P-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "Procure to Pay",
+  "subprocess": "Goods Receipt and Service Confirmation",
+  "risk": "Goods or services are recorded as received when they were not, allowing payment for nothing \u2014 the hardest step to verify for services.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm receipt is independently evidenced before payment, including for services and intangibles.",
+  "what_to_review": [
+   "Segregation between ordering, receiving and payment approval",
+   "Evidence required to confirm receipt of services and consultancy",
+   "Receipts entered by the requisitioner",
+   "Quantity and quality verification against the order",
+   "Goods received not invoiced ageing"
+  ],
+  "procedures": [
+   "Test whether the person confirming receipt is independent of the person who ordered, and quantify exceptions.",
+   "For service purchases, test the evidence supporting confirmation \u2014 deliverables, timesheets, reports \u2014 rather than an approval click.",
+   "Reconcile goods received to purchase orders and to invoices; investigate receipts with no order.",
+   "Age the goods received not invoiced balance and test the oldest items for validity."
+  ],
+  "red_flags": [
+   "Receipt confirmed on the same day the invoice was entered",
+   "Consultancy accepted with no deliverable on file",
+   "One person ordering and receiving in a remote location",
+   "GRNI balances aged over a year and never cleared"
+  ],
+  "evidence": [
+   "Goods receipt records",
+   "Purchase orders and invoices",
+   "Service deliverables and timesheets",
+   "GRNI ageing reports"
+  ],
+  "kpis": [
+   "Receipts by the requisitioner",
+   "GRNI ageing",
+   "Service spend with deliverable evidence"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-P2P-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "Procure to Pay",
+  "subprocess": "Invoice Processing and Three-Way Match",
+  "risk": "Invoices are paid without matching to an order and a receipt, so overbilling and unordered supply are paid in full.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm invoices are matched to order and receipt, and that exceptions are resolved rather than overridden.",
+  "what_to_review": [
+   "Three-way match configuration and tolerance settings",
+   "Volume and pattern of match exceptions and overrides",
+   "Invoices paid without a purchase order and their approval route",
+   "Coding accuracy and approval of expense allocation",
+   "Optical character recognition and automated posting controls"
+  ],
+  "procedures": [
+   "Quantify invoices paid without a matched order or receipt and test the approval for a sample.",
+   "Analyse match tolerance overrides by user and value; test whether tolerances are set at a level that makes the match meaningful.",
+   "Re-perform the match on a sample of paid invoices and quantify variances.",
+   "Test invoices coded to unusual or generic accounts for validity."
+  ],
+  "red_flags": [
+   "Tolerances so wide that almost nothing fails the match",
+   "Overrides concentrated with a small number of users",
+   "Non-PO invoices used routinely by a department",
+   "Invoices approved by the person who requested and received"
+  ],
+  "evidence": [
+   "Invoice register with match status",
+   "Tolerance configuration",
+   "Override reports",
+   "General ledger coding"
+  ],
+  "kpis": [
+   "Non-PO invoice %",
+   "Match overrides by user",
+   "Match variance value"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-P2P-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "Procure to Pay",
+  "subprocess": "Payment Execution and Banking",
+  "risk": "The payment file is altered after approval, or payments are released outside the normal run, moving funds without the approvals the process assumes.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Confirm that only approved invoices are paid, in the approved amount, to the approved account.",
+  "what_to_review": [
+   "Payment run preparation, review and dual release at the bank",
+   "Integrity of the file between the ledger and the bank",
+   "Manual, urgent and emergency payments",
+   "Bank mandates and signatory currency",
+   "Positive pay or equivalent bank-side controls"
+  ],
+  "procedures": [
+   "Agree the total and record count of an approved payment proposal to the file transmitted to the bank.",
+   "Test that bank release requires two approvers independent of invoice processing, including for urgent payments.",
+   "Extract all manual and emergency payments and test authorisation and justification for each.",
+   "Confirm mandates and signatories against the approved list and identify leavers still authorised."
+  ],
+  "red_flags": [
+   "Urgent payments used routinely rather than exceptionally",
+   "File totals differing from the approved proposal",
+   "Payments to vendors added on the day of the run",
+   "Signatories who left months ago still active"
+  ],
+  "evidence": [
+   "Payment proposals and approvals",
+   "Bank transmission logs and files",
+   "Bank mandates",
+   "Manual payment approvals"
+  ],
+  "kpis": [
+   "Manual payments per period",
+   "Proposal to file variances",
+   "Mandate exceptions"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-P2P-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "Procure to Pay",
+  "subprocess": "Duplicate and Erroneous Payments",
+  "risk": "The same invoice is paid twice, or paid to the wrong vendor, and the loss is never identified because no one looks.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Determine whether duplicate and erroneous payments occur and whether they are detected and recovered.",
+  "what_to_review": [
+   "Duplicate detection controls at invoice entry and at payment",
+   "Invoice numbering conventions that defeat detection",
+   "Recovery process for identified duplicates",
+   "Credit balances on vendor accounts",
+   "Statement reconciliation with major vendors"
+  ],
+  "procedures": [
+   "Run duplicate analytics on exact and fuzzy matches across vendor, amount, invoice number and date; quantify the exposure.",
+   "Test whether identified duplicates were recovered and how long recovery took.",
+   "Review vendor accounts with debit balances or long-standing credits, which often indicate unrecovered duplicates.",
+   "Test whether vendor statement reconciliations are performed for the largest suppliers."
+  ],
+  "red_flags": [
+   "Duplicate detection limited to exact invoice number matches",
+   "Vendor credit balances aged over a year",
+   "Recoveries pursued only when the vendor volunteers them",
+   "Same invoice entered against two vendor records"
+  ],
+  "evidence": [
+   "Full payment history extract",
+   "Vendor account balances",
+   "Vendor statements",
+   "Recovery correspondence"
+  ],
+  "kpis": [
+   "Duplicate exposure identified",
+   "Duplicates recovered",
+   "Aged vendor credit balances"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-P2P-08",
+  "industry": [
+   "cross"
+  ],
+  "process": "Procure to Pay",
+  "subprocess": "Employee Expenses and Purchase Cards",
+  "risk": "Personal expenditure is claimed as business expense, or purchase cards are used outside policy, with approval given without scrutiny.",
+  "rating": "Medium",
+  "risk_category": "Fraud",
+  "audit_objective": "Assess whether expense and card spend is within policy, supported and genuinely reviewed.",
+  "what_to_review": [
+   "Expense policy limits, receipt requirements and approval routing",
+   "Purchase card issuance, limits and merchant category restrictions",
+   "Approval quality \u2014 whether approvers examine or simply click",
+   "Cash withdrawals, round-sum and weekend transactions",
+   "Card cancellation on exit and dormant card review"
+  ],
+  "procedures": [
+   "Analyse claims by claimant for round sums, duplicated receipts, weekend and holiday spend, and amounts just under the receipt threshold.",
+   "Test purchase card transactions against merchant category restrictions and policy.",
+   "Measure approval time per claim; approvals granted seconds apart indicate no review.",
+   "Test that cards were cancelled for leavers and review dormant cards still active.",
+   "Test a sample of claims to original receipts rather than a summary."
+  ],
+  "red_flags": [
+   "Claims consistently just below the receipt threshold",
+   "Approvals batched in seconds",
+   "Cards active for staff who left",
+   "Cash withdrawals on purchase cards"
+  ],
+  "evidence": [
+   "Expense claim data and receipts",
+   "Purchase card transaction files",
+   "Card issuance and cancellation records",
+   "Approval timestamps"
+  ],
+  "kpis": [
+   "Claims without receipts",
+   "Policy breach rate",
+   "Cards active for leavers"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-P2P-09",
+  "industry": [
+   "cross"
+  ],
+  "process": "Procure to Pay",
+  "subprocess": "Contract Compliance and Price Adherence",
+  "risk": "The organisation pays more than the contract allows because no one checks invoices against negotiated rates, rebates and service credits.",
+  "rating": "High",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm that the value negotiated in contracts is actually realised in what is paid.",
+  "what_to_review": [
+   "Contracted rates loaded into the system versus applied at invoicing",
+   "Indexation and price increase clauses and their application",
+   "Volume rebates and discounts earned and claimed",
+   "Service credits for failure and whether they are taken",
+   "Contract expiry, renewal and evergreen terms"
+  ],
+  "procedures": [
+   "Re-price a sample of invoices against the contract and quantify overcharges across the supplier base.",
+   "Recompute contractual indexation applied and test that increases were permitted and correctly calculated.",
+   "Recompute rebates earned against volumes and test whether they were claimed and received.",
+   "Test service level performance against the contract and whether credits due were deducted."
+  ],
+  "red_flags": [
+   "Price increases applied earlier or larger than the contract permits",
+   "Rebates never claimed",
+   "Service failures with no credits taken",
+   "Contracts auto-renewing at uncompetitive rates"
+  ],
+  "evidence": [
+   "Contracts and rate schedules",
+   "Invoice and payment data",
+   "Rebate calculations",
+   "Service level reporting"
+  ],
+  "kpis": [
+   "Overcharge recovered",
+   "Rebates claimed vs. earned",
+   "Service credits taken"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-P2P-10",
+  "industry": [
+   "cross"
+  ],
+  "process": "Procure to Pay",
+  "subprocess": "Procurement Fraud, Kickbacks and Conflicts of Interest",
+  "risk": "Buyers receive undisclosed benefit for directing business, inflating prices and distorting supplier selection.",
+  "rating": "High",
+  "risk_category": "Fraud",
+  "audit_objective": "Detect indicators of collusion between buyers and suppliers and assess the controls that would prevent it.",
+  "what_to_review": [
+   "Conflict of interest declarations from procurement and budget holders",
+   "Gifts and hospitality register and its completeness",
+   "Supplier concentration by buyer and price trends",
+   "Bid patterns suggesting collusion among suppliers",
+   "Rotation of buyer responsibilities and mandatory leave"
+  ],
+  "procedures": [
+   "Analyse spend by buyer and supplier to identify concentrations, then compare prices paid against market or other business units.",
+   "Match supplier data against employee data \u2014 addresses, phone numbers, bank accounts and company registry directorships.",
+   "Review bid patterns for consistent losing bidders, near-identical pricing, or rotating winners.",
+   "Reconcile the gifts and hospitality register to expenses claimed by suppliers where visible, and test declaration completeness.",
+   "Test whether buyer rotation and leave requirements were applied."
+  ],
+  "red_flags": [
+   "A buyer whose suppliers price consistently above market",
+   "Losing bidders that never win but always bid",
+   "Gifts register with almost no entries in a large function",
+   "Suppliers registered at a residential address"
+  ],
+  "evidence": [
+   "Spend analysis by buyer and supplier",
+   "Conflict declarations and gifts register",
+   "Tender bid records",
+   "Company registry data"
+  ],
+  "kpis": [
+   "Spend concentration by buyer",
+   "Declarations completed",
+   "Price variance to benchmark"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-P2P-11",
+  "industry": [
+   "cross"
+  ],
+  "process": "Procure to Pay",
+  "subprocess": "Accruals, Cut-Off and Accounts Payable Integrity",
+  "risk": "Liabilities are omitted at period end, or the payables ledger contains balances that no longer represent real obligations.",
+  "rating": "Medium",
+  "risk_category": "Financial",
+  "audit_objective": "Confirm that payables and accruals are complete, valid and correctly cut off.",
+  "what_to_review": [
+   "Completeness of accruals for goods and services received not invoiced",
+   "Cut-off testing around period end",
+   "Ageing of the payables ledger and old unpaid balances",
+   "Debit balances and unapplied credits in payables",
+   "Reconciliation of payables ledger to the general ledger"
+  ],
+  "procedures": [
+   "Test cut-off by examining invoices received after period end and tracing them to the correct period.",
+   "Test the accrual calculation against the goods received not invoiced report and known service commitments.",
+   "Age the payables ledger and investigate balances outstanding beyond normal terms \u2014 they may be disputed, duplicated or fictitious.",
+   "Reconcile the subledger to the general ledger and test reconciling items."
+  ],
+  "red_flags": [
+   "Accruals estimated as a flat percentage with no underlying data",
+   "Old payables balances never queried by the supplier",
+   "Reconciling items rolling forward every period",
+   "Invoices held in a drawer until the new period"
+  ],
+  "evidence": [
+   "Accrual calculations and GRNI reports",
+   "Post period-end invoice register",
+   "Payables ageing",
+   "Subledger to ledger reconciliations"
+  ],
+  "kpis": [
+   "Accrual accuracy on lookback",
+   "Payables aged over terms",
+   "Unreconciled differences"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]

@@ -1,0 +1,504 @@
+[
+ {
+  "id": "IA-IT-01",
+  "industry": [
+   "cross"
+  ],
+  "process": "IT & Technology",
+  "subprocess": "Change Management",
+  "risk": "Changes reach production without testing or approval, causing outages, data corruption or the quiet introduction of unauthorised functionality.",
+  "rating": "High",
+  "risk_category": "IT",
+  "audit_objective": "Confirm that changes to production systems are authorised, tested and traceable.",
+  "what_to_review": [
+   "Change approval, testing evidence and back-out planning",
+   "Emergency change usage and retrospective approval",
+   "Segregation between development, testing and production migration",
+   "Direct data fixes applied to production databases",
+   "Post-implementation review of significant changes"
+  ],
+  "procedures": [
+   "Reconcile changes deployed to production against approved change records; investigate any deployment with no change ticket.",
+   "Quantify emergency changes as a proportion of total and test retrospective approval.",
+   "Test whether developers can migrate their own code to production.",
+   "Extract direct database changes and test authorisation for each.",
+   "Test back-out plans for substance rather than a generic statement."
+  ],
+  "red_flags": [
+   "Emergency changes used to bypass approval routinely",
+   "Deployments with no corresponding ticket",
+   "Developers holding production migration rights",
+   "Testing evidence created after go-live"
+  ],
+  "evidence": [
+   "Change management records",
+   "Deployment logs",
+   "Database change logs",
+   "Developer access rights"
+  ],
+  "kpis": [
+   "Emergency change %",
+   "Unauthorised deployments",
+   "Change failure rate"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-IT-02",
+  "industry": [
+   "cross"
+  ],
+  "process": "IT & Technology",
+  "subprocess": "IT Operations and Job Scheduling",
+  "risk": "Batch failures, interface errors and processing exceptions go unnoticed, so financial data is incomplete or wrong without anyone knowing.",
+  "rating": "Medium",
+  "risk_category": "IT",
+  "audit_objective": "Confirm that scheduled processing and system interfaces run completely and that failures are detected and resolved.",
+  "what_to_review": [
+   "Job scheduling, dependencies and failure alerting",
+   "Interface control totals between systems",
+   "Incident detection, prioritisation and resolution",
+   "Reprocessing and manual intervention controls",
+   "Monitoring coverage and who watches it out of hours"
+  ],
+  "procedures": [
+   "Review job failure logs for the period and test resolution of failures affecting financial data.",
+   "Test interface control totals between key systems and quantify unexplained differences.",
+   "Sample incidents and trace to root cause and permanent fix rather than a workaround.",
+   "Test who can amend the job schedule and whether changes follow change management."
+  ],
+  "red_flags": [
+   "Recurring job failures accepted as normal",
+   "Interfaces reconciled by record count only, not value",
+   "Incidents closed as \"restarted, no further action\"",
+   "Schedule amendments made directly in production"
+  ],
+  "evidence": [
+   "Job scheduler logs",
+   "Interface reconciliation reports",
+   "Incident management records",
+   "Monitoring configuration"
+  ],
+  "kpis": [
+   "Job failure rate",
+   "Interface differences",
+   "Repeat incidents"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-IT-03",
+  "industry": [
+   "cross"
+  ],
+  "process": "IT & Technology",
+  "subprocess": "Cyber Security \u2014 Vulnerability and Patch Management",
+  "risk": "Known vulnerabilities remain unpatched on systems exposed to attack, giving an intruder a documented route in.",
+  "rating": "High",
+  "risk_category": "IT",
+  "audit_objective": "Assess whether vulnerabilities are identified, prioritised and remediated within defined timeframes.",
+  "what_to_review": [
+   "Asset inventory completeness \u2014 you cannot patch what you do not know about",
+   "Vulnerability scanning coverage and frequency",
+   "Remediation timeframes by severity and adherence to them",
+   "Exception and risk acceptance process for unpatched systems",
+   "End-of-life and unsupported systems still in use"
+  ],
+  "procedures": [
+   "Compare the asset inventory to network discovery output and quantify unmanaged devices.",
+   "Extract open vulnerabilities by severity and age; quantify those beyond the remediation deadline.",
+   "Test the exception process for critical vulnerabilities accepted rather than fixed, and whether acceptance was authorised at the right level.",
+   "Identify end-of-life systems still in production and test the compensating controls claimed."
+  ],
+  "red_flags": [
+   "Critical vulnerabilities open for months",
+   "Scanning that excludes the most sensitive network segments",
+   "Risk acceptances granted indefinitely",
+   "Unsupported operating systems on internet-facing hosts"
+  ],
+  "evidence": [
+   "Asset inventory and network discovery output",
+   "Vulnerability scan results",
+   "Remediation and exception records",
+   "End-of-life system register"
+  ],
+  "kpis": [
+   "Critical vulnerabilities past SLA",
+   "Scan coverage %",
+   "Unsupported systems in production"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-IT-04",
+  "industry": [
+   "cross"
+  ],
+  "process": "IT & Technology",
+  "subprocess": "Cyber Security \u2014 Perimeter, Endpoint and Email",
+  "risk": "An attacker gains entry through phishing, weak authentication or an unprotected endpoint, and moves through the network undetected.",
+  "rating": "High",
+  "risk_category": "IT",
+  "audit_objective": "Assess the preventive and detective controls against the most common intrusion routes.",
+  "what_to_review": [
+   "Multi-factor authentication coverage, especially remote access and administrators",
+   "Email filtering, phishing simulation results and reporting culture",
+   "Endpoint protection deployment and exception devices",
+   "Network segmentation limiting lateral movement",
+   "Logging, monitoring and alert triage"
+  ],
+  "procedures": [
+   "Test multi-factor authentication coverage across all remote access paths and privileged accounts; identify bypass routes.",
+   "Review phishing simulation results by department and test whether repeat clickers receive intervention.",
+   "Reconcile endpoint protection deployment to the asset inventory and investigate unprotected devices.",
+   "Test segmentation by reviewing firewall rules between zones for overly permissive entries.",
+   "Sample security alerts and test triage quality and time to respond."
+  ],
+  "red_flags": [
+   "Service and administrator accounts exempt from multi-factor authentication",
+   "Firewall rules permitting any-to-any",
+   "Alerts closed without investigation notes",
+   "Phishing reporting rates near zero"
+  ],
+  "evidence": [
+   "Authentication configuration",
+   "Phishing simulation results",
+   "Endpoint deployment reports",
+   "Firewall rule sets",
+   "Security alert logs"
+  ],
+  "kpis": [
+   "MFA coverage %",
+   "Phishing click and report rates",
+   "Alert triage time"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-IT-05",
+  "industry": [
+   "cross"
+  ],
+  "process": "IT & Technology",
+  "subprocess": "Backup, Recovery and Disaster Recovery",
+  "risk": "Backups exist but cannot actually restore the business, so a ransomware event or hardware failure becomes an existential problem.",
+  "rating": "High",
+  "risk_category": "IT",
+  "audit_objective": "Confirm that backup and recovery capability is real, tested and protected from the same event it insures against.",
+  "what_to_review": [
+   "Backup scope, frequency and alignment to recovery point objectives",
+   "Restoration testing \u2014 actual restores, not backup success reports",
+   "Immutability and offline copies protected from ransomware",
+   "Disaster recovery plan currency and test realism",
+   "Recovery time objectives agreed with the business and validated"
+  ],
+  "procedures": [
+   "Obtain evidence of an actual restore test and its outcome; a successful backup job is not evidence of recoverability.",
+   "Test whether backup copies are immutable or offline and whether backup infrastructure uses separate credentials.",
+   "Compare recovery objectives agreed with the business to what the most recent test achieved.",
+   "Review the disaster recovery test scope \u2014 a tabletop exercise is not a failover."
+  ],
+  "red_flags": [
+   "Backups never restored in test",
+   "Backup systems on the same domain with the same admin credentials",
+   "Recovery objectives defined by IT with no business input",
+   "DR tests scoped to exclude the critical systems"
+  ],
+  "evidence": [
+   "Backup job reports and restore test evidence",
+   "Backup architecture documentation",
+   "DR plans and test reports",
+   "Business impact analysis"
+  ],
+  "kpis": [
+   "Restore tests completed",
+   "Actual vs. target recovery time",
+   "Systems with immutable backups"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-IT-06",
+  "industry": [
+   "cross"
+  ],
+  "process": "IT & Technology",
+  "subprocess": "Third-Party and Cloud Service Management",
+  "risk": "Critical systems run on third-party platforms with no assurance over their controls and no ability to exit.",
+  "rating": "High",
+  "risk_category": "IT",
+  "audit_objective": "Assess governance and assurance over outsourced and cloud-hosted technology.",
+  "what_to_review": [
+   "Inventory of cloud services and shadow IT procured outside the process",
+   "Service auditor reports obtained and complementary user controls performed",
+   "Contractual terms \u2014 data location, breach notification, audit rights, exit",
+   "Cloud configuration and who is responsible for what",
+   "Vendor access to the organisation's environment"
+  ],
+  "procedures": [
+   "Build an independent inventory of cloud services from expenditure and network data; compare to the official register.",
+   "Obtain service auditor reports for critical providers, identify complementary user controls and test whether they operate.",
+   "Review cloud configuration against a recognised benchmark for the most sensitive workloads.",
+   "Test vendor remote access \u2014 accounts, authentication and session monitoring."
+  ],
+  "red_flags": [
+   "Cloud services paid for on expense claims",
+   "Service auditor reports unread",
+   "Storage buckets or databases publicly accessible",
+   "Vendor accounts with standing privileged access"
+  ],
+  "evidence": [
+   "Expenditure and network data",
+   "Cloud service register",
+   "Service auditor reports",
+   "Configuration benchmark results",
+   "Vendor access records"
+  ],
+  "kpis": [
+   "Shadow IT services found",
+   "Complementary controls performed",
+   "Configuration benchmark failures"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-IT-07",
+  "industry": [
+   "cross"
+  ],
+  "process": "IT & Technology",
+  "subprocess": "Data Governance, Quality and Privacy",
+  "risk": "Personal and business-critical data is held without ownership, retained beyond need, or exposed to people who have no reason to see it.",
+  "rating": "High",
+  "risk_category": "Compliance",
+  "audit_objective": "Assess whether data is classified, owned, protected and retained in line with obligations.",
+  "what_to_review": [
+   "Data inventory, classification and ownership",
+   "Retention schedules and their actual enforcement",
+   "Access to sensitive data sets and periodic review",
+   "Data quality controls at entry and in transformation",
+   "Privacy obligations \u2014 consent, subject rights, cross-border transfer"
+  ],
+  "procedures": [
+   "Test whether data classified as sensitive is actually protected accordingly, including in test environments and extracts.",
+   "Test retention by identifying data past its retention period and confirming whether deletion occurred.",
+   "Test data subject rights requests for completeness and timeliness of response.",
+   "Review data quality controls for key financial data feeds and quantify error rates.",
+   "Test whether production data is copied into non-production environments unmasked."
+  ],
+  "red_flags": [
+   "Production data in test systems unmasked",
+   "Retention policy written but never executed",
+   "No named owner for critical data sets",
+   "Cross-border transfers with no assessed legal basis"
+  ],
+  "evidence": [
+   "Data inventory and classification",
+   "Retention schedules and deletion evidence",
+   "Access listings for sensitive data",
+   "Subject rights request records"
+  ],
+  "kpis": [
+   "Data past retention",
+   "Subject requests in time",
+   "Unmasked non-production copies"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-IT-08",
+  "industry": [
+   "cross"
+  ],
+  "process": "IT & Technology",
+  "subprocess": "IT Asset Management and Software Licensing",
+  "risk": "Hardware and software are untracked, so assets are lost, licences are under-purchased and the organisation is exposed to audit by the vendor.",
+  "rating": "Medium",
+  "risk_category": "Operational",
+  "audit_objective": "Confirm that technology assets and licences are tracked, reconciled and compliant.",
+  "what_to_review": [
+   "Hardware asset register accuracy and disposal process",
+   "Data sanitisation on disposal or return of devices",
+   "Software discovery versus licences held",
+   "Licence terms \u2014 users, cores, virtualisation rights",
+   "Vendor audit history and settlements"
+  ],
+  "procedures": [
+   "Reconcile the asset register to network discovery and to procurement records; investigate differences in both directions.",
+   "Test disposal records for evidence of data sanitisation certificates.",
+   "Compare installed software counts to licence entitlements and quantify the compliance gap.",
+   "Review licence terms for the largest vendors against the deployment model actually used."
+  ],
+  "red_flags": [
+   "Devices issued to leavers never returned",
+   "Disposal with no sanitisation evidence",
+   "Software deployed well beyond entitlement",
+   "Virtualisation increasing licence exposure unnoticed"
+  ],
+  "evidence": [
+   "Asset register and discovery data",
+   "Disposal and sanitisation records",
+   "Software deployment reports",
+   "Licence agreements"
+  ],
+  "kpis": [
+   "Assets unaccounted for",
+   "Licence compliance gap",
+   "Disposals with sanitisation evidence"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-IT-09",
+  "industry": [
+   "cross"
+  ],
+  "process": "IT & Technology",
+  "subprocess": "IT Project and Programme Delivery",
+  "risk": "Major technology programmes overrun, deliver less than promised, or go live without controls, and the business case is never revisited.",
+  "rating": "Medium",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether technology investment is governed, controlled and delivering the promised benefit.",
+  "what_to_review": [
+   "Business case approval, benefit definition and post-implementation review",
+   "Governance structure, reporting accuracy and escalation",
+   "Scope, schedule and cost control including change requests",
+   "Controls designed into new systems before go-live",
+   "Data migration accuracy and reconciliation"
+  ],
+  "procedures": [
+   "Compare reported project status to underlying evidence \u2014 status reporting is frequently optimistic until it is not.",
+   "Test change requests for approval and their cumulative effect on cost and scope against the original approval.",
+   "Test whether internal audit or a controls function reviewed the design before go-live.",
+   "For completed migrations, test the reconciliation between source and target data.",
+   "Compare realised benefits to the business case for completed projects."
+  ],
+  "red_flags": [
+   "Status reported green until it turns red without an amber stage",
+   "Benefits never measured after go-live",
+   "Controls deferred to a later phase that never arrives",
+   "Migration reconciliations performed on counts, not values"
+  ],
+  "evidence": [
+   "Business cases and approvals",
+   "Project status reports and steering minutes",
+   "Change request logs",
+   "Migration reconciliations",
+   "Post-implementation reviews"
+  ],
+  "kpis": [
+   "Cost and schedule variance",
+   "Projects with post-implementation review",
+   "Benefits realised vs. case"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-IT-10",
+  "industry": [
+   "cross"
+  ],
+  "process": "IT & Technology",
+  "subprocess": "End User Computing and Spreadsheets",
+  "risk": "Material financial reporting depends on spreadsheets and databases built outside IT, with no version control, no testing and no backup.",
+  "rating": "Medium",
+  "risk_category": "IT",
+  "audit_objective": "Assess whether critical end user computing applications are identified and controlled proportionately.",
+  "what_to_review": [
+   "Inventory of critical spreadsheets and user-built databases",
+   "Access restriction and version control",
+   "Formula integrity, input validation and change testing",
+   "Reliance placed on them in financial reporting",
+   "Backup and key person dependency"
+  ],
+  "procedures": [
+   "Identify spreadsheets feeding the financial statements or key controls and test whether they appear in any inventory.",
+   "Test formula integrity on a sample \u2014 check for hard-coded values overwriting formulas and broken ranges.",
+   "Test whether access is restricted and whether changes are tracked.",
+   "Assess key person dependency \u2014 whether anyone else can operate or explain the model."
+  ],
+  "red_flags": [
+   "Critical models on a personal drive",
+   "Hard-coded plugs inside formula columns",
+   "No one but the author understands the calculation",
+   "Versions distinguished only by filename suffix"
+  ],
+  "evidence": [
+   "End user computing inventory",
+   "The spreadsheets themselves",
+   "Access permissions",
+   "Financial reporting process documentation"
+  ],
+  "kpis": [
+   "Critical EUCs inventoried",
+   "Formula integrity exceptions",
+   "EUCs with restricted access"
+  ],
+  "lens": [
+   "ia"
+  ]
+ },
+ {
+  "id": "IA-IT-11",
+  "industry": [
+   "cross"
+  ],
+  "process": "IT & Technology",
+  "subprocess": "IT Governance, Strategy and Resilience",
+  "risk": "Technology decisions are made without alignment to business need or risk appetite, leaving critical dependencies and obsolescence unmanaged.",
+  "rating": "Medium",
+  "risk_category": "Strategic",
+  "audit_objective": "Assess whether technology is governed, funded and resourced against the organisation's actual dependency on it.",
+  "what_to_review": [
+   "IT strategy and its alignment to business plans",
+   "Technology risk reporting to the board and its quality",
+   "Technical debt and obsolescence in critical systems",
+   "Resourcing, key person dependency and succession",
+   "Business continuity for technology-dependent processes"
+  ],
+  "procedures": [
+   "Compare the technology risk reported to the board against what the audit found operationally.",
+   "Identify critical systems past supported life and test the remediation plan and its funding.",
+   "Assess key person dependencies for critical platforms and whether documentation would allow another person to operate them.",
+   "Test whether business continuity plans for technology-dependent processes have been exercised."
+  ],
+  "red_flags": [
+   "Board reporting consistently green while incidents continue",
+   "Remediation plans without budget attached",
+   "One person holding all knowledge of a critical platform",
+   "Continuity plans that assume systems will be available"
+  ],
+  "evidence": [
+   "IT strategy and board papers",
+   "Application portfolio with support status",
+   "Resourcing and succession plans",
+   "Continuity plans and test records"
+  ],
+  "kpis": [
+   "Critical systems out of support",
+   "Risks reported vs. found",
+   "Continuity plans exercised"
+  ],
+  "lens": [
+   "ia"
+  ]
+ }
+]
