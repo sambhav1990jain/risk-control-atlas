@@ -1,112 +1,123 @@
 {
  "banking": {
-  "summary": "A bank makes money by lending it out and by moving it around. So most of what can go wrong sits in those two places: loans that never get paid back, and payments that end up with the wrong person. Banks are also legally required to spot money laundering and fraud, and regulators check they are holding enough money to survive a bad year.",
+  "summary": "A bank lends money and moves money. Almost everything an auditor looks at traces back to one of those two activities, or to the obligation banks carry to know who their customers are.",
   "hallmarks": [
-   "Loans get approved because the customer is important, not because the numbers work",
-   "Checks for money laundering get rushed or skipped, which is a legal problem, not just a lost-money problem",
-   "The bank guesses how customers will behave, and builds its safety buffers on those guesses",
-   "Customers get sold products that are wrong for them, and the bank has to pay them back later"
+   "Lending decisions bent by commercial pressure \u2014 exceptions to credit policy that become routine, and limits raised the day after an order was blocked",
+   "Security that turns out to be worth less than recorded, or was never legally registered in the first place",
+   "Customer checks treated as paperwork rather than a legal duty, with alerts closed in bulk to clear a backlog",
+   "Payments and branch cash, where money physically leaves and small repeated losses add up",
+   "Numbers built on assumptions \u2014 how much will not be repaid, how customers will behave in a crisis \u2014 that nobody independently challenges"
   ],
-  "regulatory": "Rules that apply here: Basel (how much money a bank must keep in reserve), anti-money-laundering law, consumer protection rules, and IFRS 9 / CECL (how a bank estimates the loans it will not get back)."
+  "compliance": "Expect obligations covering capital and liquidity, customer due diligence and financial crime reporting, expected credit loss accounting, consumer protection and complaint handling, and data protection."
  },
  "insurance": {
-  "summary": "An insurer takes money now and promises to pay out later, so its accounts are built on estimates of what those payouts will cost. If the estimate is too low, the company looks more profitable than it is. Most of the rest of the risk sits in how claims are handled and how policies are sold.",
+  "summary": "An insurer takes money now and promises to pay later. Its accounts therefore rest on estimates of a future nobody has seen yet, which is where most of the audit attention belongs.",
   "hallmarks": [
-   "The money set aside for future claims is an estimate, and estimates can be nudged to make results look better",
-   "Claims get paid for more than the policy actually requires, because nobody checks the wording closely",
-   "Reinsurance is meant to cover the big losses, but only works if it was set up properly beforehand",
-   "Brokers and agents sell in the insurer's name, so their mistakes become the insurer's problem"
+   "The money set aside for future claims \u2014 an estimate large enough that a small nudge changes the reported result",
+   "Claims settled for more than the policy required, because nobody re-read the wording",
+   "Reinsurance that does not respond the way everyone assumed when the large loss finally arrives",
+   "Business written outside appetite or priced below what the risk deserves, to protect volume",
+   "Intermediaries selling in the insurer's name, whose conduct becomes the insurer's problem"
   ],
-  "regulatory": "Rules that apply here: solvency rules (how much capital an insurer must hold), IFRS 17 or local reserving rules, and conduct rules covering how policies are sold."
+  "compliance": "Expect obligations covering solvency and capital adequacy, technical reserving and actuarial sign-off, product governance and fair treatment of customers, intermediary licensing, and claims handling standards."
  },
  "logistics": {
-  "summary": "A logistics business moves other people's goods, using vehicles and staff spread across a wide area. Margins are thin, so small losses matter. The main things that go wrong are deliveries that never get invoiced, fuel and vehicles that are hard to keep track of, goods that go missing in the network, and safety rules that stop the operation if broken.",
+  "summary": "A logistics business moves other people's goods using vehicles, people and premises spread across a wide area. Margins are thin, so losses that look small are not.",
   "hallmarks": [
-   "Shipments get delivered but never invoiced, or invoiced at the wrong rate",
-   "Fuel is easy to take and hard to trace back to a specific vehicle or trip",
-   "Freight changes hands many times, and each handover is a chance to lose it",
-   "Driver hours, dangerous goods and customs rules \u2014 break these and the operation stops"
+   "Deliveries made but never invoiced, or invoiced at the wrong rate \u2014 revenue that simply disappears",
+   "Fuel, which is easy to take and hard to tie back to a specific vehicle or trip",
+   "Freight changing hands repeatedly, with each handover a chance for it to go missing or be damaged",
+   "Subcontracted carriers moving your freight without the insurance or safety record you assumed",
+   "Driver, vehicle and cross-border compliance, where a failure stops the operation rather than just costing money"
   ],
-  "regulatory": "Rules that apply here: driver hours-of-service limits, dangerous goods handling rules, customs requirements, and IFRS 15 / ASC 606 (revenue is earned as the goods move, not when they leave)."
+  "compliance": "Expect obligations covering driver hours and fitness to drive, vehicle roadworthiness, transport of hazardous goods, customs and trade documentation, and revenue recognition over the period of carriage."
  },
  "aviation": {
-  "summary": "An airline or ground handler works under strict safety rules and owns or leases very expensive aircraft. Paperwork is not admin here \u2014 if maintenance records are incomplete, the aircraft cannot fly. On the money side, tickets are sold long before the flight happens, so what counts as revenue and what is still owed to the customer needs care.",
+  "summary": "Airlines and ground handlers run expensive assets under strict safety oversight. Records are not administration here \u2014 if the paperwork is incomplete, the aircraft does not fly.",
   "hallmarks": [
-   "Maintenance was done but the records do not prove it, so the aircraft is grounded anyway",
-   "A ticket sold is not revenue yet \u2014 it becomes revenue when the passenger actually flies",
-   "Leased aircraft must be handed back in a specific condition, and the cost of that is easy to underestimate",
-   "Aircraft get damaged on the ground, and it is not always clear who caused it"
+   "Maintenance that was performed but cannot be evidenced, or certified by someone whose authorisation had lapsed",
+   "Tickets sold long before the flight, so what counts as earned revenue and what is still owed to the customer needs care",
+   "Leased aircraft that must be returned in a defined condition, at a cost decided years earlier",
+   "Ground damage and delays where responsibility is disputed and often absorbed",
+   "Fuel and services billed by suppliers against volumes nobody independently verified"
   ],
-  "regulatory": "Rules that apply here: airworthiness and maintenance regulations, ground handling standards, IFRS 16 (leases) and IFRS 15 (when ticket sales become revenue)."
+  "compliance": "Expect obligations covering continuing airworthiness and maintenance certification, crew and engineer licensing, ground handling and safety management systems, dangerous goods acceptance, and lease and revenue accounting."
  },
  "manufacturing": {
-  "summary": "A manufacturer buys materials, converts them into products, and holds a lot of stock along the way. Most of the risk is in whether the stock is really there, whether it is valued correctly, and whether the factory is running safely and within its environmental permits.",
+  "summary": "A manufacturer buys materials, converts them, and holds significant stock throughout. Most of the value \u2014 and most of the risk \u2014 sits in that stock and in the accuracy of what it cost to make.",
   "hallmarks": [
-   "The cost used to value products is out of date, so profit margins are wrong",
-   "Material is wasted or scrapped, and the loss disappears into general variances",
-   "Stock shows on the system but is not on the shelf",
-   "Safety and environmental permits carry conditions that must be evidenced, not just claimed"
+   "Costs used to value products that no longer reflect what inputs actually cost, so margins are wrong everywhere",
+   "Material that goes in but does not come out as sellable product, absorbed into variances instead of investigated",
+   "Stock that exists on the system but not on the floor, and counts performed by the people responsible for it",
+   "Product that will never sell at full price still carried at full cost",
+   "Safety and environmental conditions that must be evidenced, not merely asserted"
   ],
-  "regulatory": "Rules that apply here: environmental permits and emissions reporting, workplace safety law, and product liability and warranty obligations."
+  "compliance": "Expect obligations covering workplace safety, environmental permits and emissions reporting, product safety and liability, waste handling, and inventory valuation standards."
  },
  "retail": {
-  "summary": "A retailer handles a very large number of small transactions across many stores. No single sale matters much, which is exactly why losses build up unnoticed. The main risks are cash going missing at the till, stock disappearing between supplier and shelf, and money owed to customers through gift cards and loyalty points.",
+  "summary": "Retail is a very large number of small transactions across many locations. No single one matters, which is exactly why losses accumulate without anyone noticing.",
   "hallmarks": [
-   "Staff process refunds or voids against real sales and take the cash",
-   "Stock goes missing through theft, mistakes and short deliveries, all mixed together",
-   "Money promised by suppliers is counted as profit before it has actually been earned",
-   "Gift cards and loyalty points are money owed to customers, and it is easy to understate it"
+   "Refunds, voids and discounts processed against real sales, with the cash taken",
+   "Stock lost to theft, process error and short deliveries, all blended into one shrinkage figure",
+   "Money promised by suppliers counted as profit before the conditions to earn it have been met",
+   "Gift cards and loyalty points, which are money owed to customers and easy to understate",
+   "Store-level performance measured on sales, with control quietly deprioritised"
   ],
-  "regulatory": "Rules that apply here: consumer protection and pricing rules, card payment security standards (PCI DSS), and food safety rules where food is sold."
+  "compliance": "Expect obligations covering consumer protection and pricing accuracy, card payment security, product and food safety where relevant, employment standards, and stored-value or unclaimed balance rules."
  },
  "hospitality": {
-  "summary": "A hotel handles cash, food, drink and people at every property, while head office oversight is spread thin. Most losses are small and local: discounts given at the front desk, drink poured beyond the recipe, buying done outside the group's agreed suppliers.",
+  "summary": "Hotels handle cash, stock and people at every property while central oversight is stretched thin. Most losses are small, local and repeated.",
   "hallmarks": [
-   "Free or discounted rooms given at the front desk without anyone approving it",
-   "More drink is used than the sales suggest, and the gap is written off as waste",
-   "Hotels buy locally at higher prices, sometimes from suppliers connected to staff",
-   "Booking websites take a large commission, which can wipe out the profit on a room"
+   "Rooms given away, discounted or comped at the front desk with no independent approval",
+   "More food and drink consumed than sales explain, with the gap written off as waste",
+   "Purchasing done locally, at higher prices, sometimes from suppliers connected to staff",
+   "Distribution channels taking commissions large enough to erase the profit on a room",
+   "Deposits and loyalty balances held for stays that already happened, or never happened"
   ],
-  "regulatory": "Rules that apply here: food safety and licensing, card payment security standards, and employment rules covering tips and service charges."
+  "compliance": "Expect obligations covering food safety and hygiene, licensing, card payment security, employment and service charge rules, and guest data protection."
  },
  "ecommerce": {
-  "summary": "An online retailer is a business made of transactions and customer data. The money takes a path from the customer's card, through a payment provider, to the bank account \u2014 and it needs to be reconciled at each step. The other big exposure is personal data: what is held, how long, and who else gets to see it.",
+  "summary": "An online retailer is built from transactions and customer data. Money travels from the customer through a payment provider to the bank, and needs reconciling at every step.",
   "hallmarks": [
-   "Orders taken, money collected by the payment provider, and cash in the bank do not match",
-   "Fraudulent orders get shipped, then the payment is reversed and the goods are gone",
-   "Refunds get issued without the goods ever coming back",
-   "Customer data is kept longer, and shared wider, than the law allows"
+   "Orders taken, money collected by the payment provider and cash in the bank that do not reconcile",
+   "Fraudulent orders fulfilled, with the payment reversed after the goods have gone",
+   "Refunds issued without the goods ever coming back, or to a different payment method",
+   "Prices and promotions published at scale, where an error is honoured before anyone can react",
+   "Personal data kept longer and shared wider than the basis for holding it allows"
   ],
-  "regulatory": "Rules that apply here: data protection and privacy law, card payment security standards, consumer rights on returns and refunds."
+  "compliance": "Expect obligations covering data protection and marketing consent, card payment security, consumer rights on cancellation and returns, distance selling disclosure, and marketplace liability where third parties sell."
  },
  "fmcg": {
-  "summary": "A consumer goods company sells through supermarkets and distributors, and spends heavily on promotions to get shelf space. That promotional spend is the biggest area of judgement. The other major risk is product safety \u2014 if something is wrong with a batch, the company has to be able to find and withdraw it quickly.",
+  "summary": "Consumer goods companies sell through retailers and distributors and spend heavily on promotions to hold shelf space. That spend, and product safety, carry most of the risk.",
   "hallmarks": [
-   "Money is committed to promotions without anyone checking whether they worked",
-   "Retailers deduct amounts from invoices, and those deductions get paid without being verified",
-   "Extra stock is pushed to distributors near period end to hit targets, and comes back later",
-   "If a batch has a problem, the company must be able to trace where it went \u2014 quickly"
+   "Promotional money committed without anyone checking whether the promotion worked",
+   "Deductions taken by customers against invoices and settled without being verified",
+   "Stock pushed into the distribution channel near period end to meet targets, returning later",
+   "Batch traceability that has never been tested, so a recall would be slow",
+   "Short-dated stock still valued as though it will sell at full price"
   ],
-  "regulatory": "Rules that apply here: food safety systems (HACCP), labelling and advertising standards, and product recall obligations."
+  "compliance": "Expect obligations covering food and product safety systems, labelling and advertising claims, recall and withdrawal procedures, competition rules on pricing and distribution, and trade promotion accounting."
  },
  "utilities": {
-  "summary": "A utility is usually a regulated monopoly running safety-critical equipment. Prices and service levels are set by a regulator, so compliance is not optional. The main risks are billing customers for the right amount of energy or water, keeping the network safe, and treating customers in difficulty properly.",
+  "summary": "Utilities run safety-critical networks under close regulatory oversight, often with prices and service levels set externally. Compliance is not discretionary, and neither is asset safety.",
   "hallmarks": [
-   "Energy or water delivered does not match what gets billed, and the difference is guessed at",
-   "The licence contains conditions that must be evidenced, and often nobody owns them",
-   "Safety-critical maintenance is delayed to save money",
-   "Customers in hardship, or on medical equipment, get cut off when they should not be"
+   "A gap between what is delivered into the network and what is billed, filled with estimates",
+   "Licence and determination conditions nobody owns, so compliance is asserted rather than evidenced",
+   "Safety-critical maintenance deferred under cost pressure, with the risk transferred to the public",
+   "Customers in hardship or dependent on supply for health reasons, treated as ordinary arrears cases",
+   "Capital projects capitalised before the asset is actually in service"
   ],
-  "regulatory": "Rules that apply here: the operating licence and price controls set by the regulator, customer protection and hardship rules, and safety and environmental law."
+  "compliance": "Expect obligations covering the operating licence and price controls, customer protection and vulnerability rules, network safety and environmental standards, metering accuracy, and regulatory reporting."
  },
  "telecom": {
-  "summary": "A telecoms company handles a huge number of calls, messages and data sessions, which pass through several systems before they turn into a bill. Records get lost along the way, and each lost record is money never charged. The network itself is the other big risk \u2014 when it goes down, it is a public and regulatory event.",
+  "summary": "Telecoms handle enormous transaction volumes that pass through several systems before becoming a bill. Records lost along the way are services given away free.",
   "hallmarks": [
-   "Usage happens on the network but never reaches the billing system, so it is never charged",
-   "Services get switched on for customers who were never set up to be billed",
-   "Amounts owed by other operators are settled using their numbers, not the company's own",
-   "A badly controlled network change causes an outage that has to be reported to the regulator"
+   "Usage recorded on the network that never reaches billing, so it is never charged",
+   "Services activated for customers who were never properly credit assessed or set up to be billed",
+   "Amounts owed by other operators settled using their figures rather than your own",
+   "Network changes made without control, where an outage becomes a reportable event",
+   "Long-lived free-of-charge, test and employee accounts with real consumption"
   ],
-  "regulatory": "Rules that apply here: telecoms licence conditions, outage reporting duties, data retention and privacy rules, and consumer contract rules."
+  "compliance": "Expect obligations covering the operating licence, service continuity and outage reporting, subscriber identity and data retention, consumer contract and billing transparency rules, and interconnect settlement terms."
  }
 }
