@@ -1,0 +1,54 @@
+﻿Industry ID,Industry,Group,Processes excluded
+banking,Banking and financial institutions,Financial services,Inventory & Costing
+insurance,Insurance,Financial services,Inventory & Costing
+capital-markets,"Capital markets, brokerage and exchanges",Financial services,Inventory & Costing
+consumer-finance,Consumer finance and credit,Financial services,Inventory & Costing
+asset-mgmt,Asset and wealth management,Financial services,Inventory & Costing
+fintech,Fintech and payments,Financial services,Inventory & Costing
+healthcare,Healthcare providers,Health and life sciences,
+pharma,Pharmaceuticals and life sciences,Health and life sciences,
+biotech,Biotechnology,Health and life sciences,
+medtech,Medical devices and equipment,Health and life sciences,
+tech,"Technology, software and IT services",Technology and communications,Inventory & Costing
+semiconductors,Semiconductors,Technology and communications,
+hardware,Technology hardware and electronics,Technology and communications,
+telecom,Telecommunications,Technology and communications,
+media,Media and entertainment,Technology and communications,Inventory & Costing
+advertising,Advertising and marketing services,Technology and communications,Inventory & Costing
+manufacturing,Manufacturing and industrial products,Industrials and manufacturing,
+aerospace,Aerospace and defence,Industrials and manufacturing,
+automotive,Automotive and vehicle parts,Industrials and manufacturing,
+chemicals,Chemicals,Industrials and manufacturing,
+building-products,Building products and materials,Industrials and manufacturing,
+packaging,Packaging and containers,Industrials and manufacturing,
+paper,"Paper, forest products and timber",Industrials and manufacturing,
+oil-gas,"Oil, gas and refining","Energy, utilities and resources",
+oilfield,Oilfield services and equipment,"Energy, utilities and resources",
+pipelines,Pipelines and energy infrastructure,"Energy, utilities and resources",
+utilities,"Utilities, power and water","Energy, utilities and resources",
+renewables,Renewable energy and independent power,"Energy, utilities and resources",
+mining,"Mining, metals and materials","Energy, utilities and resources",
+logistics,Transportation and logistics,Transport and infrastructure,
+aviation,Aviation and airlines,Transport and infrastructure,
+marine,Marine transport and shipping,Transport and infrastructure,
+rail,Rail transport,Transport and infrastructure,
+transport-infra,"Ports, airports and transport infrastructure",Transport and infrastructure,
+retail,Retail chains,Consumer and retail,
+ecommerce,E-commerce,Consumer and retail,
+wholesale,Wholesale distribution,Consumer and retail,
+fmcg,FMCG and consumer goods,Consumer and retail,
+food-bev,Food and beverage,Consumer and retail,
+agriculture,Agriculture and agribusiness,Consumer and retail,
+apparel,"Apparel, textiles and luxury goods",Consumer and retail,
+tobacco,Tobacco,Consumer and retail,
+hospitality,Hospitality and hotels,Hospitality and leisure,
+restaurants,Restaurants and food service,Hospitality and leisure,
+gaming,"Gaming, casinos and resorts",Hospitality and leisure,
+real-estate,Real estate,Real estate and construction,Inventory & Costing
+construction,Construction and engineering,Real estate and construction,
+homebuilding,Homebuilding and residential development,Real estate and construction,
+prof-services,Professional services,Business and professional services,Inventory & Costing
+waste,Waste management and environmental services,Business and professional services,
+crown,Crown corporations and public sector,Public and not-for-profit,Inventory & Costing
+nfp,Not-for-profit,Public and not-for-profit,Inventory & Costing
+education,Education,Public and not-for-profit,Inventory & Costing

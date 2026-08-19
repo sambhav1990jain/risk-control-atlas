@@ -282,6 +282,29 @@ table.cmp td.cmpk{font-weight:600;color:var(--ink);white-space:nowrap;width:150p
   color:#FFF;opacity:.92;filter:drop-shadow(0 1px 3px rgba(0,0,0,.28))}
 .profileart::after{content:"";position:absolute;inset:0;
   background:linear-gradient(to bottom,rgba(0,0,0,0) 55%,rgba(0,0,0,.18))}
+
+.askwrap{max-width:820px;display:flex;flex-direction:column;gap:14px}
+.askegs{display:flex;flex-wrap:wrap;gap:7px}
+.askegs .chip{cursor:pointer}
+.askegs .chip:hover{border-color:var(--accent);color:var(--accent)}
+.ansblock{background:var(--surface);border:1px solid var(--line);border-radius:9px;overflow:hidden;
+  display:flex;flex-direction:column}
+.ansh{padding:9px 18px;background:var(--surface-2);border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.glossline{margin:0;padding:12px 18px;font-size:14px;line-height:1.6;color:var(--ink-2);
+  border-bottom:1px solid var(--line)}
+.glossline:last-child{border-bottom:none}
+.glossline b{color:var(--ink)}
+.ansnote{margin:0;padding:14px 18px;font-size:14px;line-height:1.6;color:var(--ink-2)}
+.anshit{display:flex;flex-direction:column;gap:5px;padding:14px 18px;text-align:left;width:100%;
+  border-bottom:1px solid var(--line)}
+.anshit:last-child{border-bottom:none}
+.anshit:hover{background:var(--accent-wash)}
+.ah-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.ah-proc{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ah-risk{font-size:14.5px;line-height:1.5;color:var(--ink)}
+.ah-plain{font-size:13px;line-height:1.5;color:var(--muted)}
+.ah-go{font-size:12.5px;color:var(--accent);margin-top:2px}
 /* ---- workspace ---- */
 .work{display:grid;grid-template-columns:250px minmax(0,1fr);gap:26px;padding:26px 0 80px;align-items:start}
 .side{position:sticky;top:66px;display:flex;flex-direction:column;gap:20px}
@@ -548,7 +571,7 @@ const LENSES = {
     'Preventive or detective, nature, frequency, control owner',
     'Test of design and operating effectiveness with sample guidance']}
 };
-const S = {tab:'about', ind:null, pickTmp:null, lens:null, proc:null, sub:null, procChosen:false,
+const S = {tab:'about', aq:'', ind:null, pickTmp:null, lens:null, proc:null, sub:null, procChosen:false,
   q:'', f:{}, view:'list', open:null};
 const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const rateCls = r => ({High:'p-high',Medium:'p-med',Low:'p-low'}[r]||'p-flat');
@@ -581,7 +604,7 @@ function go(_stage, patch){ Object.assign(S, patch||{}); render(); window.scroll
 function crumbs(){
   const el = document.getElementById('crumbs');
   const bar = el.parentElement;
-  if(['about','who','improve'].includes(S.tab) || !S.ind){ bar.style.display='none'; el.innerHTML=''; return; }
+  if(['about','ask','who','improve'].includes(S.tab) || !S.ind){ bar.style.display='none'; el.innerHTML=''; return; }
   bar.style.display='';
   const tabName = (TABS.find(t=>t[0]===S.tab)||['',''])[1];
   let h = `<span class="cbtab">${tabName}</span><span>/</span>`;
@@ -600,6 +623,7 @@ function crumbs(){
 
 const TABS = [
   ['about','What this is'],
+  ['ask','Ask'],
   ['ia','Internal audit'],
   ['icfr','ICFR'],
   ['industry','Choose your industry'],
@@ -652,7 +676,7 @@ function goTab(t){
   render(); window.scrollTo({top:0});
 }
 function stageNow(){
-  if(['about','who','improve'].includes(S.tab)) return S.tab;
+  if(['about','ask','who','improve'].includes(S.tab)) return S.tab;
   if(!S.ind) return 'pick-industry';
   if(!S.procChosen) return 'pick-process';
   if(S.tab==='industry' && !S.lens) return 'pick-lens';
@@ -771,7 +795,7 @@ function motifSvg(d, cls){
   return `<svg class="${cls}" viewBox="0 0 64 64" aria-hidden="true" fill="none"
     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
 }
-const TAB_MOTIF = {about:'atlas', ia:'services', icfr:'finance', industry:'public', who:'property', improve:'consumer'};
+const TAB_MOTIF = {about:'atlas', ask:'tech', ia:'services', icfr:'finance', industry:'public', who:'property', improve:'consumer'};
 
 
 const ART = {
@@ -861,7 +885,7 @@ const STOP = new Set(['company','companies','business','businesses','firm','firm
 function searchIndustries(raw){
   const q = (raw||'').toLowerCase().trim();
   if(q.length < 2) return [];
-  let terms = q.split(/[^a-z0-9]+/).filter(Boolean).filter(t=>!STOP.has(t));
+  let terms = q.split(/[^a-z0-9]+/).filter(Boolean).filter(t=>!STOP.has(t) && t.length > 2);
   if(!terms.length) terms = q.split(/[^a-z0-9]+/).filter(Boolean);
   const out = [];
   FLAT.filter(i=>i.id!=='all').forEach(item=>{
@@ -1058,6 +1082,12 @@ function viewAbout(){
           <p>Every entry is a starting point, not a conclusion. Risks and controls must be adjusted
           for the size of the organisation, how it operates, and the rules that apply where it
           operates.</p></div>
+        <div><h4>Take the data</h4>
+          <p>The whole library is published as open data — CSV for spreadsheets, JSON for anything
+          else, with a documented schema. <a href="data/internal-audit-programmes.csv">Audit
+          programmes (CSV)</a> · <a href="data/icfr-risk-control-matrix.csv">Risk–control matrix
+          (CSV)</a> · <a href="data/risk-control-101.json">Everything (JSON)</a> ·
+          <a href="SCHEMA.md">Schema</a> · <a href="CHANGELOG.md">What changed</a></p></div>
         <div><h4>Status</h4>
           <p>A work in progress, added to regularly. Processes and industries are built out in
           batches, and the counts above move every time.</p></div>
@@ -1245,6 +1275,146 @@ function pickLens(){
   </div>`;
 }
 
+
+/* ---------------- tab — ask ---------------- */
+const LENS_HINT = {
+  ia:['audit','auditing','audited','review','reviewing','programme','program','engagement','fieldwork','internal audit'],
+  icfr:['icfr','matrix','rcm','sox','assertion','assertions','test of design','operating effectiveness','key control','walkthrough','financial reporting']
+};
+/* words so common in this library that they carry no signal */
+const NOISE = new Set(['risk','risks','control','controls','audit','auditing','process','processes',
+  'review','reviewing','check','checks','test','testing','tests','how','what','why','where','when',
+  'should','would','could','need','needs','look','looking','find','finding','issue','issues','problem']);
+
+let ASKIDX = null;
+function buildAskIndex(){
+  if(ASKIDX) return ASKIDX;
+  const df = Object.create(null);
+  const docs = DATA.map(d=>{
+    const text = [d.risk, d.plain, d.subprocess, d.process, d.audit_objective, d.control_objective,
+      d.control, (d.what_to_review||[]).join(' '), (d.procedures||[]).join(' '),
+      (d.red_flags||[]).join(' '), d.test_design, d.test_oe].filter(Boolean).join(' ').toLowerCase();
+    const key = ((d.subprocess||'') + ' ' + (d.process||'')).toLowerCase();
+    const seen = new Set(text.split(/[^a-z0-9]+/).filter(Boolean));
+    seen.forEach(w=>{ df[w] = (df[w]||0) + 1; });
+    return {d, text, key};
+  });
+  ASKIDX = {docs, df, n:docs.length};
+  return ASKIDX;
+}
+function weightOf(term, idx){
+  const d = idx.df[term] || 0;
+  if(!d) return 0;
+  const share = d / idx.n;
+  if(share > 0.30) return 0;      /* appears nearly everywhere — meaningless */
+  if(share > 0.15) return 0.4;
+  if(share > 0.05) return 1;
+  return 2;                        /* rare and therefore telling */
+}
+function interpret(raw){
+  const q = (raw||'').toLowerCase().trim();
+  const terms = q.split(/[^a-z0-9&]+/)
+    .filter(t => t && t.length > 2 && !STOP.has(t) && !NOISE.has(t));
+  const bigrams = [];
+  for(let i=0;i<terms.length-1;i++) bigrams.push(terms[i]+' '+terms[i+1]);
+  let lens = null, best = 0;
+  Object.entries(LENS_HINT).forEach(([k,words])=>{
+    const n = words.filter(w=>q.includes(w)).length;
+    if(n > best){ best = n; lens = k; }
+  });
+  /* only trust an industry when the query really names one — audit words like
+     'audit' and 'stock' are industry keywords too, and they hijacked the match */
+  const cand = searchIndustries(terms.join(' '))[0];
+  const industry = (cand && cand.score >= 40) ? cand.item.id : null;
+  return {q, terms, bigrams, lens, industry};
+}
+function scoreDoc(doc, terms, bigrams, idx){
+  let score = 0;
+  bigrams.forEach(b=>{ if(doc.text.includes(b)) score += 12; if(doc.key.includes(b)) score += 10; });
+  terms.forEach(t=>{
+    const w = weightOf(t, idx);
+    if(!w) return;
+    if(doc.key.includes(t)) score += 9 * w;
+    else if(doc.text.includes(t)) score += 2.5 * w;
+  });
+  return score;
+}
+function answerAsk(){
+  const box = document.getElementById('askout');
+  if(!box) return;
+  const raw = S.aq || '';
+  if(raw.trim().length < 3){ box.innerHTML = ''; return; }
+  const idx = buildAskIndex();
+  const {q, terms, bigrams, lens, industry} = interpret(raw);
+  /* glossary: prefer the most specific term that matches */
+  /* only explain a term when the question is actually asking what something means */
+  const definitional = /^(what|whats|what's|define|meaning of|explain)\b/.test(q) || q.split(/\s+/).length <= 3;
+  const gloss = definitional
+    ? GLOSSARY.filter(([t]) => q.includes(t.toLowerCase())).sort((a,b)=>b[0].length-a[0].length).slice(0,2)
+    : [];
+  let docs = idx.docs;
+  if(industry) docs = docs.filter(x => x.d.industry.includes(industry) || x.d.industry.includes('cross'));
+  if(lens) docs = docs.filter(x => x.d.lens.includes(lens));
+  let hits = docs.map(x=>({d:x.d, s:scoreDoc(x, terms, bigrams, idx)}))
+    .filter(x=>x.s >= 9).sort((a,b)=>b.s-a.s);
+  /* one result per sub-process, so the list is not seven flavours of the same thing */
+  const seen = new Set();
+  hits = hits.filter(h=>{
+    const k = h.d.process+'|'+h.d.subprocess;
+    if(seen.has(k)) return false; seen.add(k); return true;
+  }).slice(0,7);
+  const indLabel = industry ? indName(industry) : null;
+  let html = '';
+  if(gloss.length){
+    html += `<div class="ansblock"><div class="ansh">What that means</div>
+      ${gloss.map(([t,d])=>`<p class="glossline"><b>${t}</b> ${esc(d)}</p>`).join('')}</div>`;
+  }
+  if(!hits.length){
+    html += `<div class="ansblock"><div class="ansh">No direct match</div>
+      <p class="ansnote">Nothing in the library matched that closely. Try naming the process —
+      payroll, procure to pay, revenue, fixed assets — or what goes wrong, such as
+      “supplier paid twice” or “stock missing”. If it genuinely is not covered,
+      <button class="inlinelink" onclick="goTab('improve')">tell me and I will add it</button>.</p></div>`;
+  } else {
+    html += `<div class="ansblock"><div class="ansh">
+      ${indLabel ? esc(indLabel)+' · ' : ''}${hits.length} match${hits.length===1?'':'es'}${lens?' · '+(lens==='ia'?'internal audit':'ICFR'):''}</div>
+      ${hits.map(({d})=>{
+        const isIa = d.lens.includes('ia');
+        return `<button class="anshit" onclick="openHit('${isIa?'ia':'icfr'}','${industry||'all'}','${esc(d.process)}')">
+          <span class="ah-top"><span class="ah-proc">${d.process} · ${d.subprocess||''}</span>
+            <span class="pill ${rateCls(d.rating)}">${d.rating||''}</span></span>
+          <span class="ah-risk">${esc(d.risk)}</span>
+          ${d.plain?`<span class="ah-plain">${esc(d.plain)}</span>`:''}
+          <span class="ah-go">Open ${isIa?'the audit programme':'the control matrix'} →</span>
+        </button>`}).join('')}
+    </div>`;
+  }
+  box.innerHTML = html;
+}
+function openHit(lens, ind, proc){
+  S.tab = lens; S.lens = lens; S.ind = ind; S.proc = proc; S.procChosen = true;
+  S.pickTmp = null; S.iq=''; S.q=''; S.f={}; S.view='list'; S.open=null;
+  render(); window.scrollTo({top:0});
+}
+function viewAsk(){
+  const examples = ['How do I audit payroll?','fuel going missing from a fleet',
+    'ICFR controls for revenue','supplier paid twice','what is a key control?',
+    'risks in a hotel front desk','stock missing from the warehouse'];
+  return `${pageHead('Ask', 'What do you need to look at?',
+    'Type a question, a process, or just what is going wrong. You get the actual entries, with a link straight to them. This searches the library — it does not invent answers.')}
+  <div class="wrap stage">
+    <div class="askwrap">
+      <input id="askbox" class="search bigsearch" autocomplete="off"
+        placeholder="e.g. how do I audit payroll, or: supplier paid twice"
+        value="${esc(S.aq||'')}" oninput="S.aq=this.value;answerAsk()">
+      <div class="askegs">${examples.map(x=>
+        `<button class="chip" onclick="S.aq='${esc(x)}';render()">${x}</button>`).join('')}</div>
+      <div id="askout"></div>
+    </div>
+  </div>
+  ${footerHtml()}`;
+}
+
 /* ---------------- tab 5 — who we are ---------------- */
 function viewWho(){
   return `${pageHead('Who we are', 'Built by someone who does this work.', '')}
@@ -1390,7 +1560,7 @@ function footerHtml(){
     <p>Built by <b>Sambhav Jain, CA</b> · Free to use under
     <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a><br>
     Feedback welcome — this is a work in progress.<br>
-    <span class="ver">Build 19 Aug 2026, 15:23 · baadbb9</span></p>
+    <span class="ver">Build 19 Aug 2026, 15:51 · 6a5b24a</span></p>
   </div></footer>`;
 }
 
@@ -1693,11 +1863,12 @@ function viewWork(){
 function render(){
   const app = document.getElementById('app');
   const st = stageNow();
-  const map = {about:viewAbout, who:viewWho, improve:viewImprove,
+  const map = {about:viewAbout, ask:viewAsk, who:viewWho, improve:viewImprove,
                'pick-industry':pickIndustry, 'pick-process':pickProcess, 'pick-lens':pickLens,
                work:viewWork};
   app.innerHTML = (map[st] || viewAbout)();
   if(st === 'about') runCounters();
+  if(st === 'ask'){ const b=document.getElementById('askbox'); if(b){ b.focus(); if(S.aq) answerAsk(); } }
   if(st === 'pick-industry'){ renderSearch();
     const inp = document.getElementById('indsearch');
     if(inp && S.iq){ inp.focus(); inp.setSelectionRange(inp.value.length, inp.value.length); } }
