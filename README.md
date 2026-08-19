@@ -1,4 +1,4 @@
-# Risk & Control Atlas
+# Risk & Control 101
 
 An interactive risk and control database spanning 28 industries, built by
 **Sambhav Jain, CA** — Manager, Financial Compliance and Governance.

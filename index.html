@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>Risk &amp; Control Atlas</title>
+<title>Risk &amp; Control 101</title>
 <style>
 :root{
   --paper:#F4F0E4; --surface:#FAF8F0; --surface-2:#EBE6D6; --ink:#16241D; --ink-2:#3A4A41;
@@ -502,7 +502,7 @@ table.cov td.zero .b{color:var(--muted);opacity:.45}
 <header class="mast">
   <div class="mast-in">
     <div class="brand" onclick="goTab('about')">
-      <h1>Risk &amp; Control Atlas</h1>
+      <h1>Risk &amp; Control 101</h1>
     </div>
     <div class="mast-sp"></div>
     <button class="ghost" onclick="goTab('about');setTimeout(()=>{const g=document.getElementById('glossary');if(g)g.scrollIntoView({behavior:'smooth'})},60)">Glossary</button>
@@ -600,8 +600,11 @@ const FORMSPREE = '';   /* set to the Formspree form id once Sam has one */
 
 function goTab(t){
   S.tab = t;
-  S.ind = null; S.lens = (t==='ia'||t==='icfr') ? t : null;
-  S.proc = null; S.sub = null; S.procChosen = false; S.q=''; S.f={}; S.view='list'; S.open=null;
+  /* every tab starts from a clean slate — including the industry chosen but not yet confirmed */
+  S.ind = null; S.pickTmp = null; S.iq = '';
+  S.lens = (t==='ia'||t==='icfr') ? t : null;
+  S.proc = null; S.sub = null; S.procChosen = false;
+  S.q = ''; S.f = {}; S.view = 'list'; S.open = null;
   render(); window.scrollTo({top:0});
 }
 function stageNow(){
@@ -1210,7 +1213,7 @@ function viewWho(){
         up what usually goes wrong in a process and what good control over it looks like. Junior
         auditors felt this hardest. They were asked to audit something they had never seen, and the
         honest answer to "where do I start" was usually "ask someone who has done it before".</p>
-        <p>This atlas is the resource I wanted. It is organised the way the work is actually
+        <p>This site is the resource I wanted. It is organised the way the work is actually
         organised — by industry, then by process, then by whether you are auditing or proving the
         numbers — and every risk is written so that someone in their first year can understand it
         and explain it to somebody else.</p>
@@ -1329,7 +1332,7 @@ async function sendFeedback(e){
 
 function footerHtml(){
   return `<footer class="site"><div class="foot-in">
-    <p><b>Risk &amp; Control Atlas</b> — written from professional practice, not reproduced from any
+    <p><b>Risk &amp; Control 101</b> — written from professional practice, not reproduced from any
     proprietary course, employer material or client engagement. Frameworks referenced: COSO (2013),
     the IIA Global Internal Audit Standards (2024), and IFRS 15 / ASC 606 where revenue recognition
     is in scope.</p>
