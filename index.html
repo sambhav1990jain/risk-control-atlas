@@ -1414,7 +1414,7 @@ function answerAsk(){
       payroll, procure to pay, revenue, fixed assets — or what goes wrong, such as
       “supplier paid twice” or “stock missing”. If it genuinely is not covered,
       <button class="inlinelink" onclick="goTab('improve')">tell me and I will add it</button>.</p></div>`;
-  } else {
+  } else if(hits.length){
     html += `<div class="ansblock"><div class="ansh">
       ${indLabel ? esc(indLabel)+' · ' : ''}${hits.length} match${hits.length===1?'':'es'}${lens?' · '+(lens==='ia'?'internal audit':'ICFR'):''}</div>
       ${hits.map(({d})=>{
