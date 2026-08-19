@@ -357,6 +357,7 @@ table.cmp td.cmpk{font-weight:600;color:var(--ink);white-space:nowrap;width:150p
 .morebtn.open::after{transform:rotate(-135deg) translate(-3px,-3px)}
 .morebtn:hover{color:var(--accent-2)}
 .more{display:flex;flex-direction:column;gap:14px}
+.more[hidden]{display:none}
 
 /* ---- workspace ---- */
 .work{display:grid;grid-template-columns:250px minmax(0,1fr);gap:26px;padding:26px 0 80px;align-items:start}
@@ -632,6 +633,33 @@ table.cov td.zero .b{color:var(--muted);opacity:.45}
   .herostats div:last-child{grid-column:auto}
   .stat{min-width:100%}
 }
+/* ---- header graphic ---- */
+.pagehead-in{display:flex;align-items:center;justify-content:space-between;gap:34px}
+.pagehead-copy{flex:1;min-width:0}
+.headtile{position:relative;flex:0 0 auto;width:212px;height:142px;margin:0;border-radius:14px;
+  overflow:hidden;border:1px solid rgba(201,160,82,.32);
+  box-shadow:0 14px 34px -14px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.10)}
+.tileart{position:absolute;inset:0;width:100%;height:100%}
+.tilegrid{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.10) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.10) 1px,transparent 1px);
+  background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 35%,transparent 78%);
+  mask-image:radial-gradient(circle at 50% 50%,#000 35%,transparent 78%)}
+.tileicon{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;
+  color:#fff;opacity:.95;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+.headart{opacity:.3}
+@media(max-width:900px){.headtile{display:none}.pagehead-in{gap:0}}
+
+/* ---- finish ---- */
+:root{--ease:cubic-bezier(.2,.7,.3,1)}
+button,a,.card,.proccard,.anshit{transition:background-color .16s var(--ease),border-color .16s var(--ease),
+  color .16s var(--ease),transform .16s var(--ease),box-shadow .16s var(--ease)}
+[id]{scroll-margin-top:120px}
+.tablewrap,.mapwrap,.prog,.profile,.ansblock{box-shadow:0 1px 2px rgba(22,36,29,.04)}
+.go:active{transform:translateY(1px)}
+.res-head h2{letter-spacing:-.015em}
+
 </style>
 
 <header class="mast">
@@ -1135,12 +1163,15 @@ function viewAbout(){
         <p>Every organisation pays suppliers, pays staff, closes its books and depends on technology.
         Those processes carry broadly the same risks everywhere, and they make up the majority of any
         audit universe.</p>
-        <p>But the part that makes an audit useful is the part that is specific to the business. A
-        bank worries about loans that will not be repaid. An airline worries about maintenance records
-        that will not satisfy a regulator. A hotel worries about drink leaving the bottle without a
-        sale. A generic checklist misses all three.</p>
-        <p>That is why this database is organised by industry first. Choose an industry and you get the
-        processes it genuinely runs, alongside the ones every business runs.</p>
+        <div class="more" id="more-ind" hidden>
+          <p>But the part that makes an audit useful is the part specific to the business. A bank
+          worries about loans that will not be repaid. An airline worries about maintenance records
+          that will not satisfy a regulator. A hotel worries about drink leaving the bottle without
+          a sale. A generic checklist misses all three.</p>
+          <p>That is why this is organised by industry first. Choose an industry and you get the
+          processes it genuinely runs, alongside the ones every organisation runs.</p>
+        </div>
+        <button class="morebtn" onclick="toggleMore('more-ind', this)">Read more</button>
       </div>
     </section>
 
@@ -1235,12 +1266,20 @@ function toggleMore(id, btn){
 
 function pageHead(eyebrow, title, sub){
   const key = (S.ind && S.tab!=='about') ? artKeyFor(S.ind) : (TAB_MOTIF[S.tab] || 'atlas');
+  const glyph = (S.ind && S.tab!=='about') ? motifFor(S.ind) : (MOTIF[TAB_MOTIF[S.tab]] || MOTIF.atlas);
   return `<section class="pagehead">
     ${artSvg(key,'headart')}
     <div class="pagehead-in">
-      <span class="eyebrow">${eyebrow}</span>
-      <h2>${title}</h2>
-      ${sub?`<p>${sub}</p>`:''}
+      <div class="pagehead-copy">
+        <span class="eyebrow">${eyebrow}</span>
+        <h2>${title}</h2>
+        ${sub?`<p>${sub}</p>`:''}
+      </div>
+      <figure class="headtile" aria-hidden="true">
+        ${artSvg(key,'tileart',true)}
+        <span class="tilegrid"></span>
+        ${motifSvg(glyph,'tileicon')}
+      </figure>
     </div>
   </section>`;
 }
@@ -1356,13 +1395,15 @@ function pickProcess(){
   const rows = lensesHere.flatMap(l=>poolFor(S.ind,l));
   const procs = [...new Set(rows.map(d=>d.process))].sort();
   const lensLabel = S.lens==='ia' ? 'Internal audit' : S.lens==='icfr' ? 'ICFR' : '';
-  const unit = S.lens==='ia' ? 'audit programmes' : S.lens==='icfr' ? 'risks and controls' : 'entries';
+  const unit = n => S.lens==='ia' ? (n===1?'audit programme':'audit programmes')
+    : S.lens==='icfr' ? (n===1?'risk and control':'risks and controls')
+    : (n===1?'entry':'entries');
   return `${pageHead('Step two — '+indName(S.ind)+(lensLabel?' · '+lensLabel:''), 'Which process are you looking at?',
     'Take all of them for the full picture, or one process if you already know what you have been asked to review. You can change this at any point once you are inside.')}
   <div class="wrap stage">
     <button class="allproc" onclick="S.proc=null;S.procChosen=true;render();window.scrollTo({top:0})">
       <span><b>All processes</b><small>The complete ${lensLabel==='ICFR'?'ICFR ':lensLabel?lensLabel.toLowerCase()+' ':''}universe for this industry</small></span>
-      <span class="pc">${rows.length} ${unit}</span>
+      <span class="pc">${rows.length} ${unit(rows.length)}</span>
     </button>
     <div class="procgrid">
       ${procs.map(pr=>{
@@ -1371,7 +1412,7 @@ function pickProcess(){
         return `<button class="proccard" onclick="S.proc='${esc(pr)}';S.procChosen=true;render();window.scrollTo({top:0})">
           <span class="pn">${pr}</span>
           <span class="pd">${subs.slice(0,3).join(' · ')}${subs.length>3?' · …':''}</span>
-          <span class="pc">${n} ${unit}</span>
+          <span class="pc">${n} ${unit(n)}</span>
         </button>`}).join('')}
     </div>
   </div>`;
@@ -1602,6 +1643,7 @@ function viewWho(){
         <p>My name is Sambhav Jain. I am a Chartered Accountant, qualified with the Institute of
         Chartered Accountants of India in 2014, and I have spent my career in internal audit and
         financial controls.</p>
+        <div class="more" id="more-who" hidden>
         <p>I started in internal audit at PwC in India, moved to Celebi Aviation to work in-house,
         and came to Canada in 2020. After around eighteen months in internal audit at Purolator I
         moved into financial compliance and governance, where I now lead internal control over
@@ -1619,6 +1661,8 @@ function viewWho(){
         <p>It is a work in progress and will be for a long time. New processes and industries are
         added regularly, and everything published here is written from professional practice rather
         than reproduced from any course, employer or client material.</p>
+        </div>
+        <button class="morebtn" onclick="toggleMore('more-who', this)">Read more</button>
       </div>
       <aside class="whocard">
         <h4>Background</h4>
@@ -1738,7 +1782,7 @@ function footerHtml(){
     <p>Built by <b>Sambhav Jain, CA</b> · Free to use under
     <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a><br>
     Feedback welcome — this is a work in progress.<br>
-    <span class="ver">Build 19 Aug 2026, 16:43 · 6a5b24a</span></p>
+    <span class="ver">Build 19 Aug 2026, 16:51 · 6a5b24a</span></p>
   </div></footer>`;
 }
 
