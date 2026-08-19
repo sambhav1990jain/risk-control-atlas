@@ -255,13 +255,23 @@ table.cmp td.cmpk{font-weight:600;color:var(--ink);white-space:nowrap;width:150p
 
 /* industry profile extras */
 .profile{position:relative;overflow:hidden}
-.profilemotif{position:absolute;right:-18px;top:-18px;width:132px;height:132px;color:var(--accent);
-  opacity:.08;pointer-events:none}
+
 .profile-sum.sub{font-size:13.5px;color:var(--muted)}
 .adapt{background:var(--accent-wash);border:1px solid var(--line-2);border-radius:7px;padding:13px 16px;
   font-size:13px;line-height:1.6;color:var(--ink-2)}
 .adapt b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
   color:var(--accent);margin-bottom:4px;font-weight:400}
+
+.heroart,.headart{position:absolute;inset:0;width:100%;height:100%;opacity:.5;mix-blend-mode:screen}
+.hero,.pagehead{isolation:isolate}
+.hero-in,.pagehead-in{position:relative;z-index:2}
+.headmotif{color:#F2EBD8;opacity:.24}
+.profileart{position:relative;height:96px;margin:-24px -24px 4px;overflow:hidden;border-bottom:1px solid var(--line)}
+.pbanner{position:absolute;inset:0;width:100%;height:100%}
+.pbannericon{position:absolute;right:26px;top:50%;transform:translateY(-50%);width:60px;height:60px;
+  color:#FFF;opacity:.92;filter:drop-shadow(0 1px 3px rgba(0,0,0,.28))}
+.profileart::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,0) 55%,rgba(0,0,0,.18))}
 /* ---- workspace ---- */
 .work{display:grid;grid-template-columns:250px minmax(0,1fr);gap:26px;padding:26px 0 80px;align-items:start}
 .side{position:sticky;top:66px;display:flex;flex-direction:column;gap:20px}
@@ -627,6 +637,61 @@ const GLOSSARY = [
  ['Sub-process','A distinct step within a process — within payroll, for example, time capture is separate from paying the money out.']
 ];
 
+const IND_MOTIF = {
+ "banking": "<path d=\"M8 46h48M12 46V26m10 20V26m10 20V26m10 20V26m10 20V26M6 26 32 10l26 16\"/>",
+ "insurance": "<path d=\"M32 8c9 6 18 7 18 7v16c0 12-8 20-18 25-10-5-18-13-18-25V15s9-1 18-7Z\"/>",
+ "capital-markets": "<path d=\"M8 46h48M14 40V26m12 14V16m12 24v-18m12 18V22\"/>",
+ "consumer-finance": "<rect x=\"6\" y=\"18\" width=\"52\" height=\"30\" rx=\"4\"/><path d=\"M6 28h52M14 40h10\"/>",
+ "asset-mgmt": "<path d=\"M10 48V24m14 24V14m14 34V30m14 18V20M8 54h48\"/>",
+ "fintech": "<rect x=\"16\" y=\"6\" width=\"32\" height=\"52\" rx=\"5\"/><path d=\"M28 12h8M26 46h12\"/>",
+ "healthcare": "<path d=\"M4 32h14l5-12 8 26 7-18 5 8h17\"/>",
+ "pharma": "<rect x=\"14\" y=\"20\" width=\"36\" height=\"18\" rx=\"9\" transform=\"rotate(-45 32 29)\"/><path d=\"M25 22 42 39\"/>",
+ "biotech": "<path d=\"M22 8c0 12 20 12 20 24S22 44 22 56M42 8c0 12-20 12-20 24s20 12 20 24M24 20h16M24 44h16\"/>",
+ "medtech": "<rect x=\"10\" y=\"14\" width=\"44\" height=\"36\" rx=\"4\"/><path d=\"M32 24v16M24 32h16\"/>",
+ "tech": "<rect x=\"18\" y=\"18\" width=\"28\" height=\"28\" rx=\"3\"/><path d=\"M26 18V8m12 10V8m-12 48v-10m12 10v-10M18 26H8m10 12H8m48-12h-10m10 12h-10\"/>",
+ "semiconductors": "<rect x=\"18\" y=\"18\" width=\"28\" height=\"28\" rx=\"2\"/><rect x=\"27\" y=\"27\" width=\"10\" height=\"10\"/><path d=\"M26 18V8m12 10V8m-12 48v-10m12 10v-10M18 26H8m10 12H8m48-12h-10m10 12h-10\"/>",
+ "hardware": "<rect x=\"6\" y=\"14\" width=\"52\" height=\"30\" rx=\"3\"/><path d=\"M4 52h56\"/>",
+ "telecom": "<path d=\"M32 44v12M20 34a17 17 0 0 1 24 0M12 26a28 28 0 0 1 40 0\"/><circle cx=\"32\" cy=\"42\" r=\"3\"/>",
+ "media": "<rect x=\"6\" y=\"14\" width=\"52\" height=\"34\" rx=\"4\"/><path d=\"m26 24 16 7-16 7z\"/>",
+ "advertising": "<path d=\"M10 26v12h10l16 10V16L20 26z\"/><path d=\"M44 24a12 12 0 0 1 0 16\"/>",
+ "manufacturing": "<circle cx=\"32\" cy=\"32\" r=\"9\"/><path d=\"M32 8v8m0 32v8M8 32h8m32 0h8M15 15l6 6m22 22 6 6m0-34-6 6m-22 22-6 6\"/>",
+ "aerospace": "<path d=\"M32 6c4 6 6 14 6 20l16 12v6l-16-5-2 12 6 6v3l-10-4-10 4v-3l6-6-2-12-16 5v-6l16-12c0-6 2-14 6-20Z\"/>",
+ "aviation": "<path d=\"M32 6c4 6 6 14 6 20l16 12v6l-16-5-2 12 6 6v3l-10-4-10 4v-3l6-6-2-12-16 5v-6l16-12c0-6 2-14 6-20Z\"/>",
+ "automotive": "<path d=\"M8 40V30l6-12h36l6 12v10M8 40h48M14 46a5 5 0 1 0 10 0 5 5 0 1 0-10 0m26 0a5 5 0 1 0 10 0 5 5 0 1 0-10 0M14 30h36\"/>",
+ "chemicals": "<path d=\"M26 8v16L12 48a4 4 0 0 0 4 6h32a4 4 0 0 0 4-6L38 24V8M22 8h20M20 38h24\"/>",
+ "mining": "<path d=\"M8 52 30 30M22 22l20 20M14 26c6-10 20-14 30-10-4 10-8 16-18 20-6 2-10-4-12-10Z\"/>",
+ "oil-gas": "<path d=\"M32 6s16 18 16 30a16 16 0 0 1-32 0C16 24 32 6 32 6Z\"/>",
+ "oilfield": "<path d=\"M20 54 32 10l12 44M14 54h36M26 32h12\"/>",
+ "pipelines": "<path d=\"M6 24h20a8 8 0 0 1 8 8a8 8 0 0 0 8 8h16M6 24v12m52 4v-12\"/>",
+ "utilities": "<path d=\"M34 6 16 36h14l-4 22 22-32H32z\"/>",
+ "renewables": "<circle cx=\"32\" cy=\"32\" r=\"5\"/><path d=\"M32 27V8M36 34l16 10M28 34 12 44\"/>",
+ "logistics": "<path d=\"M4 42h34V22H4zM38 30h12l8 8v4H38zM14 46a5 5 0 1 0 10 0 5 5 0 1 0-10 0M42 46a5 5 0 1 0 10 0 5 5 0 1 0-10 0\"/>",
+ "marine": "<path d=\"M32 8v30M20 20h24M8 38h48l-8 14H16z\"/>",
+ "rail": "<rect x=\"14\" y=\"10\" width=\"36\" height=\"34\" rx=\"4\"/><path d=\"M14 26h36M20 52l6-8m18 8-6-8M22 36h4m12 0h4\"/>",
+ "transport-infra": "<path d=\"M6 46h52M14 46V22l18-12 18 12v24M24 46V32h16v14\"/>",
+ "retail": "<path d=\"M12 18h40l-4 30H16zM22 18a10 10 0 0 1 20 0\"/>",
+ "ecommerce": "<path d=\"M6 12h6l6 26h30l6-18H16M22 50a3 3 0 1 0 6 0 3 3 0 1 0-6 0m16 0a3 3 0 1 0 6 0 3 3 0 1 0-6 0\"/>",
+ "wholesale": "<path d=\"M8 24h48v26H8zM8 24 16 12h32l8 12M26 24v26M38 24v26\"/>",
+ "fmcg": "<path d=\"M18 20h28l4 34H14zM24 20v-6h16v6\"/>",
+ "food-bev": "<path d=\"M16 10v18a6 6 0 0 0 12 0V10M22 28v26M46 10c-4 6-4 14 0 20v24\"/>",
+ "agriculture": "<path d=\"M32 54V22M32 22c-6-8-14-8-14-8s0 10 6 14M32 22c6-8 14-8 14-8s0 10-6 14\"/>",
+ "apparel": "<path d=\"M22 10 12 18l6 8 4-3v31h20V23l4 3 6-8-10-8-6 6h-8z\"/>",
+ "tobacco": "<path d=\"M8 40h40v10H8zM52 40h4v10h-4M44 22c0 6-8 6-8 12\"/>",
+ "hospitality": "<path d=\"M8 44V26h30a8 8 0 0 1 8 8v10zM8 44h48M14 26v-6h10v6\"/>",
+ "restaurants": "<path d=\"M18 8v22M14 8v10a4 4 0 0 0 8 0V8M18 30v26M42 8c-4 4-4 18 0 22v26\"/>",
+ "gaming": "<rect x=\"10\" y=\"10\" width=\"30\" height=\"30\" rx=\"4\"/><rect x=\"26\" y=\"26\" width=\"28\" height=\"28\" rx=\"4\"/><circle cx=\"20\" cy=\"20\" r=\"2\"/><circle cx=\"40\" cy=\"40\" r=\"2\"/>",
+ "real-estate": "<path d=\"M10 54V22l22-14 22 14v32zM24 54V36h16v18\"/>",
+ "construction": "<path d=\"M12 54V14l32 10M12 24l32-10M20 54V34h14v20M44 24v30\"/>",
+ "homebuilding": "<path d=\"M8 30 32 10l24 20M14 30v24h36V30M26 54V40h12v14\"/>",
+ "prof-services": "<rect x=\"8\" y=\"20\" width=\"48\" height=\"28\" rx=\"3\"/><path d=\"M24 20v-6h16v6M8 32h48\"/>",
+ "waste": "<path d=\"M14 20h36l-4 34H18zM24 20v-6h16v6M26 30v16m12-16v16\"/>",
+ "crown": "<path d=\"M6 24 32 10l26 14M12 24v22m10-22v22m20-22v22m10-22v22M6 50h52\"/>",
+ "nfp": "<path d=\"M32 52S10 38 10 24a11 11 0 0 1 22-4 11 11 0 0 1 22 4c0 14-22 28-22 28Z\"/>",
+ "education": "<path d=\"M6 24 32 12l26 12-26 12z\"/><path d=\"M18 32v12c0 4 28 4 28 0V32\"/>",
+ "building-products": "<path d=\"M8 20h20v14H8zM36 20h20v14H36zM22 36h20v14H22z\"/>",
+ "packaging": "<path d=\"M10 22 32 12l22 10v22L32 54 10 44z\"/><path d=\"M10 22l22 10 22-10M32 32v22\"/>",
+ "paper": "<path d=\"M32 54c0-14 6-24 16-30-14-2-22 6-24 14-2-10-8-16-18-14 8 8 12 18 12 30\"/>"
+};
 /* line-art motifs, drawn inline so the page stays self-contained */
 const MOTIF = {
  finance:'<path d="M8 46h48M12 46V26m10 20V26m10 20V26m10 20V26m10 20V26M6 26 32 10l26 16"/>',
@@ -651,6 +716,7 @@ const GROUP_MOTIF = {
  'Public and not-for-profit':'public'
 };
 function motifFor(indId){
+  if(IND_MOTIF[indId]) return IND_MOTIF[indId];
   const g = TAXONOMY.find(gr => gr.items.some(i => i.id === indId));
   return MOTIF[GROUP_MOTIF[g && g.group] || 'atlas'];
 }
@@ -660,18 +726,67 @@ function motifSvg(d, cls){
 }
 const TAB_MOTIF = {about:'atlas', ia:'services', icfr:'finance', industry:'public', who:'property', improve:'consumer'};
 
+
+const ART = {
+ finance:['#0E6E63','#C9A052','#1F4E73'], health:['#17806B','#E0765B','#5FA8C9'],
+ tech:['#4C57B8','#2FA89B','#C9A052'], industrial:['#A8641F','#4E7466','#274152'],
+ energy:['#C97D21','#2F8272','#7A4B1F'], transport:['#22617D','#C9A052','#3E7F5F'],
+ consumer:['#A8455E','#C9A052','#3E7F5F'], hospitality:['#B4602F','#6C9270','#CFA75C'],
+ property:['#3D5080','#C9A052','#5E8270'], services:['#5E7F1E','#317070','#C9A052'],
+ public:['#7D3F46','#41707D','#C9A052'], atlas:['#12655A','#C9A052','#317070']
+};
+function artSvg(key, cls, solid){
+  const [a,b,c] = ART[key] || ART.atlas;
+  const u = 'a'+key.replace(/[^a-z]/g,'');
+  return `<svg class="${cls}" viewBox="0 0 420 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="${u}1" cx="34%" cy="28%" r="62%">
+        <stop offset="0" stop-color="${a}" stop-opacity=".95"/><stop offset="1" stop-color="${a}" stop-opacity="0"/></radialGradient>
+      <radialGradient id="${u}2" cx="72%" cy="66%" r="56%">
+        <stop offset="0" stop-color="${b}" stop-opacity=".85"/><stop offset="1" stop-color="${b}" stop-opacity="0"/></radialGradient>
+      <radialGradient id="${u}3" cx="60%" cy="20%" r="48%">
+        <stop offset="0" stop-color="${c}" stop-opacity=".8"/><stop offset="1" stop-color="${c}" stop-opacity="0"/></radialGradient>
+      <linearGradient id="${u}5" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="${a}"/><stop offset=".55" stop-color="${c}"/><stop offset="1" stop-color="${b}"/></linearGradient>
+      <linearGradient id="${u}4" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="${b}" stop-opacity=".55"/><stop offset="1" stop-color="${a}" stop-opacity=".15"/></linearGradient>
+    </defs>
+    ${solid?`<rect width="420" height="300" fill="${a}"/><rect width="420" height="300" fill="url(#${u}5)"/>`:''}
+    <rect width="420" height="300" fill="url(#${u}1)"/>
+    <rect width="420" height="300" fill="url(#${u}2)"/>
+    <rect width="420" height="300" fill="url(#${u}3)"/>
+    <g fill="none" stroke="url(#${u}4)" stroke-width="1.4">
+      ${[0,1,2,3,4,5,6,7].map(i=>`<path d="M${-30+i*22} 310 C ${60+i*30} ${230-i*18}, ${180+i*18} ${190-i*12}, 450 ${60-i*8}"/>`).join('')}
+    </g>
+  </svg>`;
+}
+function artKeyFor(indId){
+  const g = TAXONOMY.find(gr => gr.items.some(i => i.id === indId));
+  return GROUP_MOTIF[g && g.group] || 'atlas';
+}
+
 /* rolling counters on the landing numbers */
 function runCounters(){
   document.querySelectorAll('.roll').forEach(el=>{
-    const to = +el.dataset.to, speed = +el.dataset.speed || 1;
-    const dur = speed === 3 ? 1500 : speed === 2 ? 1900 : 2200;
-    const start = performance.now();
-    if(matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent = to; return; }
+    const to = +el.dataset.to;
+    if(!isFinite(to)) return;
+    const speed = +el.dataset.speed || 1;
+    const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const base = speed === 3 ? 1500 : speed === 2 ? 1900 : 2200;
+    const dur = calm ? Math.round(base * 0.35) : base;
+    /* if frames cannot run — hidden tab, throttled window — show the real number */
+    if(document.hidden || typeof requestAnimationFrame !== 'function'){ el.textContent = to; return; }
+    let done = false;
+    const finish = () => { if(!done){ done = true; el.textContent = to; } };
+    const guard = setTimeout(finish, dur + 500);
+    const t0 = performance.now();
     const step = now => {
-      const t = Math.min(1, (now - start) / dur);
+      if(done) return;
+      const t = Math.min(1, (now - t0) / dur);
       const eased = 1 - Math.pow(1 - t, 3);
       el.textContent = Math.max(1, Math.round(to * eased));
-      if(t < 1) requestAnimationFrame(step); else el.textContent = to;
+      if(t < 1) requestAnimationFrame(step);
+      else { clearTimeout(guard); finish(); }
     };
     requestAnimationFrame(step);
   });
@@ -745,6 +860,7 @@ function viewAbout(){
      'When every key control has been tested and the evidence is on file.']];
   return `
   <section class="hero">
+    ${artSvg('atlas','heroart')}
     <div class="hero-in">
       <span class="eyebrow">Internal audit · ICFR · risk and control</span>
       <h2>Every risk worth reviewing, in <em>one place</em>.</h2>
@@ -752,7 +868,7 @@ function viewAbout(){
       Choose your industry, then choose whether you are doing an internal audit or ICFR work.
       Written to be useful on your first audit as well as your fiftieth.</p>
       <div class="herostats">
-        ${hs.map(([k,v,sp])=>`<div><span class="v roll" data-to="${v}" data-speed="${sp}">0</span>
+        ${hs.map(([k,v,sp])=>`<div><span class="v roll" data-to="${v}" data-speed="${sp}">1</span>
           <span class="k">${k}</span></div>`).join('')}
       </div>
     </div>
@@ -899,12 +1015,14 @@ function viewAbout(){
 
 /* ---------------- shared: industry picker ---------------- */
 function pageHead(eyebrow, title, sub){
+  const key = (S.ind && S.tab!=='about') ? artKeyFor(S.ind) : (TAB_MOTIF[S.tab] || 'atlas');
   return `<section class="pagehead">
+    ${artSvg(key,'headart')}
     <div class="pagehead-in">
       <span class="eyebrow">${eyebrow}</span>
       <h2>${title}</h2>
       ${sub?`<p>${sub}</p>`:''}
-      ${motifSvg(MOTIF[TAB_MOTIF[S.tab]] || MOTIF.atlas, 'headmotif')}
+      ${motifSvg((S.ind && S.tab!=='about') ? motifFor(S.ind) : (MOTIF[TAB_MOTIF[S.tab]] || MOTIF.atlas), 'headmotif')}
     </div>
   </section>`;
 }
@@ -975,10 +1093,11 @@ function industryProfile(sel){
                   : S.tab==='icfr' ? new Set(ic.map(d=>d.process)).size
                   : new Set(all.map(d=>d.process)).size;
   return `<article class="profile">
+    <div class="profileart">${artSvg(artKeyFor(sel),'pbanner',true)}
+      ${motifSvg(motifFor(sel),'pbannericon')}</div>
     <header class="profile-h">
       <div><span class="eyebrow">Industry profile</span><h3>${indName(sel)}</h3></div>
       ${own.length ? `<span class="pill p-key">${ownProcs.length} industry-specific processes</span>` : ''}
-      ${motifSvg(motifFor(sel), 'profilemotif')}
     </header>
     <p class="profile-sum">${prof ? prof.summary : sel==='all'
       ? 'Every risk and control in the database, every industry, in one list. Use this to search everything at once.'
