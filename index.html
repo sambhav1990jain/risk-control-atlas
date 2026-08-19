@@ -123,6 +123,87 @@ button.card:hover{border-color:var(--accent);transform:translateY(-2px);box-shad
   border-left:2px solid var(--accent-2);padding:2px 0 2px 12px}
 .plain b{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
   color:var(--accent);display:block;margin-bottom:3px;font-weight:400}
+
+/* tabs */
+nav.tabs{display:flex;gap:2px;max-width:1320px;margin:0 auto;padding:0 16px;overflow-x:auto;
+  scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs button{padding:10px 14px;font-size:13.5px;color:var(--muted);white-space:nowrap;
+  border-bottom:2px solid transparent;margin-bottom:-1px}
+nav.tabs button:hover{color:var(--ink)}
+nav.tabs button.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+.crumbs-bar{border-top:1px solid var(--line);background:var(--surface-2)}
+.crumbs-bar .crumbs{max-width:1320px;margin:0 auto;padding:7px 24px;font-size:12.5px}
+.cbtab{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+header.mast{padding-bottom:0}
+.mast-in{padding-bottom:10px}
+
+/* about tab */
+.prose{max-width:70ch;display:flex;flex-direction:column;gap:14px}
+.prose p{margin:0;font-size:15px;line-height:1.68;color:var(--ink-2)}
+table.cmp{min-width:640px}
+table.cmp thead th{font-size:11px}
+table.cmp td{font-size:13.5px;line-height:1.55;vertical-align:top}
+table.cmp td.cmpk{font-weight:600;color:var(--ink);white-space:nowrap;width:150px}
+.whofor{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:22px}
+.whofor h4{font-size:16px;margin-bottom:6px}
+.whofor p{margin:0;font-size:13.5px;line-height:1.58;color:var(--ink-2)}
+
+/* process picker */
+.allproc{display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;
+  background:var(--surface);border:1px solid var(--line-2);border-radius:8px;padding:16px 20px;
+  margin-bottom:16px;text-align:left}
+.allproc:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.allproc b{font-size:16px;font-family:var(--serif);display:block}
+.allproc small{font-size:13px;color:var(--muted);display:block;margin-top:2px}
+.allproc .pc{font-family:var(--mono);font-size:12px;color:var(--accent);white-space:nowrap}
+.procgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(262px,1fr));gap:12px}
+.proccard{display:flex;flex-direction:column;gap:5px;background:var(--surface);border:1px solid var(--line);
+  border-radius:8px;padding:15px 17px;text-align:left;transition:border-color .15s,transform .15s}
+.proccard:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow)}
+.proccard .pn{font-family:var(--serif);font-size:16px;line-height:1.3}
+.proccard .pd{font-size:12px;color:var(--muted);line-height:1.45}
+.proccard .pc{font-family:var(--mono);font-size:11.5px;color:var(--accent);margin-top:3px}
+
+/* who we are */
+.whogrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+.whocard{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px;
+  display:flex;flex-direction:column;gap:12px;position:sticky;top:150px}
+.whocard h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.facts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.facts li{display:flex;flex-direction:column;gap:1px;font-size:13.5px}
+.facts b{font-size:11px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;
+  color:var(--accent);font-weight:400}
+.facts span{color:var(--ink-2);line-height:1.45}
+.inlinelink{color:var(--accent);text-decoration:underline;text-underline-offset:2px;padding:0;font-size:inherit}
+
+/* feedback form */
+.formwrap{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:36px;align-items:start}
+.fbform{display:flex;flex-direction:column;gap:15px;background:var(--surface);border:1px solid var(--line);
+  border-radius:9px;padding:24px}
+.fbform label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ink-2);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.fbform input[type=text],.fbform input[type=email],.fbform select,.fbform textarea{
+  font-family:var(--sans);font-size:14.5px;letter-spacing:normal;text-transform:none;color:var(--ink);
+  background:var(--paper);border:1px solid var(--line-2);border-radius:6px;padding:9px 11px;width:100%}
+.fbform textarea{resize:vertical;line-height:1.55}
+.fbform input:focus,.fbform select:focus,.fbform textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.fcheck{flex-direction:row!important;align-items:center;gap:9px!important;text-transform:none!important;
+  letter-spacing:normal!important;font-family:var(--sans)!important;font-size:13.5px!important;color:var(--ink-2)}
+.fcheck input{width:auto}
+.fsubmit{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.fsubmit .go{margin:0}
+.fstatus{font-size:13px;color:var(--muted);line-height:1.45}
+.fstatus.ok{color:var(--lo)} .fstatus.warn{color:var(--hi)}
+.formaside{background:var(--surface-2);border:1px solid var(--line);border-radius:9px;padding:20px;
+  display:flex;flex-direction:column;gap:10px}
+.formaside h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:900px){
+  .whogrid,.formwrap{grid-template-columns:1fr}
+  .whocard{position:static}
+  .frow{grid-template-columns:1fr}
+}
 /* ---- workspace ---- */
 .work{display:grid;grid-template-columns:250px minmax(0,1fr);gap:26px;padding:26px 0 80px;align-items:start}
 .side{position:sticky;top:66px;display:flex;flex-direction:column;gap:20px}
@@ -351,13 +432,14 @@ table.cov td.zero .b{color:var(--muted);opacity:.45}
 
 <header class="mast">
   <div class="mast-in">
-    <div class="brand" onclick="go('industry')">
-      <h1>Risk &amp; Control Atlas</h1><span class="mk">v0.8</span>
+    <div class="brand" onclick="goTab('about')">
+      <h1>Risk &amp; Control Atlas</h1><span class="mk">v2</span>
     </div>
-    <div class="crumbs" id="crumbs"></div>
     <div class="mast-sp"></div>
-    <button class="ghost" onclick="document.getElementById('sheet').classList.add('open')">Method &amp; sources</button>
+    <button class="ghost" onclick="document.getElementById('sheet').classList.add('open')">Method &amp; glossary</button>
   </div>
+  <nav class="tabs" id="tabs"></nav>
+  <div class="crumbs-bar"><div class="crumbs" id="crumbs"></div></div>
 </header>
 
 <main id="app"></main>
@@ -474,7 +556,8 @@ const LENSES = {
     'Preventive or detective, nature, frequency, control owner',
     'Test of design and operating effectiveness with sample guidance']}
 };
-const S = {stage:'industry', ind:null, pick:null, lens:null, proc:null, sub:null, q:'', f:{}, view:'list', open:null};
+const S = {tab:'about', ind:null, pickTmp:null, lens:null, proc:null, sub:null, procChosen:false,
+  q:'', f:{}, view:'list', open:null};
 const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const rateCls = r => ({High:'p-high',Medium:'p-med',Low:'p-low'}[r]||'p-flat');
 
@@ -483,6 +566,7 @@ function pool(ind, lens){
   return DATA.filter(d => d.lens.includes(lens) && !skip.includes(d.process) &&
     (ind === 'all' || d.industry.includes(ind) || d.industry.includes('cross')));
 }
+const poolFor = pool;
 function counts(ind){
   return {ia:pool(ind,'ia').length, icfr:pool(ind,'icfr').length};
 }
@@ -500,31 +584,77 @@ function filtered(){
   }
   return r;
 }
-function go(stage, patch){ Object.assign(S, patch||{}, {stage}); render(); window.scrollTo({top:0}); }
+function go(_stage, patch){ Object.assign(S, patch||{}); render(); window.scrollTo({top:0}); }
 
 function crumbs(){
   const el = document.getElementById('crumbs');
-  if(S.stage==='industry'){ el.innerHTML=''; return; }
-  const ind = {name: indName(S.ind)};
-  let h = `<button onclick="go('industry',{ind:null,lens:null,proc:null,sub:null})">Industry</button><span>/</span><span>${indName(S.ind)}</span>`;
-  if(S.stage==='work') h += `<span>/</span><button onclick="go('lens',{lens:null,proc:null,sub:null})">Lens</button><span>/</span><span>${LENSES[S.lens].name}</span>`;
+  const bar = el.parentElement;
+  if(['about','who','improve'].includes(S.tab) || !S.ind){ bar.style.display='none'; el.innerHTML=''; return; }
+  bar.style.display='';
+  const tabName = (TABS.find(t=>t[0]===S.tab)||['',''])[1];
+  let h = `<span class="cbtab">${tabName}</span><span>/</span>`;
+  h += `<button onclick="S.ind=null;S.pickTmp=null;S.proc=null;S.procChosen=false;${S.tab==='industry'?'S.lens=null;':''}render()">Industry</button>`;
+  h += `<span>/</span><span>${indName(S.ind)}</span>`;
+  if(S.procChosen){
+    h += `<span>/</span><button onclick="S.proc=null;S.sub=null;S.procChosen=false;${S.tab==='industry'?'S.lens=null;':''}render()">Process</button>`;
+    h += `<span>/</span><span>${S.proc||'All processes'}</span>`;
+  }
+  if(S.tab==='industry' && S.lens){
+    h += `<span>/</span><button onclick="S.lens=null;render()">Lens</button>`;
+    h += `<span>/</span><span>${LENSES[S.lens].name}</span>`;
+  }
   el.innerHTML = h;
 }
 
-function viewIndustry(){
-  const sel = S.pick || '';
-  const c = sel ? counts(sel) : null;
-  const own = sel && sel !== 'cross' ? DATA.filter(d => d.industry.includes(sel)) : null;
+const TABS = [
+  ['about','What this is'],
+  ['ia','Internal audit'],
+  ['icfr','ICFR'],
+  ['industry','Choose your industry'],
+  ['who','Who we are'],
+  ['improve','Improve us']
+];
+const FORMSPREE = '';   /* set to the Formspree form id once Sam has one */
+
+function goTab(t){
+  S.tab = t;
+  S.ind = null; S.lens = (t==='ia'||t==='icfr') ? t : null;
+  S.proc = null; S.sub = null; S.procChosen = false; S.q=''; S.f={}; S.view='list'; S.open=null;
+  render(); window.scrollTo({top:0});
+}
+function stageNow(){
+  if(['about','who','improve'].includes(S.tab)) return S.tab;
+  if(!S.ind) return 'pick-industry';
+  if(!S.procChosen) return 'pick-process';
+  if(S.tab==='industry' && !S.lens) return 'pick-lens';
+  return 'work';
+}
+function tabsBar(){
+  document.getElementById('tabs').innerHTML = TABS.map(([id,label])=>
+    `<button class="${S.tab===id?'on':''}" onclick="goTab('${id}')">${label}</button>`).join('');
+}
+
+/* ---------------- tab 1 — what this is ---------------- */
+function viewAbout(){
   const tot = {icfr:DATA.filter(d=>d.lens.includes('icfr')).length, ia:DATA.filter(d=>d.lens.includes('ia')).length};
-  const hs = [['Industries',FLAT.length-1],
-              ['Processes',new Set(DATA.map(d=>d.process)).size],
-              ['Risks and controls',tot.icfr],
-              ['Audit programmes',tot.ia],
-              ['Test procedures',DATA.reduce((a,d)=>a+(d.procedures?d.procedures.length:(d.test_design?1:0)+(d.test_oe?1:0)),0)]];
+  const hs = [['Industries',FLAT.length-1],['Processes',new Set(DATA.map(d=>d.process)).size],
+    ['Risks and controls',tot.icfr],['Audit programmes',tot.ia],
+    ['Test procedures',DATA.reduce((a,d)=>a+(d.procedures?d.procedures.length:(d.test_design?1:0)+(d.test_oe?1:0)),0)]];
+  const rows = [
+    ['What it is for','Checking that the business is actually run the way management believes it is.',
+     'Proving that the published financial numbers can be trusted.'],
+    ['What it covers','Anything that can hurt the organisation — operations, safety, fraud, technology, compliance, culture.',
+     'Only what affects the financial statements.'],
+    ['Who asks for it','The audit committee and the board. Internal audit reports to them, not to management.',
+     'Management, because the law or the listing rules require it. External auditors then test it.'],
+    ['What you produce','A report saying what you found and what needs fixing.',
+     'A matrix of risks and controls, plus evidence that each control worked all year.'],
+    ['When it is done','When you have looked hard enough to form a view.',
+     'When every key control has been tested and the evidence is on file.']];
   return `
   <section class="hero">
     <div class="hero-in">
-      <span class="eyebrow">Internal audit \u00b7 ICFR \u00b7 risk and control</span>
+      <span class="eyebrow">Internal audit · ICFR · risk and control</span>
       <h2>Every risk worth reviewing, in <em>one place</em>.</h2>
       <p class="sub">A plain list of what can go wrong in a business, and the checks that catch it.
       Choose your industry, then choose whether you are doing an internal audit or ICFR work.
@@ -532,8 +662,8 @@ function viewIndustry(){
       <div class="byline"><span>Built by Sambhav Jain, CA</span><span class="dot"></span>
         <span>Financial compliance and governance</span></div>
       <div class="cta">
-        <a href="#start">Start with your industry</a>
-        <a class="alt" href="#lenses">See what is inside</a>
+        <a href="#" onclick="goTab('ia');return false;">Start an internal audit</a>
+        <a class="alt" href="#" onclick="goTab('icfr');return false;">Start ICFR work</a>
       </div>
       <div class="herostats">
         ${hs.map(([k,v])=>`<div><span class="v">${v}</span><span class="k">${k}</span></div>`).join('')}
@@ -544,159 +674,390 @@ function viewIndustry(){
   <div class="wrap">
     <section class="band">
       <div class="band-h">
-        <span class="eyebrow">How it works</span>
-        <h3>Three choices, and you are looking at the right risks.</h3>
-        <p>The same risk is shown differently depending on the job you are doing. And the risks
-        themselves change with the industry \u2014 a bank and a hotel do not worry about the same
-        things.</p>
-      </div>
-      <div class="steps3">
-        <div class="step"><span class="num">01</span><h4>Choose the industry</h4>
-          <p>Fifty-three to choose from. You get the processes that sector really runs, plus the
-          ones every business runs \u2014 paying suppliers, paying staff, closing the books, IT.</p></div>
-        <div class="step"><span class="num">02</span><h4>Choose the lens</h4>
-          <p>Internal audit tells you what to go and look at. ICFR gives you the risk and control
-          table, with the tests to prove each control works.</p></div>
-        <div class="step"><span class="num">03</span><h4>Work the process</h4>
-          <p>Browse by process, search for anything, filter to the high risks, then download it to
-          Excel or PDF and take it into the job.</p></div>
-      </div>
-    </section>
-
-    <section class="band" id="start">
-      <div class="band-h">
         <span class="eyebrow">Start here</span>
-        <h3>Which industry are you working in?</h3>
-        <p>A risk register is only useful when it reflects how the business actually earns and
-        spends money.</p>
+        <h3>What internal audit is</h3>
       </div>
-      <div class="picker">
-        <label class="fieldlabel" for="ind">Industry</label>
-        <select id="ind" class="select" onchange="S.pick=this.value;render();location.hash='#start'">
-          <option value="">Select an industry\u2026</option>
-          ${TAXONOMY.map(g=>`<optgroup label="${g.group}">${g.items.map(i=>
-            `<option value="${i.id}"${sel===i.id?' selected':''}>${i.name}</option>`).join('')}</optgroup>`).join('')}
-          <optgroup label="Everything">
-            <option value="all"${sel==='all'?' selected':''}>All industries \u2014 complete repository</option>
-          </optgroup>
-        </select>
-        ${!sel ? `<p class="hint">Fifty-three sectors, mapped to the Global Industry Classification
-          Standard and cross-checked against the S&amp;P 500 and Fortune 500. Each covers the
-          processes specific to that industry alongside the finance, people, technology and
-          governance processes common to all of them.</p>` : ''}
+      <div class="prose">
+        <p>Internal audit is a team inside the organisation whose job is to check whether things
+        really work the way management thinks they do. They are employees, but they report to the
+        audit committee of the board rather than to the managers whose areas they review — that
+        independence is the whole point of the function.</p>
+        <p>The scope is wide. An internal auditor might spend one month on whether fuel is being
+        stolen from a truck fleet, the next on whether the company can recover if its systems go
+        down, and the one after that on whether people feel safe raising concerns. Anything that
+        could damage the organisation is fair game, whether or not it ever touches the accounts.</p>
+        <p>The work follows a shape: understand the process, work out what could go wrong, check
+        whether anything is stopping that, test whether it actually worked, and report what you
+        found to people senior enough to act on it.</p>
       </div>
-      ${sel ? (()=>{
-        const prof = PROFILES[sel];
-        const ic = pool(sel,'icfr'), iaa = pool(sel,'ia'), all = ic.concat(iaa);
-        const own = sel!=='all' ? DATA.filter(d=>d.industry.includes(sel)) : [];
-        const ownProcs = [...new Set(own.map(d=>d.process))].sort();
-        const hi = a => a.filter(d=>d.rating==='High').length;
-        const fr = a => a.filter(d=>d.fraud==='Yes'||d.risk_category==='Fraud').length;
-        const groups = [
-          ['Internal audit', [['Audit programmes', iaa.length], ['High risk', hi(iaa)],
-                              ['Fraud related', fr(iaa)]]],
-          ['ICFR', [['Risks and controls', ic.length], ['Key controls', ic.filter(d=>d.key_control==='Yes').length],
-                    ['High risk', hi(ic)], ['Fraud relevant', fr(ic)]]]];
-        return `<article class="profile">
-          <header class="profile-h">
-            <div>
-              <span class="eyebrow">Industry profile</span>
-              <h3>${indName(sel)}</h3>
-            </div>
-            ${own.length ? `<span class="pill p-key">${ownProcs.length} sector-specific processes</span>` : ''}
-          </header>
-          <p class="profile-sum">${prof ? prof.summary : sel==='all'
-            ? 'Every risk and control in the atlas, across every sector, in one list. Use this to search the whole database at once.'
-            : 'Sector-specific content for this industry is being written. What is shown today is the full set of finance, people, technology and governance processes that every organisation runs \u2014 which is the majority of any audit universe.'}</p>
-          <div class="lensblocks">
-            <div class="lensblock"><span class="lbh">Across both lenses</span>
-              <div class="statbar"><div class="stat"><div class="k">Processes</div>
-                <div class="v">${new Set(all.map(d=>d.process)).size}</div></div></div></div>
-            ${groups.map(([name,rows])=>`<div class="lensblock">
-              <span class="lbh">${name}</span>
-              <div class="statbar">${rows.map(([k,v])=>
-                `<div class="stat"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('')}</div>
-            </div>`).join('')}
-          </div>
-          ${prof ? `<div class="profile-cols">
-            <div><h5>What usually goes wrong here</h5>
-              <ul class="ticks">${prof.hallmarks.map(h=>`<li>${h}</li>`).join('')}</ul></div>
-            <div><h5>Rules and standards that apply</h5>
-              <p class="profile-reg">${prof.regulatory}</p>
-              ${ownProcs.length ? `<h5 style="margin-top:16px">Sector-specific processes</h5>
-                <div class="chiprow">${ownProcs.map(x=>`<span class="chip">${x}</span>`).join('')}</div>` : ''}
-            </div>
-          </div>` : ''}
-          <button class="go" onclick="go('lens',{ind:'${sel}'})">Choose the lens</button>
-        </article>`})() : ''}
     </section>
 
-    <section class="band" id="lenses" style="border-bottom:none">
+    <section class="band">
       <div class="band-h">
-        <span class="eyebrow">The two lenses</span>
-        <h3>What you get for every risk.</h3>
+        <span class="eyebrow">The other side</span>
+        <h3>What ICFR is</h3>
       </div>
-      <div class="lenses2">
-        <div class="lensbox"><span class="sub">Audit programme view</span><h4>Internal audit</h4>
-          <p>For when you have been told to audit something and need to know where to start. Covers
-          anything that can hurt the business \u2014 not only the things that show up in the accounts.</p>
-          <div class="fieldgrid">${['Audit objective','What to review','Field procedures','Red flags','Evidence to request','Measures','Linked controls'].map(x=>`<span>${x}</span>`).join('')}</div>
-        </div>
-        <div class="lensbox"><span class="sub">Risk\u2013control matrix</span><h4>ICFR</h4>
-          <p>For when you have to show that the numbers in the accounts can be trusted. Each risk is
-          paired with the control that manages it, and the test that proves it works.</p>
-          <div class="fieldgrid">${['Control objective','Control description','Preventive / detective','Nature','Frequency','Assertions','COSO component','Key control','Fraud relevant','Owner','Segregation of duties','Test of design','Test of operating effectiveness','Population','Sample size'].map(x=>`<span>${x}</span>`).join('')}</div>
-        </div>
+      <div class="prose">
+        <p>ICFR stands for internal control over financial reporting. It is the set of controls that
+        make the published financial statements trustworthy — the checks that mean revenue is real,
+        costs are complete, and the balance sheet reflects what the company actually owns and owes.</p>
+        <p>Unlike internal audit, ICFR is usually a legal requirement rather than a choice. In the
+        United States it comes from the Sarbanes-Oxley Act; Canada has its own certification
+        requirements, and most major markets have an equivalent. Management has to say the controls
+        work, and for larger companies the external auditor has to test that claim independently.</p>
+        <p>The output is a matrix: for each risk to the financial statements, the control that
+        manages it, who owns it, how often it runs, and the testing that proves it operated all year.
+        It is narrower than internal audit, and considerably more prescriptive about evidence.</p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="band-h">
+        <span class="eyebrow">Side by side</span>
+        <h3>How the two differ</h3>
+        <p>People new to the profession often use the terms interchangeably. They are related, but
+        they answer different questions and are judged by different standards.</p>
+      </div>
+      <div class="tablewrap"><table class="cmp">
+        <thead><tr><th></th><th>Internal audit</th><th>ICFR</th></tr></thead>
+        <tbody>${rows.map(([k,a,b])=>`<tr><td class="cmpk">${k}</td><td>${a}</td><td>${b}</td></tr>`).join('')}</tbody>
+      </table></div>
+      <p class="prose" style="margin-top:18px">The overlap is real: an internal auditor reviewing
+      procure to pay looks at many of the same controls an ICFR tester does. The difference is the
+      question being asked. The auditor wants to know whether the process is well run. The ICFR
+      tester wants to know whether the numbers coming out of it can be relied on.</p>
+    </section>
+
+    <section class="band">
+      <div class="band-h">
+        <span class="eyebrow">Why the sector matters</span>
+        <h3>The same process, a different business</h3>
+      </div>
+      <div class="prose">
+        <p>Every organisation pays suppliers, pays staff, closes its books and depends on technology.
+        Those processes carry broadly the same risks everywhere, and they make up the majority of any
+        audit universe.</p>
+        <p>But the part that makes an audit useful is the part that is specific to the business. A
+        bank worries about loans that will not be repaid. An airline worries about maintenance records
+        that will not satisfy a regulator. A hotel worries about drink leaving the bottle without a
+        sale. A generic checklist misses all three.</p>
+        <p>That is why this database is organised by industry first. Choose a sector and you get the
+        processes it genuinely runs, alongside the ones every business runs.</p>
+      </div>
+    </section>
+
+    <section class="band" style="border-bottom:none">
+      <div class="band-h">
+        <span class="eyebrow">Who it is for</span>
+        <h3>What this site is</h3>
+      </div>
+      <div class="whofor">
+        <div><h4>If you are new to the work</h4>
+          <p>Start with a process you have been asked to audit. Each risk carries a plain sentence
+          explaining why it matters before the technical detail begins, so you can follow what you
+          are reading and explain it to someone else.</p></div>
+        <div><h4>If you are planning an engagement</h4>
+          <p>Use it as a completeness check. Pick your industry and process and see the full set of
+          review areas, so nothing obvious is missed in the planning memo.</p></div>
+        <div><h4>If you own controls</h4>
+          <p>The ICFR lens gives you the matrix in the form an external auditor expects, with test
+          steps, populations and sample guidance. Export it to Excel and work from there.</p></div>
+        <div><h4>If you are studying</h4>
+          <p>The structure follows how the profession actually organises this work, so it doubles as
+          revision for risk and control content in professional exams.</p></div>
+      </div>
+      <div class="cta" style="margin-top:26px">
+        <a href="#" onclick="goTab('industry');return false;">Choose your industry</a>
       </div>
     </section>
   </div>
-
-  <footer class="site"><div class="foot-in">
-    <p><b>Risk &amp; Control Atlas</b> \u2014 written from professional practice. It is not reproduced
-    from any proprietary course, employer material or client engagement. Frameworks referenced:
-    COSO (2013), the IIA Global Internal Audit Standards (2024), and IFRS 15 / ASC 606 where
-    revenue recognition is in scope.</p>
-    <p>Built by <b>Sambhav Jain, CA</b><br>Feedback welcome \u2014 this is version 0.8 and growing.</p>
-  </div></footer>`;
+  ${footerHtml()}`;
 }
 
-function viewLens(){
-  const c = counts(S.ind), ind = {name: indName(S.ind)};
-  const blurb = {
-    ia:'What to look at, and how, when you are auditing this area.',
-    icfr:'Each risk paired with the control that manages it, and how to test that control.'};
-  const unit = {ia:'audit programmes', icfr:'risks and controls'};
+/* ---------------- shared: industry picker ---------------- */
+function pickIndustry(){
+  const sel = S.pickTmp || '';
+  const lensLabel = S.tab==='ia' ? 'internal audit' : S.tab==='icfr' ? 'ICFR' : '';
   return `<div class="wrap stage">
     <div class="lede">
-      <span class="eyebrow">Step two \u2014 ${ind.name}</span>
+      <span class="eyebrow">Step one${lensLabel?' — '+lensLabel:''}</span>
+      <h2>Which industry are you working in?</h2>
+      <p>Fifty-three sectors to choose from. You get the processes that sector really runs, plus the
+      ones every business runs — paying suppliers, paying staff, closing the books, technology.</p>
+    </div>
+    <div class="picker">
+      <label class="fieldlabel" for="ind">Industry</label>
+      <select id="ind" class="select" onchange="S.pickTmp=this.value;render()">
+        <option value="">Select an industry…</option>
+        ${TAXONOMY.map(g=>`<optgroup label="${g.group}">${g.items.map(i=>
+          `<option value="${i.id}"${sel===i.id?' selected':''}>${i.name}</option>`).join('')}</optgroup>`).join('')}
+        <optgroup label="Everything">
+          <option value="all"${sel==='all'?' selected':''}>All industries — complete repository</option>
+        </optgroup>
+      </select>
+    </div>
+    ${sel ? industryProfile(sel) : ''}
+  </div>`;
+}
+
+function industryProfile(sel){
+  const prof = PROFILES[sel];
+  const ic = poolFor(sel,'icfr'), iaa = poolFor(sel,'ia'), all = ic.concat(iaa);
+  const own = sel!=='all' ? DATA.filter(d=>d.industry.includes(sel)) : [];
+  const ownProcs = [...new Set(own.map(d=>d.process))].sort();
+  const hi = a => a.filter(d=>d.rating==='High').length;
+  const fr = a => a.filter(d=>d.fraud==='Yes'||d.risk_category==='Fraud').length;
+  const groups = [['Internal audit', [['Audit programmes', iaa.length],['High risk', hi(iaa)],['Fraud related', fr(iaa)]]],
+                  ['ICFR', [['Risks and controls', ic.length],['Key controls', ic.filter(d=>d.key_control==='Yes').length],
+                            ['High risk', hi(ic)],['Fraud relevant', fr(ic)]]]];
+  return `<article class="profile">
+    <header class="profile-h">
+      <div><span class="eyebrow">Industry profile</span><h3>${indName(sel)}</h3></div>
+      ${own.length ? `<span class="pill p-key">${ownProcs.length} sector-specific processes</span>` : ''}
+    </header>
+    <p class="profile-sum">${prof ? prof.summary : sel==='all'
+      ? 'Every risk and control in the atlas, across every sector, in one list. Use this to search the whole database at once.'
+      : 'Sector-specific content for this industry is being written. What is shown today is the full set of finance, people, technology and governance processes that every organisation runs — which is the majority of any audit universe.'}</p>
+    <div class="lensblocks">
+      <div class="lensblock"><span class="lbh">Across both lenses</span>
+        <div class="statbar"><div class="stat"><div class="k">Processes</div>
+          <div class="v">${new Set(all.map(d=>d.process)).size}</div></div></div></div>
+      ${groups.map(([name,rws])=>`<div class="lensblock"><span class="lbh">${name}</span>
+        <div class="statbar">${rws.map(([k,v])=>
+          `<div class="stat"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('')}</div></div>`).join('')}
+    </div>
+    ${prof ? `<div class="profile-cols">
+      <div><h5>What usually goes wrong here</h5>
+        <ul class="ticks">${prof.hallmarks.map(h=>`<li>${h}</li>`).join('')}</ul></div>
+      <div><h5>Rules and standards that apply</h5>
+        <p class="profile-reg">${prof.regulatory}</p>
+        ${ownProcs.length ? `<h5 style="margin-top:16px">Sector-specific processes</h5>
+          <div class="chiprow">${ownProcs.map(x=>`<span class="chip">${x}</span>`).join('')}</div>` : ''}
+      </div></div>` : ''}
+    <button class="go" onclick="S.ind='${sel}';S.pickTmp=null;render();window.scrollTo({top:0})">
+      Continue to processes</button>
+  </article>`;
+}
+
+/* ---------------- shared: process picker ---------------- */
+function pickProcess(){
+  const lensesHere = S.lens ? [S.lens] : ['ia','icfr'];
+  const rows = lensesHere.flatMap(l=>poolFor(S.ind,l));
+  const procs = [...new Set(rows.map(d=>d.process))].sort();
+  const lensLabel = S.lens==='ia' ? 'Internal audit' : S.lens==='icfr' ? 'ICFR' : '';
+  const unit = S.lens==='ia' ? 'audit programmes' : S.lens==='icfr' ? 'risks and controls' : 'entries';
+  return `<div class="wrap stage">
+    <div class="lede">
+      <span class="eyebrow">Step two — ${indName(S.ind)}${lensLabel?' · '+lensLabel:''}</span>
+      <h2>Which process are you looking at?</h2>
+      <p>Take all of them for the full picture, or one process if you already know what you have been
+      asked to review. You can change this at any point once you are inside.</p>
+    </div>
+    <button class="allproc" onclick="S.proc=null;S.procChosen=true;render();window.scrollTo({top:0})">
+      <span><b>All processes</b><small>The complete ${lensLabel?lensLabel.toLowerCase()+' ':''}universe for this industry</small></span>
+      <span class="pc">${rows.length} ${unit}</span>
+    </button>
+    <div class="procgrid">
+      ${procs.map(pr=>{
+        const n = rows.filter(d=>d.process===pr).length;
+        const subs = [...new Set(rows.filter(d=>d.process===pr).map(d=>d.subprocess))].filter(Boolean);
+        return `<button class="proccard" onclick="S.proc='${esc(pr)}';S.procChosen=true;render();window.scrollTo({top:0})">
+          <span class="pn">${pr}</span>
+          <span class="pd">${subs.slice(0,3).join(' · ')}${subs.length>3?' · …':''}</span>
+          <span class="pc">${n} ${unit}</span>
+        </button>`}).join('')}
+    </div>
+  </div>`;
+}
+
+/* ---------------- shared: lens picker (tab 4 only) ---------------- */
+function pickLens(){
+  const blurb = {ia:'What to look at, and how, when you are auditing this area.',
+                 icfr:'Each risk paired with the control that manages it, and how to test that control.'};
+  const unit = {ia:'audit programmes', icfr:'risks and controls'};
+  const scope = S.proc ? `${S.proc} · ${indName(S.ind)}` : indName(S.ind);
+  return `<div class="wrap stage">
+    <div class="lede">
+      <span class="eyebrow">Step three — ${scope}</span>
       <h2>What are you here to do?</h2>
       <p>Pick internal audit if you are reviewing how something works. Pick ICFR if you are proving
-      the financial numbers can be trusted. Both lists below show every process and how much sits
-      inside it, so you know the size of the job before you begin.</p>
+      the financial numbers can be trusted.</p>
     </div>
     <div class="grid-lens">
       ${Object.entries(LENSES).map(([k,l])=>{
-        const rows = pool(S.ind,k);
-        const procs = [...new Set(rows.map(d=>d.process))].sort();
-        const total = rows.length;
+        let rws = poolFor(S.ind,k);
+        if(S.proc) rws = rws.filter(d=>d.process===S.proc);
+        const procs = [...new Set(rws.map(d=>d.process))].sort();
         return `<section class="card lens-card">
-          <button class="lens-open" onclick="go('work',{lens:'${k}'})">
-            <span class="sub">${l.sub}</span>
-            <h3>${l.name}</h3>
+          <button class="lens-open" onclick="S.lens='${k}';render();window.scrollTo({top:0})">
+            <span class="sub">${l.sub}</span><h3>${l.name}</h3>
             <p class="lens-blurb">${blurb[k]}</p>
           </button>
           <div class="proclist">
-            ${procs.map(pr=>{
-              const n = rows.filter(d=>d.process===pr).length;
-              return `<button onclick="go('work',{lens:'${k}',proc:'${esc(pr)}',sub:null})">
+            ${procs.map(pr=>{const n=rws.filter(d=>d.process===pr).length;
+              return `<button onclick="S.lens='${k}';S.proc='${esc(pr)}';render();window.scrollTo({top:0})">
                 <span class="pn">${pr}</span><span class="pc">${n}</span></button>`}).join('')}
           </div>
-          <div class="proctotal"><span>${procs.length} processes</span>
-            <span>${total} ${unit[k]}</span></div>
-          <button class="go" onclick="go('work',{lens:'${k}'})">Open ${l.name}</button>
+          <div class="proctotal"><span>${procs.length} process${procs.length===1?'':'es'}</span>
+            <span>${rws.length} ${unit[k]}</span></div>
+          <button class="go" onclick="S.lens='${k}';render();window.scrollTo({top:0})">Open ${l.name}</button>
         </section>`}).join('')}
     </div>
   </div>`;
+}
+
+/* ---------------- tab 5 — who we are ---------------- */
+function viewWho(){
+  return `<div class="wrap stage">
+    <div class="lede">
+      <span class="eyebrow">Who we are</span>
+      <h2>Built by someone who does this work.</h2>
+    </div>
+    <div class="whogrid">
+      <div class="prose">
+        <p>My name is Sambhav Jain. I am a Chartered Accountant, qualified with the Institute of
+        Chartered Accountants of India in 2014, and I have spent my career in internal audit and
+        financial controls.</p>
+        <p>I started in internal audit at PwC in India, moved to Celebi Aviation to work in-house,
+        and came to Canada in 2020. After around eighteen months in internal audit at Purolator I
+        moved into financial compliance and governance, where I now lead internal control over
+        financial reporting and controls testing.</p>
+        <p>Across those roles the same thing kept happening. Every time I picked up a new process
+        or a new industry, I started from a blank page. The knowledge existed — in people's heads,
+        in old working papers, in files nobody could find — but there was no single place to look
+        up what usually goes wrong in a process and what good control over it looks like. Junior
+        auditors felt this hardest. They were asked to audit something they had never seen, and the
+        honest answer to "where do I start" was usually "ask someone who has done it before".</p>
+        <p>This atlas is the resource I wanted. It is organised the way the work is actually
+        organised — by industry, then by process, then by whether you are auditing or proving the
+        numbers — and every risk is written so that someone in their first year can understand it
+        and explain it to somebody else.</p>
+        <p>It is a work in progress and will be for a long time. New processes and industries are
+        added regularly, and everything published here is written from professional practice rather
+        than reproduced from any course, employer or client material.</p>
+      </div>
+      <aside class="whocard">
+        <h4>Background</h4>
+        <ul class="facts">
+          <li><b>Chartered Accountant</b><span>ICAI, qualified 2014</span></li>
+          <li><b>Currently</b><span>Manager, Financial Compliance and Governance</span></li>
+          <li><b>Focus</b><span>ICFR, controls design and testing, internal audit</span></li>
+          <li><b>Experience</b><span>PwC India · Celebi Aviation · Purolator</span></li>
+          <li><b>Based in</b><span>Canada</span></li>
+        </ul>
+        <p class="snote">Corrections, additions and disagreements are welcome — the
+        <button class="inlinelink" onclick="goTab('improve')">Improve us</button> tab is the way to
+        send them.</p>
+      </aside>
+    </div>
+  </div>
+  ${footerHtml()}`;
+}
+
+/* ---------------- tab 6 — improve us ---------------- */
+function viewImprove(){
+  const procs = [...new Set(DATA.map(d=>d.process))].sort();
+  return `<div class="wrap stage">
+    <div class="lede">
+      <span class="eyebrow">Improve us</span>
+      <h2>Tell me what is missing or wrong.</h2>
+      <p>This database is built from practice, and practice varies. If a risk is missing from a
+      process you know well, if a control is described in a way your organisation would not
+      recognise, or if an industry you work in is not covered yet, that is worth knowing.</p>
+    </div>
+    <div class="formwrap">
+      <form id="fbform" class="fbform" onsubmit="return sendFeedback(event)">
+        <div class="frow">
+          <label>Your name<input name="name" type="text" autocomplete="name" placeholder="Optional"></label>
+          <label>Email<input name="email" type="email" autocomplete="email"
+            placeholder="Only if you want a reply"></label>
+        </div>
+        <div class="frow">
+          <label>What kind of feedback is this?
+            <select name="kind" required>
+              <option value="">Choose one…</option>
+              <option>A risk or control is missing</option>
+              <option>Something here is wrong or misleading</option>
+              <option>An industry is not covered</option>
+              <option>The wording is unclear</option>
+              <option>A suggestion for the site itself</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label>Industry it relates to
+            <select name="industry">
+              <option value="">Not specific to one</option>
+              ${FLAT.filter(i=>i.id!=='all').map(i=>`<option>${i.name}</option>`).join('')}
+            </select>
+          </label>
+        </div>
+        <label>Process it relates to
+          <select name="process">
+            <option value="">Not specific to one</option>
+            ${procs.map(p=>`<option>${p}</option>`).join('')}
+          </select>
+        </label>
+        <label>What would you change?
+          <textarea name="message" rows="7" required
+            placeholder="Be as specific as you can. If a risk is missing, describing how it actually goes wrong in practice is more useful than a title."></textarea>
+        </label>
+        <label class="fcheck"><input type="checkbox" name="credit" value="yes">
+          <span>Happy to be credited if this is used</span></label>
+        <div class="fsubmit">
+          <button type="submit" class="go">Send feedback</button>
+          <span id="fstatus" class="fstatus"></span>
+        </div>
+      </form>
+      <aside class="formaside">
+        <h4>What is most useful</h4>
+        <ul class="ticks">
+          <li>A risk you have seen materialise that is not listed here</li>
+          <li>A control that would not survive contact with a real external auditor</li>
+          <li>Terminology that is wrong for your country or sector</li>
+          <li>An industry with processes that do not fit the current structure</li>
+        </ul>
+        <p class="snote">Every piece of feedback is read. Not all of it will be acted on, and
+        anything that is will be checked against practice before it goes in.</p>
+      </aside>
+    </div>
+  </div>
+  ${footerHtml()}`;
+}
+
+async function sendFeedback(e){
+  e.preventDefault();
+  const form = e.target, status = document.getElementById('fstatus');
+  const data = Object.fromEntries(new FormData(form).entries());
+  status.textContent = 'Sending…'; status.className = 'fstatus';
+  if(FORMSPREE){
+    try{
+      const r = await fetch('https://formspree.io/f/'+FORMSPREE, {method:'POST',
+        headers:{'Accept':'application/json'}, body:new FormData(form)});
+      if(r.ok){ form.reset(); status.textContent = 'Thank you — that has been sent.';
+        status.className = 'fstatus ok'; return false; }
+      throw new Error('rejected');
+    }catch(err){ /* fall through to clipboard */ }
+  }
+  const text = Object.entries(data).map(([k,v])=>`${k}: ${v}`).join('\n');
+  try{
+    await navigator.clipboard.writeText(text);
+    status.textContent = 'Copied to your clipboard — paste it into an email for now. Direct sending is being set up.';
+    status.className = 'fstatus ok';
+  }catch(err){
+    status.textContent = 'Could not send from here. Please copy your note and email it instead.';
+    status.className = 'fstatus warn';
+  }
+  return false;
+}
+
+function footerHtml(){
+  return `<footer class="site"><div class="foot-in">
+    <p><b>Risk &amp; Control Atlas</b> — written from professional practice, not reproduced from any
+    proprietary course, employer material or client engagement. Frameworks referenced: COSO (2013),
+    the IIA Global Internal Audit Standards (2024), and IFRS 15 / ASC 606 where revenue recognition
+    is in scope.</p>
+    <p>Built by <b>Sambhav Jain, CA</b><br>Feedback welcome — this is version 2 and growing.</p>
+  </div></footer>`;
 }
 
 function sidebar(){
@@ -991,18 +1352,19 @@ function renderMain(){
 
 function viewWork(){
   return `<div class="wrap"><div class="work">${sidebar()}<section id="main"></section></div></div>
-  <footer class="site"><div class="foot-in">
-    <p><b>Risk &amp; Control Atlas</b> \u2014 written from professional practice, not reproduced from any
-    proprietary course, employer material or client engagement.</p>
-    <p>Built by <b>Sambhav Jain, CA</b></p>
-  </div></footer>`;
+  ${footerHtml()}`;
 }
 
 function render(){
   const app = document.getElementById('app');
-  app.innerHTML = S.stage==='industry' ? viewIndustry() : S.stage==='lens' ? viewLens() : viewWork();
-  if(S.stage==='work') renderMain();
-  crumbs();
+  const st = stageNow();
+  const map = {about:viewAbout, who:viewWho, improve:viewImprove,
+               'pick-industry':pickIndustry, 'pick-process':pickProcess, 'pick-lens':pickLens,
+               work:viewWork};
+  app.innerHTML = (map[st] || viewAbout)();
+  if(st === 'work') renderMain();
+  tabsBar(); crumbs();
 }
+
 render();
 </script>
