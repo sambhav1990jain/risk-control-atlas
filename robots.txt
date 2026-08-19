@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sambhav1990jain.github.io/risk-control-atlas/sitemap.xml

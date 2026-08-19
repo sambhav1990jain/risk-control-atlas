@@ -2,6 +2,13 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
+<meta name="description" content="A free, open library of risks and controls for internal audit and ICFR, covering 53 industries. Every risk explained in plain English before the technical detail.">
+<meta name="author" content="Sambhav Jain">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Risk &amp; Control 101">
+<meta property="og:description" content="Risks and controls for internal audit and ICFR across 53 industries. Free and openly licensed.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://sambhav1990jain.github.io/risk-control-atlas/">
 <title>Risk &amp; Control 101</title>
 <style>
 :root{
@@ -601,6 +608,40 @@ const TABS = [
 ];
 const FORMSPREE = '';   /* set to the Formspree form id once Sam has one */
 
+
+/* ---- every view has an address, so it can be shared and indexed ---- */
+function syncUrl(){
+  const q = new URLSearchParams();
+  if(S.tab && S.tab !== 'about') q.set('tab', S.tab);
+  if(S.ind) q.set('industry', S.ind);
+  if(S.procChosen) q.set('process', S.proc || 'all');
+  if(S.tab === 'industry' && S.lens) q.set('lens', S.lens);
+  const url = location.pathname + (q.toString() ? '?' + q : '');
+  history.replaceState(null, '', url);
+}
+function readUrl(){
+  const q = new URLSearchParams(location.search);
+  const tab = q.get('tab');
+  if(tab && TABS.some(t => t[0] === tab)) S.tab = tab;
+  if(S.tab === 'ia' || S.tab === 'icfr') S.lens = S.tab;
+  const ind = q.get('industry');
+  if(ind && FLAT.some(i => i.id === ind)) S.ind = ind;
+  const proc = q.get('process');
+  if(S.ind && proc){
+    S.procChosen = true;
+    S.proc = (proc === 'all') ? null : proc;
+  }
+  const lens = q.get('lens');
+  if(S.tab === 'industry' && (lens === 'ia' || lens === 'icfr')) S.lens = lens;
+}
+async function copyLink(btn){
+  try{
+    await navigator.clipboard.writeText(location.href);
+    const old = btn.textContent; btn.textContent = 'Link copied';
+    setTimeout(()=>{ btn.textContent = old; }, 1800);
+  }catch(e){ toast('Could not copy — the address bar has the link for this view.'); }
+}
+
 function goTab(t){
   S.tab = t;
   /* every tab starts from a clean slate — including the industry chosen but not yet confirmed */
@@ -991,9 +1032,16 @@ function viewAbout(){
         <h3>How this is put together</h3>
       </div>
       <div class="methodgrid">
-        <div><h4>Where the content comes from</h4>
-          <p>Written from professional practice. Nothing here is reproduced from a training course,
-          an employer's material, or any client engagement.</p></div>
+        <div><h4>Licence — free to use</h4>
+          <p>Everything here, including the underlying data, is published under a Creative Commons
+          Attribution 4.0 licence. Copy it, adapt it, translate it, use it in your firm's own
+          methodology. The only condition is that you credit Risk &amp; Control 101 and say if you
+          changed anything.</p></div>
+        <div><h4>How this was written</h4>
+          <p>The structure, the standard and the editorial direction are the author's. Entries were
+          drafted with the help of a large language model working to that direction, and reviewed
+          before publication. Nothing is reproduced from a training course, an employer's material,
+          or any client engagement.</p></div>
         <div><h4>How industries are classified</h4>
           <p>The industry list follows the Global Industry Classification Standard and was checked
           against the industries represented in major listed-company indices, so any large company
@@ -1339,8 +1387,10 @@ function footerHtml(){
     proprietary course, employer material or client engagement. Frameworks referenced: COSO (2013),
     the IIA Global Internal Audit Standards (2024), and IFRS 15 / ASC 606 where revenue recognition
     is in scope.</p>
-    <p>Built by <b>Sambhav Jain, CA</b><br>Feedback welcome — this is a work in progress.<br>
-    <span class="ver">Build 19 Aug 2026, 13:14 · baadbb9</span></p>
+    <p>Built by <b>Sambhav Jain, CA</b> · Free to use under
+    <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a><br>
+    Feedback welcome — this is a work in progress.<br>
+    <span class="ver">Build 19 Aug 2026, 15:23 · baadbb9</span></p>
   </div></footer>`;
 }
 
@@ -1626,6 +1676,7 @@ function renderMain(){
           <button class="${S.view!=='map'?'on':''}" onclick="S.view='list';renderMain()">${S.lens==='icfr'?'Matrix':'Programmes'}</button>
           <button class="${S.view==='map'?'on':''}" onclick="S.view='map';renderMain()">Coverage map</button>
         </div>
+        <button class="ghost" onclick="copyLink(this)">Copy link</button>
         <button class="ghost" onclick="downloadExcel()">Excel</button>
         <button class="ghost" onclick="window.print()">Print / PDF</button>
       </div>
@@ -1651,8 +1702,9 @@ function render(){
     const inp = document.getElementById('indsearch');
     if(inp && S.iq){ inp.focus(); inp.setSelectionRange(inp.value.length, inp.value.length); } }
   if(st === 'work') renderMain();
-  tabsBar(); crumbs();
+  tabsBar(); crumbs(); syncUrl();
 }
 
+readUrl();
 render();
 </script>

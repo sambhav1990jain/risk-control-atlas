@@ -29,7 +29,30 @@ risk weight sits.
 self-contained page with the data inlined; it needs no server, no build step and no
 dependencies to view.
 
-Content is written from professional practice. It is not reproduced from any proprietary
-course, employer material or client engagement.
+## Licence
 
-© 2026 Sambhav Jain. All rights reserved.
+The content of this project — every risk, control, audit programme and test procedure, and the
+JSON data behind them — is licensed under the
+[Creative Commons Attribution 4.0 International Licence](https://creativecommons.org/licenses/by/4.0/).
+
+You are free to copy it, adapt it, translate it, and use it commercially, including inside your
+firm's own audit methodology. The only condition is attribution: credit *Risk & Control 101 by
+Sambhav Jain* and indicate whether you changed anything.
+
+The full legal text is in [LICENSE](LICENSE).
+
+## How this was written
+
+The structure, standard and editorial direction are mine. The entries were drafted with the help
+of a large language model working to that direction, and every entry was reviewed before
+publication. Content is based on professional practice; none of it is reproduced from any
+training course, employer material or client engagement.
+
+Where an entry reflects something specific to how a particular organisation works, that is
+coincidence rather than disclosure.
+
+## Using it
+
+Risks and controls here are a starting point, not a conclusion. Adapt them for the size of the
+organisation, how it operates, and the regulations that apply where it operates. Nothing here is
+professional advice.
