@@ -305,6 +305,14 @@ table.cmp td.cmpk{font-weight:600;color:var(--ink);white-space:nowrap;width:150p
 .ah-risk{font-size:14.5px;line-height:1.5;color:var(--ink)}
 .ah-plain{font-size:13px;line-height:1.5;color:var(--muted)}
 .ah-go{font-size:12.5px;color:var(--accent);margin-top:2px}
+
+.indjump-in{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 18px;flex-wrap:wrap}
+.indjump-in b{font-family:var(--serif);font-size:18px;display:block}
+.indjump-in span{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.indjump-btns{display:flex;gap:8px;flex-wrap:wrap}
+.indjump-btns .go{margin:0;padding:8px 15px;font-size:13.5px}
+.go.alt{background:transparent;color:var(--accent);border:1px solid var(--line-2)}
+.go.alt:hover{background:var(--accent-wash);border-color:var(--accent)}
 /* ---- workspace ---- */
 .work{display:grid;grid-template-columns:250px minmax(0,1fr);gap:26px;padding:26px 0 80px;align-items:start}
 .side{position:sticky;top:66px;display:flex;flex-direction:column;gap:20px}
@@ -1348,15 +1356,24 @@ function answerAsk(){
   const {q, terms, bigrams, lens, industry} = interpret(raw);
   /* glossary: prefer the most specific term that matches */
   /* only explain a term when the question is actually asking what something means */
-  const definitional = /^(what|whats|what's|define|meaning of|explain)\b/.test(q) || q.split(/\s+/).length <= 3;
+  const definitional = /^(what|whats|what's|define|meaning of|explain)\b/.test(q)
+    || GLOSSARY.some(([t]) => t.toLowerCase() === q.replace(/[?.!]/g,'').trim());
   const gloss = definitional
     ? GLOSSARY.filter(([t]) => q.includes(t.toLowerCase())).sort((a,b)=>b[0].length-a[0].length).slice(0,2)
     : [];
   let docs = idx.docs;
   if(industry) docs = docs.filter(x => x.d.industry.includes(industry) || x.d.industry.includes('cross'));
   if(lens) docs = docs.filter(x => x.d.lens.includes(lens));
-  let hits = docs.map(x=>({d:x.d, s:scoreDoc(x, terms, bigrams, idx)}))
+  let hits = docs.map(x=>({d:x.d,
+      s: scoreDoc(x, terms, bigrams, idx) + (industry && x.d.industry.includes(industry) ? 8 : 0)}))
     .filter(x=>x.s >= 9).sort((a,b)=>b.s-a.s);
+  /* naming an industry is itself a request — "risks for a hotel" should not come back empty */
+  if(industry && hits.length < 4){
+    const own = docs.filter(x => x.d.industry.includes(industry))
+      .map(x => ({d:x.d, s: 4 + (x.d.rating==='High' ? 2 : 0)}))
+      .sort((a,b)=>b.s-a.s);
+    hits = hits.concat(own);
+  }
   /* one result per sub-process, so the list is not seven flavours of the same thing */
   const seen = new Set();
   hits = hits.filter(h=>{
@@ -1365,11 +1382,33 @@ function answerAsk(){
   }).slice(0,7);
   const indLabel = industry ? indName(industry) : null;
   let html = '';
+  if(industry){
+    const iaN = poolFor(industry,'ia').length, icN = poolFor(industry,'icfr').length;
+    html += `<div class="ansblock indjump">
+      <div class="ansh">Industry</div>
+      <div class="indjump-in">
+        <div><b>${esc(indLabel)}</b>
+          <span>${iaN} audit programmes · ${icN} risks and controls</span></div>
+        <div class="indjump-btns">
+          <button class="go" onclick="openIndustry('ia','${industry}')">Internal audit</button>
+          <button class="go alt" onclick="openIndustry('icfr','${industry}')">ICFR</button>
+        </div>
+      </div>
+    </div>`;
+  }
   if(gloss.length){
     html += `<div class="ansblock"><div class="ansh">What that means</div>
       ${gloss.map(([t,d])=>`<p class="glossline"><b>${t}</b> ${esc(d)}</p>`).join('')}</div>`;
   }
-  if(!hits.length){
+  if(!hits.length && industry){
+    html += `<div class="ansblock"><div class="ansh">Nothing specific to this industry yet</div>
+      <p class="ansnote">Content written specifically for ${esc(indLabel)} is still being added.
+      The processes every organisation runs — buying and paying, billing and collecting, paying
+      people, closing the books, tax, treasury, technology, third parties and governance — all
+      apply, and they are the majority of any audit plan. Open either view above to see them, or
+      <button class="inlinelink" onclick="goTab('improve')">ask for this industry to be
+      prioritised</button>.</p></div>`;
+  } else if(!hits.length && !gloss.length){
     html += `<div class="ansblock"><div class="ansh">No direct match</div>
       <p class="ansnote">Nothing in the library matched that closely. Try naming the process —
       payroll, procure to pay, revenue, fixed assets — or what goes wrong, such as
@@ -1390,6 +1429,11 @@ function answerAsk(){
     </div>`;
   }
   box.innerHTML = html;
+}
+function openIndustry(lens, ind){
+  S.tab = lens; S.lens = lens; S.ind = ind; S.proc = null; S.procChosen = true;
+  S.pickTmp = null; S.iq=''; S.q=''; S.f={}; S.view='list'; S.open=null;
+  render(); window.scrollTo({top:0});
 }
 function openHit(lens, ind, proc){
   S.tab = lens; S.lens = lens; S.ind = ind; S.proc = proc; S.procChosen = true;
@@ -1560,7 +1604,7 @@ function footerHtml(){
     <p>Built by <b>Sambhav Jain, CA</b> · Free to use under
     <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a><br>
     Feedback welcome — this is a work in progress.<br>
-    <span class="ver">Build 19 Aug 2026, 15:51 · 6a5b24a</span></p>
+    <span class="ver">Build 19 Aug 2026, 16:03 · 6a5b24a</span></p>
   </div></footer>`;
 }
 
